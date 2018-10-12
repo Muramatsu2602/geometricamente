@@ -1,0 +1,173 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Screna.SharpAvi</name>
+    </assembly>
+    <members>
+        <member name="T:Screna.Avi.AviCodec">
+            <summary>
+            Represents an Avi Codec.
+            </summary>
+        </member>
+        <member name="P:Screna.Avi.AviCodec.Name">
+            <summary>
+            Name of the Codec
+            </summary>
+        </member>
+        <member name="M:Screna.Avi.AviCodec.#ctor(System.String)">
+            <summary>
+            Creates a new instance of <see cref="T:Screna.Avi.AviCodec"/>.
+            </summary>
+        </member>
+        <member name="P:Screna.Avi.AviCodec.Quality">
+            <summary>
+            Quality of the encoded Video... 0 to 100 (default is 70) (Not supported by all Codecs). 
+            </summary>
+        </member>
+        <member name="F:Screna.Avi.AviCodec.Uncompressed">
+            <summary>Identifier used for non-compressed data.</summary>
+        </member>
+        <member name="F:Screna.Avi.AviCodec.MotionJpeg">
+            <summary>Motion JPEG.</summary>
+        </member>
+        <member name="F:Screna.Avi.AviCodec.MicrosoftMpeg4V3">
+            <summary>Microsoft MPEG-4 V3.</summary>
+        </member>
+        <member name="F:Screna.Avi.AviCodec.MicrosoftMpeg4V2">
+            <summary>Microsoft MPEG-4 V2.</summary>
+        </member>
+        <member name="F:Screna.Avi.AviCodec.Xvid">
+            <summary>Xvid MPEG-4.</summary>
+        </member>
+        <member name="F:Screna.Avi.AviCodec.DivX">
+            <summary>DivX MPEG-4.</summary>
+        </member>
+        <member name="F:Screna.Avi.AviCodec.X264">
+            <summary>x264 H.264/MPEG-4 AVC.</summary>
+        </member>
+        <member name="T:Screna.Avi.AviWriter">
+            <summary>
+            Writes an AVI file.
+            </summary>
+        </member>
+        <member name="P:Screna.Avi.AviWriter.FrameRate">
+            <summary>
+            Video Frame Rate.
+            </summary>
+        </member>
+        <member name="P:Screna.Avi.AviWriter.SupportsAudio">
+            <summary>
+            Gets whether Audio is recorded.
+            </summary>
+        </member>
+        <member name="M:Screna.Avi.AviWriter.#ctor(System.String,Screna.Avi.AviCodec)">
+            <summary>
+            Creates a new instance of <see cref="T:Screna.Avi.AviWriter"/>.
+            </summary>
+            <param name="FileName">Output file path.</param>
+            <param name="Codec">The Avi Codec.</param>
+        </member>
+        <member name="M:Screna.Avi.AviWriter.Init(Screna.IImageProvider,System.Int32,Screna.Audio.IAudioProvider)">
+            <summary>
+            Initialises the <see cref="T:Screna.IVideoFileWriter"/>. Usually called by an <see cref="T:Screna.IRecorder"/>.
+            </summary>
+            <param name="ImageProvider">The Image Provider.</param>
+            <param name="FrameRate">Video Frame Rate.</param>
+            <param name="AudioProvider">The Audio Provider.</param>
+        </member>
+        <member name="M:Screna.Avi.AviWriter.WriteFrameAsync(System.Drawing.Bitmap)">
+            <summary>
+            Asynchronously writes an Image frame.
+            </summary>
+            <param name="Image">The Image frame to write.</param>
+            <returns>The Task Object.</returns>
+        </member>
+        <member name="M:Screna.Avi.AviWriter.EnumerateEncoders">
+            <summary>
+            Enumerates all available Avi Encoders.
+            </summary>
+        </member>
+        <member name="M:Screna.Avi.AviWriter.WriteAudio(System.Byte[],System.Int32)">
+            <summary>
+            Write audio block to Audio Stream.
+            </summary>
+            <param name="Buffer">Buffer containing audio data.</param>
+            <param name="Length">Length of audio data in bytes.</param>
+        </member>
+        <member name="M:Screna.Avi.AviWriter.Dispose">
+            <summary>
+            Frees all resources used by this object.
+            </summary>
+        </member>
+        <member name="T:Screna.Avi.IAudioProviderWrapper">
+            <summary>
+            Enables a Screna based Audio Provider to be used with SharpAvi.
+            </summary>
+        </member>
+        <member name="T:Screna.Lame.Mp3EncoderLame">
+            <summary>
+            Mpeg Layer 3 (MP3) audio encoder using the lameenc32.dll (x86) or lameenc64.dll (x64).
+            </summary>
+            <remarks>
+            Only 16-bit input audio is currently supported.
+            The class is designed for using only a single instance at a time.
+            Find information about and downloads of the LAME project at http://lame.sourceforge.net/.
+            </remarks>
+        </member>
+        <member name="P:Screna.Lame.Mp3EncoderLame.SupportedBitRates">
+            <summary>
+            Supported output bit rates (in kilobits per second).
+            </summary>
+            <remarks>
+            Currently supported are 64, 96, 128, 160, 192 and 320 kbps.
+            </remarks>
+        </member>
+        <member name="M:Screna.Lame.Mp3EncoderLame.#ctor(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Creates a new instance of <see cref="T:Screna.Lame.Mp3EncoderLame"/>.
+            </summary>
+            <param name="ChannelCount">Channel count.</param>
+            <param name="SampleRate">Sample rate (in samples per second).</param>
+            <param name="OutputBitRateKbps">Output bit rate (in kilobits per second).</param>
+            <remarks>
+            Encoder expects audio data in 16-bit samples.
+            Stereo data should be interleaved: left sample first, right sample second.
+            </remarks>
+        </member>
+        <member name="M:Screna.Lame.Mp3EncoderLame.Dispose">
+            <summary>
+            Releases resources.
+            </summary>
+        </member>
+        <member name="M:Screna.Lame.Mp3EncoderLame.Encode(System.Byte[],System.Int32,System.Int32,System.Byte[],System.Int32)">
+            <summary>
+            Encodes block of audio data.
+            </summary>
+        </member>
+        <member name="M:Screna.Lame.Mp3EncoderLame.EnsureBufferIsSufficient(System.Byte[]@,System.Int32)">
+            <summary>
+            Ensures that the buffer is big enough to hold the result of encoding <paramref name="SourceCount"/> bytes.
+            </summary>
+        </member>
+        <member name="M:Screna.Lame.Mp3EncoderLame.Flush(System.Byte[],System.Int32)">
+            <summary>
+            Flushes internal encoder's buffers.
+            </summary>
+        </member>
+        <member name="P:Screna.Lame.Mp3EncoderLame.RequiresRiffHeader">
+            <summary>
+            Gets if RIFF header is needed when writing to a file.
+            </summary>
+        </member>
+        <member name="M:Screna.Lame.Mp3EncoderLame.GetMaxEncodedLength(System.Int32)">
+            <summary>
+            Gets maximum length of encoded data. Estimate taken from the description of 'lame_encode_buffer' method in 'lame.h'
+            </summary>
+        </member>
+        <member name="P:Screna.Lame.Mp3EncoderLame.WaveFormat">
+            <summary>
+            Wave Format including Mp3 Specific Data.
+            </summary>
+        </member>
+    </members>
+</doc>
