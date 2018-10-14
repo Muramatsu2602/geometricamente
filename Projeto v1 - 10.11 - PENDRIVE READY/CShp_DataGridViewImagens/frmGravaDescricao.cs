@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 
 
-namespace CShp_DataGridViewImagens
+namespace Geometricamente_V1
 {
     public partial class frmGravaDescricao : Form
     {

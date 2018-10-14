@@ -136,7 +136,7 @@ namespace CapturaTela
                 {
                     Directory.CreateDirectory("D:\\DADOS_SISTEMA\\video");
                 }
-                string fullName = string.Format(@"{0}\{1}_{2}.avi", "D:\\DADOS_SISTEMA\\video", dados[0], DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss"));
+                string fullName = string.Format(@"{0}\{1}_{2}.avi", "D:\\DADOS_SISTEMA\\video", dados[0], DateTime.Now.ToString("yyyyMMdd_HHmmss"));
 
                 DateTime agora = DateTime.Now;
                 // Save File option
@@ -148,7 +148,7 @@ namespace CapturaTela
                               fullName,
                               this._width,
                               this._height,
-                              (int)25,
+                              (int)10,
                               (VideoCodec)cb_VideoCodec.SelectedValue,
                               (int)(BitRate)5000000);
                 }

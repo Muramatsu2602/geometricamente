@@ -10,12 +10,15 @@ using System.Threading;
 using System.Windows.Forms;
 using CapturaTela;
 
-namespace CShp_DataGridViewImagens
+namespace Geometricamente_V1
 {
     public partial class frmLogin : Form
     {
+        String[] dados = new String[100];
+ 
+
         public frmLogin()
-        {
+        {            
             Thread t = new Thread(new ThreadStart(StartForm));
             t.Start();
             Thread.Sleep(5000);
@@ -26,24 +29,7 @@ namespace CShp_DataGridViewImagens
         {
             Application.Run(new frmSplashScreen());
         }
-        private void button1_Click(object sender, EventArgs e)
-        {
-            String[] dados = new String[100];
-            dados[0] = txtNome.Text;
-            dados[1] = numIdade.Value.ToString();
-            if (rbFala.Checked)
-            {
-                frmEscolhePasta enviaDados = new frmEscolhePasta(dados);
-                enviaDados.Show();
-            }
-            else
-            {
-                frmCapturaDesenho captura = new frmCapturaDesenho(dados);
-                captura.Show();
-            }
-            this.Hide();
-            
-        }
+ 
 
         private void txtNome_Validating(object sender, CancelEventArgs e)
         {
@@ -54,21 +40,34 @@ namespace CShp_DataGridViewImagens
             }
         }
 
-        private void btnEncerrar_Click(object sender, EventArgs e)
+
+        private void btnSair_Click(object sender, EventArgs e)
         {
 
             for (int i = Application.OpenForms.Count - 1; i >= 0; i--)
             {
                 if (Application.OpenForms[i].Name != "Form1")
                     Application.OpenForms[i].Close();
-        
+
             }
             this.Close();
         }
 
-        private void frmLogin_Load(object sender, EventArgs e)
+        private void btnGravar_Click(object sender, EventArgs e)
         {
+            dados[0] = txtNome.Text;
+            dados[1] = numIdade.Value.ToString();
+            frmEscolhePasta enviaDados = new frmEscolhePasta(dados);
+            enviaDados.Show();
+        }
 
+        private void btnDesenhar_Click(object sender, EventArgs e)
+
+        {
+            dados[0] = txtNome.Text;
+            dados[1] = numIdade.Value.ToString();
+            frmCapturaDesenho captura = new frmCapturaDesenho(dados);
+            captura.Show();
         }
     }
 }

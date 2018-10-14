@@ -1,4 +1,4 @@
-﻿namespace CShp_DataGridViewImagens
+﻿namespace Geometricamente_V1
 {
     partial class frmSplashScreen
     {

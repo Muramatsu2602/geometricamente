@@ -5,7 +5,7 @@ using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
-namespace CShp_DataGridViewImagens
+namespace Geometricamente_V1
 {
     public partial class frmEscolhePasta : Form
     {

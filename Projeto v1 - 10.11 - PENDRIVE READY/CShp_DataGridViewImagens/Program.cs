@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CShp_DataGridViewImagens
+namespace Geometricamente_V1
 {
     static class Program
     {

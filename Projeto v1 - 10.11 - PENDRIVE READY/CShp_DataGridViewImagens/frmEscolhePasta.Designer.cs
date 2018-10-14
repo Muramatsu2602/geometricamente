@@ -1,4 +1,4 @@
-﻿namespace CShp_DataGridViewImagens
+﻿namespace Geometricamente_V1
 {
     partial class frmEscolhePasta
     {
@@ -96,7 +96,7 @@
             // 
             // panel3
             // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.AutoScroll = true;
             this.panel3.Location = new System.Drawing.Point(3, 49);
