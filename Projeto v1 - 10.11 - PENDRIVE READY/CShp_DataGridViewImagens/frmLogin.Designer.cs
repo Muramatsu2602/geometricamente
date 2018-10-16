@@ -58,24 +58,22 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Enabled = false;
             this.label3.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(8, 215);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(74, 24);
+            this.label3.Size = new System.Drawing.Size(100, 32);
             this.label3.TabIndex = 9;
             this.label3.Text = "IDADE";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Enabled = false;
             this.label2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(8, 155);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 24);
+            this.label2.Size = new System.Drawing.Size(95, 32);
             this.label2.TabIndex = 8;
             this.label2.Text = "NOME";
             // 
@@ -83,20 +81,20 @@
             // 
             this.numIdade.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numIdade.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.numIdade.Location = new System.Drawing.Point(87, 207);
-            this.numIdade.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numIdade.Location = new System.Drawing.Point(112, 209);
+            this.numIdade.Margin = new System.Windows.Forms.Padding(4);
             this.numIdade.Name = "numIdade";
-            this.numIdade.Size = new System.Drawing.Size(93, 32);
+            this.numIdade.Size = new System.Drawing.Size(93, 38);
             this.numIdade.TabIndex = 7;
             this.numIdade.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtNome
             // 
             this.txtNome.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNome.Location = new System.Drawing.Point(87, 152);
-            this.txtNome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNome.Location = new System.Drawing.Point(111, 155);
+            this.txtNome.Margin = new System.Windows.Forms.Padding(4);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(500, 32);
+            this.txtNome.Size = new System.Drawing.Size(500, 38);
             this.txtNome.TabIndex = 6;
             this.txtNome.Validating += new System.ComponentModel.CancelEventHandler(this.txtNome_Validating);
             // 
@@ -107,7 +105,7 @@
             this.btnGravar.InitialImage = ((System.Drawing.Image)(resources.GetObject("btnGravar.InitialImage")));
             this.btnGravar.Location = new System.Drawing.Point(231, 336);
             this.btnGravar.Name = "btnGravar";
-            this.btnGravar.Padding = new System.Windows.Forms.Padding(11, 11, 11, 11);
+            this.btnGravar.Padding = new System.Windows.Forms.Padding(11);
             this.btnGravar.Size = new System.Drawing.Size(139, 132);
             this.btnGravar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnGravar.TabIndex = 17;
@@ -121,7 +119,7 @@
             this.btnDesenhar.InitialImage = ((System.Drawing.Image)(resources.GetObject("btnDesenhar.InitialImage")));
             this.btnDesenhar.Location = new System.Drawing.Point(449, 336);
             this.btnDesenhar.Name = "btnDesenhar";
-            this.btnDesenhar.Padding = new System.Windows.Forms.Padding(11, 11, 11, 11);
+            this.btnDesenhar.Padding = new System.Windows.Forms.Padding(11);
             this.btnDesenhar.Size = new System.Drawing.Size(139, 132);
             this.btnDesenhar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnDesenhar.TabIndex = 18;
@@ -135,7 +133,7 @@
             this.btnSair.InitialImage = ((System.Drawing.Image)(resources.GetObject("btnSair.InitialImage")));
             this.btnSair.Location = new System.Drawing.Point(12, 336);
             this.btnSair.Name = "btnSair";
-            this.btnSair.Padding = new System.Windows.Forms.Padding(11, 11, 11, 11);
+            this.btnSair.Padding = new System.Windows.Forms.Padding(11);
             this.btnSair.Size = new System.Drawing.Size(139, 132);
             this.btnSair.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnSair.TabIndex = 19;
@@ -144,9 +142,9 @@
             // 
             // frmLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 480);
+            this.ClientSize = new System.Drawing.Size(619, 498);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.btnDesenhar);
             this.Controls.Add(this.btnGravar);
@@ -157,7 +155,7 @@
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmLogin";

@@ -109,18 +109,6 @@
     <Compile Include="frmGravaDescricao.Designer.cs">
       <DependentUpon>frmGravaDescricao.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmGravaTela_v1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmGravaTela_v1.Designer.cs">
-      <DependentUpon>frmGravaTela_v1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmGravaTela_v2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmGravaTela_v2.Designer.cs">
-      <DependentUpon>frmGravaTela_v2.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -149,12 +137,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmGravaDescricao.resx">
       <DependentUpon>frmGravaDescricao.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmGravaTela_v1.resx">
-      <DependentUpon>frmGravaTela_v1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmGravaTela_v2.resx">
-      <DependentUpon>frmGravaTela_v2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>

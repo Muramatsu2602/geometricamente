@@ -18,12 +18,13 @@ namespace Geometricamente_V1
  
 
         public frmLogin()
-        {            
+        {
             Thread t = new Thread(new ThreadStart(StartForm));
             t.Start();
             Thread.Sleep(5000);
             InitializeComponent();
             t.Abort();
+            this.Focus();
         }
         private void StartForm()
         {

@@ -19,7 +19,7 @@ namespace Geometricamente_V1
 
         private void frmFala_Load(object sender, EventArgs e)
         {
-            btnParaGravar.Enabled = false;
+            pictureBox2.Enabled = false;
         }
 
         public frmGravaDescricao(Image imgForm, String[] dados)
@@ -42,8 +42,8 @@ namespace Geometricamente_V1
         private void btnGravar_Click(object sender, EventArgs e)
         {
             mciSendString("record recsound", null, 0, IntPtr.Zero);
-            btnGravar.Enabled = false;
-            btnParaGravar.Enabled = true;
+            pictureBox2.Enabled = false;
+            pictureBox1.Enabled = true;
             //cronometro
             tempoInicial = DateTime.Now;
             timer1.Start();
@@ -63,14 +63,14 @@ namespace Geometricamente_V1
                     DateTime agora = DateTime.Now;
                     mciSendString("Save recsound C:\\DADOS_SISTEMA\\audio\\" + agora.ToString("yyyy-MM-dd_HH-mm-ss") + "_img-" + dados[2] + "_" + dados[0] + "_" + dados[1] + "anos" + ".wav", null, 0, IntPtr.Zero);
                     mciSendString("close recsound", null, 0, IntPtr.Zero);
-                    btnParaGravar.Enabled = false;
-                    btnGravar.Enabled = false;
+                    pictureBox2.Enabled = false;
+                    pictureBox1.Enabled = false;
               
                 }
                 else
                 {
-                    btnGravar.Enabled = true;
-                    btnParaGravar.Enabled = false;
+                    pictureBox1.Enabled = true;
+                    pictureBox2.Enabled = false;
                 }
             }
             catch (Exception a)
