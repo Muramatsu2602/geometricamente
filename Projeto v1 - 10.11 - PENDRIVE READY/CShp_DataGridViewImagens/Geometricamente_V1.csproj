@@ -91,6 +91,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DrawingSurface.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DrawingSurface.Designer.cs">
+      <DependentUpon>DrawingSurface.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCapturaDesenho.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +135,9 @@
     <Compile Include="TopForm.designer.cs">
       <DependentUpon>TopForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="DrawingSurface.resx">
+      <DependentUpon>DrawingSurface.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCapturaDesenho.resx">
       <DependentUpon>frmCapturaDesenho.cs</DependentUpon>
     </EmbeddedResource>

@@ -3,7 +3,8 @@ using System.Windows.Forms;
 using System;
 using System.Runtime.InteropServices;
 using System.Text;
-
+using System.Windows.Input;
+using System.Drawing.Drawing2D;
 
 namespace Geometricamente_V1
 {
@@ -49,6 +50,24 @@ namespace Geometricamente_V1
             timer1.Start();
         }
 
+        private Cursor crossCursor(Pen pen, Brush brush, string name, int x, int y)
+        {
+            var pic = new Bitmap(x, y);
+            Graphics gr = Graphics.FromImage(pic);
+
+            var pathX = new GraphicsPath();
+            var pathY = new GraphicsPath();
+            pathX.AddLine(0, y / 2, x, y / 2);
+            pathY.AddLine(x / 2, 0, x / 2, y);
+            gr.DrawPath(pen, pathX);
+            gr.DrawPath(pen, pathY);
+            gr.DrawString(name, Font, brush, x / 2 + 5, y - 35);
+
+            IntPtr ptr = pic.GetHicon();
+            var c = new Cursor(ptr);
+            return c;
+        }
+
         private void btnParaGravar_Click(object sender, EventArgs e)
         {
 
@@ -88,5 +107,19 @@ namespace Geometricamente_V1
         {
             this.Close();
         }
+
+        private void picImagem_MouseMove(object sender, MouseEventArgs e)
+        {
+            lblCoordenadas.Text = string.Format("X = {0}, Y = {1}", e.X, e.Y);
+        }
     }
 }
+
+
+
+
+
+
+//
+
+

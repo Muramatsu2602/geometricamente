@@ -62,7 +62,7 @@ namespace Geometricamente_V1
                 panel3.Controls.Add(picture);
 
                 // aqui vai ir o nome da imagem
-                this.dados[2] = arquivo.Name;
+                //this.dados[2] = arquivo.Name;
 
                 picture.Click += new EventHandler(AbreForm);
                

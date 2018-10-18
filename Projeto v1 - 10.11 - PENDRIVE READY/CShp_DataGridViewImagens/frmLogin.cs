@@ -24,7 +24,7 @@ namespace Geometricamente_V1
             Thread.Sleep(5000);
             InitializeComponent();
             t.Abort();
-            this.Focus();
+            this.ShowDialog();
         }
         private void StartForm()
         {

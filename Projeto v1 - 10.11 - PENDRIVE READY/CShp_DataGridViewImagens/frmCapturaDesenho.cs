@@ -406,11 +406,6 @@ namespace CapturaTela
             drawCircle = true;
         }
 
-        private void label7_Click(object sender, EventArgs e)
-        {
-            drawTriangle = true;
-        }
-
         private void frmCapturaDesenho_Load(object sender, EventArgs e)
         {
 
@@ -419,6 +414,11 @@ namespace CapturaTela
         private void btn_Apagar_Click(object sender, EventArgs e)
         {
             pnl_Draw.BackColor = Color.White;
+        }
+
+        private void btn_Triangle_Click(object sender, EventArgs e)
+        {
+            drawTriangle = true;
         }
 
 
@@ -444,7 +444,5 @@ namespace CapturaTela
         _4000kbit = 4000000,
         _5000kbit = 5000000
     }
-
-
 
 }
