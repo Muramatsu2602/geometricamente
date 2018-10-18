@@ -132,11 +132,11 @@ namespace CapturaTela
                 this.SetVisible(true);
                 this._frameCount = 0;
 
-                if (!Directory.Exists("D:\\DADOS_SISTEMA\\video"))
+                if (!Directory.Exists("C:\\DADOS_SISTEMA\\video"))
                 {
-                    Directory.CreateDirectory("D:\\DADOS_SISTEMA\\video");
+                    Directory.CreateDirectory("C:\\DADOS_SISTEMA\\video");
                 }
-                string fullName = string.Format(@"{0}\{1}_{2}.avi", "D:\\DADOS_SISTEMA\\video", dados[0], DateTime.Now.ToString("yyyyMMdd_HHmmss"));
+                string fullName = string.Format(@"{0}\{1}_{2}.avi", "C:\\DADOS_SISTEMA\\video", dados[0], DateTime.Now.ToString("yyyyMMdd_HHmmss"));
 
                 DateTime agora = DateTime.Now;
                 // Save File option

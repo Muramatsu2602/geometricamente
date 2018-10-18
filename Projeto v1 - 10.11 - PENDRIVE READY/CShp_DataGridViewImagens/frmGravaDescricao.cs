@@ -14,6 +14,10 @@ namespace Geometricamente_V1
         TimeSpan diferencaTempo;
         String[] dados = new string[100];
 
+        Pen crossPen;
+        Pen rectanglePen;
+        Brush rectangleBrush;
+
         //gravação de audio
         [DllImport("winmm.dll")]
         private static extern long mciSendString(string command, StringBuilder retstring, int ReturnLength, IntPtr callback);
@@ -32,7 +36,17 @@ namespace Geometricamente_V1
             mciSendString("open new Type waveaudio alias recsound", null, 0, IntPtr.Zero);
             picImagem.Image = imgForm;
             this.dados = dados;
+
+            this.DoubleBuffered = true;
+            this.ResizeRedraw = true;
+            crossPen = new Pen(Color.Red, 2);
+            rectangleBrush = new SolidBrush(Color.FromArgb(50, Color.Blue));
+            rectanglePen = new Pen(Color.Blue, 1);
+
         }
+        bool mouseDown = false;
+        Point startPoint = Point.Empty;
+        Point endPoint = Point.Empty;
 
         private void timer1_Tick(object sender, System.EventArgs e)
         {
@@ -48,24 +62,6 @@ namespace Geometricamente_V1
             //cronometro
             tempoInicial = DateTime.Now;
             timer1.Start();
-        }
-
-        private Cursor crossCursor(Pen pen, Brush brush, string name, int x, int y)
-        {
-            var pic = new Bitmap(x, y);
-            Graphics gr = Graphics.FromImage(pic);
-
-            var pathX = new GraphicsPath();
-            var pathY = new GraphicsPath();
-            pathX.AddLine(0, y / 2, x, y / 2);
-            pathY.AddLine(x / 2, 0, x / 2, y);
-            gr.DrawPath(pen, pathX);
-            gr.DrawPath(pen, pathY);
-            gr.DrawString(name, Font, brush, x / 2 + 5, y - 35);
-
-            IntPtr ptr = pic.GetHicon();
-            var c = new Cursor(ptr);
-            return c;
         }
 
         private void btnParaGravar_Click(object sender, EventArgs e)
@@ -84,7 +80,6 @@ namespace Geometricamente_V1
                     mciSendString("close recsound", null, 0, IntPtr.Zero);
                     pictureBox2.Enabled = false;
                     pictureBox1.Enabled = false;
-              
                 }
                 else
                 {
@@ -98,11 +93,6 @@ namespace Geometricamente_V1
             }
         }
 
-        private void Form2_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -112,14 +102,40 @@ namespace Geometricamente_V1
         {
             lblCoordenadas.Text = string.Format("X = {0}, Y = {1}", e.X, e.Y);
         }
+
+        protected override void OnMouseDown(MouseEventArgs e)
+        {
+            startPoint = e.Location;
+            mouseDown = true;
+            base.OnMouseDown(e);
+        }
+        protected override void OnMouseUp(MouseEventArgs e)
+        {
+            mouseDown = false;
+            base.OnMouseUp(e);
+        }
+        protected override void OnMouseMove(MouseEventArgs e)
+        {
+            endPoint = e.Location;
+            this.Invalidate();
+            base.OnMouseMove(e);
+        }
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            var g = e.Graphics;
+            if (this.ClientRectangle.Contains(endPoint))
+                DrawCross(e.Graphics, endPoint);
+        }
+
+        void DrawCross(Graphics g, Point point)
+        {
+            g.DrawLine(crossPen, new Point(0, point.Y), new Point(Width, point.Y));
+            g.DrawLine(crossPen, new Point(point.X, 0), new Point(point.X, Height));
+        }
+    
+       
     }
 }
 
-
-
-
-
-
-//
 
 

@@ -112,10 +112,11 @@
             // lblCoordenadas
             // 
             this.lblCoordenadas.AutoSize = true;
-            this.lblCoordenadas.BackColor = System.Drawing.Color.Red;
-            this.lblCoordenadas.Location = new System.Drawing.Point(159, 25);
+            this.lblCoordenadas.BackColor = System.Drawing.Color.White;
+            this.lblCoordenadas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCoordenadas.Location = new System.Drawing.Point(26, 12);
             this.lblCoordenadas.Name = "lblCoordenadas";
-            this.lblCoordenadas.Size = new System.Drawing.Size(84, 17);
+            this.lblCoordenadas.Size = new System.Drawing.Size(123, 20);
             this.lblCoordenadas.TabIndex = 16;
             this.lblCoordenadas.Text = "                   ";
             // 
@@ -134,21 +135,20 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Aquamarine;
-            this.ClientSize = new System.Drawing.Size(769, 844);
+            this.ClientSize = new System.Drawing.Size(769, 826);
             this.Controls.Add(this.lblCoordenadas);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lblTempo);
-            this.Controls.Add(this.picImagem);
             this.Controls.Add(this.button2);
+            this.Controls.Add(this.picImagem);
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmGravaDescricao";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Imagem Selecionada";
-            this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picImagem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
