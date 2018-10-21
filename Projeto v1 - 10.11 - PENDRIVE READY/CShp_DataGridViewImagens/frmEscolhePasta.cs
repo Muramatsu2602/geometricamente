@@ -14,6 +14,9 @@ namespace Geometricamente_V1
         {
             InitializeComponent();
             this.dados = dados;
+            ExibeArquivosDaPastaSelecionada("C://Geometricamente/images");
+            txtDiretorio.Text = "C:\\Geometricamente\\images";
+
         }
         FolderBrowserDialog fbd1 = new FolderBrowserDialog();
         private void btnSelecionarPasta_Click(object sender, EventArgs e)
@@ -22,7 +25,7 @@ namespace Geometricamente_V1
             {
                 //Define as propriedades do controle FolderBrowserDialog
                 fbd1.Description = "Selecione uma pasta exibir as imagens";
-                //fbd1.RootFolder = Environment.SpecialFolder.Desktop;
+                fbd1.SelectedPath = "C://Geometricamente/images";
                 fbd1.ShowNewFolderButton = true;
 
                 //Exibe a caixa de diálogo
@@ -30,6 +33,8 @@ namespace Geometricamente_V1
                 {
                     //Exibe a pasta selecionada
                     txtDiretorio.Text = fbd1.SelectedPath;
+                    panel3.Controls.Clear();
+
                 }
                 ExibeArquivosDaPastaSelecionada(fbd1.SelectedPath);
             }
@@ -49,7 +54,7 @@ namespace Geometricamente_V1
             {
                 FileInfo arquivo = new FileInfo(arquivos[i]);
                 // quero enviar o nome da imagem no array dados, slot 3
-                string caminhoImagem = fbd1.SelectedPath + "\\" + arquivo.Name;
+                string caminhoImagem = pasta + "\\" + arquivo.Name;
                 PictureBox picture = new PictureBox
                 {
                     Name = "pictureBox" + i,
@@ -65,8 +70,8 @@ namespace Geometricamente_V1
                 //this.dados[2] = arquivo.Name;
 
                 picture.Click += new EventHandler(AbreForm);
-               
-                if (c > (panel3.Size.Width - 210))
+                
+                if (c > (panel3.Size.Width - 400))
                 {
                     l = l + 210;
                     c = 0;
@@ -95,7 +100,7 @@ namespace Geometricamente_V1
             return arquivosEncontrados.ToArray();
         }
                 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnSair_Click(object sender, EventArgs e)
         {
             for (int i = Application.OpenForms.Count - 1; i >= 0; i--)
             {

@@ -5,18 +5,22 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Input;
 using System.Drawing.Drawing2D;
+using System.Collections.Generic;
 
 namespace Geometricamente_V1
 {
     public partial class frmGravaDescricao : Form
     {
-        DateTime tempoInicial;
+                DateTime tempoInicial;
         TimeSpan diferencaTempo;
         String[] dados = new string[100];
 
         Pen crossPen;
         Pen rectanglePen;
         Brush rectangleBrush;
+        bool mouseDown = false;
+        Point startPoint = Point.Empty;
+        Point endPoint = Point.Empty;
 
         //gravação de audio
         [DllImport("winmm.dll")]
@@ -30,24 +34,18 @@ namespace Geometricamente_V1
         public frmGravaDescricao(Image imgForm, String[] dados)
         {
             InitializeComponent();
-            /*Image img;
-            img = Image.FromFile(caminhoImagem);*/
-            // gravar audio
             mciSendString("open new Type waveaudio alias recsound", null, 0, IntPtr.Zero);
             picImagem.Image = imgForm;
             this.dados = dados;
-
             this.DoubleBuffered = true;
             this.ResizeRedraw = true;
             crossPen = new Pen(Color.Red, 2);
             rectangleBrush = new SolidBrush(Color.FromArgb(50, Color.Blue));
             rectanglePen = new Pen(Color.Blue, 1);
 
-        }
-        bool mouseDown = false;
-        Point startPoint = Point.Empty;
-        Point endPoint = Point.Empty;
+           
 
+        }
         private void timer1_Tick(object sender, System.EventArgs e)
         {
             diferencaTempo = (DateTime.Now).Subtract(tempoInicial);
@@ -76,7 +74,7 @@ namespace Geometricamente_V1
                 if (dr == DialogResult.Yes)
                 {
                     DateTime agora = DateTime.Now;
-                    mciSendString("Save recsound C:\\DADOS_SISTEMA\\audio\\" + agora.ToString("yyyy-MM-dd_HH-mm-ss") + "_img-" + dados[2] + "_" + dados[0] + "_" + dados[1] + "anos" + ".wav", null, 0, IntPtr.Zero);
+                    mciSendString("Save recsound C:\\Geometricamente\\audio\\" + agora.ToString("yyyy-MM-dd_HH-mm-ss") + "_img-" + dados[2] + "_" + dados[0] + "_" + dados[1] + "anos" + ".wav", null, 0, IntPtr.Zero);
                     mciSendString("close recsound", null, 0, IntPtr.Zero);
                     pictureBox2.Enabled = false;
                     pictureBox1.Enabled = false;
@@ -100,12 +98,44 @@ namespace Geometricamente_V1
 
         private void picImagem_MouseMove(object sender, MouseEventArgs e)
         {
-            lblCoordenadas.Text = string.Format("X = {0}, Y = {1}", e.X, e.Y);
+            endPoint = picImagem.Location;
+            this.Invalidate();
+            base.OnMouseMove(e);            
+        }
+        private void picImagem_MouseUp(object sender, MouseEventArgs e)
+        {
+            mouseDown = false;
+            base.OnMouseUp(e);
+        }
+        private void picImagem_MouseDown(object sender, MouseEventArgs e)
+        {
+            startPoint = picImagem.Location;
+            mouseDown = true;
+            base.OnMouseDown(e);
+        }
+
+        void DrawCross(Graphics g, Point point)
+        {
+            g.DrawLine(crossPen, new Point(0, point.Y), new Point(picImagem.Width, point.Y));
+            g.DrawLine(crossPen, new Point(point.X, 0), new Point(point.X, picImagem.Height));
+        }
+
+        private void picImagem_Paint(object sender, PaintEventArgs e)
+        {
+            if (this.ClientRectangle.Contains(endPoint))
+                DrawCross(e.Graphics, endPoint);
+        }
+
+
+        /*
+        private void picImagem_MouseMove(object sender, MouseEventArgs e)
+        {
+            lblCoordenadas.Text = string.Format("X = {0}, Y = {1}", e.X, e.Y);         
         }
 
         protected override void OnMouseDown(MouseEventArgs e)
         {
-            startPoint = e.Location;
+            startPoint = picImagem.Location;
             mouseDown = true;
             base.OnMouseDown(e);
         }
@@ -116,25 +146,25 @@ namespace Geometricamente_V1
         }
         protected override void OnMouseMove(MouseEventArgs e)
         {
-            endPoint = e.Location;
+            endPoint = picImagem.Location;
             this.Invalidate();
             base.OnMouseMove(e);
         }
-        protected override void OnPaint(PaintEventArgs e)
+        
+        
+
+        private void picImagem_Paint(object sender, PaintEventArgs e)
         {
-            var g = e.Graphics;
             if (this.ClientRectangle.Contains(endPoint))
                 DrawCross(e.Graphics, endPoint);
         }
+        */
 
-        void DrawCross(Graphics g, Point point)
-        {
-            g.DrawLine(crossPen, new Point(0, point.Y), new Point(Width, point.Y));
-            g.DrawLine(crossPen, new Point(point.X, 0), new Point(point.X, Height));
-        }
-    
-       
+
+
+
     }
+
 }
 
 

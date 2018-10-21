@@ -21,10 +21,10 @@ namespace Geometricamente_V1
         {
             Thread t = new Thread(new ThreadStart(StartForm));
             t.Start();
-            Thread.Sleep(5000);
+            //Thread.Sleep(5000);
             InitializeComponent();
+            this.Focus();
             t.Abort();
-            this.ShowDialog();
         }
         private void StartForm()
         {
@@ -70,5 +70,7 @@ namespace Geometricamente_V1
             frmCapturaDesenho captura = new frmCapturaDesenho(dados);
             captura.Show();
         }
+
+ 
     }
 }

@@ -53,7 +53,10 @@
             this.picImagem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picImagem.TabIndex = 0;
             this.picImagem.TabStop = false;
+            this.picImagem.Paint += new System.Windows.Forms.PaintEventHandler(this.picImagem_Paint);
+            this.picImagem.MouseDown += new System.Windows.Forms.MouseEventHandler(this.picImagem_MouseDown);
             this.picImagem.MouseMove += new System.Windows.Forms.MouseEventHandler(this.picImagem_MouseMove);
+            this.picImagem.MouseUp += new System.Windows.Forms.MouseEventHandler(this.picImagem_MouseUp);
             // 
             // lblTempo
             // 

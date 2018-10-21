@@ -96,7 +96,6 @@
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(500, 38);
             this.txtNome.TabIndex = 6;
-            this.txtNome.Validating += new System.ComponentModel.CancelEventHandler(this.txtNome_Validating);
             // 
             // btnGravar
             // 
