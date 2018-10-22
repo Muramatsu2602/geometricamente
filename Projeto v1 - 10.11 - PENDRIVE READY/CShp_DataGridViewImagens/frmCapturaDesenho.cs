@@ -79,6 +79,7 @@ namespace CapturaTela
 
             this._isRecording = false;
             //this._screenSize = Screen.PrimaryScreen.Bounds;
+
             this._frameCount = 0;
             this._width = SystemInformation.VirtualScreen.Width;
             this._height = SystemInformation.VirtualScreen.Height;
@@ -132,11 +133,10 @@ namespace CapturaTela
                 this.SetVisible(true);
                 this._frameCount = 0;
 
-                string fullName = string.Format(@"{0}\{1}_{2}.avi", "C:\\Geometricamente\\video", dados[0], DateTime.Now.ToString("yyyyMMdd_HHmmss"));
+                string fullName = string.Format(@"{0}\{1}_{2}.avi", "D:\\Geometricamente\\video", dados[0], DateTime.Now.ToString("yyyyMMdd_HHmmss"));
 
                 DateTime agora = DateTime.Now;
                 // Save File option
-
 
                 try
                 {
@@ -361,6 +361,14 @@ namespace CapturaTela
             }
             if (drawTriangle)
             {
+
+                SolidBrush brush = new SolidBrush(btn_PenColor.BackColor);
+                Point[] points = { new Point(10, 10), new Point(100, 10), new Point(50, 100) };
+                g.FillPolygon(brush, points);
+
+                startPaint = false;
+                drawTriangle = false;
+
                 SolidBrush sb = new SolidBrush(btn_PenColor.BackColor);
                 // g.FillPolygon(sb, int.Parse(txt_ShapeSize.Text));
 
@@ -415,6 +423,11 @@ namespace CapturaTela
         private void btn_Triangle_Click(object sender, EventArgs e)
         {
             drawTriangle = true;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
 
 

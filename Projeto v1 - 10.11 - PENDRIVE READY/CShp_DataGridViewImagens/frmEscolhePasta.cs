@@ -14,8 +14,8 @@ namespace Geometricamente_V1
         {
             InitializeComponent();
             this.dados = dados;
-            ExibeArquivosDaPastaSelecionada("C://Geometricamente/images");
-            txtDiretorio.Text = "C:\\Geometricamente\\images";
+            ExibeArquivosDaPastaSelecionada("D://Geometricamente/images");
+            txtDiretorio.Text = "D:\\Geometricamente\\images";
 
         }
         FolderBrowserDialog fbd1 = new FolderBrowserDialog();
@@ -25,7 +25,7 @@ namespace Geometricamente_V1
             {
                 //Define as propriedades do controle FolderBrowserDialog
                 fbd1.Description = "Selecione uma pasta exibir as imagens";
-                fbd1.SelectedPath = "C://Geometricamente/images";
+                fbd1.SelectedPath = "D://Geometricamente/images";
                 fbd1.ShowNewFolderButton = true;
 
                 //Exibe a caixa de diálogo
@@ -102,12 +102,6 @@ namespace Geometricamente_V1
                 
         private void btnSair_Click(object sender, EventArgs e)
         {
-            for (int i = Application.OpenForms.Count - 1; i >= 0; i--)
-            {
-                
-                    Application.OpenForms[i].Close();
-
-            }
             this.Close();
         }
 

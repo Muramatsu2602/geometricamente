@@ -21,7 +21,7 @@ namespace Geometricamente_V1
         {
             Thread t = new Thread(new ThreadStart(StartForm));
             t.Start();
-            //Thread.Sleep(5000);
+            Thread.Sleep(5000);
             InitializeComponent();
             this.Focus();
             t.Abort();
@@ -30,28 +30,16 @@ namespace Geometricamente_V1
         {
             Application.Run(new frmSplashScreen());
         }
- 
-
-        private void txtNome_Validating(object sender, CancelEventArgs e)
-        {
-           if( string.IsNullOrEmpty(txtNome.Text))
-            {
-                txtNome.Focus();
-                MessageBox.Show("CAMPO NOME NAO PODE ESTAR VAZIO!", "Nome em branco", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
-
-
         private void btnSair_Click(object sender, EventArgs e)
         {
-
-            for (int i = Application.OpenForms.Count - 1; i >= 0; i--)
+            DialogResult dr = new DialogResult();
+            dr = MessageBox.Show(" Deseja Sair ?", "GEOMETRICAMENTE", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+            if (dr == DialogResult.Yes)
             {
-                if (Application.OpenForms[i].Name != "Form1")
-                    Application.OpenForms[i].Close();
+                Application.Exit();
 
             }
-            this.Close();
+            
         }
 
         private void btnGravar_Click(object sender, EventArgs e)
@@ -71,6 +59,13 @@ namespace Geometricamente_V1
             captura.Show();
         }
 
- 
+        private void txtNome_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtNome.Text))
+            {
+                txtNome.Focus();
+                MessageBox.Show("CAMPO NOME NAO PODE ESTAR VAZIO!", "Nome em branco", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
     }
 }

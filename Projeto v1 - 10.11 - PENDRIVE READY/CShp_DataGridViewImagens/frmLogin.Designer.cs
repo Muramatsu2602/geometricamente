@@ -47,10 +47,10 @@
             // 
             this.label1.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label1.Location = new System.Drawing.Point(11, 9);
+            this.label1.Location = new System.Drawing.Point(4, 15);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(576, 63);
+            this.label1.Size = new System.Drawing.Size(607, 63);
             this.label1.TabIndex = 0;
             this.label1.Text = "LOGIN";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -96,13 +96,14 @@
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(500, 38);
             this.txtNome.TabIndex = 6;
+            this.txtNome.Leave += new System.EventHandler(this.txtNome_Leave);
             // 
             // btnGravar
             // 
             this.btnGravar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.btnGravar.Image = ((System.Drawing.Image)(resources.GetObject("btnGravar.Image")));
             this.btnGravar.InitialImage = ((System.Drawing.Image)(resources.GetObject("btnGravar.InitialImage")));
-            this.btnGravar.Location = new System.Drawing.Point(231, 336);
+            this.btnGravar.Location = new System.Drawing.Point(148, 341);
             this.btnGravar.Name = "btnGravar";
             this.btnGravar.Padding = new System.Windows.Forms.Padding(11);
             this.btnGravar.Size = new System.Drawing.Size(139, 132);
@@ -116,7 +117,7 @@
             this.btnDesenhar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.btnDesenhar.Image = ((System.Drawing.Image)(resources.GetObject("btnDesenhar.Image")));
             this.btnDesenhar.InitialImage = ((System.Drawing.Image)(resources.GetObject("btnDesenhar.InitialImage")));
-            this.btnDesenhar.Location = new System.Drawing.Point(449, 336);
+            this.btnDesenhar.Location = new System.Drawing.Point(334, 341);
             this.btnDesenhar.Name = "btnDesenhar";
             this.btnDesenhar.Padding = new System.Windows.Forms.Padding(11);
             this.btnDesenhar.Size = new System.Drawing.Size(139, 132);
@@ -130,10 +131,10 @@
             this.btnSair.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.btnSair.Image = ((System.Drawing.Image)(resources.GetObject("btnSair.Image")));
             this.btnSair.InitialImage = ((System.Drawing.Image)(resources.GetObject("btnSair.InitialImage")));
-            this.btnSair.Location = new System.Drawing.Point(12, 336);
+            this.btnSair.Location = new System.Drawing.Point(536, 9);
             this.btnSair.Name = "btnSair";
             this.btnSair.Padding = new System.Windows.Forms.Padding(11);
-            this.btnSair.Size = new System.Drawing.Size(139, 132);
+            this.btnSair.Size = new System.Drawing.Size(75, 73);
             this.btnSair.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnSair.TabIndex = 19;
             this.btnSair.TabStop = false;

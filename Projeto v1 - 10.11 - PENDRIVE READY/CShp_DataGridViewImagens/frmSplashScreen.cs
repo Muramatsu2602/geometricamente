@@ -21,25 +21,25 @@ namespace Geometricamente_V1
         }
         public void TestaPasta()
         {
-            if (!Directory.Exists("C:\\Geometricamente\\video"))
+            if (!Directory.Exists("D:\\Geometricamente\\video"))
             {
-                Directory.CreateDirectory("C:\\Geometricamente\\video");
+                Directory.CreateDirectory("D:\\Geometricamente\\video");
             }
-            if (!Directory.Exists("C:\\Geometricamente\\audio"))
+            if (!Directory.Exists("D:\\Geometricamente\\audio"))
             {
-                Directory.CreateDirectory("C:\\Geometricamente\\audio");
+                Directory.CreateDirectory("D:\\Geometricamente\\audio");
             }
-            if (!Directory.Exists("C:\\Geometricamente\\images"))
+            if (!Directory.Exists("D:\\Geometricamente\\images"))
             {
-                Directory.CreateDirectory("C:\\Geometricamente\\images");
+                Directory.CreateDirectory("D:\\Geometricamente\\images");
             }
-            if (!Directory.Exists("C:\\Geometricamente\\app"))
+            if (!Directory.Exists("D:\\Geometricamente\\app"))
             {
-                Directory.CreateDirectory("C:\\Geometricamente\\app");
+                Directory.CreateDirectory("D:\\Geometricamente\\app");
             }
-            if (!Directory.Exists("C:\\Geometricamente\\setup"))
+            if (!Directory.Exists("D:\\Geometricamente\\setup"))
             {
-                Directory.CreateDirectory("C:\\Geometricamente\\setup");
+                Directory.CreateDirectory("D:\\Geometricamente\\setup");
             }
         }
   

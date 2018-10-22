@@ -74,7 +74,7 @@ namespace Geometricamente_V1
                 if (dr == DialogResult.Yes)
                 {
                     DateTime agora = DateTime.Now;
-                    mciSendString("Save recsound C:\\Geometricamente\\audio\\" + agora.ToString("yyyy-MM-dd_HH-mm-ss") + "_img-" + dados[2] + "_" + dados[0] + "_" + dados[1] + "anos" + ".wav", null, 0, IntPtr.Zero);
+                    mciSendString("Save recsound D:\\Geometricamente\\audio\\" + agora.ToString("yyyy-MM-dd_HH-mm-ss") + "_img-" + dados[2] + "_" + dados[0] + "_" + dados[1] + "anos" + ".wav", null, 0, IntPtr.Zero);
                     mciSendString("close recsound", null, 0, IntPtr.Zero);
                     pictureBox2.Enabled = false;
                     pictureBox1.Enabled = false;

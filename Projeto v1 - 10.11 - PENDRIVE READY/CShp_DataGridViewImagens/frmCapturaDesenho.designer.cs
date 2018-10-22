@@ -67,6 +67,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.nud_FPS = new System.Windows.Forms.NumericUpDown();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -232,7 +233,7 @@
             // 
             // txt_ShapeSize
             // 
-            this.txt_ShapeSize.Location = new System.Drawing.Point(2, 58);
+            this.txt_ShapeSize.Location = new System.Drawing.Point(23, 67);
             this.txt_ShapeSize.Margin = new System.Windows.Forms.Padding(4);
             this.txt_ShapeSize.Name = "txt_ShapeSize";
             this.txt_ShapeSize.Size = new System.Drawing.Size(117, 22);
@@ -243,7 +244,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(4, 37);
+            this.label7.Location = new System.Drawing.Point(38, 42);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(84, 17);
@@ -371,8 +372,10 @@
             // 
             this.pnl_Draw.AutoSize = true;
             this.pnl_Draw.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.pnl_Draw.Controls.Add(this.button4);
             this.pnl_Draw.Controls.Add(this.panel1);
             this.pnl_Draw.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnl_Draw.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.pnl_Draw.Location = new System.Drawing.Point(0, 0);
             this.pnl_Draw.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_Draw.Name = "pnl_Draw";
@@ -459,6 +462,20 @@
             this.panel4.Size = new System.Drawing.Size(1440, 673);
             this.panel4.TabIndex = 20;
             // 
+            // button4
+            // 
+            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button4.BackColor = System.Drawing.Color.Red;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.Color.White;
+            this.button4.Location = new System.Drawing.Point(1388, 11);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(40, 40);
+            this.button4.TabIndex = 18;
+            this.button4.Text = "&X";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // frmCapturaDesenho
             // 
             this.AcceptButton = this.bt_start;
@@ -467,7 +484,7 @@
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1440, 673);
             this.Controls.Add(this.panel4);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmCapturaDesenho";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -529,6 +546,7 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Button button4;
     }
 }
 
