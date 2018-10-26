@@ -180,7 +180,7 @@
             // 
             this.picRetangulo.BackColor = System.Drawing.Color.White;
             this.picRetangulo.Image = ((System.Drawing.Image)(resources.GetObject("picRetangulo.Image")));
-            this.picRetangulo.Location = new System.Drawing.Point(113, 231);
+            this.picRetangulo.Location = new System.Drawing.Point(113, 235);
             this.picRetangulo.Name = "picRetangulo";
             this.picRetangulo.Size = new System.Drawing.Size(93, 46);
             this.picRetangulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

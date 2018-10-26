@@ -97,6 +97,12 @@
     <Compile Include="frmCapturaDesenho.designer.cs">
       <DependentUpon>frmCapturaDesenho.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCrosshair.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCrosshair.Designer.cs">
+      <DependentUpon>frmCrosshair.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmEscolhePasta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +137,9 @@
     </Compile>
     <EmbeddedResource Include="frmCapturaDesenho.resx">
       <DependentUpon>frmCapturaDesenho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCrosshair.resx">
+      <DependentUpon>frmCrosshair.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEscolhePasta.resx">
       <DependentUpon>frmEscolhePasta.cs</DependentUpon>

@@ -16,7 +16,6 @@ namespace Geometricamente_V1
         String[] dados = new string[100];
         bool ligado = true;
 
-
         Pen crossPen;
         Pen rectanglePen;
         Brush rectangleBrush;
@@ -91,12 +90,12 @@ namespace Geometricamente_V1
             this.Close();
         }
 
+        /*
         private void picImagem_MouseMove(object sender, MouseEventArgs e)
         {
             endPoint = picImagem.Location;
             this.Invalidate();
             base.OnMouseMove(e);
-            lblCoordenadas.Text = string.Format("X = {0}, Y = {1}", e.X, e.Y);
         }
         private void picImagem_MouseUp(object sender, MouseEventArgs e)
         {
@@ -118,10 +117,12 @@ namespace Geometricamente_V1
 
         private void picImagem_Paint(object sender, PaintEventArgs e)
         {
-            /*
+            
             if (this.ClientRectangle.Contains(endPoint))
-                DrawCross(e.Graphics, endPoint); */
+                DrawCross(e.Graphics, endPoint); 
         }
+
+    */
 
         private void PicGravador_Click(object sender, EventArgs e)
         {
@@ -138,40 +139,12 @@ namespace Geometricamente_V1
             }
         }
 
-
-        /*
-        private void picImagem_MouseMove(object sender, MouseEventArgs e)
+    
+        private void button2_Click(object sender, EventArgs e)
         {
-            lblCoordenadas.Text = string.Format("X = {0}, Y = {1}", e.X, e.Y);         
+                 frmCrosshair crosshair = new frmCrosshair();
+                crosshair.ShowDialog(this);
         }
-
-        protected override void OnMouseDown(MouseEventArgs e)
-        {
-            startPoint = picImagem.Location;
-            mouseDown = true;
-            base.OnMouseDown(e);
-        }
-        protected override void OnMouseUp(MouseEventArgs e)
-        {
-            mouseDown = false;
-            base.OnMouseUp(e);
-        }
-        protected override void OnMouseMove(MouseEventArgs e)
-        {
-            endPoint = picImagem.Location;
-            this.Invalidate();
-            base.OnMouseMove(e);
-        }
-        
-        
-
-        private void picImagem_Paint(object sender, PaintEventArgs e)
-        {
-            if (this.ClientRectangle.Contains(endPoint))
-                DrawCross(e.Graphics, endPoint);
-        }
-        */
-
 
 
 

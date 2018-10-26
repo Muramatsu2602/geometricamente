@@ -78,14 +78,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Geometricamente_V1.exe" size="327648">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Geometricamente_V1.exe" size="329184">
       <assemblyIdentity name="Geometricamente_V1" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>qpTm7FFxGPHIk2y3XGB+vaM2mXZp9WZTVg6bt8G5Na0=</dsig:DigestValue>
+        <dsig:DigestValue>+9O78N7sbIdZd+E5AhAn8WkFT+eiUoCMfbtKcrt/24k=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

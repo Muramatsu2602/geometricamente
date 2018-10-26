@@ -35,9 +35,11 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.button1 = new System.Windows.Forms.Button();
             this.picGravador = new System.Windows.Forms.PictureBox();
-            this.lblCoordenadas = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picImagem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picGravador)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // picImagem
@@ -50,14 +52,10 @@
             this.picImagem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picImagem.TabIndex = 0;
             this.picImagem.TabStop = false;
-            this.picImagem.Paint += new System.Windows.Forms.PaintEventHandler(this.picImagem_Paint);
-            this.picImagem.MouseDown += new System.Windows.Forms.MouseEventHandler(this.picImagem_MouseDown);
-            this.picImagem.MouseMove += new System.Windows.Forms.MouseEventHandler(this.picImagem_MouseMove);
-            this.picImagem.MouseUp += new System.Windows.Forms.MouseEventHandler(this.picImagem_MouseUp);
             // 
             // lblTempo
             // 
-            this.lblTempo.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTempo.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTempo.Location = new System.Drawing.Point(0, 2);
             this.lblTempo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTempo.Name = "lblTempo";
@@ -93,21 +91,33 @@
             this.picGravador.Margin = new System.Windows.Forms.Padding(4);
             this.picGravador.Name = "picGravador";
             this.picGravador.Size = new System.Drawing.Size(133, 123);
-            this.picGravador.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picGravador.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picGravador.TabIndex = 14;
             this.picGravador.TabStop = false;
             this.picGravador.Click += new System.EventHandler(this.PicGravador_Click);
             // 
-            // lblCoordenadas
+            // pictureBox1
             // 
-            this.lblCoordenadas.AutoSize = true;
-            this.lblCoordenadas.BackColor = System.Drawing.Color.White;
-            this.lblCoordenadas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCoordenadas.Location = new System.Drawing.Point(26, 12);
-            this.lblCoordenadas.Name = "lblCoordenadas";
-            this.lblCoordenadas.Size = new System.Drawing.Size(123, 20);
-            this.lblCoordenadas.TabIndex = 16;
-            this.lblCoordenadas.Text = "                   ";
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(43, 735);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(56, 56);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 19;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(3, 701);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(142, 25);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "Coordenadas";
             // 
             // frmGravaDescricao
             // 
@@ -115,7 +125,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Turquoise;
             this.ClientSize = new System.Drawing.Size(769, 826);
-            this.Controls.Add(this.lblCoordenadas);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.picGravador);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lblTempo);
@@ -128,6 +139,7 @@
             this.Text = "Imagem Selecionada";
             ((System.ComponentModel.ISupportInitialize)(this.picImagem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picGravador)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -140,6 +152,7 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox picGravador;
-        private System.Windows.Forms.Label lblCoordenadas;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label1;
     }
 }
