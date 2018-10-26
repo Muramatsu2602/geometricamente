@@ -11,9 +11,11 @@ namespace Geometricamente_V1
 {
     public partial class frmGravaDescricao : Form
     {
-                DateTime tempoInicial;
+        DateTime tempoInicial;
         TimeSpan diferencaTempo;
         String[] dados = new string[100];
+        bool ligado = true;
+
 
         Pen crossPen;
         Pen rectanglePen;
@@ -28,7 +30,7 @@ namespace Geometricamente_V1
 
         private void frmFala_Load(object sender, EventArgs e)
         {
-            pictureBox2.Enabled = false;
+       
         }
 
         public frmGravaDescricao(Image imgForm, String[] dados)
@@ -43,7 +45,7 @@ namespace Geometricamente_V1
             rectangleBrush = new SolidBrush(Color.FromArgb(50, Color.Blue));
             rectanglePen = new Pen(Color.Blue, 1);
 
-           
+
 
         }
         private void timer1_Tick(object sender, System.EventArgs e)
@@ -52,19 +54,16 @@ namespace Geometricamente_V1
             lblTempo.Text = diferencaTempo.ToString("c");
         }
 
-        private void btnGravar_Click(object sender, EventArgs e)
+     
+        public void Gravar()
         {
             mciSendString("record recsound", null, 0, IntPtr.Zero);
-            pictureBox2.Enabled = false;
-            pictureBox1.Enabled = true;
             //cronometro
             tempoInicial = DateTime.Now;
             timer1.Start();
         }
-
-        private void btnParaGravar_Click(object sender, EventArgs e)
+        public void ParaGravar()
         {
-
             try
             {
                 timer1.Stop();
@@ -76,20 +75,16 @@ namespace Geometricamente_V1
                     DateTime agora = DateTime.Now;
                     mciSendString("Save recsound D:\\Geometricamente\\audio\\" + agora.ToString("yyyy-MM-dd_HH-mm-ss") + "_img-" + dados[2] + "_" + dados[0] + "_" + dados[1] + "anos" + ".wav", null, 0, IntPtr.Zero);
                     mciSendString("close recsound", null, 0, IntPtr.Zero);
-                    pictureBox2.Enabled = false;
-                    pictureBox1.Enabled = false;
+
                 }
-                else
-                {
-                    pictureBox1.Enabled = true;
-                    pictureBox2.Enabled = false;
-                }
+
             }
             catch (Exception a)
             {
                 MessageBox.Show("DEU ERRO" + a);
             }
         }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -100,7 +95,8 @@ namespace Geometricamente_V1
         {
             endPoint = picImagem.Location;
             this.Invalidate();
-            base.OnMouseMove(e);            
+            base.OnMouseMove(e);
+            lblCoordenadas.Text = string.Format("X = {0}, Y = {1}", e.X, e.Y);
         }
         private void picImagem_MouseUp(object sender, MouseEventArgs e)
         {
@@ -122,8 +118,24 @@ namespace Geometricamente_V1
 
         private void picImagem_Paint(object sender, PaintEventArgs e)
         {
+            /*
             if (this.ClientRectangle.Contains(endPoint))
-                DrawCross(e.Graphics, endPoint);
+                DrawCross(e.Graphics, endPoint); */
+        }
+
+        private void PicGravador_Click(object sender, EventArgs e)
+        {
+            if (picGravador.BackColor == Color.Transparent)
+            {
+                Gravar();
+                picGravador.BackColor = Color.Red;
+
+            }
+            else if (picGravador.BackColor == Color.Red)
+            {
+                ParaGravar();
+                picGravador.BackColor = Color.Transparent;
+            }
         }
 
 

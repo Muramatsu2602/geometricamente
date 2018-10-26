@@ -86,7 +86,6 @@ namespace CapturaTela
             this._stopWatch = new Stopwatch();
             this._screenArea = Rectangle.Empty;
 
-            this.bt_Save.Enabled = false;
             this._writer = new VideoFileWriter();
 
             _screenNames = new List<string>();
@@ -106,12 +105,19 @@ namespace CapturaTela
 
         }
 
-        private void bt_start_Click(object sender, EventArgs e)
+        private void Comecar()
         {
             Start(false);
-
         }
+        private void Salvar()
+        {
+            this.SetVisible(false);
+            MessageBox.Show(@"Vídeo Salvo com sucesso!");
+            pnl_Draw.BackgroundImage = null;
 
+            pnl_Draw.BackColor = Color.White;
+        }
+      
         private void Start(bool selectArea)
         {
             try
@@ -286,19 +292,9 @@ namespace CapturaTela
             }
         }
 
-        private void Bt_Save_Click(object sender, EventArgs e)
-        {
-            this.SetVisible(false);
-            MessageBox.Show(@"File saved!");
-            pnl_Draw.BackgroundImage = null;
-
-            pnl_Draw.BackColor = Color.White;
-
-        }
+      
         private void SetVisible(bool visible)
-        {
-            this.bt_start.Enabled = !visible;
-            this.bt_Save.Enabled = visible;
+        { 
             this._isRecording = visible;
         }
 
@@ -361,17 +357,46 @@ namespace CapturaTela
             }
             if (drawTriangle)
             {
-
-                SolidBrush brush = new SolidBrush(btn_PenColor.BackColor);
-                Point[] points = { new Point(10, 10), new Point(100, 10), new Point(50, 100) };
-                g.FillPolygon(brush, points);
-
-                startPaint = false;
-                drawTriangle = false;
-
+                /*
                 SolidBrush sb = new SolidBrush(btn_PenColor.BackColor);
-                // g.FillPolygon(sb, int.Parse(txt_ShapeSize.Text));
 
+                // Create points that define polygon.
+                Point point1 = new Point(e.X+0, 0+e.Y);
+                Point point2 = new Point(150-e.X, e.Y);
+                Point point3 = new Point(150+e.X, 150+e.Y);
+
+                PointF[] curvePoints =
+                         {
+                 point1,
+                 point2,
+                 point3
+                 };
+                // Draw polygon to screen.
+                //g.DrawPolygon(sb, curvePoints);
+                g.FillPolygon(sb,curvePoints);
+                drawTriangle = false;
+                */
+
+                float angle = 0;
+
+                SolidBrush brs = new SolidBrush(btn_PenColor.BackColor);
+
+                PointF[] p = new PointF[3];
+
+                p[0].X = e.X;
+
+                p[0].Y = e.Y;
+
+                p[1].X = (float)(e.X - int.Parse(txt_ShapeSize.Text) * Math.Cos(angle));
+
+                p[1].Y = (float)(e.Y - int.Parse(txt_ShapeSize.Text) * Math.Sin(angle));
+
+                p[2].X = (float)(e.X - int.Parse(txt_ShapeSize.Text) * Math.Cos(angle + Math.PI / 3));
+
+                p[2].Y = (float)(e.Y - int.Parse(txt_ShapeSize.Text) * Math.Sin(angle + Math.PI / 3));
+
+                g.FillPolygon(brs, p);
+                drawTriangle = false;
             }
         }
 
@@ -397,7 +422,14 @@ namespace CapturaTela
 
         private void btn_Square_Click(object sender, EventArgs e)
         {
-            drawSquare = true;
+            if (picQuadrado.BackColor == Color.White)
+            {
+                drawSquare = true;
+            }
+            else if (picQuadrado.BackColor == Color.Red)
+            {
+                drawSquare = true;
+            }
         }
 
         private void btn_Rectangle_Click(object sender, EventArgs e)
@@ -414,20 +446,46 @@ namespace CapturaTela
         {
 
         }
-
-        private void btn_Apagar_Click(object sender, EventArgs e)
-        {
-            pnl_Draw.BackColor = Color.White;
-        }
-
+  
         private void btn_Triangle_Click(object sender, EventArgs e)
         {
             drawTriangle = true;
+
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             this.Hide();
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            if (picDesenha.BackColor == Color.Transparent)
+            {
+                Comecar();
+                picDesenha.BackColor = Color.Red;
+
+                /*
+                picDesenha.BackgroundImage = Image.FromFile("D:\\Geometricamente\\images\\educative-set\\stop.png");
+                picDesenha.SizeMode = PictureBoxSizeMode.StretchImage;
+                */
+            }
+            else if (picDesenha.BackColor == Color.Red)
+            {
+                Salvar();
+                picDesenha.BackColor = Color.Transparent;
+                /* 
+                   picDesenha.BackgroundImage = Image.FromFile("D:\\Geometricamente\\images\\educative-set\\paint-palette.png");
+                    picDesenha.SizeMode = PictureBoxSizeMode.StretchImage;
+                 */
+            }
+
+        }
+
+        private void picApaga_Click(object sender, EventArgs e)
+        {
+            pnl_Draw.BackColor = Color.White;
+            pnl_Draw.BackColor = Color.White;
         }
 
 

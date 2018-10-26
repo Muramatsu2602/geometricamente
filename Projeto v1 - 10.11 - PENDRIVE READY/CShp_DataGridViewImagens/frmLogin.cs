@@ -32,16 +32,8 @@ namespace Geometricamente_V1
         }
         private void btnSair_Click(object sender, EventArgs e)
         {
-            DialogResult dr = new DialogResult();
-            dr = MessageBox.Show(" Deseja Sair ?", "GEOMETRICAMENTE", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
-            if (dr == DialogResult.Yes)
-            {
-                Application.Exit();
-
-            }
-            
+            this.Close();
         }
-
         private void btnGravar_Click(object sender, EventArgs e)
         {
             dados[0] = txtNome.Text;
@@ -61,11 +53,12 @@ namespace Geometricamente_V1
 
         private void txtNome_Leave(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtNome.Text))
-            {
-                txtNome.Focus();
-                MessageBox.Show("CAMPO NOME NAO PODE ESTAR VAZIO!", "Nome em branco", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+
+        }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -36,18 +36,17 @@
             this.txtNome = new System.Windows.Forms.TextBox();
             this.btnGravar = new System.Windows.Forms.PictureBox();
             this.btnDesenhar = new System.Windows.Forms.PictureBox();
-            this.btnSair = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numIdade)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGravar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDesenhar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnSair)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label1.Location = new System.Drawing.Point(4, 15);
+            this.label1.Location = new System.Drawing.Point(4, 13);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(607, 63);
@@ -103,7 +102,7 @@
             this.btnGravar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.btnGravar.Image = ((System.Drawing.Image)(resources.GetObject("btnGravar.Image")));
             this.btnGravar.InitialImage = ((System.Drawing.Image)(resources.GetObject("btnGravar.InitialImage")));
-            this.btnGravar.Location = new System.Drawing.Point(148, 341);
+            this.btnGravar.Location = new System.Drawing.Point(145, 341);
             this.btnGravar.Name = "btnGravar";
             this.btnGravar.Padding = new System.Windows.Forms.Padding(11);
             this.btnGravar.Size = new System.Drawing.Size(139, 132);
@@ -117,7 +116,7 @@
             this.btnDesenhar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.btnDesenhar.Image = ((System.Drawing.Image)(resources.GetObject("btnDesenhar.Image")));
             this.btnDesenhar.InitialImage = ((System.Drawing.Image)(resources.GetObject("btnDesenhar.InitialImage")));
-            this.btnDesenhar.Location = new System.Drawing.Point(334, 341);
+            this.btnDesenhar.Location = new System.Drawing.Point(331, 341);
             this.btnDesenhar.Name = "btnDesenhar";
             this.btnDesenhar.Padding = new System.Windows.Forms.Padding(11);
             this.btnDesenhar.Size = new System.Drawing.Size(139, 132);
@@ -126,26 +125,27 @@
             this.btnDesenhar.TabStop = false;
             this.btnDesenhar.Click += new System.EventHandler(this.btnDesenhar_Click);
             // 
-            // btnSair
+            // button1
             // 
-            this.btnSair.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.btnSair.Image = ((System.Drawing.Image)(resources.GetObject("btnSair.Image")));
-            this.btnSair.InitialImage = ((System.Drawing.Image)(resources.GetObject("btnSair.InitialImage")));
-            this.btnSair.Location = new System.Drawing.Point(536, 9);
-            this.btnSair.Name = "btnSair";
-            this.btnSair.Padding = new System.Windows.Forms.Padding(11);
-            this.btnSair.Size = new System.Drawing.Size(75, 73);
-            this.btnSair.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnSair.TabIndex = 19;
-            this.btnSair.TabStop = false;
-            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
+            this.button1.BackColor = System.Drawing.Color.Red;
+            this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(564, 13);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(47, 44);
+            this.button1.TabIndex = 20;
+            this.button1.Text = "&X";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.btnSair_Click);
             // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(619, 498);
-            this.Controls.Add(this.btnSair);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnDesenhar);
             this.Controls.Add(this.btnGravar);
             this.Controls.Add(this.label3);
@@ -159,10 +159,10 @@
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmLogin";
+            this.Load += new System.EventHandler(this.frmLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numIdade)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGravar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDesenhar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnSair)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -177,6 +177,6 @@
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.PictureBox btnGravar;
         private System.Windows.Forms.PictureBox btnDesenhar;
-        private System.Windows.Forms.PictureBox btnSair;
+        private System.Windows.Forms.Button button1;
     }
 }

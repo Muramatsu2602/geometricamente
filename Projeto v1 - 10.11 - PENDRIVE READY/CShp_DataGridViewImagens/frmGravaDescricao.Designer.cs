@@ -34,13 +34,10 @@
             this.lblTempo = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.picGravador = new System.Windows.Forms.PictureBox();
             this.lblCoordenadas = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picImagem)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picGravador)).BeginInit();
             this.SuspendLayout();
             // 
             // picImagem
@@ -61,10 +58,10 @@
             // lblTempo
             // 
             this.lblTempo.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTempo.Location = new System.Drawing.Point(220, 688);
+            this.lblTempo.Location = new System.Drawing.Point(0, 2);
             this.lblTempo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTempo.Name = "lblTempo";
-            this.lblTempo.Size = new System.Drawing.Size(325, 132);
+            this.lblTempo.Size = new System.Drawing.Size(768, 49);
             this.lblTempo.TabIndex = 8;
             this.lblTempo.Text = "00:00:00";
             this.lblTempo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -79,7 +76,7 @@
             this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(721, -2);
+            this.button1.Location = new System.Drawing.Point(721, 2);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(47, 44);
@@ -88,29 +85,18 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // pictureBox1
+            // picGravador
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(79, 697);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(133, 123);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 14;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.btnGravar_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(545, 697);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(133, 123);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 15;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.btnParaGravar_Click);
+            this.picGravador.BackColor = System.Drawing.Color.Transparent;
+            this.picGravador.Image = ((System.Drawing.Image)(resources.GetObject("picGravador.Image")));
+            this.picGravador.Location = new System.Drawing.Point(323, 692);
+            this.picGravador.Margin = new System.Windows.Forms.Padding(4);
+            this.picGravador.Name = "picGravador";
+            this.picGravador.Size = new System.Drawing.Size(133, 123);
+            this.picGravador.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picGravador.TabIndex = 14;
+            this.picGravador.TabStop = false;
+            this.picGravador.Click += new System.EventHandler(this.PicGravador_Click);
             // 
             // lblCoordenadas
             // 
@@ -123,28 +109,16 @@
             this.lblCoordenadas.TabIndex = 16;
             this.lblCoordenadas.Text = "                   ";
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(545, 695);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(133, 123);
-            this.button2.TabIndex = 17;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.btnParaGravar_Click);
-            // 
             // frmGravaDescricao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Aquamarine;
+            this.BackColor = System.Drawing.Color.Turquoise;
             this.ClientSize = new System.Drawing.Size(769, 826);
             this.Controls.Add(this.lblCoordenadas);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.picGravador);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lblTempo);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.picImagem);
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -153,8 +127,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Imagem Selecionada";
             ((System.ComponentModel.ISupportInitialize)(this.picImagem)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picGravador)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -166,9 +139,7 @@
         private System.Windows.Forms.Label lblTempo;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox picGravador;
         private System.Windows.Forms.Label lblCoordenadas;
-        private System.Windows.Forms.Button button2;
     }
 }
