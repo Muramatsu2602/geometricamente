@@ -15,21 +15,20 @@ namespace Geometricamente_V1
         TimeSpan diferencaTempo;
         String[] dados = new string[100];
         bool ligado = true;
-
         Pen crossPen;
         Pen rectanglePen;
         Brush rectangleBrush;
         bool mouseDown = false;
         Point startPoint = Point.Empty;
         Point endPoint = Point.Empty;
-
+        bool cross = false;
         //gravação de audio
         [DllImport("winmm.dll")]
         private static extern long mciSendString(string command, StringBuilder retstring, int ReturnLength, IntPtr callback);
 
         private void frmFala_Load(object sender, EventArgs e)
         {
-       
+
         }
 
         public frmGravaDescricao(Image imgForm, String[] dados)
@@ -43,7 +42,7 @@ namespace Geometricamente_V1
             crossPen = new Pen(Color.Red, 2);
             rectangleBrush = new SolidBrush(Color.FromArgb(50, Color.Blue));
             rectanglePen = new Pen(Color.Blue, 1);
-
+            tmrCross.Start();
 
 
         }
@@ -53,7 +52,7 @@ namespace Geometricamente_V1
             lblTempo.Text = diferencaTempo.ToString("c");
         }
 
-     
+
         public void Gravar()
         {
             mciSendString("record recsound", null, 0, IntPtr.Zero);
@@ -90,39 +89,6 @@ namespace Geometricamente_V1
             this.Close();
         }
 
-        /*
-        private void picImagem_MouseMove(object sender, MouseEventArgs e)
-        {
-            endPoint = picImagem.Location;
-            this.Invalidate();
-            base.OnMouseMove(e);
-        }
-        private void picImagem_MouseUp(object sender, MouseEventArgs e)
-        {
-            mouseDown = false;
-            base.OnMouseUp(e);
-        }
-        private void picImagem_MouseDown(object sender, MouseEventArgs e)
-        {
-            startPoint = picImagem.Location;
-            mouseDown = true;
-            base.OnMouseDown(e);
-        }
-
-        void DrawCross(Graphics g, Point point)
-        {
-            g.DrawLine(crossPen, new Point(0, point.Y), new Point(picImagem.Width, point.Y));
-            g.DrawLine(crossPen, new Point(point.X, 0), new Point(point.X, picImagem.Height));
-        }
-
-        private void picImagem_Paint(object sender, PaintEventArgs e)
-        {
-            
-            if (this.ClientRectangle.Contains(endPoint))
-                DrawCross(e.Graphics, endPoint); 
-        }
-
-    */
 
         private void PicGravador_Click(object sender, EventArgs e)
         {
@@ -139,14 +105,40 @@ namespace Geometricamente_V1
             }
         }
 
-    
-        private void button2_Click(object sender, EventArgs e)
+
+        private void picImagem_MouseMove(object sender, MouseEventArgs e)
         {
-                 frmCrosshair crosshair = new frmCrosshair();
-                crosshair.ShowDialog(this);
+
+            if (!cross)
+            {
+                line_X.Show();
+                line_Y.Show();
+                label_X.Text = e.Location.X.ToString();
+                label_Y.Text = e.Location.Y.ToString();
+                line_Y.Location = new Point((e.Location.X + 0), 50);
+                line_X.Location = new Point(0, (e.Location.Y + 50));
+            }
+            else if (cross)
+            {
+                line_X.Hide();
+                line_Y.Hide();
+            }
         }
+        private void btnCrosshair_Click(object sender, EventArgs e)
+        {
 
+            if (btnCrosshair.BackColor == Color.White)
+            {
+                cross = true;
+                btnCrosshair.BackColor = Color.Silver;
+            }
+            else if (btnCrosshair.BackColor == Color.Silver)
+            {
+                cross = false;
+                btnCrosshair.BackColor = Color.White;
+            }
 
+        }
 
     }
 

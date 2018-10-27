@@ -30,36 +30,31 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGravaDescricao));
-            this.picImagem = new System.Windows.Forms.PictureBox();
             this.lblTempo = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.button1 = new System.Windows.Forms.Button();
             this.picGravador = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnCrosshair = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.picImagem)).BeginInit();
+            this.label_X = new System.Windows.Forms.Label();
+            this.label_Y = new System.Windows.Forms.Label();
+            this.picImagem = new System.Windows.Forms.PictureBox();
+            this.line_Y = new System.Windows.Forms.Label();
+            this.line_X = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.tmrCross = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.picGravador)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCrosshair)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picImagem)).BeginInit();
             this.SuspendLayout();
-            // 
-            // picImagem
-            // 
-            this.picImagem.BackColor = System.Drawing.Color.White;
-            this.picImagem.Location = new System.Drawing.Point(0, 49);
-            this.picImagem.Margin = new System.Windows.Forms.Padding(4);
-            this.picImagem.Name = "picImagem";
-            this.picImagem.Size = new System.Drawing.Size(768, 635);
-            this.picImagem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picImagem.TabIndex = 0;
-            this.picImagem.TabStop = false;
             // 
             // lblTempo
             // 
             this.lblTempo.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTempo.Location = new System.Drawing.Point(0, 2);
-            this.lblTempo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTempo.Location = new System.Drawing.Point(13, 3);
             this.lblTempo.Name = "lblTempo";
-            this.lblTempo.Size = new System.Drawing.Size(768, 49);
+            this.lblTempo.Size = new System.Drawing.Size(576, 40);
             this.lblTempo.TabIndex = 8;
             this.lblTempo.Text = "00:00:00";
             this.lblTempo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -74,10 +69,9 @@
             this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(721, 2);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Location = new System.Drawing.Point(541, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(47, 44);
+            this.button1.Size = new System.Drawing.Size(35, 36);
             this.button1.TabIndex = 12;
             this.button1.Text = "&X";
             this.button1.UseVisualStyleBackColor = false;
@@ -87,72 +81,153 @@
             // 
             this.picGravador.BackColor = System.Drawing.Color.Transparent;
             this.picGravador.Image = ((System.Drawing.Image)(resources.GetObject("picGravador.Image")));
-            this.picGravador.Location = new System.Drawing.Point(323, 692);
-            this.picGravador.Margin = new System.Windows.Forms.Padding(4);
+            this.picGravador.Location = new System.Drawing.Point(242, 562);
             this.picGravador.Name = "picGravador";
-            this.picGravador.Size = new System.Drawing.Size(133, 123);
+            this.picGravador.Size = new System.Drawing.Size(100, 100);
             this.picGravador.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picGravador.TabIndex = 14;
             this.picGravador.TabStop = false;
             this.picGravador.Click += new System.EventHandler(this.PicGravador_Click);
             // 
-            // pictureBox1
+            // btnCrosshair
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.White;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(43, 735);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(56, 56);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 19;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.button2_Click);
+            this.btnCrosshair.BackColor = System.Drawing.Color.White;
+            this.btnCrosshair.Image = ((System.Drawing.Image)(resources.GetObject("btnCrosshair.Image")));
+            this.btnCrosshair.Location = new System.Drawing.Point(32, 597);
+            this.btnCrosshair.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCrosshair.Name = "btnCrosshair";
+            this.btnCrosshair.Size = new System.Drawing.Size(42, 46);
+            this.btnCrosshair.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnCrosshair.TabIndex = 19;
+            this.btnCrosshair.TabStop = false;
+            this.btnCrosshair.Click += new System.EventHandler(this.btnCrosshair_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(3, 701);
+            this.label1.Location = new System.Drawing.Point(2, 570);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(142, 25);
+            this.label1.Size = new System.Drawing.Size(116, 20);
             this.label1.TabIndex = 20;
             this.label1.Text = "Coordenadas";
             // 
+            // label_X
+            // 
+            this.label_X.BackColor = System.Drawing.Color.White;
+            this.label_X.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_X.Location = new System.Drawing.Point(32, 25);
+            this.label_X.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label_X.Name = "label_X";
+            this.label_X.Size = new System.Drawing.Size(42, 13);
+            this.label_X.TabIndex = 21;
+            // 
+            // label_Y
+            // 
+            this.label_Y.BackColor = System.Drawing.Color.White;
+            this.label_Y.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Y.Location = new System.Drawing.Point(126, 25);
+            this.label_Y.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label_Y.Name = "label_Y";
+            this.label_Y.Size = new System.Drawing.Size(42, 13);
+            this.label_Y.TabIndex = 22;
+            // 
+            // picImagem
+            // 
+            this.picImagem.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.picImagem.BackColor = System.Drawing.Color.White;
+            this.picImagem.Location = new System.Drawing.Point(0, 46);
+            this.picImagem.Name = "picImagem";
+            this.picImagem.Size = new System.Drawing.Size(600, 488);
+            this.picImagem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picImagem.TabIndex = 0;
+            this.picImagem.TabStop = false;
+            this.picImagem.MouseMove += new System.Windows.Forms.MouseEventHandler(this.picImagem_MouseMove);
+            // 
+            // line_Y
+            // 
+            this.line_Y.BackColor = System.Drawing.Color.Red;
+            this.line_Y.Location = new System.Drawing.Point(0, 46);
+            this.line_Y.Name = "line_Y";
+            this.line_Y.Size = new System.Drawing.Size(2, 488);
+            this.line_Y.TabIndex = 24;
+            // 
+            // line_X
+            // 
+            this.line_X.BackColor = System.Drawing.Color.Red;
+            this.line_X.Location = new System.Drawing.Point(0, 46);
+            this.line_X.Name = "line_X";
+            this.line_X.Size = new System.Drawing.Size(600, 2);
+            this.line_X.TabIndex = 23;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(97, 20);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(24, 20);
+            this.label2.TabIndex = 25;
+            this.label2.Text = "Y:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(16, 20);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(24, 20);
+            this.label3.TabIndex = 26;
+            this.label3.Text = "X:";
+            // 
             // frmGravaDescricao
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Turquoise;
-            this.ClientSize = new System.Drawing.Size(769, 826);
+            this.ClientSize = new System.Drawing.Size(600, 671);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.line_Y);
+            this.Controls.Add(this.line_X);
+            this.Controls.Add(this.label_Y);
+            this.Controls.Add(this.label_X);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.btnCrosshair);
             this.Controls.Add(this.picGravador);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lblTempo);
             this.Controls.Add(this.picImagem);
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmGravaDescricao";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Imagem Selecionada";
-            ((System.ComponentModel.ISupportInitialize)(this.picImagem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picGravador)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCrosshair)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picImagem)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox picImagem;
         private System.Windows.Forms.Label lblTempo;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox picGravador;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox btnCrosshair;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label_X;
+        private System.Windows.Forms.Label label_Y;
+        private System.Windows.Forms.PictureBox picImagem;
+        private System.Windows.Forms.Label line_Y;
+        private System.Windows.Forms.Label line_X;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Timer tmrCross;
     }
 }
