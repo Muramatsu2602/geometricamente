@@ -37,3 +37,5 @@ C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\Projeto v1 - 10.11 - PEN
 C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\Projeto v1 - 10.11 - PENDRIVE READY\CShp_DataGridViewImagens\obj\Debug\Geometricamente_V1.exe.manifest
 C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\Projeto v1 - 10.11 - PENDRIVE READY\CShp_DataGridViewImagens\obj\Debug\Geometricamente_V1.application
 C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\Projeto v1 - 10.11 - PENDRIVE READY\CShp_DataGridViewImagens\obj\Debug\Geometricamente_V1.csproj.CopyComplete
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\Projeto v1 - 10.11 - PENDRIVE READY\CShp_DataGridViewImagens\obj\Debug\Geometricamente_V1.ShapeMovementTrial01.resources
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\Projeto v1 - 10.11 - PENDRIVE READY\CShp_DataGridViewImagens\bin\Debug\PresentationFramework.dll

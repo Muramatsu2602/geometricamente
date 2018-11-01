@@ -15,7 +15,7 @@ namespace Geometricamente_V1
     public partial class frmLogin : Form
     {
         String[] dados = new String[100];
- 
+        
 
         public frmLogin()
         {
@@ -23,8 +23,8 @@ namespace Geometricamente_V1
             t.Start();
             Thread.Sleep(5000);
             InitializeComponent();
-            this.Focus();
             t.Abort();
+            this.ShowDialog();
         }
         private void StartForm()
         {
@@ -32,32 +32,72 @@ namespace Geometricamente_V1
         }
         private void btnSair_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult dr = new DialogResult();
+            dr = MessageBox.Show("Deseja mesmo sair?", "GEOMETRICAMENTE", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dr == DialogResult.Yes)
+            {
+               Application.Exit();
+            }
         }
         private void btnGravar_Click(object sender, EventArgs e)
         {
-            dados[0] = txtNome.Text;
-            dados[1] = numIdade.Value.ToString();
-            frmEscolhePasta enviaDados = new frmEscolhePasta(dados);
-            enviaDados.Show();
+            ValidaCampo('g');
         }
 
         private void btnDesenhar_Click(object sender, EventArgs e)
 
         {
-            dados[0] = txtNome.Text;
-            dados[1] = numIdade.Value.ToString();
-            frmCapturaDesenho captura = new frmCapturaDesenho(dados);
-            captura.Show();
+           ValidaCampo('d');
         }
 
-        private void txtNome_Leave(object sender, EventArgs e)
+        public void ValidaCampo(char botao)
         {
+            if (String.IsNullOrWhiteSpace(txtNome.Text))
+            {
+                MessageBox.Show("PREENCHA O SEU NOME!");
+                txtNome.Focus();
+            }
+            else if (numIdade.Value == 0)
 
+            {
+                MessageBox.Show("IDADE NAO PODE SER IGUAL A ZERO!");
+                numIdade.Focus();
+            }
+            else
+            {
+                dados[0] = txtNome.Text;
+                dados[1] = numIdade.Value.ToString();
+                if (botao.Equals('g'))
+                {
+                    frmEscolhePasta enviaDados = new frmEscolhePasta(dados);
+                    enviaDados.Show();  
+                }else if (botao.Equals('d'))
+                {
+                    frmCapturaDesenho captura = new frmCapturaDesenho(dados);
+                    captura.Show();
+                }
+            
+            } 
         }
 
-        private void frmLogin_Load(object sender, EventArgs e)
+        private void btnGravar_MouseHover(object sender, EventArgs e)
         {
+            btnGravar.BackColor = Color.LightGray;
+        }
+
+        private void btnGravar_MouseLeave(object sender, EventArgs e)
+        {
+            btnGravar.BackColor = Color.Transparent;
+        }
+
+        private void btnDesenhar_MouseHover(object sender, EventArgs e)
+        {
+            btnDesenhar.BackColor = Color.LightGray;
+        }
+
+        private void btnDesenhar_MouseLeave(object sender, EventArgs e)
+        {
+            btnDesenhar.BackColor = Color.Transparent;
 
         }
     }

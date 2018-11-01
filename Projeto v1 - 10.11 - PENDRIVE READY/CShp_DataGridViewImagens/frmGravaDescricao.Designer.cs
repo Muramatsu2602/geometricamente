@@ -52,9 +52,9 @@
             // lblTempo
             // 
             this.lblTempo.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTempo.Location = new System.Drawing.Point(13, 3);
+            this.lblTempo.Location = new System.Drawing.Point(224, 3);
             this.lblTempo.Name = "lblTempo";
-            this.lblTempo.Size = new System.Drawing.Size(576, 40);
+            this.lblTempo.Size = new System.Drawing.Size(155, 40);
             this.lblTempo.TabIndex = 8;
             this.lblTempo.Text = "00:00:00";
             this.lblTempo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -118,20 +118,20 @@
             // 
             this.label_X.BackColor = System.Drawing.Color.White;
             this.label_X.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_X.Location = new System.Drawing.Point(32, 25);
+            this.label_X.Location = new System.Drawing.Point(126, 13);
             this.label_X.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_X.Name = "label_X";
-            this.label_X.Size = new System.Drawing.Size(42, 13);
+            this.label_X.Size = new System.Drawing.Size(48, 29);
             this.label_X.TabIndex = 21;
             // 
             // label_Y
             // 
             this.label_Y.BackColor = System.Drawing.Color.White;
             this.label_Y.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Y.Location = new System.Drawing.Point(126, 25);
+            this.label_Y.Location = new System.Drawing.Point(44, 13);
             this.label_Y.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_Y.Name = "label_Y";
-            this.label_Y.Size = new System.Drawing.Size(42, 13);
+            this.label_Y.Size = new System.Drawing.Size(48, 29);
             this.label_Y.TabIndex = 22;
             // 
             // picImagem
@@ -177,11 +177,15 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(16, 20);
+            this.label3.Location = new System.Drawing.Point(16, 19);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(24, 20);
             this.label3.TabIndex = 26;
             this.label3.Text = "X:";
+            // 
+            // tmrCross
+            // 
+            this.tmrCross.Tick += new System.EventHandler(this.tmrCross_Tick);
             // 
             // frmGravaDescricao
             // 

@@ -14,7 +14,7 @@ namespace Geometricamente_V1
         {
             InitializeComponent();
             this.dados = dados;
-            ExibeArquivosDaPastaSelecionada("D://Geometricamente/images");
+            ExibeArquivosDaPastaSelecionada("D://Geometricamente//images");
             txtDiretorio.Text = "D:\\Geometricamente\\images";
 
         }
@@ -25,7 +25,7 @@ namespace Geometricamente_V1
             {
                 //Define as propriedades do controle FolderBrowserDialog
                 fbd1.Description = "Selecione uma pasta exibir as imagens";
-                fbd1.SelectedPath = "D://Geometricamente/images";
+                fbd1.SelectedPath = "D://Geometricamente//images";
                 fbd1.ShowNewFolderButton = true;
 
                 //Exibe a caixa de diálogo
@@ -86,7 +86,7 @@ namespace Geometricamente_V1
         {
             var box = (PictureBox)sender;
             frmGravaDescricao f2 = new frmGravaDescricao( box.Image, dados); // aqui o
-            f2.Show();
+            f2.ShowDialog();
         }
 
         public static string[] GetArquivosDaPasta(String pastaRaiz, String[] filtros, bool isRecursiva)
@@ -102,7 +102,12 @@ namespace Geometricamente_V1
                 
         private void btnSair_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult dr = new DialogResult();
+            dr = MessageBox.Show("Deseja mesmo sair?", "GEOMETRICAMENTE", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dr == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
 
     }

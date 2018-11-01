@@ -9,6 +9,7 @@ using AForge.Video.FFMPEG;
 using AForge.Video;
 using System.Diagnostics;
 using System.IO;
+using System.Runtime.CompilerServices;
 
 namespace CapturaTela
 {
@@ -30,6 +31,7 @@ namespace CapturaTela
         private Rectangle _screenArea;
         int screenLeft, screenTop = 0;
         bool useArea = false;
+        bool isMouseDown = false;
 
         [StructLayout(LayoutKind.Sequential)]
         struct CURSORINFO
@@ -104,7 +106,6 @@ namespace CapturaTela
 
 
         }
-
         private void Comecar()
         {
             Start(false);
@@ -117,7 +118,7 @@ namespace CapturaTela
 
             pnl_Draw.BackColor = Color.White;
         }
-      
+
         private void Start(bool selectArea)
         {
             try
@@ -139,7 +140,7 @@ namespace CapturaTela
                 this.SetVisible(true);
                 this._frameCount = 0;
 
-                string fullName = string.Format(@"{0}\{1}_{2}.avi", "D:\\Geometricamente\\video", dados[0], DateTime.Now.ToString("yyyyMMdd_HHmmss"));
+                string fullName = string.Format(@"{0}\{1}_{2}.mp4", "D:\\Geometricamente\\video", dados[0], DateTime.Now.ToString("yyyyMMdd_HHmmss"));
 
                 DateTime agora = DateTime.Now;
                 // Save File option
@@ -292,9 +293,9 @@ namespace CapturaTela
             }
         }
 
-      
+
         private void SetVisible(bool visible)
-        { 
+        {
             this._isRecording = visible;
         }
 
@@ -321,66 +322,43 @@ namespace CapturaTela
         bool drawRectangle = false;
         bool drawCircle = false;
         bool drawTriangle = false;
+        private Brush sb;
 
         //Event Fired when the mouse pointer is over Panel and a mouse button is pressed
         private void pnl_Draw_MouseDown(object sender, MouseEventArgs e)
         {
             Graphics g = pnl_Draw.CreateGraphics();
+            SolidBrush sb = new SolidBrush(btn_PenColor.BackColor);
 
             startPaint = true;
             if (drawSquare)
             {
-
                 //Use Solid Brush for filling the graphic shapes
-                SolidBrush sb = new SolidBrush(btn_PenColor.BackColor);
                 //setting the width and height same for creating square.
                 //Getting the width and Heigt value from Textbox(txt_ShapeSize)
                 g.FillRectangle(sb, e.X, e.Y, int.Parse(txt_ShapeSize.Text), int.Parse(txt_ShapeSize.Text));
                 //setting startPaint and drawSquare value to false for creating one graphic on one click.
                 startPaint = false;
-                drawSquare = false;
+                
+                //drawSquare = false;
             }
             if (drawRectangle)
             {
-                SolidBrush sb = new SolidBrush(btn_PenColor.BackColor);
                 //setting the width twice of the height
                 g.FillRectangle(sb, e.X, e.Y, 2 * int.Parse(txt_ShapeSize.Text), int.Parse(txt_ShapeSize.Text));
                 startPaint = false;
-                drawRectangle = false;
+                //drawRectangle = false;
             }
             if (drawCircle)
             {
-                SolidBrush sb = new SolidBrush(btn_PenColor.BackColor);
                 g.FillEllipse(sb, e.X, e.Y, int.Parse(txt_ShapeSize.Text), int.Parse(txt_ShapeSize.Text));
                 startPaint = false;
-                drawCircle = false;
+                //drawCircle = false;
             }
             if (drawTriangle)
             {
-                /*
-                SolidBrush sb = new SolidBrush(btn_PenColor.BackColor);
-
-                // Create points that define polygon.
-                Point point1 = new Point(e.X+0, 0+e.Y);
-                Point point2 = new Point(150-e.X, e.Y);
-                Point point3 = new Point(150+e.X, 150+e.Y);
-
-                PointF[] curvePoints =
-                         {
-                 point1,
-                 point2,
-                 point3
-                 };
-                // Draw polygon to screen.
-                //g.DrawPolygon(sb, curvePoints);
-                g.FillPolygon(sb,curvePoints);
-                drawTriangle = false;
-                */
 
                 float angle = 0;
-
-                SolidBrush brs = new SolidBrush(btn_PenColor.BackColor);
-
                 PointF[] p = new PointF[3];
 
                 p[0].X = e.X;
@@ -395,8 +373,8 @@ namespace CapturaTela
 
                 p[2].Y = (float)(e.Y - int.Parse(txt_ShapeSize.Text) * Math.Sin(angle + Math.PI / 3));
 
-                g.FillPolygon(brs, p);
-                drawTriangle = false;
+                g.FillPolygon(sb, p);
+                //drawTriangle = false;
             }
         }
 
@@ -424,38 +402,98 @@ namespace CapturaTela
         {
             if (picQuadrado.BackColor == Color.White)
             {
+                picTriangulo.BackColor = Color.White;
+                picCirculo.BackColor = Color.White;
+                picRetangulo. BackColor = Color.White;
+                drawTriangle = false;
+                drawCircle = false;
+                drawRectangle = false;
+
+                picQuadrado.BackColor = btn_PenColor.BackColor;
                 drawSquare = true;
             }
-            else if (picQuadrado.BackColor == Color.Red)
+            else if (picQuadrado.BackColor == btn_PenColor.BackColor)
             {
-                drawSquare = true;
+                drawSquare = false;
+                picQuadrado.BackColor = Color.White;
             }
         }
 
         private void btn_Rectangle_Click(object sender, EventArgs e)
         {
-            drawRectangle = true;
+
+            if (picRetangulo.BackColor == Color.White)
+            {
+                picTriangulo.BackColor = Color.White;
+                picCirculo.BackColor = Color.White;
+                picQuadrado. BackColor = Color.White;
+
+                drawTriangle = false;
+                drawCircle = false;
+                drawSquare = false;
+
+                picRetangulo.BackColor = btn_PenColor.BackColor;
+                drawRectangle = true;
+            }
+            else if (picRetangulo.BackColor == btn_PenColor.BackColor)
+            {
+                drawRectangle = false;
+                picRetangulo.BackColor = Color.White;
+            }
+
         }
 
         private void btn_Circle_Click(object sender, EventArgs e)
         {
-            drawCircle = true;
-        }
+            if (picCirculo.BackColor == Color.White)
+            {
+                picTriangulo.BackColor = Color.White;
+                picRetangulo.BackColor = Color.White;
+                picQuadrado. BackColor = Color.White;
 
-        private void frmCapturaDesenho_Load(object sender, EventArgs e)
-        {
+                drawTriangle = false;
+                drawRectangle = false;
+                drawSquare = false;
+               
+                picCirculo.BackColor = btn_PenColor.BackColor;
+
+                drawCircle = true;
+            }
+            else if (picCirculo.BackColor == btn_PenColor.BackColor)
+            {
+                drawCircle = false;
+                picCirculo.BackColor = Color.White;
+            }
 
         }
-  
         private void btn_Triangle_Click(object sender, EventArgs e)
         {
-            drawTriangle = true;
+            if (picTriangulo.BackColor == Color.White)
+            {
+                picCirculo.BackColor = Color.White;
+                picRetangulo.BackColor = Color.White;
+                picQuadrado. BackColor = Color.White;
 
+                drawCircle = false;
+                drawRectangle = false;
+                drawSquare = false;
+
+                picTriangulo.BackColor = btn_PenColor.BackColor;
+                drawTriangle = true;
+            }
+            else if (picTriangulo.BackColor == btn_PenColor.BackColor)
+            {
+                drawTriangle = false;
+                picTriangulo.BackColor = Color.White;
+            }
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            DialogResult dr = new DialogResult();
+            dr = MessageBox.Show("Deseja mesmo sair?", "GEOMETRICAMENTE", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dr == DialogResult.Yes)
+                this.Close();
         }
 
         private void pictureBox5_Click(object sender, EventArgs e)
@@ -464,31 +502,54 @@ namespace CapturaTela
             {
                 Comecar();
                 picDesenha.BackColor = Color.Red;
-
-                /*
-                picDesenha.BackgroundImage = Image.FromFile("D:\\Geometricamente\\images\\educative-set\\stop.png");
-                picDesenha.SizeMode = PictureBoxSizeMode.StretchImage;
-                */
             }
             else if (picDesenha.BackColor == Color.Red)
             {
                 Salvar();
                 picDesenha.BackColor = Color.Transparent;
-                /* 
-                   picDesenha.BackgroundImage = Image.FromFile("D:\\Geometricamente\\images\\educative-set\\paint-palette.png");
-                    picDesenha.SizeMode = PictureBoxSizeMode.StretchImage;
-                 */
             }
 
         }
 
         private void picApaga_Click(object sender, EventArgs e)
         {
+            pnl_Draw.ResetBackColor();
             pnl_Draw.BackColor = Color.White;
-            pnl_Draw.BackColor = Color.White;
+            picCirculo.BackColor = Color.White;
+            picQuadrado.BackColor = Color.White;
+            picRetangulo.BackColor = Color.White;
+            picTriangulo.BackColor = Color.White;
         }
 
+        private void pnl_Draw_MouseMove(object sender, MouseEventArgs e)
+        {/*          if (isMouseDown == true)
+            {
+                sb.Location = e.Location;
+ 
+                if (sb.Right > pnl_Draw.Width)
+                {
+                    rect.X = pnl_Draw.Width - rect.Width;
+                }
+                if (rect.Top < 0)
+                {
+                    rect.Y = 0;
+                }
+                if (rect.Left < 0 )
+                {
+                    rect.X =  0;
+                }
+                if (rect.Bottom > pnl_Draw.Height)
+                {
+                    rect.Y = pnl_Draw.Height - sb.Height;
+                }
+                Refresh();
+            } */
+        }
 
+        private void pnl_Draw_MouseUp(object sender, MouseEventArgs e)
+        {
+            isMouseDown = false;
+        }
 
         //Exit under File Menu
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)

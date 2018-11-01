@@ -14,7 +14,6 @@ namespace Geometricamente_V1
         DateTime tempoInicial;
         TimeSpan diferencaTempo;
         String[] dados = new string[100];
-        bool ligado = true;
         Pen crossPen;
         Pen rectanglePen;
         Brush rectangleBrush;
@@ -22,6 +21,20 @@ namespace Geometricamente_V1
         Point startPoint = Point.Empty;
         Point endPoint = Point.Empty;
         bool cross = false;
+
+        public bool Ligado { get; set; } = true;
+        public Pen CrossPen { get => crossPen; set => crossPen = value; }
+        public DateTime TempoInicial { get => tempoInicial; set => tempoInicial = value; }
+        public TimeSpan DiferencaTempo { get => diferencaTempo; set => diferencaTempo = value; }
+        public string[] Dados { get => dados; set => dados = value; }
+        public Pen CrossPen1 { get => crossPen; set => crossPen = value; }
+        public Pen RectanglePen { get => rectanglePen; set => rectanglePen = value; }
+        public Brush RectangleBrush { get => rectangleBrush; set => rectangleBrush = value; }
+        public bool MouseDown1 { get => mouseDown; set => mouseDown = value; }
+        public Point StartPoint { get => startPoint; set => startPoint = value; }
+        public Point EndPoint { get => endPoint; set => endPoint = value; }
+        public bool Cross { get => cross; set => cross = value; }
+
         //gravação de audio
         [DllImport("winmm.dll")]
         private static extern long mciSendString(string command, StringBuilder retstring, int ReturnLength, IntPtr callback);
@@ -39,7 +52,7 @@ namespace Geometricamente_V1
             this.dados = dados;
             this.DoubleBuffered = true;
             this.ResizeRedraw = true;
-            crossPen = new Pen(Color.Red, 2);
+            CrossPen = new Pen(Color.Red, 2);
             rectangleBrush = new SolidBrush(Color.FromArgb(50, Color.Blue));
             rectanglePen = new Pen(Color.Blue, 1);
             tmrCross.Start();
@@ -71,9 +84,14 @@ namespace Geometricamente_V1
                 if (dr == DialogResult.Yes)
                 {
                     DateTime agora = DateTime.Now;
-                    mciSendString("Save recsound D:\\Geometricamente\\audio\\" + agora.ToString("yyyy-MM-dd_HH-mm-ss") + "_img-" + dados[2] + "_" + dados[0] + "_" + dados[1] + "anos" + ".wav", null, 0, IntPtr.Zero);
+                    mciSendString("Save recsound D:\\Geometricamente\\audio\\" + agora.ToString("yyyy-MM-dd_HH-mm-ss") + "_img-" + dados[2] + "_" + dados[0] + "_" + dados[1] + "anos" + ".mp3", null, 0, IntPtr.Zero);
                     mciSendString("close recsound", null, 0, IntPtr.Zero);
 
+                }
+                else if (dr == DialogResult.No)
+                {
+                    lblTempo.Text = "00:00:00";
+                    picGravador.Focus();
                 }
 
             }
@@ -86,7 +104,12 @@ namespace Geometricamente_V1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult dr = new DialogResult();
+            dr = MessageBox.Show("Deseja mesmo sair?", "GEOMETRICAMENTE", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dr == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
 
 
@@ -140,6 +163,10 @@ namespace Geometricamente_V1
 
         }
 
+        private void tmrCross_Tick(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

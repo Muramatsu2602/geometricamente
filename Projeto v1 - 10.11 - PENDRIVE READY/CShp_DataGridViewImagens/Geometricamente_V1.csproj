@@ -78,6 +78,9 @@
     <Reference Include="AForge.Video.FFMPEG">
       <HintPath>..\..\..\AForge.NET Framework-2.2.5-(libs only)\Release\AForge.Video.FFMPEG.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\PresentationFramework.4.6.0\lib\PresentationFramework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -89,6 +92,7 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="frmCapturaDesenho.cs">
@@ -123,6 +127,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShapeMovementTrial01.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShapeMovementTrial01.Designer.cs">
+      <DependentUpon>ShapeMovementTrial01.cs</DependentUpon>
+    </Compile>
     <Compile Include="TopForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +164,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ShapeMovementTrial01.resx">
+      <DependentUpon>ShapeMovementTrial01.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TopForm.resx">
       <DependentUpon>TopForm.cs</DependentUpon>
     </EmbeddedResource>

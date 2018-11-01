@@ -61,7 +61,7 @@
             this.label3.Location = new System.Drawing.Point(8, 215);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(100, 32);
+            this.label3.Size = new System.Drawing.Size(74, 24);
             this.label3.TabIndex = 9;
             this.label3.Text = "IDADE";
             // 
@@ -72,7 +72,7 @@
             this.label2.Location = new System.Drawing.Point(8, 155);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 32);
+            this.label2.Size = new System.Drawing.Size(71, 24);
             this.label2.TabIndex = 8;
             this.label2.Text = "NOME";
             // 
@@ -83,7 +83,7 @@
             this.numIdade.Location = new System.Drawing.Point(112, 209);
             this.numIdade.Margin = new System.Windows.Forms.Padding(4);
             this.numIdade.Name = "numIdade";
-            this.numIdade.Size = new System.Drawing.Size(93, 38);
+            this.numIdade.Size = new System.Drawing.Size(93, 32);
             this.numIdade.TabIndex = 7;
             this.numIdade.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -93,9 +93,8 @@
             this.txtNome.Location = new System.Drawing.Point(111, 155);
             this.txtNome.Margin = new System.Windows.Forms.Padding(4);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(500, 38);
+            this.txtNome.Size = new System.Drawing.Size(500, 32);
             this.txtNome.TabIndex = 6;
-            this.txtNome.Leave += new System.EventHandler(this.txtNome_Leave);
             // 
             // btnGravar
             // 
@@ -110,6 +109,8 @@
             this.btnGravar.TabIndex = 17;
             this.btnGravar.TabStop = false;
             this.btnGravar.Click += new System.EventHandler(this.btnGravar_Click);
+            this.btnGravar.MouseLeave += new System.EventHandler(this.btnGravar_MouseLeave);
+            this.btnGravar.MouseHover += new System.EventHandler(this.btnGravar_MouseHover);
             // 
             // btnDesenhar
             // 
@@ -124,6 +125,8 @@
             this.btnDesenhar.TabIndex = 18;
             this.btnDesenhar.TabStop = false;
             this.btnDesenhar.Click += new System.EventHandler(this.btnDesenhar_Click);
+            this.btnDesenhar.MouseLeave += new System.EventHandler(this.btnDesenhar_MouseLeave);
+            this.btnDesenhar.MouseHover += new System.EventHandler(this.btnDesenhar_MouseHover);
             // 
             // button1
             // 
@@ -142,7 +145,7 @@
             // 
             // frmLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(619, 498);
             this.Controls.Add(this.button1);
@@ -159,7 +162,6 @@
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmLogin";
-            this.Load += new System.EventHandler(this.frmLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numIdade)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGravar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDesenhar)).EndInit();

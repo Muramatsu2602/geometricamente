@@ -16,6 +16,7 @@ namespace Geometricamente_V1
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frmLogin());
+            //Application.Run(new ShapeMovementTrial01());
      
         }
     }
