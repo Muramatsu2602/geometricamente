@@ -129,7 +129,7 @@ namespace Geometricamente_V1
         }
 
 
-        private void picImagem_MouseMove(object sender, MouseEventArgs e)
+        private void picImagem_MouseMove(object sender, System.Windows.Forms.MouseEventArgs e)
         {
 
             if (!cross)

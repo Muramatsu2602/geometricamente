@@ -22,12 +22,14 @@ namespace Geometricamente_V1
             Thread t = new Thread(new ThreadStart(StartForm));
             t.Start();
             Thread.Sleep(5000);
-            InitializeComponent();
             t.Abort();
+            InitializeComponent();
+            
             this.ShowDialog();
         }
         private void StartForm()
         {
+           
             Application.Run(new frmSplashScreen());
         }
         private void btnSair_Click(object sender, EventArgs e)

@@ -42,13 +42,15 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.picDesenha = new System.Windows.Forms.PictureBox();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.picApaga = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.txt_ShapeSize = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.picRetangulo = new System.Windows.Forms.PictureBox();
+            this.tkbTamanho = new System.Windows.Forms.TrackBar();
             this.picTriangulo = new System.Windows.Forms.PictureBox();
             this.picCirculo = new System.Windows.Forms.PictureBox();
             this.picQuadrado = new System.Windows.Forms.PictureBox();
-            this.txt_ShapeSize = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -59,7 +61,9 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
             this.btn_PenColor = new System.Windows.Forms.Button();
+            this.picApaga = new System.Windows.Forms.PictureBox();
             this.pnl_Draw = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.lb_stopWatch = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -70,8 +74,10 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picDesenha)).BeginInit();
             this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picApaga)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRetangulo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tkbTamanho)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTriangulo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCirculo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picQuadrado)).BeginInit();
@@ -79,7 +85,9 @@
             this.panel2.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picApaga)).BeginInit();
             this.pnl_Draw.SuspendLayout();
+            this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_FPS)).BeginInit();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
@@ -88,7 +96,7 @@
             // 
             this.cb_VideoCodec.FormattingEnabled = true;
             this.cb_VideoCodec.Location = new System.Drawing.Point(75, 446);
-            this.cb_VideoCodec.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cb_VideoCodec.Margin = new System.Windows.Forms.Padding(2);
             this.cb_VideoCodec.Name = "cb_VideoCodec";
             this.cb_VideoCodec.Size = new System.Drawing.Size(102, 21);
             this.cb_VideoCodec.TabIndex = 4;
@@ -117,13 +125,15 @@
             // 
             this.cb_BitRate.FormattingEnabled = true;
             this.cb_BitRate.Location = new System.Drawing.Point(230, 445);
-            this.cb_BitRate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cb_BitRate.Margin = new System.Windows.Forms.Padding(2);
             this.cb_BitRate.Name = "cb_BitRate";
             this.cb_BitRate.Size = new System.Drawing.Size(76, 21);
             this.cb_BitRate.TabIndex = 7;
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel1.BackColor = System.Drawing.Color.Silver;
             this.panel1.Controls.Add(this.picDesenha);
@@ -131,15 +141,16 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(3, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(187, 521);
+            this.panel1.Size = new System.Drawing.Size(233, 547);
             this.panel1.TabIndex = 17;
             // 
             // picDesenha
             // 
+            this.picDesenha.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.picDesenha.BackColor = System.Drawing.Color.Transparent;
             this.picDesenha.Image = ((System.Drawing.Image)(resources.GetObject("picDesenha.Image")));
-            this.picDesenha.Location = new System.Drawing.Point(44, 405);
-            this.picDesenha.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picDesenha.Location = new System.Drawing.Point(70, 441);
+            this.picDesenha.Margin = new System.Windows.Forms.Padding(2);
             this.picDesenha.Name = "picDesenha";
             this.picDesenha.Size = new System.Drawing.Size(90, 98);
             this.picDesenha.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -149,56 +160,104 @@
             // 
             // panel7
             // 
-            this.panel7.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.panel7.BackColor = System.Drawing.Color.White;
             this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel7.Controls.Add(this.picApaga);
+            this.panel7.Controls.Add(this.pictureBox2);
+            this.panel7.Controls.Add(this.txt_ShapeSize);
+            this.panel7.Controls.Add(this.pictureBox1);
+            this.panel7.Controls.Add(this.label4);
             this.panel7.Controls.Add(this.picRetangulo);
+            this.panel7.Controls.Add(this.tkbTamanho);
             this.panel7.Controls.Add(this.picTriangulo);
             this.panel7.Controls.Add(this.picCirculo);
             this.panel7.Controls.Add(this.picQuadrado);
-            this.panel7.Controls.Add(this.txt_ShapeSize);
-            this.panel7.Controls.Add(this.label7);
             this.panel7.Controls.Add(this.panel8);
-            this.panel7.Location = new System.Drawing.Point(10, 116);
+            this.panel7.Location = new System.Drawing.Point(10, 120);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(168, 261);
+            this.panel7.Size = new System.Drawing.Size(213, 313);
             this.panel7.TabIndex = 3;
             // 
-            // picApaga
+            // pictureBox2
             // 
-            this.picApaga.BackColor = System.Drawing.Color.White;
-            this.picApaga.Image = ((System.Drawing.Image)(resources.GetObject("picApaga.Image")));
-            this.picApaga.Location = new System.Drawing.Point(113, 32);
-            this.picApaga.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.picApaga.Name = "picApaga";
-            this.picApaga.Size = new System.Drawing.Size(50, 46);
-            this.picApaga.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picApaga.TabIndex = 20;
-            this.picApaga.TabStop = false;
-            this.picApaga.Click += new System.EventHandler(this.picApaga_Click);
-            this.picApaga.DoubleClick += new System.EventHandler(this.picApaga_Click);
+            this.pictureBox2.BackColor = System.Drawing.Color.White;
+            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(4, 267);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(29, 26);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 24;
+            this.pictureBox2.TabStop = false;
+            // 
+            // txt_ShapeSize
+            // 
+            this.txt_ShapeSize.BackColor = System.Drawing.Color.Violet;
+            this.txt_ShapeSize.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_ShapeSize.Location = new System.Drawing.Point(4, 232);
+            this.txt_ShapeSize.Name = "txt_ShapeSize";
+            this.txt_ShapeSize.Size = new System.Drawing.Size(45, 26);
+            this.txt_ShapeSize.TabIndex = 9;
+            this.txt_ShapeSize.Text = "100";
+            this.txt_ShapeSize.Visible = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(156, 261);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(53, 48);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 23;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label4
+            // 
+            this.label4.BackColor = System.Drawing.Color.Gray;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(0, 230);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(212, 29);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "TAMANHO";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // picRetangulo
             // 
             this.picRetangulo.BackColor = System.Drawing.Color.White;
             this.picRetangulo.Image = ((System.Drawing.Image)(resources.GetObject("picRetangulo.Image")));
-            this.picRetangulo.Location = new System.Drawing.Point(85, 191);
-            this.picRetangulo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picRetangulo.Location = new System.Drawing.Point(106, 157);
+            this.picRetangulo.Margin = new System.Windows.Forms.Padding(2);
             this.picRetangulo.Name = "picRetangulo";
-            this.picRetangulo.Size = new System.Drawing.Size(70, 37);
+            this.picRetangulo.Size = new System.Drawing.Size(100, 61);
             this.picRetangulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picRetangulo.TabIndex = 21;
             this.picRetangulo.TabStop = false;
             this.picRetangulo.Click += new System.EventHandler(this.btn_Rectangle_Click);
             // 
+            // tkbTamanho
+            // 
+            this.tkbTamanho.BackColor = System.Drawing.Color.White;
+            this.tkbTamanho.Location = new System.Drawing.Point(38, 267);
+            this.tkbTamanho.Name = "tkbTamanho";
+            this.tkbTamanho.Size = new System.Drawing.Size(111, 45);
+            this.tkbTamanho.TabIndex = 2;
+            this.tkbTamanho.TickFrequency = 3;
+            this.tkbTamanho.ValueChanged += new System.EventHandler(this.tkbTamanho_ValueChanged);
+            // 
             // picTriangulo
             // 
             this.picTriangulo.BackColor = System.Drawing.Color.White;
+            this.picTriangulo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picTriangulo.Image = ((System.Drawing.Image)(resources.GetObject("picTriangulo.Image")));
-            this.picTriangulo.Location = new System.Drawing.Point(9, 176);
-            this.picTriangulo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picTriangulo.Location = new System.Drawing.Point(15, 138);
+            this.picTriangulo.Margin = new System.Windows.Forms.Padding(2);
             this.picTriangulo.Name = "picTriangulo";
-            this.picTriangulo.Size = new System.Drawing.Size(60, 63);
+            this.picTriangulo.Size = new System.Drawing.Size(80, 80);
             this.picTriangulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picTriangulo.TabIndex = 20;
             this.picTriangulo.TabStop = false;
@@ -207,11 +266,12 @@
             // picCirculo
             // 
             this.picCirculo.BackColor = System.Drawing.Color.White;
+            this.picCirculo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picCirculo.Image = ((System.Drawing.Image)(resources.GetObject("picCirculo.Image")));
-            this.picCirculo.Location = new System.Drawing.Point(94, 93);
-            this.picCirculo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picCirculo.Location = new System.Drawing.Point(119, 48);
+            this.picCirculo.Margin = new System.Windows.Forms.Padding(2);
             this.picCirculo.Name = "picCirculo";
-            this.picCirculo.Size = new System.Drawing.Size(60, 65);
+            this.picCirculo.Size = new System.Drawing.Size(80, 80);
             this.picCirculo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picCirculo.TabIndex = 19;
             this.picCirculo.TabStop = false;
@@ -220,54 +280,36 @@
             // picQuadrado
             // 
             this.picQuadrado.BackColor = System.Drawing.Color.White;
+            this.picQuadrado.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picQuadrado.Image = ((System.Drawing.Image)(resources.GetObject("picQuadrado.Image")));
-            this.picQuadrado.Location = new System.Drawing.Point(9, 93);
-            this.picQuadrado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picQuadrado.Location = new System.Drawing.Point(15, 48);
+            this.picQuadrado.Margin = new System.Windows.Forms.Padding(2);
             this.picQuadrado.Name = "picQuadrado";
-            this.picQuadrado.Size = new System.Drawing.Size(60, 65);
+            this.picQuadrado.Size = new System.Drawing.Size(80, 80);
             this.picQuadrado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picQuadrado.TabIndex = 18;
             this.picQuadrado.TabStop = false;
             this.picQuadrado.Click += new System.EventHandler(this.btn_Square_Click);
             // 
-            // txt_ShapeSize
-            // 
-            this.txt_ShapeSize.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_ShapeSize.Location = new System.Drawing.Point(4, 54);
-            this.txt_ShapeSize.Name = "txt_ShapeSize";
-            this.txt_ShapeSize.Size = new System.Drawing.Size(105, 26);
-            this.txt_ShapeSize.TabIndex = 9;
-            this.txt_ShapeSize.Text = "100";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(3, 34);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(68, 13);
-            this.label7.TabIndex = 8;
-            this.label7.Text = "TAMANHO";
-            // 
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.DimGray;
             this.panel8.Controls.Add(this.label8);
-            this.panel8.Location = new System.Drawing.Point(4, 2);
+            this.panel8.Location = new System.Drawing.Point(-2, -1);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(167, 27);
+            this.panel8.Size = new System.Drawing.Size(213, 30);
             this.panel8.TabIndex = 1;
             // 
             // label8
             // 
-            this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(50, 5);
+            this.label8.Location = new System.Drawing.Point(2, 1);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(71, 16);
+            this.label8.Size = new System.Drawing.Size(212, 29);
             this.label8.TabIndex = 1;
             this.label8.Text = "FORMAS";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel2
             // 
@@ -276,30 +318,31 @@
             this.panel2.Controls.Add(this.panel6);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.btn_PenColor);
-            this.panel2.Location = new System.Drawing.Point(10, 11);
+            this.panel2.Location = new System.Drawing.Point(10, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(168, 103);
+            this.panel2.Size = new System.Drawing.Size(213, 103);
             this.panel2.TabIndex = 1;
             // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.DimGray;
             this.panel6.Controls.Add(this.label10);
+            this.panel6.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.panel6.Location = new System.Drawing.Point(0, -1);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(166, 27);
+            this.panel6.Size = new System.Drawing.Size(212, 27);
             this.panel6.TabIndex = 2;
             // 
             // label10
             // 
-            this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(68, 7);
+            this.label10.Location = new System.Drawing.Point(-1, 6);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(40, 16);
+            this.label10.Size = new System.Drawing.Size(212, 16);
             this.label10.TabIndex = 1;
             this.label10.Text = "COR";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel3
             // 
@@ -349,19 +392,34 @@
             // btn_PenColor
             // 
             this.btn_PenColor.BackColor = System.Drawing.Color.Black;
-            this.btn_PenColor.Location = new System.Drawing.Point(-16, 13);
+            this.btn_PenColor.Location = new System.Drawing.Point(-16, 5);
             this.btn_PenColor.Name = "btn_PenColor";
-            this.btn_PenColor.Size = new System.Drawing.Size(192, 111);
+            this.btn_PenColor.Size = new System.Drawing.Size(235, 111);
             this.btn_PenColor.TabIndex = 2;
             this.btn_PenColor.UseVisualStyleBackColor = false;
             this.btn_PenColor.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // picApaga
+            // 
+            this.picApaga.BackColor = System.Drawing.Color.White;
+            this.picApaga.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picApaga.Image = ((System.Drawing.Image)(resources.GetObject("picApaga.Image")));
+            this.picApaga.Location = new System.Drawing.Point(2, 9);
+            this.picApaga.Margin = new System.Windows.Forms.Padding(2);
+            this.picApaga.Name = "picApaga";
+            this.picApaga.Size = new System.Drawing.Size(66, 62);
+            this.picApaga.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picApaga.TabIndex = 20;
+            this.picApaga.TabStop = false;
+            this.picApaga.Click += new System.EventHandler(this.picApaga_Click);
+            this.picApaga.DoubleClick += new System.EventHandler(this.picApaga_Click);
             // 
             // pnl_Draw
             // 
             this.pnl_Draw.AutoSize = true;
             this.pnl_Draw.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pnl_Draw.Controls.Add(this.button4);
             this.pnl_Draw.Controls.Add(this.panel1);
+            this.pnl_Draw.Controls.Add(this.panel5);
             this.pnl_Draw.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_Draw.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.pnl_Draw.Location = new System.Drawing.Point(0, 0);
@@ -372,16 +430,29 @@
             this.pnl_Draw.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnl_Draw_MouseMove);
             this.pnl_Draw.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnl_Draw_MouseUp);
             // 
+            // panel5
+            // 
+            this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panel5.BackColor = System.Drawing.Color.Silver;
+            this.panel5.Controls.Add(this.button4);
+            this.panel5.Controls.Add(this.picApaga);
+            this.panel5.Location = new System.Drawing.Point(236, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(844, 79);
+            this.panel5.TabIndex = 24;
+            // 
             // button4
             // 
             this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button4.BackColor = System.Drawing.Color.Red;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(1041, 9);
-            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button4.Location = new System.Drawing.Point(783, 11);
+            this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(30, 32);
+            this.button4.Size = new System.Drawing.Size(50, 50);
             this.button4.TabIndex = 18;
             this.button4.Text = "&X";
             this.button4.UseVisualStyleBackColor = false;
@@ -412,7 +483,7 @@
             // 
             this.cb_screenSelector.FormattingEnabled = true;
             this.cb_screenSelector.Location = new System.Drawing.Point(75, 471);
-            this.cb_screenSelector.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cb_screenSelector.Margin = new System.Windows.Forms.Padding(2);
             this.cb_screenSelector.Name = "cb_screenSelector";
             this.cb_screenSelector.Size = new System.Drawing.Size(102, 21);
             this.cb_screenSelector.TabIndex = 15;
@@ -430,7 +501,7 @@
             // nud_FPS
             // 
             this.nud_FPS.Location = new System.Drawing.Point(229, 467);
-            this.nud_FPS.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nud_FPS.Margin = new System.Windows.Forms.Padding(2);
             this.nud_FPS.Maximum = new decimal(new int[] {
             25,
             0,
@@ -476,7 +547,7 @@
             this.ClientSize = new System.Drawing.Size(1080, 547);
             this.Controls.Add(this.panel4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmCapturaDesenho";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Tag = "Geometricamente v1";
@@ -486,18 +557,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.picDesenha)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picApaga)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRetangulo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tkbTamanho)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTriangulo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCirculo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picQuadrado)).EndInit();
             this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
             this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picApaga)).EndInit();
             this.pnl_Draw.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nud_FPS)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
@@ -514,7 +587,6 @@
         private System.Windows.Forms.Panel pnl_Draw;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.TextBox txt_ShapeSize;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btn_PenColor;
@@ -538,6 +610,11 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.PictureBox picApaga;
         private System.Windows.Forms.PictureBox picDesenha;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.TrackBar tkbTamanho;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
 

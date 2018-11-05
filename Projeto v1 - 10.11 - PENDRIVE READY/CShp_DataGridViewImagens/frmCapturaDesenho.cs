@@ -15,6 +15,7 @@ namespace CapturaTela
 {
     public partial class frmCapturaDesenho : Form
     {
+        #region Atributos da Classe
         String[] dados = new string[100];
 
 
@@ -72,6 +73,13 @@ namespace CapturaTela
         static extern bool DrawIcon(IntPtr hDC, int X, int Y, IntPtr hIcon);
 
         const Int32 CURSOR_SHOWING = 0x00000001;
+        #endregion
+
+        public frmCapturaDesenho()
+        {
+            InitializeComponent();
+            g = pnl_Draw.CreateGraphics();
+        }
 
         public frmCapturaDesenho(String[] dados)
         {
@@ -106,6 +114,11 @@ namespace CapturaTela
 
 
         }
+
+        
+        #region Metodos Para Gravacao
+
+      
         private void Comecar()
         {
             Start(false);
@@ -299,21 +312,20 @@ namespace CapturaTela
             this._isRecording = visible;
         }
 
+        #endregion
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             this._isRecording = false;
-            Application.Exit();
+            
         }
 
         //from now on there'll be the code for MiniPaint
 
-        public frmCapturaDesenho()
-        {
-            InitializeComponent();
-            g = pnl_Draw.CreateGraphics();
-        }
 
+        #region Metodos de Desenho em pnl_Draw
+
+            
         bool startPaint = false;
         Graphics g;        //nullable int for storing Null value
         int? initX = null;
@@ -487,6 +499,7 @@ namespace CapturaTela
                 picTriangulo.BackColor = Color.White;
             }
         }
+        #endregion
 
         private void button4_Click(object sender, EventArgs e)
         {
@@ -494,6 +507,8 @@ namespace CapturaTela
             dr = MessageBox.Show("Deseja mesmo sair?", "GEOMETRICAMENTE", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dr == DialogResult.Yes)
                 this.Close();
+                
+             
         }
 
         private void pictureBox5_Click(object sender, EventArgs e)
@@ -522,42 +537,39 @@ namespace CapturaTela
         }
 
         private void pnl_Draw_MouseMove(object sender, MouseEventArgs e)
-        {/*          if (isMouseDown == true)
-            {
-                sb.Location = e.Location;
- 
-                if (sb.Right > pnl_Draw.Width)
-                {
-                    rect.X = pnl_Draw.Width - rect.Width;
-                }
-                if (rect.Top < 0)
-                {
-                    rect.Y = 0;
-                }
-                if (rect.Left < 0 )
-                {
-                    rect.X =  0;
-                }
-                if (rect.Bottom > pnl_Draw.Height)
-                {
-                    rect.Y = pnl_Draw.Height - sb.Height;
-                }
-                Refresh();
-            } */
+        {
         }
+
+        private void tkbTamanho_ValueChanged(object sender, EventArgs e)
+        {
+            if (tkbTamanho.Value == 0)
+            {
+                txt_ShapeSize.Text = "25";
+            }
+            else if(tkbTamanho.Value == 1)
+            {
+                txt_ShapeSize.Text = "50";
+            }
+            else if (tkbTamanho.Value == 2)
+            {
+                txt_ShapeSize.Text = "100";
+            }
+            else if (tkbTamanho.Value == 3)
+            {
+                txt_ShapeSize.Text = "200";
+        
+            } else if (tkbTamanho.Value == 4)
+            {
+                txt_ShapeSize.Text = "500";
+
+            }
+      
+        }
+
 
         private void pnl_Draw_MouseUp(object sender, MouseEventArgs e)
         {
             isMouseDown = false;
-        }
-
-        //Exit under File Menu
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Do you want to Exit?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
-            {
-                Application.Exit();
-            }
         }
 
     }
