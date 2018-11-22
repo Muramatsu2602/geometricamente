@@ -14,8 +14,9 @@ namespace Geometricamente_V1
         {
             InitializeComponent();
             this.dados = dados;
-            ExibeArquivosDaPastaSelecionada("D://Geometricamente//images");
-            txtDiretorio.Text = "D:\\Geometricamente\\images";
+
+            ExibeArquivosDaPastaSelecionada(TestaPendrive()+"://Geometricamente//images");
+            txtDiretorio.Text = TestaPendrive()+":\\Geometricamente\\images";
 
         }
         FolderBrowserDialog fbd1 = new FolderBrowserDialog();
@@ -25,7 +26,8 @@ namespace Geometricamente_V1
             {
                 //Define as propriedades do controle FolderBrowserDialog
                 fbd1.Description = "Selecione uma pasta exibir as imagens";
-                fbd1.SelectedPath = "D://Geometricamente//images";
+                
+                fbd1.SelectedPath = TestaPendrive()+"://Geometricamente//images";
                 fbd1.ShowNewFolderButton = true;
 
                 //Exibe a caixa de diálogo
@@ -65,10 +67,6 @@ namespace Geometricamente_V1
                     Image = Image.FromFile(caminhoImagem)
                 };
                 panel3.Controls.Add(picture);
-
-                // aqui vai ir o nome da imagem
-                //this.dados[2] = arquivo.Name;
-
                 picture.Click += new EventHandler(AbreForm);
                 
                 if (c > (panel3.Size.Width - 400))
@@ -109,6 +107,31 @@ namespace Geometricamente_V1
                 this.Close();
             }
         }
-
+        public String TestaPendrive()
+        {
+            if (Directory.Exists("D:\\")) { return "D"; }
+            if (Directory.Exists("E:\\")) { return "E"; }
+            if (Directory.Exists("F:\\")) { return "F"; }
+            if (Directory.Exists("G:\\")) { return "G"; }
+            if (Directory.Exists("F:\\")) { return "H"; }
+            if (Directory.Exists("F:\\")) { return "I"; }
+            if (Directory.Exists("F:\\")) { return "J"; }
+            if (Directory.Exists("F:\\")) { return "K"; }
+            if (Directory.Exists("F:\\")) { return "L"; }
+            if (Directory.Exists("F:\\")) { return "M"; }
+            if (Directory.Exists("F:\\")) { return "N"; }
+            if (Directory.Exists("F:\\")) { return "O"; }
+            if (Directory.Exists("F:\\")) { return "P"; }
+            if (Directory.Exists("F:\\")) { return "Q"; }
+            if (Directory.Exists("F:\\")) { return "R"; }
+            if (Directory.Exists("F:\\")) { return "S"; }
+            if (Directory.Exists("F:\\")) { return "T"; }
+            if (Directory.Exists("F:\\")) { return "U"; }
+            if (Directory.Exists("F:\\")) { return "W"; }
+            if (Directory.Exists("F:\\")) { return "X"; }
+            if (Directory.Exists("F:\\")) { return "Y"; }
+            if (Directory.Exists("F:\\")) { return "Z"; }
+            return "C";
+        }
     }
 }

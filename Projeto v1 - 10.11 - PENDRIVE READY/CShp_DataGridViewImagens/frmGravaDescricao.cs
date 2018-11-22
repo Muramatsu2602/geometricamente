@@ -1,11 +1,9 @@
-﻿using System.Drawing;
-using System.Windows.Forms;
-using System;
+﻿using System;
+using System.Drawing;
+using System.IO;
 using System.Runtime.InteropServices;
 using System.Text;
-using System.Windows.Input;
-using System.Drawing.Drawing2D;
-using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace Geometricamente_V1
 {
@@ -17,10 +15,10 @@ namespace Geometricamente_V1
         Pen crossPen;
         Pen rectanglePen;
         Brush rectangleBrush;
-        bool mouseDown = false;
+        bool mouseDown;
         Point startPoint = Point.Empty;
         Point endPoint = Point.Empty;
-        bool cross = false;
+        bool cross;
 
         public bool Ligado { get; set; } = true;
         public Pen CrossPen { get => crossPen; set => crossPen = value; }
@@ -50,8 +48,8 @@ namespace Geometricamente_V1
             mciSendString("open new Type waveaudio alias recsound", null, 0, IntPtr.Zero);
             picImagem.Image = imgForm;
             this.dados = dados;
-            this.DoubleBuffered = true;
-            this.ResizeRedraw = true;
+            DoubleBuffered = true;
+            ResizeRedraw = true;
             CrossPen = new Pen(Color.Red, 2);
             rectangleBrush = new SolidBrush(Color.FromArgb(50, Color.Blue));
             rectanglePen = new Pen(Color.Blue, 1);
@@ -59,7 +57,7 @@ namespace Geometricamente_V1
 
 
         }
-        private void timer1_Tick(object sender, System.EventArgs e)
+        private void timer1_Tick(object sender, EventArgs e)
         {
             diferencaTempo = (DateTime.Now).Subtract(tempoInicial);
             lblTempo.Text = diferencaTempo.ToString("c");
@@ -84,16 +82,19 @@ namespace Geometricamente_V1
                 if (dr == DialogResult.Yes)
                 {
                     DateTime agora = DateTime.Now;
-                    mciSendString("Save recsound D:\\Geometricamente\\audio\\" + agora.ToString("yyyy-MM-dd_HH-mm-ss") + "_img-" + dados[2] + "_" + dados[0] + "_" + dados[1] + "anos" + ".mp3", null, 0, IntPtr.Zero);
-                    mciSendString("close recsound", null, 0, IntPtr.Zero);
 
+
+                    mciSendString("Save recsound " + TestaPendrive() + ":\\Geometricamente\\audio\\" + agora.ToString("yyyy-MM-dd_HH-mm-ss") +
+                        "_img-" + dados[2] + "_" + dados[0] + "_" + dados[1] + "anos" + ".mp3", null, 0,
+                        IntPtr.Zero);
+
+                    mciSendString("close recsound", null, 0, IntPtr.Zero);
                 }
                 else if (dr == DialogResult.No)
                 {
                     lblTempo.Text = "00:00:00";
                     picGravador.Focus();
                 }
-
             }
             catch (Exception a)
             {
@@ -101,6 +102,32 @@ namespace Geometricamente_V1
             }
         }
 
+        public String TestaPendrive()
+        {
+            if (Directory.Exists("D:\\")) { return "D"; }
+            if (Directory.Exists("E:\\")) { return "E"; }
+            if (Directory.Exists("F:\\")) { return "F"; }
+            if (Directory.Exists("G:\\")) { return "G"; }
+            if (Directory.Exists("F:\\")) { return "H"; }
+            if (Directory.Exists("F:\\")) { return "I"; }
+            if (Directory.Exists("F:\\")) { return "J"; }
+            if (Directory.Exists("F:\\")) { return "K"; }
+            if (Directory.Exists("F:\\")) { return "L"; }
+            if (Directory.Exists("F:\\")) { return "M"; }
+            if (Directory.Exists("F:\\")) { return "N"; }
+            if (Directory.Exists("F:\\")) { return "O"; }
+            if (Directory.Exists("F:\\")) { return "P"; }
+            if (Directory.Exists("F:\\")) { return "Q"; }
+            if (Directory.Exists("F:\\")) { return "R"; }
+            if (Directory.Exists("F:\\")) { return "S"; }
+            if (Directory.Exists("F:\\")) { return "T"; }
+            if (Directory.Exists("F:\\")) { return "U"; }
+            if (Directory.Exists("F:\\")) { return "W"; }
+            if (Directory.Exists("F:\\")) { return "X"; }
+            if (Directory.Exists("F:\\")) { return "Y"; }
+            if (Directory.Exists("F:\\")) { return "Z"; }
+            return "C";
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -108,7 +135,7 @@ namespace Geometricamente_V1
             dr = MessageBox.Show("Deseja mesmo sair?", "GEOMETRICAMENTE", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dr == DialogResult.Yes)
             {
-                this.Close();
+                Close();
             }
         }
 
@@ -129,7 +156,7 @@ namespace Geometricamente_V1
         }
 
 
-        private void picImagem_MouseMove(object sender, System.Windows.Forms.MouseEventArgs e)
+        private void picImagem_MouseMove(object sender, MouseEventArgs e)
         {
 
             if (!cross)

@@ -15,8 +15,6 @@ namespace Geometricamente_V1
     public partial class frmLogin : Form
     {
         String[] dados = new String[100];
-        
-
         public frmLogin()
         {
             Thread t = new Thread(new ThreadStart(StartForm));

@@ -46,9 +46,8 @@
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(965, 629);
+            this.panel2.Size = new System.Drawing.Size(724, 511);
             this.panel2.TabIndex = 1;
             // 
             // panel3
@@ -56,9 +55,8 @@
             this.panel3.AutoScroll = true;
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(965, 629);
+            this.panel3.Size = new System.Drawing.Size(724, 511);
             this.panel3.TabIndex = 1;
             // 
             // txtDiretorio
@@ -66,9 +64,10 @@
             this.txtDiretorio.AutoSize = true;
             this.txtDiretorio.BackColor = System.Drawing.Color.White;
             this.txtDiretorio.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDiretorio.Location = new System.Drawing.Point(209, 11);
+            this.txtDiretorio.Location = new System.Drawing.Point(157, 9);
+            this.txtDiretorio.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.txtDiretorio.Name = "txtDiretorio";
-            this.txtDiretorio.Size = new System.Drawing.Size(346, 29);
+            this.txtDiretorio.Size = new System.Drawing.Size(274, 24);
             this.txtDiretorio.TabIndex = 0;
             this.txtDiretorio.Text = "C:\\Geometricamente\\images";
             this.txtDiretorio.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -76,10 +75,9 @@
             // btnSelecionarPasta
             // 
             this.btnSelecionarPasta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSelecionarPasta.Location = new System.Drawing.Point(70, 8);
-            this.btnSelecionarPasta.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSelecionarPasta.Location = new System.Drawing.Point(53, 7);
             this.btnSelecionarPasta.Name = "btnSelecionarPasta";
-            this.btnSelecionarPasta.Size = new System.Drawing.Size(132, 36);
+            this.btnSelecionarPasta.Size = new System.Drawing.Size(99, 29);
             this.btnSelecionarPasta.TabIndex = 0;
             this.btnSelecionarPasta.Text = "Selecionar Pasta";
             this.btnSelecionarPasta.UseVisualStyleBackColor = true;
@@ -93,10 +91,9 @@
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.btnSelecionarPasta);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 629);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.Location = new System.Drawing.Point(0, 511);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(965, 52);
+            this.panel1.Size = new System.Drawing.Size(724, 42);
             this.panel1.TabIndex = 0;
             // 
             // btnSair
@@ -106,10 +103,9 @@
             this.btnSair.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSair.ForeColor = System.Drawing.Color.White;
-            this.btnSair.Location = new System.Drawing.Point(914, 2);
-            this.btnSair.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSair.Location = new System.Drawing.Point(686, 2);
             this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(47, 44);
+            this.btnSair.Size = new System.Drawing.Size(35, 36);
             this.btnSair.TabIndex = 11;
             this.btnSair.Text = "&X";
             this.btnSair.UseVisualStyleBackColor = false;
@@ -118,9 +114,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(5, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(4, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(58, 52);
+            this.pictureBox1.Size = new System.Drawing.Size(44, 42);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -128,13 +125,12 @@
             // 
             // frmEscolhePasta
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(965, 681);
+            this.ClientSize = new System.Drawing.Size(724, 553);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmEscolhePasta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";

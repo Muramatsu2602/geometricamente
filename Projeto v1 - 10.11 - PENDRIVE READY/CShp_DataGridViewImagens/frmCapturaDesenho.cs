@@ -1,15 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows.Forms;
-using AForge.Video.FFMPEG;
 using AForge.Video;
-using System.Diagnostics;
-using System.IO;
-using System.Runtime.CompilerServices;
+using AForge.Video.FFMPEG;
 
 namespace CapturaTela
 {
@@ -30,9 +29,9 @@ namespace CapturaTela
         private ScreenCaptureStream _streamVideo;
         private Stopwatch _stopWatch;
         private Rectangle _screenArea;
-        int screenLeft, screenTop = 0;
-        bool useArea = false;
-        bool isMouseDown = false;
+        int screenLeft, screenTop;
+        bool useArea;
+        bool isMouseDown;
 
         [StructLayout(LayoutKind.Sequential)]
         struct CURSORINFO
@@ -87,16 +86,16 @@ namespace CapturaTela
             frmCapturaDesenho.dados = dados;
             InitializeComponent();
 
-            this._isRecording = false;
+            _isRecording = false;
             //this._screenSize = Screen.PrimaryScreen.Bounds;
 
-            this._frameCount = 0;
-            this._width = SystemInformation.VirtualScreen.Width;
-            this._height = SystemInformation.VirtualScreen.Height;
-            this._stopWatch = new Stopwatch();
-            this._screenArea = Rectangle.Empty;
+            _frameCount = 0;
+            _width = SystemInformation.VirtualScreen.Width;
+            _height = SystemInformation.VirtualScreen.Height;
+            _stopWatch = new Stopwatch();
+            _screenArea = Rectangle.Empty;
 
-            this._writer = new VideoFileWriter();
+            _writer = new VideoFileWriter();
 
             _screenNames = new List<string>();
             _screenNames.Add(@"Select ALL");
@@ -105,31 +104,31 @@ namespace CapturaTela
             {
                 _screenNames.Add(screen.DeviceName);
             }
-            this.cb_screenSelector.DropDownStyle = ComboBoxStyle.DropDownList;
-            this.cb_screenSelector.DataSource = _screenNames;
+            cb_screenSelector.DropDownStyle = ComboBoxStyle.DropDownList;
+            cb_screenSelector.DataSource = _screenNames;
 
             // Codec ComboBox
-            this.cb_VideoCodec.DataSource = Enum.GetValues(typeof(VideoCodec));
-            this.cb_VideoCodec.DropDownStyle = ComboBoxStyle.DropDownList;
+            cb_VideoCodec.DataSource = Enum.GetValues(typeof(VideoCodec));
+            cb_VideoCodec.DropDownStyle = ComboBoxStyle.DropDownList;
 
 
         }
 
-        
         #region Metodos Para Gravacao
 
-      
+
         private void Comecar()
         {
             Start(false);
         }
         private void Salvar()
         {
-            this.SetVisible(false);
+            SetVisible(false);
             MessageBox.Show(@"Vídeo Salvo com sucesso!");
             pnl_Draw.BackgroundImage = null;
 
             pnl_Draw.BackColor = Color.White;
+
         }
 
         private void Start(bool selectArea)
@@ -137,7 +136,7 @@ namespace CapturaTela
             try
             {
 
-                this.StartRec(selectArea);
+                StartRec(selectArea);
             }
             catch (Exception exc)
             {
@@ -149,11 +148,11 @@ namespace CapturaTela
         {
             if (_isRecording == false)
             {
-                this.SetScreenArea(selectArea);
-                this.SetVisible(true);
-                this._frameCount = 0;
-
-                string fullName = string.Format(@"{0}\{1}_{2}.mp4", "D:\\Geometricamente\\video", dados[0], DateTime.Now.ToString("yyyyMMdd_HHmmss"));
+                SetScreenArea(selectArea);
+                SetVisible(true);
+                _frameCount = 0;
+                
+                string fullName = string.Format(@"{0}\{1}_{2}.mp4", TestaPendrive()+":\\Geometricamente\\video", dados[0], DateTime.Now.ToString("yyyyMMdd_HHmmss"));
 
                 DateTime agora = DateTime.Now;
                 // Save File option
@@ -162,9 +161,9 @@ namespace CapturaTela
                 {
                     _writer.Open(
                               fullName,
-                              this._width,
-                              this._height,
-                              (int)10,
+                              _width,
+                              _height,
+                              10,
                               (VideoCodec)cb_VideoCodec.SelectedValue,
                               (int)(BitRate)5000000);
                 }
@@ -175,7 +174,7 @@ namespace CapturaTela
                 }
 
                 // Start main work
-                this.StartRecord();
+                StartRecord();
             }
         }
 
@@ -185,14 +184,14 @@ namespace CapturaTela
             useArea = false;
 
             // get entire desktop area size
-            string screenName = this.cb_screenSelector.SelectedValue.ToString();
+            string screenName = cb_screenSelector.SelectedValue.ToString();
             if (string.Compare(screenName, @"Select ALL", StringComparison.OrdinalIgnoreCase) == 0)
             {
                 foreach (Screen screen in Screen.AllScreens)
                 {
-                    this._screenArea = screen.Bounds;
-                    this._width = _screenArea.Width;
-                    this._height = _screenArea.Height;
+                    _screenArea = screen.Bounds;
+                    _width = _screenArea.Width;
+                    _height = _screenArea.Height;
                 }
             } // o de cima foca a tela toda!
             else if (string.Compare(screenName, @"Custom screen area", StringComparison.OrdinalIgnoreCase) == 0)
@@ -201,8 +200,8 @@ namespace CapturaTela
                 {
                     if (f.ShowDialog() == DialogResult.OK)
                     {
-                        this.WindowState = FormWindowState.Minimized;
-                        this._screenArea = f.AreaBounds;
+                        WindowState = FormWindowState.Minimized;
+                        _screenArea = f.AreaBounds;
 
                         decimal prop = (decimal)4 / 3;
                         decimal realProp = (decimal)f.w / f.h;
@@ -215,8 +214,8 @@ namespace CapturaTela
                         if ((h & 1) != 0)
                             h = h + 1;
 
-                        this._width = w;
-                        this._height = h;
+                        _width = w;
+                        _height = h;
                         screenLeft = f.AreaBounds.Left;
                         screenTop = f.AreaBounds.Top;
                         useArea = true;
@@ -225,32 +224,32 @@ namespace CapturaTela
             }
             else
             {
-                this._screenArea = Screen.AllScreens.Last(scr => scr.DeviceName.Equals(screenName)).Bounds;
-                this._width = this._screenArea.Width;
-                this._height = this._screenArea.Height;
+                _screenArea = Screen.AllScreens.Last(scr => scr.DeviceName.Equals(screenName)).Bounds;
+                _width = _screenArea.Width;
+                _height = _screenArea.Height;
             }
         }
 
         private void StartRecord() //Object stateInfo
         {
             // create screen capture video source
-            this._streamVideo = new ScreenCaptureStream(this._screenArea);
+            _streamVideo = new ScreenCaptureStream(_screenArea);
 
             // set NewFrame event handler
-            this._streamVideo.NewFrame += new NewFrameEventHandler(this.Video_NewFrame);
+            _streamVideo.NewFrame += Video_NewFrame;
 
             // start the video source
-            this._streamVideo.Start();
+            _streamVideo.Start();
 
             // _stopWatch
-            this._stopWatch.Start();
+            _stopWatch.Start();
         }
 
         private void Video_NewFrame(object sender, NewFrameEventArgs eventArgs)
         {
-            if (this._isRecording)
+            if (_isRecording)
             {
-                this._frameCount++;
+                _frameCount++;
 
                 Bitmap frame = eventArgs.Frame;
 
@@ -259,7 +258,7 @@ namespace CapturaTela
 
 
                 CURSORINFO pci;
-                pci.cbSize = System.Runtime.InteropServices.Marshal.SizeOf(typeof(CURSORINFO));
+                pci.cbSize = Marshal.SizeOf(typeof(CURSORINFO));
 
                 if (GetCursorInfo(out pci))
                 {
@@ -271,7 +270,7 @@ namespace CapturaTela
                         Color c = Color.Yellow;
                         float width = 2;
                         int radius = 30;
-                        if ((Control.MouseButtons & MouseButtons.Left) != 0 || (Control.MouseButtons & MouseButtons.Right) != 0)
+                        if ((MouseButtons & MouseButtons.Left) != 0 || (MouseButtons & MouseButtons.Right) != 0)
                         {
                             c = Color.OrangeRed;
                             width = 4;
@@ -294,7 +293,7 @@ namespace CapturaTela
                     graphics.DrawImage(frame, destRect, 0, 0, frame.Width, frame.Height, GraphicsUnit.Pixel, null);
                     frame = destImage;
                 }
-                this._writer.WriteVideoFrame(frame);
+                _writer.WriteVideoFrame(frame);
             }
             else
             {
@@ -309,31 +308,27 @@ namespace CapturaTela
 
         private void SetVisible(bool visible)
         {
-            this._isRecording = visible;
+            _isRecording = visible;
         }
 
         #endregion
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            this._isRecording = false;
-            
+            _isRecording = false;
+
         }
-
-        //from now on there'll be the code for MiniPaint
-
-
         #region Metodos de Desenho em pnl_Draw
 
-            
-        bool startPaint = false;
+
+        bool startPaint;
         Graphics g;        //nullable int for storing Null value
         int? initX = null;
         int? initY = null;
-        bool drawSquare = false;
-        bool drawRectangle = false;
-        bool drawCircle = false;
-        bool drawTriangle = false;
+        bool drawSquare;
+        bool drawRectangle;
+        bool drawCircle;
+        bool drawTriangle;
         private Brush sb;
 
         //Event Fired when the mouse pointer is over Panel and a mouse button is pressed
@@ -351,7 +346,7 @@ namespace CapturaTela
                 g.FillRectangle(sb, e.X, e.Y, int.Parse(txt_ShapeSize.Text), int.Parse(txt_ShapeSize.Text));
                 //setting startPaint and drawSquare value to false for creating one graphic on one click.
                 startPaint = false;
-                
+
                 //drawSquare = false;
             }
             if (drawRectangle)
@@ -416,10 +411,11 @@ namespace CapturaTela
             {
                 picTriangulo.BackColor = Color.White;
                 picCirculo.BackColor = Color.White;
-                picRetangulo. BackColor = Color.White;
+                picRetangulo.BackColor = Color.White;
                 drawTriangle = false;
                 drawCircle = false;
                 drawRectangle = false;
+
 
                 picQuadrado.BackColor = btn_PenColor.BackColor;
                 drawSquare = true;
@@ -438,7 +434,7 @@ namespace CapturaTela
             {
                 picTriangulo.BackColor = Color.White;
                 picCirculo.BackColor = Color.White;
-                picQuadrado. BackColor = Color.White;
+                picQuadrado.BackColor = Color.White;
 
                 drawTriangle = false;
                 drawCircle = false;
@@ -461,12 +457,12 @@ namespace CapturaTela
             {
                 picTriangulo.BackColor = Color.White;
                 picRetangulo.BackColor = Color.White;
-                picQuadrado. BackColor = Color.White;
+                picQuadrado.BackColor = Color.White;
 
                 drawTriangle = false;
                 drawRectangle = false;
                 drawSquare = false;
-               
+
                 picCirculo.BackColor = btn_PenColor.BackColor;
 
                 drawCircle = true;
@@ -484,7 +480,7 @@ namespace CapturaTela
             {
                 picCirculo.BackColor = Color.White;
                 picRetangulo.BackColor = Color.White;
-                picQuadrado. BackColor = Color.White;
+                picQuadrado.BackColor = Color.White;
 
                 drawCircle = false;
                 drawRectangle = false;
@@ -506,9 +502,7 @@ namespace CapturaTela
             DialogResult dr = new DialogResult();
             dr = MessageBox.Show("Deseja mesmo sair?", "GEOMETRICAMENTE", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dr == DialogResult.Yes)
-                this.Close();
-                
-             
+                Close();
         }
 
         private void pictureBox5_Click(object sender, EventArgs e)
@@ -536,17 +530,25 @@ namespace CapturaTela
             picTriangulo.BackColor = Color.White;
         }
 
-        private void pnl_Draw_MouseMove(object sender, MouseEventArgs e)
-        {
-        }
 
         private void tkbTamanho_ValueChanged(object sender, EventArgs e)
+        {
+            TamanhoForma();  
+        }
+
+
+        private void pnl_Draw_MouseUp(object sender, MouseEventArgs e)
+        {
+            isMouseDown = false;
+        }
+
+        private void TamanhoForma()
         {
             if (tkbTamanho.Value == 0)
             {
                 txt_ShapeSize.Text = "25";
             }
-            else if(tkbTamanho.Value == 1)
+            else if (tkbTamanho.Value == 1)
             {
                 txt_ShapeSize.Text = "50";
             }
@@ -556,22 +558,66 @@ namespace CapturaTela
             }
             else if (tkbTamanho.Value == 3)
             {
-                txt_ShapeSize.Text = "200";
-        
-            } else if (tkbTamanho.Value == 4)
-            {
-                txt_ShapeSize.Text = "500";
+                txt_ShapeSize.Text = "150";
 
             }
-      
+            else if (tkbTamanho.Value == 4)
+            {
+                txt_ShapeSize.Text = "200";
+
+            }
+            else if (tkbTamanho.Value == 5)
+            {
+                txt_ShapeSize.Text = "250";
+            }
+            else if (tkbTamanho.Value == 6)
+            {
+
+                txt_ShapeSize.Text = "300";
+            }
+            else if (tkbTamanho.Value == 7)
+            {
+                txt_ShapeSize.Text = "350";
+            }
+            else if (tkbTamanho.Value == 8)
+            {
+                txt_ShapeSize.Text = "400";
+            }
+            else if (tkbTamanho.Value == 9)
+            {
+                txt_ShapeSize.Text = "450";
+            }
+            else if (tkbTamanho.Value == 10)
+            {
+                txt_ShapeSize.Text = "500";
+            }
         }
-
-
-        private void pnl_Draw_MouseUp(object sender, MouseEventArgs e)
+        private String TestaPendrive()
         {
-            isMouseDown = false;
+            if (Directory.Exists("D:\\")) { return "D"; }
+            if (Directory.Exists("E:\\")) { return "E"; }
+            if (Directory.Exists("F:\\")) { return "F"; }
+            if (Directory.Exists("G:\\")) { return "G"; }
+            if (Directory.Exists("F:\\")) { return "H"; }
+            if (Directory.Exists("F:\\")) { return "I"; }
+            if (Directory.Exists("F:\\")) { return "J"; }
+            if (Directory.Exists("F:\\")) { return "K"; }
+            if (Directory.Exists("F:\\")) { return "L"; }
+            if (Directory.Exists("F:\\")) { return "M"; }
+            if (Directory.Exists("F:\\")) { return "N"; }
+            if (Directory.Exists("F:\\")) { return "O"; }
+            if (Directory.Exists("F:\\")) { return "P"; }
+            if (Directory.Exists("F:\\")) { return "Q"; }
+            if (Directory.Exists("F:\\")) { return "R"; }
+            if (Directory.Exists("F:\\")) { return "S"; }
+            if (Directory.Exists("F:\\")) { return "T"; }
+            if (Directory.Exists("F:\\")) { return "U"; }
+            if (Directory.Exists("F:\\")) { return "W"; }
+            if (Directory.Exists("F:\\")) { return "X"; }
+            if (Directory.Exists("F:\\")) { return "Y"; }
+            if (Directory.Exists("F:\\")) { return "Z"; }
+            return "C";
         }
-
     }
     public enum BitRate
     {

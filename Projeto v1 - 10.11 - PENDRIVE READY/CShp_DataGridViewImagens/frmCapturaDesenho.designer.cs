@@ -192,14 +192,13 @@
             // 
             // txt_ShapeSize
             // 
-            this.txt_ShapeSize.BackColor = System.Drawing.Color.Violet;
+            this.txt_ShapeSize.BackColor = System.Drawing.Color.White;
             this.txt_ShapeSize.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_ShapeSize.Location = new System.Drawing.Point(4, 232);
+            this.txt_ShapeSize.Location = new System.Drawing.Point(6, 232);
             this.txt_ShapeSize.Name = "txt_ShapeSize";
             this.txt_ShapeSize.Size = new System.Drawing.Size(45, 26);
             this.txt_ShapeSize.TabIndex = 9;
             this.txt_ShapeSize.Text = "100";
-            this.txt_ShapeSize.Visible = false;
             // 
             // pictureBox1
             // 
@@ -246,7 +245,7 @@
             this.tkbTamanho.Name = "tkbTamanho";
             this.tkbTamanho.Size = new System.Drawing.Size(111, 45);
             this.tkbTamanho.TabIndex = 2;
-            this.tkbTamanho.TickFrequency = 3;
+            this.tkbTamanho.TickFrequency = 5;
             this.tkbTamanho.ValueChanged += new System.EventHandler(this.tkbTamanho_ValueChanged);
             // 
             // picTriangulo
@@ -404,7 +403,7 @@
             this.picApaga.BackColor = System.Drawing.Color.White;
             this.picApaga.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picApaga.Image = ((System.Drawing.Image)(resources.GetObject("picApaga.Image")));
-            this.picApaga.Location = new System.Drawing.Point(2, 9);
+            this.picApaga.Location = new System.Drawing.Point(15, 9);
             this.picApaga.Margin = new System.Windows.Forms.Padding(2);
             this.picApaga.Name = "picApaga";
             this.picApaga.Size = new System.Drawing.Size(66, 62);
@@ -427,7 +426,6 @@
             this.pnl_Draw.Size = new System.Drawing.Size(1080, 547);
             this.pnl_Draw.TabIndex = 19;
             this.pnl_Draw.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnl_Draw_MouseDown);
-            this.pnl_Draw.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnl_Draw_MouseMove);
             this.pnl_Draw.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnl_Draw_MouseUp);
             // 
             // panel5
@@ -440,7 +438,7 @@
             this.panel5.Controls.Add(this.picApaga);
             this.panel5.Location = new System.Drawing.Point(236, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(844, 79);
+            this.panel5.Size = new System.Drawing.Size(844, 81);
             this.panel5.TabIndex = 24;
             // 
             // button4
