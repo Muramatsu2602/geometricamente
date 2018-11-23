@@ -37,7 +37,6 @@
             this.btnCrosshair = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label_X = new System.Windows.Forms.Label();
-            this.label_Y = new System.Windows.Forms.Label();
             this.picImagem = new System.Windows.Forms.PictureBox();
             this.line_Y = new System.Windows.Forms.Label();
             this.line_X = new System.Windows.Forms.Label();
@@ -45,6 +44,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.tmrCross = new System.Windows.Forms.Timer(this.components);
             this.lblGravando = new System.Windows.Forms.Label();
+            this.label_Y = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picGravador)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCrosshair)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picImagem)).BeginInit();
@@ -125,16 +125,6 @@
             this.label_X.Size = new System.Drawing.Size(48, 29);
             this.label_X.TabIndex = 21;
             // 
-            // label_Y
-            // 
-            this.label_Y.BackColor = System.Drawing.Color.White;
-            this.label_Y.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Y.Location = new System.Drawing.Point(44, 13);
-            this.label_Y.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label_Y.Name = "label_Y";
-            this.label_Y.Size = new System.Drawing.Size(48, 29);
-            this.label_Y.TabIndex = 22;
-            // 
             // picImagem
             // 
             this.picImagem.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -200,7 +190,17 @@
             this.lblGravando.TabIndex = 27;
             this.lblGravando.Text = "GRAVANDO";
             // 
-            // frmGravaDescricao
+            // label_Y
+            // 
+            this.label_Y.BackColor = System.Drawing.Color.White;
+            this.label_Y.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Y.Location = new System.Drawing.Point(44, 13);
+            this.label_Y.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label_Y.Name = "label_Y";
+            this.label_Y.Size = new System.Drawing.Size(48, 29);
+            this.label_Y.TabIndex = 22;
+            // 
+            // FrmGravaDescricao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -240,7 +240,6 @@
         private System.Windows.Forms.PictureBox btnCrosshair;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label_X;
-        private System.Windows.Forms.Label label_Y;
         private System.Windows.Forms.PictureBox picImagem;
         private System.Windows.Forms.Label line_Y;
         private System.Windows.Forms.Label line_X;
@@ -248,5 +247,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Timer tmrCross;
         private System.Windows.Forms.Label lblGravando;
+        private System.Windows.Forms.Label label_Y;
     }
 }

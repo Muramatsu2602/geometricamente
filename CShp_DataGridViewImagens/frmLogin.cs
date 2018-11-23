@@ -64,11 +64,13 @@ namespace Geometricamente_V1
                 {
                     frmEscolhePasta enviaDados = new frmEscolhePasta(dados);
                     enviaDados.Show();  
-                }else if (botao.Equals('d'))
-                {
-                    frmCapturaDesenho captura = new frmCapturaDesenho(dados);
-                    captura.Show();
                 }
+                else if (botao.Equals('d'))
+                {
+                      frmModoDesenho modo = new frmModoDesenho(dados);
+                       modo.ShowDialog();
+                }
+                
             
             } 
         }

@@ -158,12 +158,20 @@ namespace Geometricamente_V1
             if (btnCrosshair.BackColor == Color.White)
             {
                 cross = true;
+                label_X.Visible = false;
+                label_Y.Visible = false;
+                label3.Visible = false;
+                label2.Visible = false;
                 btnCrosshair.BackColor = Color.Silver;
 
             }
             else if (btnCrosshair.BackColor == Color.Silver)
             {
                 cross = false;
+                 label_X.Visible = true;
+                label_Y.Visible = true;
+                label3.Visible = true;
+                label2.Visible = true;
                 btnCrosshair.BackColor = Color.White;
             }
 

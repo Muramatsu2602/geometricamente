@@ -115,11 +115,23 @@
     <Compile Include="frmGravaDescricao.Designer.cs">
       <DependentUpon>frmGravaDescricao.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmGravaPaint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGravaPaint.Designer.cs">
+      <DependentUpon>frmGravaPaint.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmModoDesenho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmModoDesenho.Designer.cs">
+      <DependentUpon>frmModoDesenho.cs</DependentUpon>
     </Compile>
     <Compile Include="frmSplashScreen.cs">
       <SubType>Form</SubType>
@@ -150,8 +162,14 @@
     <EmbeddedResource Include="frmGravaDescricao.resx">
       <DependentUpon>frmGravaDescricao.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmGravaPaint.resx">
+      <DependentUpon>frmGravaPaint.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmModoDesenho.resx">
+      <DependentUpon>frmModoDesenho.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSplashScreen.resx">
       <DependentUpon>frmSplashScreen.cs</DependentUpon>

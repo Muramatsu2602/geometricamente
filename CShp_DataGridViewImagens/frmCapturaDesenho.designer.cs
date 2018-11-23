@@ -225,9 +225,9 @@
             // 
             this.panel.AutoSize = true;
             this.panel.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel.Controls.Add(this.panel5);
             this.panel.Controls.Add(this.pnl_Draw);
             this.panel.Controls.Add(this.panel1);
-            this.panel.Controls.Add(this.panel5);
             this.panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.panel.Location = new System.Drawing.Point(0, 0);
@@ -279,9 +279,9 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel1.BackColor = System.Drawing.Color.Silver;
+            this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.picDesenha);
             this.panel1.Controls.Add(this.panel7);
-            this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(3, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(233, 618);

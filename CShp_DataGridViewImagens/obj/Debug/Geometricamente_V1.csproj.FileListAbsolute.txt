@@ -61,3 +61,5 @@ C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\CShp_DataGridViewImagens
 C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\CShp_DataGridViewImagens\obj\Debug\Geometricamente_V1.csproj.CopyComplete
 C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\CShp_DataGridViewImagens\obj\Debug\Geometricamente_V1.exe
 C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\CShp_DataGridViewImagens\obj\Debug\Geometricamente_V1.pdb
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\CShp_DataGridViewImagens\obj\Debug\Geometricamente_V1.frmModoDesenho.resources
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\CShp_DataGridViewImagens\obj\Debug\Geometricamente_V1.frmGravaPaint.resources
