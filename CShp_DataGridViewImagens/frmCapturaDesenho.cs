@@ -151,8 +151,8 @@ namespace CapturaTela
                 SetScreenArea(selectArea);
                 SetVisible(true);
                 _frameCount = 0;
-                
-                string fullName = string.Format(@"{0}\{1}_{2}.mp4", TestaPendrive()+"\\video", dados[0], DateTime.Now.ToString("yyyyMMdd_HHmmss"));
+
+                string fullName = string.Format(@"{0}\{1}_{2}.mp4", TestaPendrive() + "\\video", dados[0], DateTime.Now.ToString("yyyyMMdd_HHmmss"));
 
                 DateTime agora = DateTime.Now;
                 // Save File option
@@ -316,7 +316,6 @@ namespace CapturaTela
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             _isRecording = false;
-
         }
         #region Metodos de Desenho em pnl_Draw
 
@@ -507,7 +506,13 @@ namespace CapturaTela
 
         private void pictureBox5_Click(object sender, EventArgs e)
         {
-            if (picDesenha.BackColor == Color.Transparent)
+            GravarCheckBox();
+
+        }
+
+        private void GravarCheckBox()
+        {
+            if (picDesenha.BackColor == Color.White)
             {
                 Comecar();
                 picDesenha.BackColor = Color.GreenYellow;
@@ -515,9 +520,8 @@ namespace CapturaTela
             else if (picDesenha.BackColor == Color.GreenYellow)
             {
                 Salvar();
-                picDesenha.BackColor = Color.Transparent;
+                picDesenha.BackColor = Color.White;
             }
-
         }
 
         private void picApaga_Click(object sender, EventArgs e)
@@ -533,7 +537,7 @@ namespace CapturaTela
 
         private void tkbTamanho_ValueChanged(object sender, EventArgs e)
         {
-            TamanhoForma();  
+            TamanhoForma();
         }
 
 
@@ -617,7 +621,7 @@ namespace CapturaTela
 
         private void pnl_Draw_MouseMove(object sender, MouseEventArgs e)
         {
-            
+
             if (!cross)
             {
                 line_X.Show();

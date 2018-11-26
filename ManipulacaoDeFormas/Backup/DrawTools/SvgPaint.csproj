@@ -1,0 +1,199 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{81A153EA-0605-4433-B769-BADDB980A701}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>PENCIL08.ICO</ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>SvgPaint</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>DrawTools</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>..\bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <ProjectReference Include="..\DocToolkit\DocToolkit.csproj">
+      <Name>DocToolkit</Name>
+      <Project>{EF871417-414A-462F-9B30-6EEC3920499F}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Draw\Draw.csproj">
+      <Name>Draw</Name>
+      <Project>{3BAE9B81-85D2-4A4C-969B-D5D9DA5E1C6A}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\SVGLib\SVGLib.csproj">
+      <Name>SVGLib</Name>
+      <Project>{43B7A044-2909-48C9-AD09-707709CDFE46}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="about.bmp" />
+    <Content Include="App.ico" />
+    <Content Include="ellipse.bmp" />
+    <Content Include="line.bmp" />
+    <Content Include="new.bmp" />
+    <Content Include="open.bmp" />
+    <Content Include="pencil.bmp" />
+    <Content Include="pointer.bmp" />
+    <Content Include="rectangle.bmp" />
+    <Content Include="save.bmp" />
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="dlgProperties.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DlgScale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DrawArea.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EditText.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tool.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ToolEllipse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ToolImage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ToolLine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ToolObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ToolPointer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ToolPolygon.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ToolRectangle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ToolText.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="Bitmap.cur" />
+    <EmbeddedResource Include="dlgProperties.resx">
+      <DependentUpon>dlgProperties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DlgScale.resx">
+      <DependentUpon>DlgScale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DrawArea.resx">
+      <DependentUpon>DrawArea.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditText.resx">
+      <DependentUpon>EditText.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ellipse.cur" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAbout.resx">
+      <DependentUpon>FormAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Line.cur" />
+    <EmbeddedResource Include="Pencil.cur" />
+    <EmbeddedResource Include="PolyHandle.cur" />
+    <EmbeddedResource Include="Rectangle.cur" />
+    <EmbeddedResource Include="Text.cur" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

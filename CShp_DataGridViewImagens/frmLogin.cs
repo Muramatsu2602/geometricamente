@@ -1,35 +1,31 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Threading;
 using System.Windows.Forms;
-using CapturaTela;
 
 namespace Geometricamente_V1
 {
     public partial class frmLogin : Form
     {
+
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        public static extern bool SetForegroundWindow(IntPtr hWnd);
         String[] dados = new String[100];
         public frmLogin()
         {
+
             InitializeComponent();
             frmSplashScreen splash = new frmSplashScreen();
             splash.ShowDialog();
+            SetForegroundWindow(this.Handle);
         }
-       
+
         private void btnSair_Click(object sender, EventArgs e)
         {
             DialogResult dr = new DialogResult();
             dr = MessageBox.Show("Deseja mesmo sair?", "GEOMETRICAMENTE", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dr == DialogResult.Yes)
             {
-               Application.Exit();
+                Application.Exit();
             }
         }
         private void btnGravar_Click(object sender, EventArgs e)
@@ -40,7 +36,7 @@ namespace Geometricamente_V1
         private void btnDesenhar_Click(object sender, EventArgs e)
 
         {
-           ValidaCampo('d');
+            ValidaCampo('d');
         }
 
         public void ValidaCampo(char botao)
@@ -63,16 +59,16 @@ namespace Geometricamente_V1
                 if (botao.Equals('g'))
                 {
                     frmEscolhePasta enviaDados = new frmEscolhePasta(dados);
-                    enviaDados.Show();  
+                    enviaDados.Show();
                 }
                 else if (botao.Equals('d'))
                 {
-                      frmModoDesenho modo = new frmModoDesenho(dados);
-                       modo.ShowDialog();
+                    frmModoDesenho modo = new frmModoDesenho(dados);
+                    modo.ShowDialog();
                 }
-                
-            
-            } 
+
+
+            }
         }
 
         private void btnGravar_MouseHover(object sender, EventArgs e)
@@ -82,7 +78,7 @@ namespace Geometricamente_V1
 
         private void btnGravar_MouseLeave(object sender, EventArgs e)
         {
-            btnGravar.BackColor = Color.Transparent;
+            btnGravar.BackColor = Color.White;
         }
 
         private void btnDesenhar_MouseHover(object sender, EventArgs e)
@@ -92,7 +88,7 @@ namespace Geometricamente_V1
 
         private void btnDesenhar_MouseLeave(object sender, EventArgs e)
         {
-            btnDesenhar.BackColor = Color.Transparent;
+            btnDesenhar.BackColor = Color.White;
 
         }
 

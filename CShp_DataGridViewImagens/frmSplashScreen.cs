@@ -1,14 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Geometricamente_V1
@@ -20,10 +11,10 @@ namespace Geometricamente_V1
         {
             InitializeComponent();
         }
-      
+
         private void frmSplashScreen_Load(object sender, EventArgs e)
         {
-            TestaPasta();     
+            TestaPasta();
         }
         public String TestaPendrive()
         {
@@ -52,11 +43,10 @@ namespace Geometricamente_V1
                 Directory.CreateDirectory(TestaPendrive() + "\\setup");
             }
         }
-
         private void timer1_Tick(object sender, EventArgs e)
         {
             i += timer1.Interval;
-            if(i == 5000)
+            if (i == 5000)
                 this.Close();
         }
     }

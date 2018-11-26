@@ -347,6 +347,32 @@ namespace Geometricamente_V1
             }
         }
 
+        private void frmGravaPaint_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+            DialogResult dr = new DialogResult();
+            dr = MessageBox.Show("Deseja para de gravar o Paint ?", "GEOMETRICAMENTE", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dr == DialogResult.Yes)
+            {
+                try
+                {
+                    foreach (Process proc in Process.GetProcessesByName("MSPAINT"))
+                    {
+                        proc.Kill();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Não foi possivel fechar o Paint automaticamente! Feche manualmente. Mais detalhes \n" + ex.Message);
+                }
+            }
+            else
+            {
+                e.Cancel = true;
+            }
+
+        }
+
         private String TestaPendrive()
         {
             return Environment.CurrentDirectory;
