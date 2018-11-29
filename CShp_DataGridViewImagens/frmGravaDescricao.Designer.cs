@@ -70,7 +70,7 @@
             this.btnSair.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSair.ForeColor = System.Drawing.Color.White;
-            this.btnSair.Location = new System.Drawing.Point(541, 2);
+            this.btnSair.Location = new System.Drawing.Point(553, 7);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(35, 36);
             this.btnSair.TabIndex = 12;
@@ -81,6 +81,7 @@
             // picGravador
             // 
             this.picGravador.BackColor = System.Drawing.Color.Transparent;
+            this.picGravador.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picGravador.Image = ((System.Drawing.Image)(resources.GetObject("picGravador.Image")));
             this.picGravador.Location = new System.Drawing.Point(159, 554);
             this.picGravador.Name = "picGravador";
@@ -176,7 +177,6 @@
             // 
             // tmrCross
             // 
-            this.tmrCross.Tick += new System.EventHandler(this.tmrCross_Tick);
             // 
             // lblGravando
             // 

@@ -152,7 +152,7 @@ namespace CapturaTela
                 SetVisible(true);
                 _frameCount = 0;
 
-                string fullName = string.Format(@"{0}\{1}_{2}.mp4", TestaPendrive() + "\\video", dados[0], DateTime.Now.ToString("yyyyMMdd_HHmmss"));
+                string fullName = string.Format(@"{0}\{1}_{2}.mp4", TestaPendrive() + "\\video", dados[0], DateTime.Now.ToString("yyyy.MM.dd_HH.mm.ss"));
 
                 DateTime agora = DateTime.Now;
                 // Save File option
@@ -317,6 +317,7 @@ namespace CapturaTela
         {
             _isRecording = false;
         }
+
         #region Metodos de Desenho em pnl_Draw
 
 

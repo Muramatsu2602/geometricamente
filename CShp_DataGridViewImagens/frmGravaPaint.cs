@@ -158,7 +158,7 @@ namespace Geometricamente_V1
                 SetVisible(true);
                 _frameCount = 0;
 
-                string fullName = string.Format(@"{0}\{1}_{2}.mp4", TestaPendrive() + "\\video", dados[0], DateTime.Now.ToString("yyyyMMdd_HHmmss"));
+                string fullName = string.Format(@"{0}\{1}_{2}.mp4", TestaPendrive() + "\\video", dados[0], DateTime.Now.ToString("yyyy.MM.dd_HH.mm.ss"));
 
                 DateTime agora = DateTime.Now;
                 // Save File option
@@ -175,7 +175,7 @@ namespace Geometricamente_V1
                 }
                 catch (Exception e)
                 {
-                    MessageBox.Show("PASTA NAO ENCONTRADA!!!");
+                    MessageBox.Show("PASTA NAO ENCONTRADA!");
                     throw e;
                 }
 
@@ -351,15 +351,21 @@ namespace Geometricamente_V1
         {
 
             DialogResult dr = new DialogResult();
-            dr = MessageBox.Show("Deseja para de gravar o Paint ?", "GEOMETRICAMENTE", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            dr = MessageBox.Show("Deseja Sair?", "GEOMETRICAMENTE", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dr == DialogResult.Yes)
             {
                 try
                 {
-                    foreach (Process proc in Process.GetProcessesByName("MSPAINT"))
+                    dr = new DialogResult();
+                    dr = MessageBox.Show("Deseja Fechar o Paint?", "GEOMETRICAMENTE", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (dr == DialogResult.Yes)
                     {
-                        proc.Kill();
+                        foreach (Process proc in Process.GetProcessesByName("MSPAINT"))
+                        {
+                            proc.Kill();
+                        }
                     }
+
                 }
                 catch (Exception ex)
                 {

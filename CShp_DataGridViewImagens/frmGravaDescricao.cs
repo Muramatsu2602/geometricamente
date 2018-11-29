@@ -9,6 +9,7 @@ namespace Geometricamente_V1
 {
     public partial class FrmGravaDescricao : Form
     {
+        #region Atributos
         DateTime tempoInicial;
         TimeSpan diferencaTempo;
         String[] dados = new string[100];
@@ -32,6 +33,8 @@ namespace Geometricamente_V1
         public Point StartPoint { get => startPoint; set => startPoint = value; }
         public Point EndPoint { get => endPoint; set => endPoint = value; }
         public bool Cross { get => cross; set => cross = value; }
+
+        #endregion
 
         //gravação de audio
         [DllImport("winmm.dll")]
@@ -75,7 +78,6 @@ namespace Geometricamente_V1
             try
             {
                 timer1.Stop();
-
                 DialogResult dr = new DialogResult();
                 dr = MessageBox.Show("Pronto! deseja salvar?", "GEOMETRIA", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
                 if (dr == DialogResult.Yes)
@@ -106,14 +108,11 @@ namespace Geometricamente_V1
         private void button1_Click(object sender, EventArgs e)
         {
             DialogResult dr = new DialogResult();
-        
             dr = MessageBox.Show("Deseja mesmo sair?", "GEOMETRICAMENTE", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dr == DialogResult.Yes)
             {
-                this.Close();
+                Close();
             }
-            
-         
         }
 
 
@@ -168,17 +167,12 @@ namespace Geometricamente_V1
             else if (btnCrosshair.BackColor == Color.Silver)
             {
                 cross = false;
-                 label_X.Visible = true;
+                label_X.Visible = true;
                 label_Y.Visible = true;
                 label3.Visible = true;
                 label2.Visible = true;
                 btnCrosshair.BackColor = Color.White;
             }
-
-        }
-
-        private void tmrCross_Tick(object sender, EventArgs e)
-        {
 
         }
     }

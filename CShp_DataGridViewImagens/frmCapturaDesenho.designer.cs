@@ -298,6 +298,7 @@
             // btnCrosshair
             // 
             this.btnCrosshair.BackColor = System.Drawing.Color.White;
+            this.btnCrosshair.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCrosshair.Image = ((System.Drawing.Image)(resources.GetObject("btnCrosshair.Image")));
             this.btnCrosshair.Location = new System.Drawing.Point(105, 9);
             this.btnCrosshair.Margin = new System.Windows.Forms.Padding(2);
@@ -526,7 +527,7 @@
             // 
             this.txt_ShapeSize.BackColor = System.Drawing.Color.White;
             this.txt_ShapeSize.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_ShapeSize.Location = new System.Drawing.Point(6, 232);
+            this.txt_ShapeSize.Location = new System.Drawing.Point(2, 232);
             this.txt_ShapeSize.Name = "txt_ShapeSize";
             this.txt_ShapeSize.Size = new System.Drawing.Size(45, 26);
             this.txt_ShapeSize.TabIndex = 9;
