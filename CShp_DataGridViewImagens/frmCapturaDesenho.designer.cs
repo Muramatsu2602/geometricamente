@@ -651,6 +651,7 @@
             this.ClientSize = new System.Drawing.Size(1080, 618);
             this.Controls.Add(this.panel4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmCapturaDesenho";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -697,7 +698,6 @@
         private System.Windows.Forms.NumericUpDown nud_FPS;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel;
-        private System.Windows.Forms.Panel pnl_Draw;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox picDesenha;
         private System.Windows.Forms.Panel panel7;
@@ -723,13 +723,14 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.PictureBox picApaga;
-        private System.Windows.Forms.Label line_X;
-        private System.Windows.Forms.Label line_Y;
         private System.Windows.Forms.PictureBox btnCrosshair;
         private System.Windows.Forms.Label lblX;
         private System.Windows.Forms.Label lblY;
         private System.Windows.Forms.Label label_X;
         private System.Windows.Forms.Label label_Y;
+        private System.Windows.Forms.Panel pnl_Draw;
+        private System.Windows.Forms.Label line_Y;
+        private System.Windows.Forms.Label line_X;
     }
 }
 

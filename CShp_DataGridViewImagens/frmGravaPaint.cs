@@ -77,7 +77,7 @@ namespace Geometricamente_V1
 
         private void picDesenha_Click(object sender, EventArgs e)
         {
-            if (picDesenha.BackColor == Color.Transparent)
+            if (picDesenha.BackColor == Color.Silver)
             {
                 Comecar();
                 picDesenha.BackColor = Color.GreenYellow;
@@ -85,7 +85,7 @@ namespace Geometricamente_V1
             else if (picDesenha.BackColor == Color.GreenYellow)
             {
                 Salvar();
-                picDesenha.BackColor = Color.Transparent;
+                picDesenha.BackColor = Color.Silver;
             }
         }
 
@@ -356,16 +356,19 @@ namespace Geometricamente_V1
             {
                 try
                 {
-                    dr = new DialogResult();
-                    dr = MessageBox.Show("Deseja Fechar o Paint?", "GEOMETRICAMENTE", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (dr == DialogResult.Yes)
+                    Process[] pname = Process.GetProcessesByName("MSPAINT");
+                    if (pname.Length > 0)
                     {
-                        foreach (Process proc in Process.GetProcessesByName("MSPAINT"))
+                        dr = new DialogResult();
+                        dr = MessageBox.Show("Deseja Fechar o Paint?", "GEOMETRICAMENTE", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        if (dr == DialogResult.Yes)
                         {
-                            proc.Kill();
+                            foreach (Process proc in Process.GetProcessesByName("MSPAINT"))
+                            {
+                                proc.Kill();
+                            }
                         }
                     }
-
                 }
                 catch (Exception ex)
                 {
@@ -376,6 +379,11 @@ namespace Geometricamente_V1
             {
                 e.Cancel = true;
             }
+
+        }
+
+        private void frmGravaPaint_Load(object sender, EventArgs e)
+        {
 
         }
 

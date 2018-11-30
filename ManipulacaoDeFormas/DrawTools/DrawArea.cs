@@ -81,7 +81,8 @@ namespace DrawTools
 			Polygon,
 			Bitmap,
 			Text,
-			NumberOfDrawTools
+			NumberOfDrawTools,
+            Triangle
 		};
 
 		#endregion

@@ -196,9 +196,11 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.picDesenha);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmGravaPaint";
             this.Text = "GRAVAR TELA";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmGravaPaint_FormClosing);
+            this.Load += new System.EventHandler(this.frmGravaPaint_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picDesenha)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_FPS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSettings)).EndInit();

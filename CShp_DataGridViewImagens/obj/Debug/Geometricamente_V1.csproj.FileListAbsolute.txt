@@ -52,7 +52,6 @@ C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\CShp_DataGridViewImagens
 C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\CShp_DataGridViewImagens\obj\Debug\Geometricamente_V1.frmLogin.resources
 C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\CShp_DataGridViewImagens\obj\Debug\Geometricamente_V1.frmSplashScreen.resources
 C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\CShp_DataGridViewImagens\obj\Debug\Geometricamente_V1.Properties.Resources.resources
-C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\CShp_DataGridViewImagens\obj\Debug\Geometricamente_V1.ShapeMovementTrial01.resources
 C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\CShp_DataGridViewImagens\obj\Debug\CapturaTela.TopForm.resources
 C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\CShp_DataGridViewImagens\obj\Debug\Geometricamente_V1.csproj.GenerateResource.cache
 C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\CShp_DataGridViewImagens\obj\Debug\Geometricamente_V1.csproj.CoreCompileInputs.cache

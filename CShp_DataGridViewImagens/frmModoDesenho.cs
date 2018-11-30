@@ -40,6 +40,15 @@ namespace Geometricamente_V1
             btnMSPaint.BackColor = Color.Transparent;
 
         }
+        private void btnSvgPaint_MouseHover(object sender, EventArgs e)
+        {
+            btnSvgPaint.BackColor = Color.LightGray;
+        }
+
+        private void btnSvgPaint_MouseLeave(object sender, EventArgs e)
+        {
+              btnSvgPaint.BackColor = Color.Transparent;
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -56,10 +65,17 @@ namespace Geometricamente_V1
 
         private void btnGeometricamente_Click(object sender, EventArgs e)
         {
-             frmCapturaDesenho captura = new frmCapturaDesenho(dados);
-             captura.ShowDialog();
+            frmCapturaDesenho captura = new frmCapturaDesenho(dados);
+            captura.ShowDialog();
             this.Close();
         }
+
+        private void btnSvgPaint_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start(@"C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\ManipulacaoDeFormas\bin\Debug\SvgPaint.exe");
+        }
+
+
     }
 
 }
