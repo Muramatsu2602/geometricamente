@@ -7,3 +7,12 @@ C:\Users\pedro\OneDrive\Área de Trabalho\SVG editor\Draw\obj\Debug\Draw.csproj.
 C:\Users\pedro\OneDrive\Área de Trabalho\SVG editor\Draw\obj\Debug\Draw.csproj.CopyComplete
 C:\Users\pedro\OneDrive\Área de Trabalho\SVG editor\Draw\obj\Debug\Draw.dll
 C:\Users\pedro\OneDrive\Área de Trabalho\SVG editor\Draw\obj\Debug\Draw.pdb
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\SVG editor\Draw\bin\Debug\Draw.dll
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\SVG editor\Draw\bin\Debug\Draw.pdb
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\SVG editor\Draw\bin\Debug\SVGLib.dll
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\SVG editor\Draw\bin\Debug\SVGLib.pdb
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\SVG editor\Draw\obj\Debug\Draw.csprojAssemblyReference.cache
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\SVG editor\Draw\obj\Debug\Draw.csproj.CoreCompileInputs.cache
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\SVG editor\Draw\obj\Debug\Draw.csproj.CopyComplete
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\SVG editor\Draw\obj\Debug\Draw.dll
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\SVG editor\Draw\obj\Debug\Draw.pdb

@@ -9,7 +9,6 @@ namespace Geometricamente_V1
 {
     static class Program
     {
-
         [STAThread]
         static void Main()
         {

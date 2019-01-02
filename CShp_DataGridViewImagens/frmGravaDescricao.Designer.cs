@@ -42,7 +42,6 @@
             this.line_X = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.tmrCross = new System.Windows.Forms.Timer(this.components);
             this.lblGravando = new System.Windows.Forms.Label();
             this.label_Y = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picGravador)).BeginInit();
@@ -243,7 +242,6 @@
         private System.Windows.Forms.Label line_X;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Timer tmrCross;
         private System.Windows.Forms.Label lblGravando;
         private System.Windows.Forms.Label label_Y;
     }

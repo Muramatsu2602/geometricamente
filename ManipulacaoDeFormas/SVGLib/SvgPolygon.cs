@@ -1,7 +1,7 @@
 // --------------------------------------------------------------------------------
 // Name:     SvgPolygon
 //
-// Author:   Maurizio Bigoloni <big71@fastwebnet.it>
+// Author:  p <big71@fastwebnet.it>
 //           See the ReleaseNote.txt file for copyright and license information.
 //
 // Remarks:

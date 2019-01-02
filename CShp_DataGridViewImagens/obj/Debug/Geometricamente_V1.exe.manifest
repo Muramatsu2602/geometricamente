@@ -86,17 +86,17 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>sEMqX5UJVzYZqBMHBCXieGXpa66ebF/H3obKxFBEIic=</dsig:DigestValue>
+        <dsig:DigestValue>N6L7Cs5I+SI4lkmsKKGEs9X14kCzNfXn7ihfFhS/qe8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="Geometricamente_V1.exe.config" size="225">
+  <file name="Geometricamente_V1.exe.config" size="226">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>R1rbTGzZFbJxWXsUjGlL37ObXu7w1ZrMkXPT72C4lg0=</dsig:DigestValue>
+      <dsig:DigestValue>Z5FZM2eY0yWLuLBt8J6jN8cytLqHpKmgXPiCdPpL+Cg=</dsig:DigestValue>
     </hash>
   </file>
   <file name="logoPrograma.ico" size="134886">

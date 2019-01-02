@@ -1,16 +1,16 @@
 <config>
   <MainForm>
-    <Left>178</Left>
-    <Top>310</Top>
+    <Left>302</Left>
+    <Top>156</Top>
     <Width>783</Width>
     <Height>476</Height>
-    <WindowState>0</WindowState>
+    <WindowState>2</WindowState>
   </MainForm>
   <FileDir>
     <Path>C:\Users\pedro\OneDrive\Área de Trabalho\Project2005\bin\Debug</Path>
   </FileDir>
   <MRU>
   </MRU>
-  <Color>-8388353</Color>
+  <Color>-16711681</Color>
   <Width>8</Width>
 </config>

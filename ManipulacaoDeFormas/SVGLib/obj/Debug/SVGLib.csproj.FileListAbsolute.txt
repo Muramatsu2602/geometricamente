@@ -4,3 +4,14 @@ C:\Users\pedro\OneDrive\Área de Trabalho\Project2005\SVGLib\obj\Debug\SVGLib.cs
 C:\Users\pedro\OneDrive\Área de Trabalho\Project2005\SVGLib\obj\Debug\SVGLib.csproj.CoreCompileInputs.cache
 C:\Users\pedro\OneDrive\Área de Trabalho\Project2005\SVGLib\obj\Debug\SVGLib.dll
 C:\Users\pedro\OneDrive\Área de Trabalho\Project2005\SVGLib\obj\Debug\SVGLib.pdb
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\ManipulacaoDeFormas\SVGLib\bin\Debug\SVGLib.dll
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\ManipulacaoDeFormas\SVGLib\bin\Debug\SVGLib.pdb
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\ManipulacaoDeFormas\SVGLib\obj\Debug\SVGLib.csprojAssemblyReference.cache
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\ManipulacaoDeFormas\SVGLib\obj\Debug\SVGLib.csproj.CoreCompileInputs.cache
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\ManipulacaoDeFormas\SVGLib\obj\Debug\SVGLib.dll
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\ManipulacaoDeFormas\SVGLib\obj\Debug\SVGLib.pdb
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\ManipulacaoDeFormas\SVGLib\bin\Debug\AForge.dll
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\ManipulacaoDeFormas\SVGLib\bin\Debug\AForge.Video.dll
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\ManipulacaoDeFormas\SVGLib\bin\Debug\AForge.xml
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\ManipulacaoDeFormas\SVGLib\bin\Debug\AForge.Video.xml
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\ManipulacaoDeFormas\SVGLib\obj\Debug\SVGLib.csproj.CopyComplete

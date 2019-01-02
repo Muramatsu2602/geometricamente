@@ -224,7 +224,6 @@ namespace Geometricamente_V1
                         _height = h;
                         screenLeft = f.AreaBounds.Left;
                         screenTop = f.AreaBounds.Top;
-                        useArea = true;
                     }
                 }
             }

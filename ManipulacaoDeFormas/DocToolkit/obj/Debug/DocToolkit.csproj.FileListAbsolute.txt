@@ -4,3 +4,14 @@ C:\Users\pedro\OneDrive\Área de Trabalho\Project2005\DocToolkit\obj\Debug\DocTo
 C:\Users\pedro\OneDrive\Área de Trabalho\Project2005\DocToolkit\obj\Debug\DocToolkit.csproj.CoreCompileInputs.cache
 C:\Users\pedro\OneDrive\Área de Trabalho\Project2005\DocToolkit\obj\Debug\DocToolkit.dll
 C:\Users\pedro\OneDrive\Área de Trabalho\Project2005\DocToolkit\obj\Debug\DocToolkit.pdb
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\ManipulacaoDeFormas\DocToolkit\bin\Debug\DocToolkit.dll
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\ManipulacaoDeFormas\DocToolkit\bin\Debug\DocToolkit.pdb
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\ManipulacaoDeFormas\DocToolkit\bin\Debug\AForge.dll
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\ManipulacaoDeFormas\DocToolkit\bin\Debug\AForge.Video.dll
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\ManipulacaoDeFormas\DocToolkit\bin\Debug\AForge.xml
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\ManipulacaoDeFormas\DocToolkit\bin\Debug\AForge.Video.xml
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\ManipulacaoDeFormas\DocToolkit\obj\Debug\DocToolkit.csprojAssemblyReference.cache
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\ManipulacaoDeFormas\DocToolkit\obj\Debug\DocToolkit.csproj.CoreCompileInputs.cache
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\ManipulacaoDeFormas\DocToolkit\obj\Debug\DocToolkit.csproj.CopyComplete
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\ManipulacaoDeFormas\DocToolkit\obj\Debug\DocToolkit.dll
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\ManipulacaoDeFormas\DocToolkit\obj\Debug\DocToolkit.pdb

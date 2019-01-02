@@ -4,3 +4,9 @@ C:\Users\pedro\OneDrive\Área de Trabalho\SVG editor\SVGLib\obj\Debug\SVGLib.csp
 C:\Users\pedro\OneDrive\Área de Trabalho\SVG editor\SVGLib\obj\Debug\SVGLib.csproj.CoreCompileInputs.cache
 C:\Users\pedro\OneDrive\Área de Trabalho\SVG editor\SVGLib\obj\Debug\SVGLib.dll
 C:\Users\pedro\OneDrive\Área de Trabalho\SVG editor\SVGLib\obj\Debug\SVGLib.pdb
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\SVG editor\SVGLib\bin\Debug\SVGLib.dll
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\SVG editor\SVGLib\bin\Debug\SVGLib.pdb
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\SVG editor\SVGLib\obj\Debug\SVGLib.csprojAssemblyReference.cache
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\SVG editor\SVGLib\obj\Debug\SVGLib.csproj.CoreCompileInputs.cache
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\SVG editor\SVGLib\obj\Debug\SVGLib.dll
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\SVG editor\SVGLib\obj\Debug\SVGLib.pdb

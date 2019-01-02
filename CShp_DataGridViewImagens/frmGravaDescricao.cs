@@ -56,7 +56,7 @@ namespace Geometricamente_V1
             CrossPen = new Pen(Color.Red, 2);
             rectangleBrush = new SolidBrush(Color.FromArgb(50, Color.Blue));
             rectanglePen = new Pen(Color.Blue, 1);
-            tmrCross.Start();
+           
 
         }
         private void timer1_Tick(object sender, EventArgs e)
@@ -136,6 +136,7 @@ namespace Geometricamente_V1
         private void picImagem_MouseMove(object sender, MouseEventArgs e)
         {
 
+            
             if (!cross)
             {
                 line_X.Show();
@@ -150,6 +151,8 @@ namespace Geometricamente_V1
                 line_X.Hide();
                 line_Y.Hide();
             }
+        
+
         }
         private void btnCrosshair_Click(object sender, EventArgs e)
         {
@@ -175,6 +178,8 @@ namespace Geometricamente_V1
             }
 
         }
+
+      
     }
 
 }

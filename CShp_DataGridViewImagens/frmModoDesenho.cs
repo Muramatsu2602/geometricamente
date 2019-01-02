@@ -72,7 +72,7 @@ namespace Geometricamente_V1
 
         private void btnSvgPaint_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start(@"C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\ManipulacaoDeFormas\bin\Debug\SvgPaint.exe");
+            Process.Start(@"C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\ManipulacaoDeFormas\bin\Debug\SvgPaint.exe");
         }
 
 

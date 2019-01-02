@@ -1,9 +1,5 @@
 using System;
-using System.Collections;
-using System.ComponentModel;
 using System.Windows.Forms;
-using System.Data;
-using Microsoft.Win32;
 using System.Diagnostics;
 using System.Security;
 using System.Runtime.Serialization;
@@ -11,9 +7,15 @@ using DocToolkit;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Drawing.Printing;
-
+using AForge.Video;
+using AForge.Video.FFMPEG;
 using SVGLib;
 using Draw;
+using System.Runtime.InteropServices;
+using System.Collections.Generic;
+using System.Threading;
+using System.IO;
+using System.Resources;
 
 /// 
 /// Drawing of graphics shapes (line, rectangle,
@@ -88,7 +90,69 @@ namespace DrawTools
         private MenuItem menuItem11;
         private System.Windows.Forms.MenuItem miScale;
 
+        #region Atributos da Classe
+        String[] dados = new string[100];
+
+        bool cross;
+        private bool _isRecording;
+        private List<string> _screenNames;
+        //private Rectangle _screenSize;
+        private UInt32 _frameCount;
+        private int fps = 0;
+        private VideoFileWriter _writer;
+        private int _width;
+        private int _height;
+        private ScreenCaptureStream _streamVideo;
+        private Stopwatch _stopWatch;
+        private Rectangle _screenArea;
+        int screenLeft, screenTop;
+        bool useArea;
+        bool isMouseDown;
+
+        [StructLayout(LayoutKind.Sequential)]
+        struct CURSORINFO
+        {
+            public Int32 cbSize;
+            public Int32 flags;
+            public IntPtr hCursor;
+            public POINTAPI ptScreenPos;
+        }
+
+        [StructLayout(LayoutKind.Sequential)]
+        struct POINTAPI
+        {
+            public int x;
+            public int y;
+        }
+
+        [StructLayout(LayoutKind.Sequential)]
+        public struct ICONINFO
+        {
+            public bool fIcon;
+            public Int32 xHotspot;
+            public Int32 yHotspot;
+            public IntPtr hbmMask;
+            public IntPtr hbmColor;
+        }
+
+        [DllImport("user32.dll")]
+        static extern bool GetCursorInfo(out CURSORINFO pci);
+
+        [DllImport("user32.dll")]
+        public static extern IntPtr CopyIcon(IntPtr hIcon);
+
+        [DllImport("user32.dll")]
+        public static extern bool GetIconInfo(IntPtr hIcon, out ICONINFO piconinfo);
+
+        [DllImport("user32.dll")]
+        static extern bool DrawIcon(IntPtr hDC, int X, int Y, IntPtr hIcon);
+
+        const Int32 CURSOR_SHOWING = 0x00000001;
+        #endregion
+
         #region Constructor, Dispose
+
+
 
         public Form1()
         {
@@ -96,6 +160,33 @@ namespace DrawTools
             // Required for Windows Form Designer support
             //
             InitializeComponent();
+
+            #region CONSTRUTOR'S VARIABLES
+                _isRecording = false;
+                //this._screenSize = Screen.PrimaryScreen.Bounds;
+
+                _frameCount = 0;
+                _width = SystemInformation.VirtualScreen.Width;
+                _height = SystemInformation.VirtualScreen.Height;
+                _stopWatch = new Stopwatch();
+                _screenArea = Rectangle.Empty;
+
+                _writer = new VideoFileWriter();
+
+                _screenNames = new List<string>();
+                _screenNames.Add(@"Select ALL");
+                _screenNames.Add(@"Custom screen area");
+                foreach (var screen in Screen.AllScreens)
+                {
+                    _screenNames.Add(screen.DeviceName);
+                }
+                cb_screenSelector.DropDownStyle = ComboBoxStyle.DropDownList;
+                cb_screenSelector.DataSource = _screenNames;
+
+                // Codec ComboBox
+                cb_VideoCodec.DataSource = Enum.GetValues(typeof(VideoCodec));
+                cb_VideoCodec.DropDownStyle = ComboBoxStyle.DropDownList;
+            #endregion
 
             _config = Config.Instance(this);
         }
@@ -160,6 +251,7 @@ namespace DrawTools
             this.menuDrawEllipse = new System.Windows.Forms.MenuItem();
             this.menuDrawLine = new System.Windows.Forms.MenuItem();
             this.menuDrawPolygon = new System.Windows.Forms.MenuItem();
+            this.menuItem11 = new System.Windows.Forms.MenuItem();
             this.menuItem10 = new System.Windows.Forms.MenuItem();
             this.menuHelpAbout = new System.Windows.Forms.MenuItem();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
@@ -180,21 +272,20 @@ namespace DrawTools
             this.tbRecord = new System.Windows.Forms.ToolBarButton();
             this.tbOpen = new System.Windows.Forms.ToolBarButton();
             this.drawArea = new DrawTools.DrawArea();
-            this.menuItem11 = new System.Windows.Forms.MenuItem();
             this.SuspendLayout();
             // 
             // mainMenu1
             // 
             this.mainMenu1.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.menuItem1,
             this.menuItem3,
             this.menuItem9,
             this.menuItem2,
+            this.menuItem1,
             this.menuItem10});
             // 
             // menuItem1
             // 
-            this.menuItem1.Index = 0;
+            this.menuItem1.Index = 3;
             this.menuItem1.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.menuFileNew,
             this.menuFileOpen,
@@ -281,7 +372,7 @@ namespace DrawTools
             // 
             // menuItem3
             // 
-            this.menuItem3.Index = 1;
+            this.menuItem3.Index = 0;
             this.menuItem3.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.menuEditSelectAll,
             this.menuEditUnselectAll,
@@ -348,7 +439,7 @@ namespace DrawTools
             // 
             // menuItem9
             // 
-            this.menuItem9.Index = 2;
+            this.menuItem9.Index = 1;
             this.menuItem9.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.miScale});
             this.menuItem9.Text = "Ver";
@@ -361,7 +452,7 @@ namespace DrawTools
             // 
             // menuItem2
             // 
-            this.menuItem2.Index = 3;
+            this.menuItem2.Index = 2;
             this.menuItem2.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.menuDrawPointer,
             this.menuDrawRectangle,
@@ -400,6 +491,11 @@ namespace DrawTools
             this.menuDrawPolygon.Index = 4;
             this.menuDrawPolygon.Text = "Lápis";
             this.menuDrawPolygon.Click += new System.EventHandler(this.menuDrawPolygon_Click);
+            // 
+            // menuItem11
+            // 
+            this.menuItem11.Index = 5;
+            this.menuItem11.Text = "Triângulo ";
             // 
             // menuItem10
             // 
@@ -457,7 +553,7 @@ namespace DrawTools
             this.toolBar1.Location = new System.Drawing.Point(0, 0);
             this.toolBar1.Name = "toolBar1";
             this.toolBar1.ShowToolTips = true;
-            this.toolBar1.Size = new System.Drawing.Size(668, 34);
+            this.toolBar1.Size = new System.Drawing.Size(573, 34);
             this.toolBar1.TabIndex = 0;
             this.toolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right;
             this.toolBar1.Wrappable = false;
@@ -576,16 +672,11 @@ namespace DrawTools
             this.drawArea.TabIndex = 1;
             this.drawArea.Load += new System.EventHandler(this.drawArea_Load);
             // 
-            // menuItem11
-            // 
-            this.menuItem11.Index = 5;
-            this.menuItem11.Text = "Triângulo ";
-            // 
             // Form1
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(668, 459);
+            this.ClientSize = new System.Drawing.Size(573, 459);
             this.Controls.Add(this.drawArea);
             this.Controls.Add(this.toolBar1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -1264,7 +1355,7 @@ namespace DrawTools
         /// </summary>
         private void CommandRecord()
         {
-            MessageBox.Show("HERE SHALL BE RECORDING SYSTEM!");
+
         }
 
         /// <summary>
@@ -1377,6 +1468,203 @@ namespace DrawTools
         public void OpenDocument(string file)
         {
             docManager.OpenDocument(file);
+        }
+
+        #endregion
+
+            #region Metodos Para Gravacao
+
+
+        private void Comecar()
+        {
+            Start(false);
+        }
+        private void Salvar()
+        {
+            SetVisible(false);
+            MessageBox.Show(@"Vídeo Salvo com sucesso!");
+
+
+        }
+
+        private void Start(bool selectArea)
+        {
+            try
+            {
+
+                StartRec(selectArea);
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message);
+            }
+        }
+
+        private void StartRec(bool selectArea)
+        {
+            if (_isRecording == false)
+            {
+                SetScreenArea(selectArea);
+                SetVisible(true);
+                _frameCount = 0;
+
+                string fullName = string.Format(@"{0}\{1}_{2}.mp4", Environment.CurrentDirectory + "\\video", dados[0], DateTime.Now.ToString("yyyy.MM.dd_HH.mm.ss"));
+
+                DateTime agora = DateTime.Now;
+                // Save File option
+
+                try
+                {
+                    _writer.Open(
+                              fullName,
+                              _width,
+                              _height,
+                              10,
+                              (VideoCodec),
+                              (int)5000000);
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("PASTA NAO ENCONTRADA!");
+                    throw e;
+                }
+
+                // Start main work
+                StartRecord();
+            }
+        }
+
+        private void SetScreenArea(bool selectArea)
+        {
+            screenLeft = screenTop = 0;
+            useArea = false;
+
+            // get entire desktop area size
+            string screenName = cb_screenSelector.SelectedValue.ToString();
+            if (string.Compare(screenName, @"Select ALL", StringComparison.OrdinalIgnoreCase) == 0)
+            {
+                foreach (Screen screen in Screen.AllScreens)
+                {
+                    _screenArea = screen.Bounds;
+                    _width = _screenArea.Width;
+                    _height = _screenArea.Height;
+                }
+            } // o de cima foca a tela toda!
+            else if (string.Compare(screenName, @"Custom screen area", StringComparison.OrdinalIgnoreCase) == 0)
+            {
+                using (TopForm f = new TopForm())
+                {
+                    if (f.ShowDialog() == DialogResult.OK)
+                    {
+                        WindowState = FormWindowState.Minimized;
+                        _screenArea = f.AreaBounds;
+
+                        decimal prop = (decimal)4 / 3;
+                        decimal realProp = (decimal)f.w / f.h;
+                        bool makeLonger = realProp < prop;
+                        int w = Convert.ToInt32(makeLonger ? f.h * prop : f.w);
+                        int h = Convert.ToInt32(makeLonger ? f.h : f.w / prop);
+
+                        if ((w & 1) != 0)
+                            w = w + 1;
+                        if ((h & 1) != 0)
+                            h = h + 1;
+
+                        _width = w;
+                        _height = h;
+                        screenLeft = f.AreaBounds.Left;
+                        screenTop = f.AreaBounds.Top;
+                        useArea = true;
+                    }
+                }
+            }
+            else
+            {
+                _screenArea = Screen.AllScreens.Last(scr => scr.DeviceName.Equals(screenName)).Bounds;
+                _width = _screenArea.Width;
+                _height = _screenArea.Height;
+            }
+        }
+
+        private void StartRecord() //Object stateInfo
+        {
+            // create screen capture video source
+            _streamVideo = new ScreenCaptureStream(_screenArea);
+
+            // set NewFrame event handler
+            _streamVideo.NewFrame += Video_NewFrame;
+
+            // start the video source
+            _streamVideo.Start();
+
+            // _stopWatch
+            _stopWatch.Start();
+        }
+
+        private void Video_NewFrame(object sender, NewFrameEventArgs eventArgs)
+        {
+            if (_isRecording)
+            {
+                _frameCount++;
+
+                Bitmap frame = eventArgs.Frame;
+
+
+                Graphics graphics = Graphics.FromImage(frame);
+
+
+                CURSORINFO pci;
+                pci.cbSize = Marshal.SizeOf(typeof(CURSORINFO));
+
+                if (GetCursorInfo(out pci))
+                {
+                    if (pci.flags == CURSOR_SHOWING)
+                    {
+                        int x = pci.ptScreenPos.x - screenLeft;
+                        int y = pci.ptScreenPos.y - screenTop;
+
+                        Color c = Color.Yellow;
+                        float width = 2;
+                        int radius = 30;
+                        if ((MouseButtons & MouseButtons.Left) != 0 || (MouseButtons & MouseButtons.Right) != 0)
+                        {
+                            c = Color.OrangeRed;
+                            width = 4;
+                            radius = 35;
+                        }
+                        Pen p = new Pen(c, width);
+
+                        graphics.DrawEllipse(p, x - radius / 2, y - radius / 2, radius, radius);
+                        DrawIcon(graphics.GetHdc(), x, y, pci.hCursor);
+                        graphics.ReleaseHdc();
+                    }
+                }
+                if (useArea)
+                {
+                    var destRect = new Rectangle(Convert.ToInt32((_width - frame.Width) / 2), Convert.ToInt32((_height - frame.Height) / 2), frame.Width, frame.Height);
+                    var destImage = new Bitmap(_width, _height);
+                    destImage.SetResolution(frame.HorizontalResolution, frame.VerticalResolution);
+
+                    graphics = Graphics.FromImage(destImage);
+                    graphics.DrawImage(frame, destRect, 0, 0, frame.Width, frame.Height, GraphicsUnit.Pixel, null);
+                    frame = destImage;
+                }
+                _writer.WriteVideoFrame(frame);
+            }
+            else
+            {
+                _stopWatch.Reset();
+                Thread.Sleep(500);
+                _streamVideo.SignalToStop();
+                Thread.Sleep(500);
+                _writer.Close();
+            }
+        }
+
+
+        private void SetVisible(bool visible)
+        {
+            _isRecording = visible;
         }
 
         #endregion
@@ -1510,7 +1798,6 @@ namespace DrawTools
         {
             this.drawArea.Draw(e.Graphics);
         }
-
         private void miPreview_Click(object sender, System.EventArgs e)
         {
             PrintDocument printDocument1 = new PrintDocument();
