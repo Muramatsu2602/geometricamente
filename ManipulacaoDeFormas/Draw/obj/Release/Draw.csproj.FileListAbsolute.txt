@@ -1,0 +1,16 @@
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\ManipulacaoDeFormas\Draw\bin\Release\Draw.dll
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\ManipulacaoDeFormas\Draw\bin\Release\AForge.dll
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\ManipulacaoDeFormas\Draw\bin\Release\AForge.Video.dll
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\ManipulacaoDeFormas\Draw\bin\Release\AForge.Video.FFMPEG.dll
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\ManipulacaoDeFormas\Draw\bin\Release\SVGLib.dll
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\ManipulacaoDeFormas\Draw\bin\Release\SVGLib.xml
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\ManipulacaoDeFormas\Draw\bin\Release\AForge.xml
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\ManipulacaoDeFormas\Draw\bin\Release\AForge.Video.xml
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\ManipulacaoDeFormas\Draw\obj\Release\Draw.csprojAssemblyReference.cache
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\ManipulacaoDeFormas\Draw\obj\Release\Draw.PropertiesDialog.resources
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\ManipulacaoDeFormas\Draw\obj\Release\Draw.PropertiesImage.resources
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\ManipulacaoDeFormas\Draw\obj\Release\Draw.PropertiesText.resources
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\ManipulacaoDeFormas\Draw\obj\Release\Draw.csproj.GenerateResource.cache
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\ManipulacaoDeFormas\Draw\obj\Release\Draw.csproj.CoreCompileInputs.cache
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\ManipulacaoDeFormas\Draw\obj\Release\Draw.csproj.CopyComplete
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\ManipulacaoDeFormas\Draw\obj\Release\Draw.dll

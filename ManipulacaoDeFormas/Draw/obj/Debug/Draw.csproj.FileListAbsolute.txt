@@ -28,3 +28,4 @@ C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\ManipulacaoDeFormas\Draw
 C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\ManipulacaoDeFormas\Draw\bin\Debug\AForge.Video.dll
 C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\ManipulacaoDeFormas\Draw\bin\Debug\AForge.xml
 C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\ManipulacaoDeFormas\Draw\bin\Debug\AForge.Video.xml
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\ManipulacaoDeFormas\Draw\bin\Debug\AForge.Video.FFMPEG.dll

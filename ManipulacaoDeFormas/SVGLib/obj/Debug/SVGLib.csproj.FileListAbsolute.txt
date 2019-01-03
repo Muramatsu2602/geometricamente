@@ -15,3 +15,4 @@ C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\ManipulacaoDeFormas\SVGL
 C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\ManipulacaoDeFormas\SVGLib\bin\Debug\AForge.xml
 C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\ManipulacaoDeFormas\SVGLib\bin\Debug\AForge.Video.xml
 C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\ManipulacaoDeFormas\SVGLib\obj\Debug\SVGLib.csproj.CopyComplete
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\ManipulacaoDeFormas\SVGLib\bin\Debug\AForge.Video.FFMPEG.dll

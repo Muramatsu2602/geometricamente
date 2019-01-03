@@ -26,3 +26,5 @@ C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\ManipulacaoDeFormas\Draw
 C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\ManipulacaoDeFormas\DrawTools\obj\Debug\SvgPaint.csproj.CopyComplete
 C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\ManipulacaoDeFormas\DrawTools\obj\Debug\SvgPaint.exe
 C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\ManipulacaoDeFormas\DrawTools\obj\Debug\SvgPaint.pdb
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\ManipulacaoDeFormas\bin\Debug\SvgPaint.exe.config
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\ManipulacaoDeFormas\DrawTools\obj\Debug\DrawTools.TopForm.resources

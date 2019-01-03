@@ -1,0 +1,10 @@
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\ManipulacaoDeFormas\DocToolkit\bin\Release\DocToolkit.dll
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\ManipulacaoDeFormas\DocToolkit\bin\Release\AForge.dll
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\ManipulacaoDeFormas\DocToolkit\bin\Release\AForge.Video.dll
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\ManipulacaoDeFormas\DocToolkit\bin\Release\AForge.Video.FFMPEG.dll
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\ManipulacaoDeFormas\DocToolkit\bin\Release\AForge.xml
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\ManipulacaoDeFormas\DocToolkit\bin\Release\AForge.Video.xml
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\ManipulacaoDeFormas\DocToolkit\obj\Release\DocToolkit.csprojAssemblyReference.cache
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\ManipulacaoDeFormas\DocToolkit\obj\Release\DocToolkit.csproj.CoreCompileInputs.cache
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\ManipulacaoDeFormas\DocToolkit\obj\Release\DocToolkit.csproj.CopyComplete
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\ManipulacaoDeFormas\DocToolkit\obj\Release\DocToolkit.dll

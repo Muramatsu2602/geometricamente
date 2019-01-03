@@ -14,8 +14,8 @@ using Draw;
 using System.Runtime.InteropServices;
 using System.Collections.Generic;
 using System.Threading;
-using System.IO;
-using System.Resources;
+using System.Linq;
+
 
 /// 
 /// Drawing of graphics shapes (line, rectangle,
@@ -35,6 +35,7 @@ namespace DrawTools
     /// </summary>
     public class Form1 : System.Windows.Forms.Form
     {
+        #region Componentes do Formulario
         private System.Windows.Forms.MainMenu mainMenu1;
         private System.Windows.Forms.MenuItem menuItem1;
         private System.Windows.Forms.MenuItem menuFileNew;
@@ -90,9 +91,12 @@ namespace DrawTools
         private MenuItem menuItem11;
         private System.Windows.Forms.MenuItem miScale;
 
+        #endregion
+
+
         #region Atributos da Classe
         String[] dados = new string[100];
-
+      
         bool cross;
         private bool _isRecording;
         private List<string> _screenNames;
@@ -161,31 +165,28 @@ namespace DrawTools
             //
             InitializeComponent();
 
+            FormBorderStyle = FormBorderStyle.None;
+            WindowState = FormWindowState.Maximized;
+
             #region CONSTRUTOR'S VARIABLES
-                _isRecording = false;
-                //this._screenSize = Screen.PrimaryScreen.Bounds;
+            _isRecording = false;
+            //this._screenSize = Screen.PrimaryScreen.Bounds;
 
-                _frameCount = 0;
-                _width = SystemInformation.VirtualScreen.Width;
-                _height = SystemInformation.VirtualScreen.Height;
-                _stopWatch = new Stopwatch();
-                _screenArea = Rectangle.Empty;
+            _frameCount = 0;
+            _width = SystemInformation.VirtualScreen.Width;
+            _height = SystemInformation.VirtualScreen.Height;
+            _stopWatch = new Stopwatch();
+            _screenArea = Rectangle.Empty;
 
-                _writer = new VideoFileWriter();
+            _writer = new VideoFileWriter();
 
-                _screenNames = new List<string>();
-                _screenNames.Add(@"Select ALL");
-                _screenNames.Add(@"Custom screen area");
-                foreach (var screen in Screen.AllScreens)
-                {
-                    _screenNames.Add(screen.DeviceName);
-                }
-                cb_screenSelector.DropDownStyle = ComboBoxStyle.DropDownList;
-                cb_screenSelector.DataSource = _screenNames;
-
-                // Codec ComboBox
-                cb_VideoCodec.DataSource = Enum.GetValues(typeof(VideoCodec));
-                cb_VideoCodec.DropDownStyle = ComboBoxStyle.DropDownList;
+            _screenNames = new List<string>();
+            _screenNames.Add(@"Select ALL");
+            _screenNames.Add(@"Custom screen area");
+            foreach (var screen in Screen.AllScreens)
+            {
+                _screenNames.Add(screen.DeviceName);
+            }
             #endregion
 
             _config = Config.Instance(this);
@@ -678,8 +679,8 @@ namespace DrawTools
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(573, 459);
             this.Controls.Add(this.drawArea);
-            this.Controls.Add(this.toolBar1);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Controls.Add(toolBar1);
+            Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Menu = this.mainMenu1;
             this.Name = "Form1";
             this.Text = "SvgPaint";
@@ -1472,7 +1473,7 @@ namespace DrawTools
 
         #endregion
 
-            #region Metodos Para Gravacao
+        #region Metodos Para Gravacao
 
 
         private void Comecar()
@@ -1520,7 +1521,7 @@ namespace DrawTools
                               _width,
                               _height,
                               10,
-                              (VideoCodec),
+                              VideoCodec.MPEG4,
                               (int)5000000);
                 }
                 catch (Exception e)
@@ -1540,7 +1541,7 @@ namespace DrawTools
             useArea = false;
 
             // get entire desktop area size
-            string screenName = cb_screenSelector.SelectedValue.ToString();
+            string screenName = "Select ALL";
             if (string.Compare(screenName, @"Select ALL", StringComparison.OrdinalIgnoreCase) == 0)
             {
                 foreach (Screen screen in Screen.AllScreens)
@@ -1575,8 +1576,8 @@ namespace DrawTools
                         screenLeft = f.AreaBounds.Left;
                         screenTop = f.AreaBounds.Top;
                         useArea = true;
-                    }
-                }
+                                  }
+  }
             }
             else
             {

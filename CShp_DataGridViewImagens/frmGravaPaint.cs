@@ -171,7 +171,7 @@ namespace Geometricamente_V1
                               _height,
                               10,
                               (VideoCodec)cb_VideoCodec.SelectedValue,
-                              (int)(BitRate)5000000);
+                              (int)5000000);
                 }
                 catch (Exception e)
                 {
@@ -229,7 +229,7 @@ namespace Geometricamente_V1
             }
             else
             {
-                _screenArea = Screen.AllScreens.Last(scr => scr.DeviceName.Equals(screenName)).Bounds;
+                _screenArea = Screen.AllScreens.All(scr => scr.DeviceName.Equals(screenName)).Bounds;
                 _width = _screenArea.Width;
                 _height = _screenArea.Height;
             }
