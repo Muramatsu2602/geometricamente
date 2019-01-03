@@ -8,13 +8,14 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.Drawing.Printing;
 using AForge.Video;
-using AForge.Video.FFMPEG;
+//using AForge.Video.FFMPEG;
 using SVGLib;
 using Draw;
 using System.Runtime.InteropServices;
 using System.Collections.Generic;
 using System.Threading;
 using System.Linq;
+using Accord.Video.FFMPEG;
 
 
 /// 
@@ -165,8 +166,8 @@ namespace DrawTools
             //
             InitializeComponent();
 
-            FormBorderStyle = FormBorderStyle.None;
-            WindowState = FormWindowState.Maximized;
+            //FormBorderStyle = FormBorderStyle.None;
+            //WindowState = FormWindowState.Maximized;
 
             #region CONSTRUTOR'S VARIABLES
             _isRecording = false;
@@ -221,19 +222,6 @@ namespace DrawTools
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.mainMenu1 = new System.Windows.Forms.MainMenu(this.components);
-            this.menuItem1 = new System.Windows.Forms.MenuItem();
-            this.menuFileNew = new System.Windows.Forms.MenuItem();
-            this.menuFileOpen = new System.Windows.Forms.MenuItem();
-            this.menuFileSave = new System.Windows.Forms.MenuItem();
-            this.menuFileSaveAs = new System.Windows.Forms.MenuItem();
-            this.miExport = new System.Windows.Forms.MenuItem();
-            this.miPrint = new System.Windows.Forms.MenuItem();
-            this.miPreview = new System.Windows.Forms.MenuItem();
-            this.menuItem7 = new System.Windows.Forms.MenuItem();
-            this.menuItem6 = new System.Windows.Forms.MenuItem();
-            this.menuFileRecentFiles = new System.Windows.Forms.MenuItem();
-            this.menuItem8 = new System.Windows.Forms.MenuItem();
-            this.menuFileExit = new System.Windows.Forms.MenuItem();
             this.menuItem3 = new System.Windows.Forms.MenuItem();
             this.menuEditSelectAll = new System.Windows.Forms.MenuItem();
             this.menuEditUnselectAll = new System.Windows.Forms.MenuItem();
@@ -253,6 +241,19 @@ namespace DrawTools
             this.menuDrawLine = new System.Windows.Forms.MenuItem();
             this.menuDrawPolygon = new System.Windows.Forms.MenuItem();
             this.menuItem11 = new System.Windows.Forms.MenuItem();
+            this.menuItem1 = new System.Windows.Forms.MenuItem();
+            this.menuFileNew = new System.Windows.Forms.MenuItem();
+            this.menuFileOpen = new System.Windows.Forms.MenuItem();
+            this.menuFileSave = new System.Windows.Forms.MenuItem();
+            this.menuFileSaveAs = new System.Windows.Forms.MenuItem();
+            this.miExport = new System.Windows.Forms.MenuItem();
+            this.miPrint = new System.Windows.Forms.MenuItem();
+            this.miPreview = new System.Windows.Forms.MenuItem();
+            this.menuItem7 = new System.Windows.Forms.MenuItem();
+            this.menuItem6 = new System.Windows.Forms.MenuItem();
+            this.menuFileRecentFiles = new System.Windows.Forms.MenuItem();
+            this.menuItem8 = new System.Windows.Forms.MenuItem();
+            this.menuFileExit = new System.Windows.Forms.MenuItem();
             this.menuItem10 = new System.Windows.Forms.MenuItem();
             this.menuHelpAbout = new System.Windows.Forms.MenuItem();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
@@ -283,93 +284,6 @@ namespace DrawTools
             this.menuItem2,
             this.menuItem1,
             this.menuItem10});
-            // 
-            // menuItem1
-            // 
-            this.menuItem1.Index = 3;
-            this.menuItem1.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.menuFileNew,
-            this.menuFileOpen,
-            this.menuFileSave,
-            this.menuFileSaveAs,
-            this.miExport,
-            this.miPrint,
-            this.miPreview,
-            this.menuItem7,
-            this.menuItem6,
-            this.menuFileRecentFiles,
-            this.menuItem8,
-            this.menuFileExit});
-            this.menuItem1.Text = "Arquivo";
-            // 
-            // menuFileNew
-            // 
-            this.menuFileNew.Index = 0;
-            this.menuFileNew.Text = "Novo Documento";
-            this.menuFileNew.Click += new System.EventHandler(this.menuFileNew_Click);
-            // 
-            // menuFileOpen
-            // 
-            this.menuFileOpen.Index = 1;
-            this.menuFileOpen.Text = "Abrir Documento";
-            this.menuFileOpen.Click += new System.EventHandler(this.menuFileOpen_Click);
-            // 
-            // menuFileSave
-            // 
-            this.menuFileSave.Index = 2;
-            this.menuFileSave.Text = "Salvar Documento";
-            this.menuFileSave.Click += new System.EventHandler(this.menuFileSave_Click);
-            // 
-            // menuFileSaveAs
-            // 
-            this.menuFileSaveAs.Index = 3;
-            this.menuFileSaveAs.Text = "Salvar como...";
-            this.menuFileSaveAs.Click += new System.EventHandler(this.menuFileSaveAs_Click);
-            // 
-            // miExport
-            // 
-            this.miExport.Index = 4;
-            this.miExport.Text = "Exportar para  jpg/png...";
-            this.miExport.Click += new System.EventHandler(this.miExport_Click);
-            // 
-            // miPrint
-            // 
-            this.miPrint.Index = 5;
-            this.miPrint.Text = "Imprimir...";
-            this.miPrint.Click += new System.EventHandler(this.miPrint_Click);
-            // 
-            // miPreview
-            // 
-            this.miPreview.Index = 6;
-            this.miPreview.Text = "Imprimir/Visualizar...";
-            this.miPreview.Click += new System.EventHandler(this.miPreview_Click);
-            // 
-            // menuItem7
-            // 
-            this.menuItem7.Index = 7;
-            this.menuItem7.Text = "Propriedades";
-            this.menuItem7.Click += new System.EventHandler(this.menuItem7_Click);
-            // 
-            // menuItem6
-            // 
-            this.menuItem6.Index = 8;
-            this.menuItem6.Text = "-";
-            // 
-            // menuFileRecentFiles
-            // 
-            this.menuFileRecentFiles.Index = 9;
-            this.menuFileRecentFiles.Text = "Últimos documentos abertos";
-            // 
-            // menuItem8
-            // 
-            this.menuItem8.Index = 10;
-            this.menuItem8.Text = "-";
-            // 
-            // menuFileExit
-            // 
-            this.menuFileExit.Index = 11;
-            this.menuFileExit.Text = "Sair";
-            this.menuFileExit.Click += new System.EventHandler(this.menuFileExit_Click);
             // 
             // menuItem3
             // 
@@ -497,6 +411,93 @@ namespace DrawTools
             // 
             this.menuItem11.Index = 5;
             this.menuItem11.Text = "Triângulo ";
+            // 
+            // menuItem1
+            // 
+            this.menuItem1.Index = 3;
+            this.menuItem1.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.menuFileNew,
+            this.menuFileOpen,
+            this.menuFileSave,
+            this.menuFileSaveAs,
+            this.miExport,
+            this.miPrint,
+            this.miPreview,
+            this.menuItem7,
+            this.menuItem6,
+            this.menuFileRecentFiles,
+            this.menuItem8,
+            this.menuFileExit});
+            this.menuItem1.Text = "Arquivo";
+            // 
+            // menuFileNew
+            // 
+            this.menuFileNew.Index = 0;
+            this.menuFileNew.Text = "Novo Documento";
+            this.menuFileNew.Click += new System.EventHandler(this.menuFileNew_Click);
+            // 
+            // menuFileOpen
+            // 
+            this.menuFileOpen.Index = 1;
+            this.menuFileOpen.Text = "Abrir Documento";
+            this.menuFileOpen.Click += new System.EventHandler(this.menuFileOpen_Click);
+            // 
+            // menuFileSave
+            // 
+            this.menuFileSave.Index = 2;
+            this.menuFileSave.Text = "Salvar Documento";
+            this.menuFileSave.Click += new System.EventHandler(this.menuFileSave_Click);
+            // 
+            // menuFileSaveAs
+            // 
+            this.menuFileSaveAs.Index = 3;
+            this.menuFileSaveAs.Text = "Salvar como...";
+            this.menuFileSaveAs.Click += new System.EventHandler(this.menuFileSaveAs_Click);
+            // 
+            // miExport
+            // 
+            this.miExport.Index = 4;
+            this.miExport.Text = "Exportar para  jpg/png...";
+            this.miExport.Click += new System.EventHandler(this.miExport_Click);
+            // 
+            // miPrint
+            // 
+            this.miPrint.Index = 5;
+            this.miPrint.Text = "Imprimir...";
+            this.miPrint.Click += new System.EventHandler(this.miPrint_Click);
+            // 
+            // miPreview
+            // 
+            this.miPreview.Index = 6;
+            this.miPreview.Text = "Imprimir/Visualizar...";
+            this.miPreview.Click += new System.EventHandler(this.miPreview_Click);
+            // 
+            // menuItem7
+            // 
+            this.menuItem7.Index = 7;
+            this.menuItem7.Text = "Propriedades";
+            this.menuItem7.Click += new System.EventHandler(this.menuItem7_Click);
+            // 
+            // menuItem6
+            // 
+            this.menuItem6.Index = 8;
+            this.menuItem6.Text = "-";
+            // 
+            // menuFileRecentFiles
+            // 
+            this.menuFileRecentFiles.Index = 9;
+            this.menuFileRecentFiles.Text = "Últimos documentos abertos";
+            // 
+            // menuItem8
+            // 
+            this.menuItem8.Index = 10;
+            this.menuItem8.Text = "-";
+            // 
+            // menuFileExit
+            // 
+            this.menuFileExit.Index = 11;
+            this.menuFileExit.Text = "Sair";
+            this.menuFileExit.Click += new System.EventHandler(this.menuFileExit_Click);
             // 
             // menuItem10
             // 
@@ -646,7 +647,7 @@ namespace DrawTools
             // 
             this.tbRecord.ImageIndex = 12;
             this.tbRecord.Name = "tbRecord";
-            this.tbRecord.Text = "&Gravar";
+            this.tbRecord.Text = "Gravar";
             // 
             // tbOpen
             // 
@@ -679,8 +680,8 @@ namespace DrawTools
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(573, 459);
             this.Controls.Add(this.drawArea);
-            this.Controls.Add(toolBar1);
-            Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Controls.Add(this.toolBar1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Menu = this.mainMenu1;
             this.Name = "Form1";
             this.Text = "SvgPaint";
@@ -1356,7 +1357,17 @@ namespace DrawTools
         /// </summary>
         private void CommandRecord()
         {
-
+            if (tbRecord.Text == "Gravar")
+            {
+                Comecar();
+                tbRecord.Text = "Salvar";
+            }
+            else if (tbRecord.Text == "Salvar")
+            {
+                Salvar();
+                tbRecord.Text = "Gravar";
+            }
+          
         }
 
         /// <summary>
@@ -1693,6 +1704,7 @@ namespace DrawTools
 
         private void miScale_Click(object sender, System.EventArgs e)
         {
+            
             DlgScale dlg = new DlgScale();
             dlg.Sc = this.drawArea.ScaleDraw.Width;
             if (dlg.ShowDialog(this) == DialogResult.OK)
