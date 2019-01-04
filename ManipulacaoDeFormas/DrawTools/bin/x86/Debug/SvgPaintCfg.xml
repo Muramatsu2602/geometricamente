@@ -1,7 +1,7 @@
 <config>
   <MainForm>
-    <Left>664</Left>
-    <Top>104</Top>
+    <Left>704</Left>
+    <Top>52</Top>
     <Width>573</Width>
     <Height>479</Height>
     <WindowState>2</WindowState>
@@ -11,6 +11,6 @@
   </FileDir>
   <MRU>
   </MRU>
-  <Color>-16777216</Color>
+  <Color>-16711872</Color>
   <Width>1</Width>
 </config>

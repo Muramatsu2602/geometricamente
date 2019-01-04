@@ -40,3 +40,5 @@ C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\ManipulacaoDeFormas\Draw
 C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\ManipulacaoDeFormas\DrawTools\bin\x86\Debug\Accord.xml
 C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\ManipulacaoDeFormas\DrawTools\bin\x86\Debug\Accord.Video.xml
 C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\ManipulacaoDeFormas\DrawTools\bin\x86\Debug\Accord.Video.FFMPEG.xml
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\ManipulacaoDeFormas\DrawTools\bin\x86\Debug\SvgPaint.exe.CodeAnalysisLog.xml
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\ManipulacaoDeFormas\DrawTools\bin\x86\Debug\SvgPaint.exe.lastcodeanalysissucceeded

@@ -6,7 +6,7 @@ using SVGLib;
 using Draw;
 
 namespace DrawTools
-{
+{     
 	/// <summary>
 	/// Polygon tool
 	/// </summary>

@@ -16,3 +16,5 @@ C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\ManipulacaoDeFormas\DocT
 C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\ManipulacaoDeFormas\DocToolkit\obj\Debug\DocToolkit.dll
 C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\ManipulacaoDeFormas\DocToolkit\obj\Debug\DocToolkit.pdb
 C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\ManipulacaoDeFormas\DocToolkit\bin\Debug\AForge.Video.FFMPEG.dll
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\ManipulacaoDeFormas\DocToolkit\bin\Debug\DocToolkit.dll.CodeAnalysisLog.xml
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\ManipulacaoDeFormas\DocToolkit\bin\Debug\DocToolkit.dll.lastcodeanalysissucceeded

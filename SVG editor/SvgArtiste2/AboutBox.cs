@@ -100,5 +100,10 @@ namespace SVGEditor2
             }
         }
         #endregion
+
+        private void labelCompanyName_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -230,6 +230,7 @@
     <Compile Include="ToolText.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Content Include="Triangle.bmp" />
     <EmbeddedResource Include="Bitmap.cur" />
     <EmbeddedResource Include="dlgProperties.resx">
       <DependentUpon>dlgProperties.cs</DependentUpon>

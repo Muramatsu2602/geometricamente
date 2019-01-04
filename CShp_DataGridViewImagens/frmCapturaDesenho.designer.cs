@@ -384,9 +384,9 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.picDesenha);
             this.panel1.Controls.Add(this.panel7);
-            this.panel1.Location = new System.Drawing.Point(3, 0);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(233, 618);
+            this.panel1.Size = new System.Drawing.Size(236, 618);
             this.panel1.TabIndex = 17;
             // 
             // panel2
@@ -482,7 +482,7 @@
             this.picDesenha.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.picDesenha.BackColor = System.Drawing.Color.White;
             this.picDesenha.Image = ((System.Drawing.Image)(resources.GetObject("picDesenha.Image")));
-            this.picDesenha.Location = new System.Drawing.Point(70, 474);
+            this.picDesenha.Location = new System.Drawing.Point(75, 474);
             this.picDesenha.Margin = new System.Windows.Forms.Padding(2);
             this.picDesenha.Name = "picDesenha";
             this.picDesenha.Size = new System.Drawing.Size(90, 98);

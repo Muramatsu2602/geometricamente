@@ -7,7 +7,7 @@ using DocToolkit;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Drawing.Printing;
-using AForge.Video;
+//using AForge.Video;
 //using AForge.Video.FFMPEG;
 using SVGLib;
 using Draw;
@@ -16,6 +16,7 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Linq;
 using Accord.Video.FFMPEG;
+using Accord.Video;
 
 
 /// 
@@ -97,7 +98,7 @@ namespace DrawTools
 
         #region Atributos da Classe
         String[] dados = new string[100];
-      
+
         bool cross;
         private bool _isRecording;
         private List<string> _screenNames;
@@ -112,6 +113,7 @@ namespace DrawTools
         private Rectangle _screenArea;
         int screenLeft, screenTop;
         bool useArea;
+        private ToolBarButton tbTriangle;
         bool isMouseDown;
 
         [StructLayout(LayoutKind.Sequential)]
@@ -273,6 +275,7 @@ namespace DrawTools
             this.tbAbout = new System.Windows.Forms.ToolBarButton();
             this.tbRecord = new System.Windows.Forms.ToolBarButton();
             this.tbOpen = new System.Windows.Forms.ToolBarButton();
+            this.tbTriangle = new System.Windows.Forms.ToolBarButton();
             this.drawArea = new DrawTools.DrawArea();
             this.SuspendLayout();
             // 
@@ -362,7 +365,7 @@ namespace DrawTools
             // miScale
             // 
             this.miScale.Index = 0;
-            this.miScale.Text = "Escala...";
+            this.miScale.Text = "Escala";
             this.miScale.Click += new System.EventHandler(this.miScale_Click);
             // 
             // menuItem2
@@ -529,6 +532,7 @@ namespace DrawTools
             this.imageList1.Images.SetKeyName(10, "");
             this.imageList1.Images.SetKeyName(11, "");
             this.imageList1.Images.SetKeyName(12, "vicons_camera_bitmap_pixelated.png");
+            this.imageList1.Images.SetKeyName(13, "Triangle.bmp");
             // 
             // toolBar1
             // 
@@ -540,6 +544,7 @@ namespace DrawTools
             this.tbPointer,
             this.tbLine,
             this.tbRectangle,
+            this.tbTriangle,
             this.tbPolygon,
             this.tbEllipse,
             this.tbBitMap,
@@ -555,7 +560,7 @@ namespace DrawTools
             this.toolBar1.Location = new System.Drawing.Point(0, 0);
             this.toolBar1.Name = "toolBar1";
             this.toolBar1.ShowToolTips = true;
-            this.toolBar1.Size = new System.Drawing.Size(573, 34);
+            this.toolBar1.Size = new System.Drawing.Size(644, 34);
             this.toolBar1.TabIndex = 0;
             this.toolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right;
             this.toolBar1.Wrappable = false;
@@ -655,6 +660,12 @@ namespace DrawTools
             this.tbOpen.Name = "tbOpen";
             this.tbOpen.ToolTipText = "gravar tela";
             // 
+            // tbTriangle
+            // 
+            this.tbTriangle.ImageIndex = 13;
+            this.tbTriangle.Name = "tbTriangle";
+            this.tbTriangle.Text = "TRI";
+            // 
             // drawArea
             // 
             this.drawArea.ActiveTool = DrawTools.DrawArea.DrawToolType.Pointer;
@@ -662,14 +673,14 @@ namespace DrawTools
             this.drawArea.DocManager = null;
             this.drawArea.DrawNetRectangle = false;
             this.drawArea.GraphicsList = null;
-            this.drawArea.Location = new System.Drawing.Point(0, 36);
+            this.drawArea.Location = new System.Drawing.Point(0, 40);
             this.drawArea.Name = "drawArea";
             this.drawArea.NetRectangle = ((System.Drawing.RectangleF)(resources.GetObject("drawArea.NetRectangle")));
             this.drawArea.OldScale = new System.Drawing.SizeF(1F, 1F);
             this.drawArea.OriginalSize = new System.Drawing.SizeF(500F, 400F);
             this.drawArea.Owner = null;
             this.drawArea.ScaleDraw = new System.Drawing.SizeF(1F, 1F);
-            this.drawArea.Size = new System.Drawing.Size(150, 150);
+            this.drawArea.Size = new System.Drawing.Size(170, 165);
             this.drawArea.SizePicture = new System.Drawing.SizeF(500F, 400F);
             this.drawArea.TabIndex = 1;
             this.drawArea.Load += new System.EventHandler(this.drawArea_Load);
@@ -678,13 +689,13 @@ namespace DrawTools
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(573, 459);
+            this.ClientSize = new System.Drawing.Size(644, 467);
             this.Controls.Add(this.drawArea);
             this.Controls.Add(this.toolBar1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Menu = this.mainMenu1;
             this.Name = "Form1";
-            this.Text = "SvgPaint";
+            this.Text = "SvgPaint - Alexandr Shoknin 2005";
             this.Closing += new System.ComponentModel.CancelEventHandler(this.Form1_Closing);
             this.Closed += new System.EventHandler(this.Form1_Closed);
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -872,7 +883,11 @@ namespace DrawTools
             else if (e.Button == tbRecord)
             {
                 CommandRecord();
+            }else if (e.Button == tbTriangle)
+            {
+                CommandTriangle();
             }
+                
         }
 
 
@@ -1179,6 +1194,14 @@ namespace DrawTools
         }
 
         /// <summary>
+        /// Set Triangle draw tool
+        /// </summary>
+        private void CommandTriangle()
+        {
+            drawArea.ActiveTool = DrawArea.DrawToolType.Triangle;
+        }
+
+        /// <summary>
         /// Set Ellipse draw tool
         /// </summary>
         private void CommandEllipse()
@@ -1334,7 +1357,7 @@ namespace DrawTools
             menuDrawEllipse.Checked = (drawArea.ActiveTool == DrawArea.DrawToolType.Ellipse);
             menuDrawLine.Checked = (drawArea.ActiveTool == DrawArea.DrawToolType.Line);
             menuDrawPolygon.Checked = (drawArea.ActiveTool == DrawArea.DrawToolType.Polygon);
-
+            //menuDrawnTriangle.Checked = (drawArea.ActiveTool == DrawArea.DrawToolType.Triangle);
             bool objects = (drawArea.GraphicsList.Count > 0);
             bool selectedObjects = (drawArea.GraphicsList.SelectionCount > 0);
 
@@ -1357,17 +1380,31 @@ namespace DrawTools
         /// </summary>
         private void CommandRecord()
         {
+
             if (tbRecord.Text == "Gravar")
             {
-                Comecar();
-                tbRecord.Text = "Salvar";
+                DialogResult dr = new DialogResult();
+                dr = MessageBox.Show("Deseja Gravar a tela?", "GEOMETRICAMENTE", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dr == DialogResult.Yes)
+                {
+                    try
+                    {
+                        Comecar();
+                        tbRecord.Text = "Salvar";
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Não foi possível gravar a tela!  Mais detalhes \n" + ex.Message);
+                    }
+                }
             }
             else if (tbRecord.Text == "Salvar")
             {
                 Salvar();
                 tbRecord.Text = "Gravar";
             }
-          
+
         }
 
         /// <summary>
@@ -1587,8 +1624,8 @@ namespace DrawTools
                         screenLeft = f.AreaBounds.Left;
                         screenTop = f.AreaBounds.Top;
                         useArea = true;
-                                  }
-  }
+                    }
+                }
             }
             else
             {
@@ -1704,7 +1741,7 @@ namespace DrawTools
 
         private void miScale_Click(object sender, System.EventArgs e)
         {
-            
+
             DlgScale dlg = new DlgScale();
             dlg.Sc = this.drawArea.ScaleDraw.Width;
             if (dlg.ShowDialog(this) == DialogResult.OK)
@@ -1729,6 +1766,8 @@ namespace DrawTools
         {
             ExportToPng();
         }
+
+        #region Outras Funcionalidades (Salvar, Exportar, etc...)
 
         void ExportToPng()
         {
@@ -1819,5 +1858,7 @@ namespace DrawTools
             dlg.Document = printDocument1;
             dlg.ShowDialog();
         }
+
+        #endregion
     }
 }

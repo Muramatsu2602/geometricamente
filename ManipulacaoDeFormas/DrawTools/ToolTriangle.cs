@@ -15,12 +15,12 @@ namespace DrawTools
 		public ToolTriangle()
 		{
 			Type t = GetType();
-            Cursor = new Cursor(t, "Triangle.cur");
+            //Cursor = new Cursor(t, "Triangle.cur");
 		}
 
         public override void OnMouseDown(DrawArea drawArea, MouseEventArgs e)
         {
-            AddNewObject(drawArea, new DrawRectangle(e.X, e.Y, 1, 1));
+            AddNewObject(drawArea, new DrawTriangle(e.X, e.Y, 1, 1));
         }
 
         public override void OnMouseMove(DrawArea drawArea, MouseEventArgs e)
