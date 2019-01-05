@@ -65,6 +65,9 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Tools\Forms\ShapeProperties.pt-BR.resx">
+      <DependentUpon>ShapeProperties.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="WorkArea.resx">
       <DependentUpon>WorkArea.cs</DependentUpon>
     </EmbeddedResource>
@@ -94,6 +97,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Tools\ToolTriangle.cs" />
     <Compile Include="WorkArea.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -231,6 +235,10 @@
     <EmbeddedResource Include="Tools\Forms\ShapeProperties.resx">
       <DependentUpon>ShapeProperties.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\001-video-camera.png" />
+    <Content Include="Resources\save.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

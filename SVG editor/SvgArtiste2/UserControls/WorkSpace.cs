@@ -277,7 +277,7 @@ namespace SVGEditor2.UserControls
                     break;
 
                 case "Rectangle":
-                    drawArea.ActiveTool = DrawTools.DrawArea.DrawToolType.Rectangle;
+                    drawArea.ActiveTool = DrawTools.DrawArea.DrawToolType.Retangulo;
                     break;
 
                 case "Ellipse":

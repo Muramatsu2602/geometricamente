@@ -39,7 +39,7 @@ namespace SVGEditor2.Tools.ToolBoxes
                     break;
                 case "radioButton_rectangle":
                     ToolSelection = "Rectangle";
-                        break;
+                    break;
                 case "radioButton_line":
                     ToolSelection = "Line";
                     break;
@@ -62,9 +62,8 @@ namespace SVGEditor2.Tools.ToolBoxes
                     ToolSelection = "Image";
                     break;
             }
-
             if (ToolSelectionChanged != null)
-                ToolSelectionChanged(ToolSelection, null);   
+                ToolSelectionChanged(ToolSelection, null);
         }
 
         public void SetToolSelection(DrawTools.DrawArea.DrawToolType tool)
@@ -77,7 +76,7 @@ namespace SVGEditor2.Tools.ToolBoxes
                 case DrawTools.DrawArea.DrawToolType.Ellipse:
                     radioButton_ellipse.Checked = true;
                     break;
-                case DrawTools.DrawArea.DrawToolType.Rectangle:
+                case DrawTools.DrawArea.DrawToolType.Retangulo:
                     radioButton_rectangle.Checked = true;
                     break;
                 case DrawTools.DrawArea.DrawToolType.Line:
@@ -93,6 +92,12 @@ namespace SVGEditor2.Tools.ToolBoxes
                     radioButton_Pointer.Checked = true;
                     break;
             }
+        }
+
+   
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -36,6 +36,7 @@ namespace Draw
         private const string Tag = "rect";
 
         private RectangleF rectangle;
+        
 
         #endregion Fields
 
@@ -88,7 +89,7 @@ namespace Draw
             }
         }
 
-        protected float Height
+        protected float Altura
         {
             get
             {
@@ -112,7 +113,7 @@ namespace Draw
             }
         }
 
-        protected float Width
+        protected float Largura
         {
             get
             {
@@ -137,7 +138,7 @@ namespace Draw
                     ParseSize(svg.Width,Dpi.X),
                     ParseSize(svg.Height,Dpi.Y));
                 dobj.SetStyleFromSvg(svg);
-                dobj.Name = svg.ShapeName;
+                dobj.Nome = svg.ShapeName;
 
                 return dobj;
             }
@@ -214,12 +215,12 @@ namespace Draw
             try
             {
                 RectangleF r = GetNormalizedRectangle(RectangleF);
-                if (Fill != Color.Empty)
+                if (CorForma != Color.Empty)
                 {
-                    Brush brush = new SolidBrush(Fill);
+                    Brush brush = new SolidBrush(CorForma);
                     g.FillRectangle(brush,r);
                 }
-                Pen pen = new Pen(Stroke, StrokeWidth);
+                Pen pen = new Pen(CorLinha, StrokeWidth);
                 g.DrawRectangle(pen,r.X,r.Y,r.Width,r.Height);
 
                 pen.Dispose();
@@ -330,7 +331,7 @@ namespace Draw
             string s = "<";
             s += Tag;
             s += GetStrStyle(scale);
-            s += GetRectStringXml(RectangleF,scale, Name);
+            s += GetRectStringXml(RectangleF,scale, Nome);
             s += " />" + "\r\n";
             return s;
         }
@@ -345,7 +346,7 @@ namespace Draw
         /// <returns></returns>
         public override int HitTest(PointF point)
         {
-            if ( Selected )
+            if ( Selecionado )
             {
                 for ( int i = 1; i <= HandleCount; i++ )
                 {

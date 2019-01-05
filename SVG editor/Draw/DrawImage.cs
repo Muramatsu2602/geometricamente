@@ -194,8 +194,8 @@ namespace Draw
                 if (_reload)
                 {
                     _image = ImageFromBytes(ReadPngMemImage(_fileName));
-                    Width = _image.Width;
-                    Height = _image.Height;
+                    Largura = _image.Width;
+                    Altura = _image.Height;
                     _reload = false;
                 }
                 if (_image != null)
@@ -265,7 +265,7 @@ namespace Draw
 
         void InitBox()
         {
-            Stroke = Color.Red;
+            CorLinha = Color.Red;
             StrokeWidth = 1;
         }
 

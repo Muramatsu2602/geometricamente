@@ -78,7 +78,7 @@ using System.Drawing;
         {
             drawArea.GraphicsList.UnselectAll();
 
-            o.Selected = true;
+            o.Selecionado = true;
             drawArea.GraphicsList.Add(o);
 
             drawArea.Capture = true;

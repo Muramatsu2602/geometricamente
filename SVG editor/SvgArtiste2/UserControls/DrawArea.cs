@@ -88,7 +88,7 @@ namespace DrawTools
         public enum DrawToolType
         {
             Pointer,
-            Rectangle,
+            Retangulo,
             Ellipse,
             Line,
             Polygon,
@@ -309,7 +309,7 @@ namespace DrawTools
             // create array of drawing tools
             _tools = new Tool[(int)DrawToolType.NumberOfDrawTools];
             _tools[(int)DrawToolType.Pointer] = new ToolPointer();
-            _tools[(int)DrawToolType.Rectangle] = new ToolRectangle();
+            _tools[(int)DrawToolType.Retangulo] = new ToolRectangle();
             _tools[(int)DrawToolType.Ellipse] = new ToolEllipse();
             _tools[(int)DrawToolType.Line] = new ToolLine();
             _tools[(int)DrawToolType.Polygon] = new ToolPolygon();
@@ -442,10 +442,10 @@ namespace DrawTools
             else if (e.Button == MouseButtons.Right)
                 OnContextMenu(e);
 
-            if (_graphicsList.IsAnythingSelected() && (!_tools[(int)_activeTool].IsComplete))
+            if (_graphicsList.IsAnythingSelecionado() && (!_tools[(int)_activeTool].IsComplete))
             {
                 if (ItemsSelected != null)
-                    ItemsSelected(_graphicsList.GetAllSelected(), e);
+                    ItemsSelected(_graphicsList.GetAllSelecionado(), e);
             }
         }
 
@@ -508,10 +508,10 @@ namespace DrawTools
                 }
             }
 
-            if (_graphicsList.GetAllSelected().Count > 0)
+            if (_graphicsList.GetAllSelecionado().Count > 0)
             {
                 if (ItemsSelected != null)
-                    ItemsSelected(_graphicsList.GetAllSelected(), e);
+                    ItemsSelected(_graphicsList.GetAllSelecionado(), e);
             }
         }
 
@@ -730,11 +730,11 @@ namespace DrawTools
 
             if ( o != null )
             {
-                if ( ! o.Selected )
+                if ( ! o.Selecionado )
                     GraphicsList.UnselectAll();
 
                 // Select clicked object
-                o.Selected = true;
+                o.Selecionado = true;
                 _bringToFrontToolStripMenuItem.Enabled = true;
                 _sendToBackToolStripMenuItem.Enabled = true;
                 _cutToolStripMenuItem.Enabled = true;

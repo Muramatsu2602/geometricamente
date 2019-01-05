@@ -65,6 +65,7 @@ namespace DrawTools
             _newPolygon = new DrawPolygon(e.X, e.Y, e.X + 1, e.Y + 1);
             AddNewObject(drawArea, _newPolygon);
             _lastX = e.X;
+         
             _lastY = e.Y;
         }
 
@@ -77,8 +78,10 @@ namespace DrawTools
         {
             drawArea.Cursor = Cursor;
 
-            if ( e.Button != MouseButtons.Left )
+            if ( e.Button != MouseButtons.Left ){
+                MessageBox.Show("a");
                 return;
+            }
 
             if ( _newPolygon == null )
                 return;                 // precaution

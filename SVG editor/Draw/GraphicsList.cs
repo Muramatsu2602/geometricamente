@@ -73,7 +73,7 @@ namespace Draw
         public String Description { get; set; }
 
         /// <summary>
-        /// SelectedCount and GetSelectedObject allow to read
+        /// SelecionadoCount and GetSelecionadoObject allow to read
         /// selected objects in the loop
         /// </summary>
         public int SelectionCount
@@ -83,7 +83,7 @@ namespace Draw
                 int n = 0;
                 foreach (DrawObject o in _graphicsList)
                 {
-                    if ( o.Selected )
+                    if ( o.Selecionado )
                         n++;
                 }
                 return n;
@@ -166,7 +166,7 @@ namespace Draw
             _inMemoryList.Clear();
             for (i = n - 1; i >= 0; i--)
             {
-                if (((DrawObject)_graphicsList[i]).Selected)
+                if (((DrawObject)_graphicsList[i]).Selecionado)
                 {
                     _inMemoryList.Add(_graphicsList[i]);
                 }
@@ -191,7 +191,7 @@ namespace Draw
 
             for (int i = n - 1; i >= 0; i--)
             {
-                if (((DrawObject)_graphicsList[i]).Selected)
+                if (((DrawObject)_graphicsList[i]).Selecionado)
                 {
                     _inMemoryList.Clear();
                     _inMemoryList.Add(_graphicsList[i]);
@@ -267,40 +267,40 @@ namespace Draw
 
                 o.Draw(g);
 
-                if ( o.Selected )
+                if ( o.Selecionado )
                 {
                     o.DrawTracker(g);
                 }
             }
         }
 
-        public List<DrawObject> GetAllSelected()
+        public List<DrawObject> GetAllSelecionado()
         {
             var selectionList = new List<DrawObject>();
             foreach (DrawObject o in _graphicsList)
             {
-                if (o.Selected)
+                if (o.Selecionado)
                     selectionList.Add(o);
             }
             return selectionList;
         }
 
-        public DrawObject GetFirstSelected()
+        public DrawObject GetFirstSelecionado()
         {
             foreach ( DrawObject o in _graphicsList )
             {
-                if ( o.Selected )
+                if ( o.Selecionado )
                     return o;
             }
             return null;
         }
 
-        public DrawObject GetSelectedObject(int index)
+        public DrawObject GetSelecionadoObject(int index)
         {
             int n = -1;
             foreach (DrawObject o in _graphicsList)
             {
-                if ( o.Selected )
+                if ( o.Selecionado )
                 {
                     n++;
 
@@ -327,10 +327,10 @@ namespace Draw
             return sXml;
         }
 
-        public bool IsAnythingSelected()
+        public bool IsAnythingSelecionado()
         {
             foreach (DrawObject o in _graphicsList)
-                if (o.Selected)
+                if (o.Selecionado)
                 return true;
 
             return false;
@@ -355,7 +355,7 @@ namespace Draw
 
             for (int i = n - 1; i >= 0; i--)
             {
-                if (((DrawObject)_graphicsList[i]).Selected)
+                if (((DrawObject)_graphicsList[i]).Selecionado)
                 {
                     tempList.Add(_graphicsList[i]);
                 }
@@ -381,7 +381,7 @@ namespace Draw
 
             for (int i = n - 1; i >= 0; i-- )
             {
-                if ( ((DrawObject)_graphicsList[i]).Selected )
+                if ( ((DrawObject)_graphicsList[i]).Selecionado )
                 {
                     tempList.Add(_graphicsList[i]);
                 }
@@ -408,7 +408,7 @@ namespace Draw
 
             for (i = n - 1; i >= 0; i--)
             {
-                if (((DrawObject)_graphicsList[i]).Selected)
+                if (((DrawObject)_graphicsList[i]).Selecionado)
                 {
                     tempList.Add(_graphicsList[i]);
                 }
@@ -440,7 +440,7 @@ namespace Draw
         {
             foreach (DrawObject o in _graphicsList)
             {
-                o.Selected = true;
+                o.Selecionado = true;
             }
         }
 
@@ -451,7 +451,7 @@ namespace Draw
             foreach (DrawObject o in _graphicsList)
             {
                 if ( o.IntersectsWith(rectangle) )
-                    o.Selected = true;
+                    o.Selecionado = true;
             }
         }
 
@@ -465,7 +465,7 @@ namespace Draw
         {
             foreach (DrawObject o in _graphicsList)
             {
-                o.Selected = false;
+                o.Selecionado = false;
             }
         }
 

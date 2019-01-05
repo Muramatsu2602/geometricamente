@@ -46,10 +46,10 @@
             // 
             this.label1.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label1.Location = new System.Drawing.Point(4, 13);
+            this.label1.Location = new System.Drawing.Point(4, 10);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(607, 63);
+            this.label1.Size = new System.Drawing.Size(596, 63);
             this.label1.TabIndex = 0;
             this.label1.Text = "LOGIN";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -58,7 +58,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(31, 190);
+            this.label3.Location = new System.Drawing.Point(23, 190);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(74, 24);
@@ -69,7 +69,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(30, 112);
+            this.label2.Location = new System.Drawing.Point(22, 112);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(71, 24);
@@ -80,7 +80,7 @@
             // 
             this.numIdade.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numIdade.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.numIdade.Location = new System.Drawing.Point(34, 221);
+            this.numIdade.Location = new System.Drawing.Point(26, 221);
             this.numIdade.Margin = new System.Windows.Forms.Padding(4);
             this.numIdade.Name = "numIdade";
             this.numIdade.Size = new System.Drawing.Size(115, 32);
@@ -90,7 +90,7 @@
             // txtNome
             // 
             this.txtNome.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNome.Location = new System.Drawing.Point(34, 144);
+            this.txtNome.Location = new System.Drawing.Point(26, 144);
             this.txtNome.Margin = new System.Windows.Forms.Padding(4);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(551, 32);
@@ -103,7 +103,7 @@
             this.btnGravar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGravar.Image = ((System.Drawing.Image)(resources.GetObject("btnGravar.Image")));
             this.btnGravar.InitialImage = ((System.Drawing.Image)(resources.GetObject("btnGravar.InitialImage")));
-            this.btnGravar.Location = new System.Drawing.Point(116, 305);
+            this.btnGravar.Location = new System.Drawing.Point(111, 306);
             this.btnGravar.Name = "btnGravar";
             this.btnGravar.Padding = new System.Windows.Forms.Padding(11);
             this.btnGravar.Size = new System.Drawing.Size(150, 150);
@@ -121,7 +121,7 @@
             this.btnDesenhar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDesenhar.Image = ((System.Drawing.Image)(resources.GetObject("btnDesenhar.Image")));
             this.btnDesenhar.InitialImage = ((System.Drawing.Image)(resources.GetObject("btnDesenhar.InitialImage")));
-            this.btnDesenhar.Location = new System.Drawing.Point(338, 305);
+            this.btnDesenhar.Location = new System.Drawing.Point(333, 306);
             this.btnDesenhar.Name = "btnDesenhar";
             this.btnDesenhar.Padding = new System.Windows.Forms.Padding(11);
             this.btnDesenhar.Size = new System.Drawing.Size(150, 150);
@@ -138,10 +138,10 @@
             this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(564, 13);
+            this.button1.Location = new System.Drawing.Point(537, 13);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(47, 44);
+            this.button1.Size = new System.Drawing.Size(50, 50);
             this.button1.TabIndex = 20;
             this.button1.Text = "&X";
             this.button1.UseVisualStyleBackColor = false;
@@ -151,7 +151,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(619, 498);
+            this.ClientSize = new System.Drawing.Size(600, 480);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnDesenhar);
             this.Controls.Add(this.btnGravar);

@@ -142,16 +142,16 @@
             this.groupBox2.Size = new System.Drawing.Size(103, 73);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Grid";
+            this.groupBox2.Text = "Grade";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(39, 44);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 13);
+            this.label1.Size = new System.Drawing.Size(47, 13);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Divisions";
+            this.label1.Text = "Divisões";
             // 
             // numericUpDown_minorGrids
             // 
@@ -181,9 +181,9 @@
             this.checkBox_Grid.AutoSize = true;
             this.checkBox_Grid.Location = new System.Drawing.Point(4, 19);
             this.checkBox_Grid.Name = "checkBox_Grid";
-            this.checkBox_Grid.Size = new System.Drawing.Size(75, 17);
+            this.checkBox_Grid.Size = new System.Drawing.Size(93, 17);
             this.checkBox_Grid.TabIndex = 0;
-            this.checkBox_Grid.Text = "Show Grid";
+            this.checkBox_Grid.Text = "Mostrar Grade";
             this.checkBox_Grid.UseVisualStyleBackColor = true;
             this.checkBox_Grid.CheckedChanged += new System.EventHandler(this.CheckBoxGridCheckedChanged);
             // 
@@ -197,19 +197,19 @@
             this.groupBox3.Controls.Add(this.numWidth);
             this.groupBox3.Location = new System.Drawing.Point(17, 310);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(100, 145);
+            this.groupBox3.Size = new System.Drawing.Size(116, 145);
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "WorkSpace";
+            this.groupBox3.Text = "Área de Trabalho";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(3, 82);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(60, 13);
+            this.label4.Size = new System.Drawing.Size(55, 13);
             this.label4.TabIndex = 10;
-            this.label4.Text = "Description";
+            this.label4.Text = "Descricão";
             // 
             // textBox_description
             // 
@@ -222,11 +222,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 54);
+            this.label3.Location = new System.Drawing.Point(-1, 54);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(38, 13);
+            this.label3.Size = new System.Drawing.Size(34, 13);
             this.label3.TabIndex = 8;
-            this.label3.Text = "Height";
+            this.label3.Text = "Altura";
             // 
             // numHeight
             // 
@@ -244,11 +244,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 27);
+            this.label2.Location = new System.Drawing.Point(-1, 27);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.Size = new System.Drawing.Size(43, 13);
             this.label2.TabIndex = 6;
-            this.label2.Text = "Width";
+            this.label2.Text = "Largura";
             // 
             // numWidth
             // 

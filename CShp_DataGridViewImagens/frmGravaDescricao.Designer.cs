@@ -44,6 +44,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.lblGravando = new System.Windows.Forms.Label();
             this.label_Y = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picGravador)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCrosshair)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picImagem)).BeginInit();
@@ -52,7 +53,7 @@
             // lblTempo
             // 
             this.lblTempo.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTempo.Location = new System.Drawing.Point(265, 614);
+            this.lblTempo.Location = new System.Drawing.Point(317, 556);
             this.lblTempo.Name = "lblTempo";
             this.lblTempo.Size = new System.Drawing.Size(155, 40);
             this.lblTempo.TabIndex = 8;
@@ -69,7 +70,7 @@
             this.btnSair.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSair.ForeColor = System.Drawing.Color.White;
-            this.btnSair.Location = new System.Drawing.Point(553, 7);
+            this.btnSair.Location = new System.Drawing.Point(756, 5);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(35, 36);
             this.btnSair.TabIndex = 12;
@@ -79,13 +80,14 @@
             // 
             // picGravador
             // 
-            this.picGravador.BackColor = System.Drawing.Color.Transparent;
+            this.picGravador.BackColor = System.Drawing.Color.White;
             this.picGravador.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picGravador.Image = ((System.Drawing.Image)(resources.GetObject("picGravador.Image")));
-            this.picGravador.Location = new System.Drawing.Point(159, 554);
+            this.picGravador.Location = new System.Drawing.Point(741, 542);
             this.picGravador.Name = "picGravador";
-            this.picGravador.Size = new System.Drawing.Size(100, 100);
-            this.picGravador.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picGravador.Padding = new System.Windows.Forms.Padding(5);
+            this.picGravador.Size = new System.Drawing.Size(50, 50);
+            this.picGravador.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picGravador.TabIndex = 14;
             this.picGravador.TabStop = false;
             this.picGravador.Click += new System.EventHandler(this.PicGravador_Click);
@@ -94,7 +96,7 @@
             // 
             this.btnCrosshair.BackColor = System.Drawing.Color.White;
             this.btnCrosshair.Image = ((System.Drawing.Image)(resources.GetObject("btnCrosshair.Image")));
-            this.btnCrosshair.Location = new System.Drawing.Point(32, 597);
+            this.btnCrosshair.Location = new System.Drawing.Point(11, 544);
             this.btnCrosshair.Margin = new System.Windows.Forms.Padding(2);
             this.btnCrosshair.Name = "btnCrosshair";
             this.btnCrosshair.Size = new System.Drawing.Size(42, 46);
@@ -108,7 +110,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(2, 570);
+            this.label1.Location = new System.Drawing.Point(58, 556);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(116, 20);
@@ -119,7 +121,7 @@
             // 
             this.label_X.BackColor = System.Drawing.Color.White;
             this.label_X.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_X.Location = new System.Drawing.Point(126, 13);
+            this.label_X.Location = new System.Drawing.Point(118, 9);
             this.label_X.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_X.Name = "label_X";
             this.label_X.Size = new System.Drawing.Size(48, 29);
@@ -132,7 +134,7 @@
             this.picImagem.BackColor = System.Drawing.Color.White;
             this.picImagem.Location = new System.Drawing.Point(0, 46);
             this.picImagem.Name = "picImagem";
-            this.picImagem.Size = new System.Drawing.Size(600, 488);
+            this.picImagem.Size = new System.Drawing.Size(800, 488);
             this.picImagem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picImagem.TabIndex = 0;
             this.picImagem.TabStop = false;
@@ -151,14 +153,14 @@
             this.line_X.BackColor = System.Drawing.Color.Red;
             this.line_X.Location = new System.Drawing.Point(0, 46);
             this.line_X.Name = "line_X";
-            this.line_X.Size = new System.Drawing.Size(600, 2);
+            this.line_X.Size = new System.Drawing.Size(800, 2);
             this.line_X.TabIndex = 23;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(97, 20);
+            this.label2.Location = new System.Drawing.Point(89, 16);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(24, 20);
             this.label2.TabIndex = 25;
@@ -168,7 +170,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(16, 19);
+            this.label3.Location = new System.Drawing.Point(8, 15);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(24, 20);
             this.label3.TabIndex = 26;
@@ -179,7 +181,7 @@
             this.lblGravando.AutoSize = true;
             this.lblGravando.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGravando.ForeColor = System.Drawing.Color.Silver;
-            this.lblGravando.Location = new System.Drawing.Point(287, 597);
+            this.lblGravando.Location = new System.Drawing.Point(338, 539);
             this.lblGravando.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblGravando.Name = "lblGravando";
             this.lblGravando.Size = new System.Drawing.Size(110, 20);
@@ -190,18 +192,31 @@
             // 
             this.label_Y.BackColor = System.Drawing.Color.White;
             this.label_Y.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Y.Location = new System.Drawing.Point(44, 13);
+            this.label_Y.Location = new System.Drawing.Point(36, 9);
             this.label_Y.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_Y.Name = "label_Y";
             this.label_Y.Size = new System.Drawing.Size(48, 29);
             this.label_Y.TabIndex = 22;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(673, 556);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(63, 20);
+            this.label4.TabIndex = 28;
+            this.label4.Text = "Gravar";
             // 
             // FrmGravaDescricao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Turquoise;
-            this.ClientSize = new System.Drawing.Size(600, 671);
+            this.ClientSize = new System.Drawing.Size(800, 600);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.lblGravando);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -244,5 +259,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblGravando;
         private System.Windows.Forms.Label label_Y;
+        private System.Windows.Forms.Label label4;
     }
 }

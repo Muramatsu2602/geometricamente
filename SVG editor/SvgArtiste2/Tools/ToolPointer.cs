@@ -80,7 +80,7 @@ namespace DrawTools
 
                 for ( int i = 0; i < n; i++ )
                 {
-                    DrawObject o = drawArea.GraphicsList.GetSelectedObject(i);
+                    DrawObject o = drawArea.GraphicsList.GetSelecionadoObject(i);
                     int handleNumber = o.HitTest(point);
                     bool hitOnOutline = o.HitOnCircumferance;
 
@@ -94,7 +94,7 @@ namespace DrawTools
 
                         // Since we want to resize only one object, unselect all other objects
                         drawArea.GraphicsList.UnselectAll();
-                        o.Selected = true;
+                        o.Selecionado = true;
                         o.MouseClickOnHandle(handleNumber);
 
                         break;
@@ -104,7 +104,7 @@ namespace DrawTools
                     {
                         _selectMode = SelectionMode.Size;
                         o.MouseClickOnBorder();
-                        o.Selected = true;
+                        o.Selecionado = true;
                     }
 
             }
@@ -129,11 +129,11 @@ namespace DrawTools
                     _selectMode = SelectionMode.Move;
 
                     // Unselect all if Ctrl is not pressed and clicked object is not selected yet
-                    if ( ( Control.ModifierKeys & Keys.Control ) == 0  && !o.Selected )
+                    if ( ( Control.ModifierKeys & Keys.Control ) == 0  && !o.Selecionado )
                         drawArea.GraphicsList.UnselectAll();
 
                     // Select clicked object
-                    o.Selected = true;
+                    o.Selecionado = true;
 
                     drawArea.Cursor = Cursors.SizeAll;
                 }
@@ -230,7 +230,7 @@ namespace DrawTools
 
                 for ( int i = 0; i < n; i++ )
                 {
-                    drawArea.GraphicsList.GetSelectedObject(i).Move(dx, dy);
+                    drawArea.GraphicsList.GetSelecionadoObject(i).Move(dx, dy);
                 }
 
                 drawArea.Cursor = Cursors.SizeAll;
@@ -267,7 +267,7 @@ namespace DrawTools
                 // after resizing
                 _resizedObject.Normalize();
                 _resizedObject = null;
-                drawArea.ResizeCommand(drawArea.GraphicsList.GetFirstSelected(),
+                drawArea.ResizeCommand(drawArea.GraphicsList.GetFirstSelecionado(),
                     new PointF(_startPoint.X, _startPoint.Y),
                     new PointF(e.X, e.Y),
                     _resizedObjectHandle);
@@ -283,7 +283,7 @@ namespace DrawTools
 
                 for (int i = 0; i < drawArea.GraphicsList.SelectionCount; i++)
                 {
-                    movedItemsList.Add(drawArea.GraphicsList.GetSelectedObject(i));
+                    movedItemsList.Add(drawArea.GraphicsList.GetSelecionadoObject(i));
                 }
 
                 var delta = new PointF {X = e.X - _startPoint.X, Y = e.Y - _startPoint.Y};

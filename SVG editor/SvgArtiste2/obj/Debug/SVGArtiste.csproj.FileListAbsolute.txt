@@ -48,3 +48,6 @@ C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\SVG editor\SvgArtiste2\o
 C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\SVG editor\SvgArtiste2\obj\Debug\SVGArtiste.csproj.CopyComplete
 C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\SVG editor\SvgArtiste2\obj\Debug\SvgArtiste.exe
 C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\SVG editor\SvgArtiste2\obj\Debug\SvgArtiste.pdb
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\SVG editor\SvgArtiste2\bin\Debug\pt-BR\SvgArtiste.resources.dll
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\SVG editor\SvgArtiste2\obj\Debug\SVGEditor2.shapeProperties.pt-BR.resources
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\SVG editor\SvgArtiste2\obj\Debug\pt-BR\SvgArtiste.resources.dll

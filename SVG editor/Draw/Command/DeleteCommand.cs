@@ -52,7 +52,7 @@ namespace Draw.Command
 
             for (int i = n - 1; i >= 0; i--)
             {
-                if (((DrawObject)_graphicsList[i]).Selected)
+                if (((DrawObject)_graphicsList[i]).Selecionado)
                 {
                     State obj;
                     obj.Obj = (DrawObject)_graphicsList[i];

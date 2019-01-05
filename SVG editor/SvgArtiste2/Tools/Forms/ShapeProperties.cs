@@ -38,5 +38,10 @@ namespace SVGEditor2
             if (PropertyChanged != null)
                 PropertyChanged(s, e);
         }
+
+        private void propertyGrid_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -260,5 +260,10 @@ namespace SVGEditor2
         {
             _svgMainFiles.SaveDocument("");
         }
+
+        private void MaiMenuStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
     }
 }

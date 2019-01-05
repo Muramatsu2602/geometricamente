@@ -48,6 +48,7 @@ namespace Draw
 
             LoadCursor();
             Initialize();
+            Console.WriteLine("OOOOOO");
         }
 
         public DrawPolygon(float x1, float y1, float x2, float y2)
@@ -121,16 +122,16 @@ namespace Draw
             {
                 g.SmoothingMode = SmoothingMode.AntiAlias;
 
-                if (Fill != Color.Empty)
+                if (CorLinha != Color.Empty)
                 {
                     var arr = new PointF[_pointArray.Count];
                     for (int i = 0; i < _pointArray.Count; i++)
                         arr[i] = (PointF)_pointArray[i];
-                    Brush brush = new SolidBrush(Fill);
+                    Brush brush = new SolidBrush(CorForma);
                     g.FillPolygon(brush,arr);
                 }
 
-                var pen = new Pen(Stroke, StrokeWidth);
+                var pen = new Pen(CorLinha, StrokeWidth);
 
                 IEnumerator enumerator = _pointArray.GetEnumerator();
 

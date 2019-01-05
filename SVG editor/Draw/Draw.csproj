@@ -139,6 +139,7 @@
     <Compile Include="DrawText.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="DrawTriangle.cs" />
     <Compile Include="EnPathCommands.cs" />
     <Compile Include="GraphicsList.cs">
     </Compile>

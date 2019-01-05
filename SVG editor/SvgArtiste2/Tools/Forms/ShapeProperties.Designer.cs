@@ -34,22 +34,17 @@
             // 
             // propertyGrid
             // 
-            this.propertyGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.propertyGrid.Location = new System.Drawing.Point(0, 0);
+            resources.ApplyResources(this.propertyGrid, "propertyGrid");
             this.propertyGrid.Name = "propertyGrid";
-            this.propertyGrid.Size = new System.Drawing.Size(196, 266);
-            this.propertyGrid.TabIndex = 0;
             this.propertyGrid.PropertyValueChanged += new System.Windows.Forms.PropertyValueChangedEventHandler(this.propertyGrid_PropertyValueChanged);
+            this.propertyGrid.Click += new System.EventHandler(this.propertyGrid_Click);
             // 
             // shapeProperties
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(196, 266);
             this.Controls.Add(this.propertyGrid);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "shapeProperties";
-            this.Text = "Properties";
             this.ResumeLayout(false);
 
         }
@@ -57,6 +52,5 @@
         #endregion
 
         public System.Windows.Forms.PropertyGrid propertyGrid;
-
     }
 }
