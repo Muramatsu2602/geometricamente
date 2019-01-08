@@ -31,6 +31,7 @@ namespace SVGEditor2
         public shapeProperties()
         {
             InitializeComponent();
+            
         }
 
         private void propertyGrid_PropertyValueChanged(object s, PropertyValueChangedEventArgs e)

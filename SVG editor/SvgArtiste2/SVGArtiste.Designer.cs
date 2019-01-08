@@ -299,6 +299,7 @@ namespace SVGEditor2
             // 
             // toolStrip1
             // 
+            this.toolStrip1.AutoSize = false;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton_new,
             this.toolStripButton_open,
@@ -308,7 +309,7 @@ namespace SVGEditor2
             this.toolStripSeparator2});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(546, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(546, 30);
             this.toolStrip1.TabIndex = 5;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -318,7 +319,7 @@ namespace SVGEditor2
             this.toolStripButton_new.Image = global::SVGEditor2.Properties.Resources.new_page;
             this.toolStripButton_new.ImageTransparentColor = System.Drawing.Color.White;
             this.toolStripButton_new.Name = "toolStripButton_new";
-            this.toolStripButton_new.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton_new.Size = new System.Drawing.Size(23, 27);
             this.toolStripButton_new.Text = "New SVG Document";
             this.toolStripButton_new.Click += new System.EventHandler(this.NewToolStripMenuItemNewClick);
             // 
@@ -328,7 +329,7 @@ namespace SVGEditor2
             this.toolStripButton_open.Image = global::SVGEditor2.Properties.Resources.open;
             this.toolStripButton_open.ImageTransparentColor = System.Drawing.Color.White;
             this.toolStripButton_open.Name = "toolStripButton_open";
-            this.toolStripButton_open.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton_open.Size = new System.Drawing.Size(23, 27);
             this.toolStripButton_open.Text = "Open SVG Document";
             this.toolStripButton_open.Click += new System.EventHandler(this.OpenToolStripMenuItemClick);
             // 
@@ -338,7 +339,7 @@ namespace SVGEditor2
             this.toolStripButton_saveAs.Image = global::SVGEditor2.Properties.Resources.save_as;
             this.toolStripButton_saveAs.ImageTransparentColor = System.Drawing.Color.White;
             this.toolStripButton_saveAs.Name = "toolStripButton_saveAs";
-            this.toolStripButton_saveAs.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton_saveAs.Size = new System.Drawing.Size(23, 27);
             this.toolStripButton_saveAs.Text = "Save SVG Document As";
             this.toolStripButton_saveAs.Click += new System.EventHandler(this.SaveToolStripMenuItemClick);
             // 
@@ -348,7 +349,7 @@ namespace SVGEditor2
             this.toolStripButton_close.Image = global::SVGEditor2.Properties.Resources.cancel;
             this.toolStripButton_close.ImageTransparentColor = System.Drawing.Color.White;
             this.toolStripButton_close.Name = "toolStripButton_close";
-            this.toolStripButton_close.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton_close.Size = new System.Drawing.Size(23, 27);
             this.toolStripButton_close.Text = "Close Current SVG Document";
             this.toolStripButton_close.Click += new System.EventHandler(this.ToolStripButtonCloseClick);
             // 
@@ -358,22 +359,22 @@ namespace SVGEditor2
             this.toolStripButton_exit.Image = global::SVGEditor2.Properties.Resources.exit;
             this.toolStripButton_exit.ImageTransparentColor = System.Drawing.Color.White;
             this.toolStripButton_exit.Name = "toolStripButton_exit";
-            this.toolStripButton_exit.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton_exit.Size = new System.Drawing.Size(23, 27);
             this.toolStripButton_exit.Text = "Exit Application";
             this.toolStripButton_exit.Click += new System.EventHandler(this.ExitToolStripMenuItemClick);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 30);
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this._docker);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 49);
+            this.panel1.Location = new System.Drawing.Point(0, 54);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(546, 365);
+            this.panel1.Size = new System.Drawing.Size(546, 360);
             this.panel1.TabIndex = 6;
             // 
             // _docker
@@ -384,7 +385,7 @@ namespace SVGEditor2
             this._docker.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this._docker.Location = new System.Drawing.Point(0, 0);
             this._docker.Name = "_docker";
-            this._docker.Size = new System.Drawing.Size(546, 365);
+            this._docker.Size = new System.Drawing.Size(546, 360);
             this._docker.TabIndex = 8;
             this._docker.TitleBarGradientColor1 = System.Drawing.SystemColors.Control;
             this._docker.TitleBarGradientColor2 = System.Drawing.Color.White;

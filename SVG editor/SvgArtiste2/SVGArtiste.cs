@@ -47,6 +47,8 @@ namespace SVGEditor2
         public SvgArtiste()
         {
             InitializeComponent();
+
+
             Intialize();
         }
 
@@ -105,7 +107,7 @@ namespace SVGEditor2
             _svgMainFiles.ToolDone += OnToolDone;
             _svgMainFiles.ItemsSelected += SvgMainFilesItemsSelected;
 
-            _toolBox = new ToolBox {Size = new Size(113, 165)};
+            _toolBox = new ToolBox { Size = new Size(113, 165) };
             _toolBox.ToolSelectionChanged += ToolSelectionChanged;
 
             _svgProperties = new WorkSpaceControlBox();
@@ -159,7 +161,7 @@ namespace SVGEditor2
         }
 
         private void OpenToolStripMenuItemClick(object sender, EventArgs e)
-        {        
+        {
             var flgOpenFileDialog = new OpenFileDialog();
             flgOpenFileDialog.Filter = @"SVG files (*.svg)|*.svg|All files (*.*)|*.*";
 
@@ -220,7 +222,7 @@ namespace SVGEditor2
             _docker.DockForm(_infoToolbar, DockStyle.Left, zDockMode.Inner);
             _docker.DockForm(_infoFilesMain, DockStyle.Fill, zDockMode.Inner);
             _docker.DockForm(_infoDocumentProperties, DockStyle.Right, zDockMode.Inner);
-            _docker.DockForm(_infoShapeProperties,_infoToolbar, DockStyle.Bottom, zDockMode.Outer);
+            _docker.DockForm(_infoShapeProperties, _infoToolbar, DockStyle.Bottom, zDockMode.Outer);
             _svgMainFiles.AddNewPage("New:" + _counter++);
         }
 

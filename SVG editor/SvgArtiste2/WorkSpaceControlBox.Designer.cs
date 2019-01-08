@@ -60,12 +60,12 @@
             // trackBarZoom
             // 
             this.trackBarZoom.Location = new System.Drawing.Point(6, 19);
-            this.trackBarZoom.Minimum = 1;
+            this.trackBarZoom.Minimum = 2;
             this.trackBarZoom.Name = "trackBarZoom";
             this.trackBarZoom.Orientation = System.Windows.Forms.Orientation.Vertical;
             this.trackBarZoom.Size = new System.Drawing.Size(45, 167);
             this.trackBarZoom.TabIndex = 0;
-            this.trackBarZoom.Value = 1;
+            this.trackBarZoom.Value = 2;
             this.trackBarZoom.ValueChanged += new System.EventHandler(this.TrackBarZoomValueChanged);
             // 
             // groupBox1
@@ -130,7 +130,7 @@
             this.label_Zoom.Name = "label_Zoom";
             this.label_Zoom.Size = new System.Drawing.Size(20, 13);
             this.label_Zoom.TabIndex = 1;
-            this.label_Zoom.Text = "1X";
+            this.label_Zoom.Text = "2X";
             // 
             // groupBox2
             // 

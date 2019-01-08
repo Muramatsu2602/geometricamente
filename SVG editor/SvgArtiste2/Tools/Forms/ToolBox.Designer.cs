@@ -59,9 +59,9 @@
             this.flowLayoutPanel1.Controls.Add(this.radioButton_image);
             this.flowLayoutPanel1.Controls.Add(this.btnGravar);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(205, 559);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(283, 556);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // radioButton_Pointer
@@ -71,7 +71,7 @@
             this.radioButton_Pointer.ImageList = this.imageList;
             this.radioButton_Pointer.Location = new System.Drawing.Point(3, 3);
             this.radioButton_Pointer.Name = "radioButton_Pointer";
-            this.radioButton_Pointer.Size = new System.Drawing.Size(35, 38);
+            this.radioButton_Pointer.Size = new System.Drawing.Size(60, 60);
             this.radioButton_Pointer.TabIndex = 0;
             this.radioButton_Pointer.TabStop = true;
             this.radioButton_Pointer.UseVisualStyleBackColor = true;
@@ -96,9 +96,9 @@
             this.radioButton_rectangle.Appearance = System.Windows.Forms.Appearance.Button;
             this.radioButton_rectangle.ImageKey = "Rectangle32x32.ico";
             this.radioButton_rectangle.ImageList = this.imageList;
-            this.radioButton_rectangle.Location = new System.Drawing.Point(44, 3);
+            this.radioButton_rectangle.Location = new System.Drawing.Point(69, 3);
             this.radioButton_rectangle.Name = "radioButton_rectangle";
-            this.radioButton_rectangle.Size = new System.Drawing.Size(35, 38);
+            this.radioButton_rectangle.Size = new System.Drawing.Size(60, 60);
             this.radioButton_rectangle.TabIndex = 0;
             this.radioButton_rectangle.TabStop = true;
             this.radioButton_rectangle.UseVisualStyleBackColor = true;
@@ -109,9 +109,9 @@
             this.radioButton_line.Appearance = System.Windows.Forms.Appearance.Button;
             this.radioButton_line.ImageKey = "Line32x32.ico";
             this.radioButton_line.ImageList = this.imageList;
-            this.radioButton_line.Location = new System.Drawing.Point(85, 3);
+            this.radioButton_line.Location = new System.Drawing.Point(135, 3);
             this.radioButton_line.Name = "radioButton_line";
-            this.radioButton_line.Size = new System.Drawing.Size(35, 38);
+            this.radioButton_line.Size = new System.Drawing.Size(60, 60);
             this.radioButton_line.TabIndex = 0;
             this.radioButton_line.TabStop = true;
             this.radioButton_line.UseVisualStyleBackColor = true;
@@ -122,9 +122,9 @@
             this.radioButton_ellipse.Appearance = System.Windows.Forms.Appearance.Button;
             this.radioButton_ellipse.ImageIndex = 3;
             this.radioButton_ellipse.ImageList = this.imageList;
-            this.radioButton_ellipse.Location = new System.Drawing.Point(126, 3);
+            this.radioButton_ellipse.Location = new System.Drawing.Point(201, 3);
             this.radioButton_ellipse.Name = "radioButton_ellipse";
-            this.radioButton_ellipse.Size = new System.Drawing.Size(35, 38);
+            this.radioButton_ellipse.Size = new System.Drawing.Size(60, 60);
             this.radioButton_ellipse.TabIndex = 0;
             this.radioButton_ellipse.TabStop = true;
             this.radioButton_ellipse.UseVisualStyleBackColor = true;
@@ -135,9 +135,9 @@
             this.radioButton_pencil.Appearance = System.Windows.Forms.Appearance.Button;
             this.radioButton_pencil.ImageKey = "Pencil.ico";
             this.radioButton_pencil.ImageList = this.imageList;
-            this.radioButton_pencil.Location = new System.Drawing.Point(167, 3);
+            this.radioButton_pencil.Location = new System.Drawing.Point(3, 69);
             this.radioButton_pencil.Name = "radioButton_pencil";
-            this.radioButton_pencil.Size = new System.Drawing.Size(35, 38);
+            this.radioButton_pencil.Size = new System.Drawing.Size(60, 60);
             this.radioButton_pencil.TabIndex = 0;
             this.radioButton_pencil.TabStop = true;
             this.radioButton_pencil.UseVisualStyleBackColor = true;
@@ -149,9 +149,9 @@
             this.radioButton_path.Appearance = System.Windows.Forms.Appearance.Button;
             this.radioButton_path.ImageKey = "Path32x32.ico";
             this.radioButton_path.ImageList = this.imageList;
-            this.radioButton_path.Location = new System.Drawing.Point(3, 47);
+            this.radioButton_path.Location = new System.Drawing.Point(69, 69);
             this.radioButton_path.Name = "radioButton_path";
-            this.radioButton_path.Size = new System.Drawing.Size(35, 38);
+            this.radioButton_path.Size = new System.Drawing.Size(60, 60);
             this.radioButton_path.TabIndex = 0;
             this.radioButton_path.TabStop = true;
             this.radioButton_path.UseVisualStyleBackColor = true;
@@ -162,9 +162,9 @@
             this.radioButton_text.Appearance = System.Windows.Forms.Appearance.Button;
             this.radioButton_text.ImageKey = "Text23x32.ico";
             this.radioButton_text.ImageList = this.imageList;
-            this.radioButton_text.Location = new System.Drawing.Point(44, 47);
+            this.radioButton_text.Location = new System.Drawing.Point(135, 69);
             this.radioButton_text.Name = "radioButton_text";
-            this.radioButton_text.Size = new System.Drawing.Size(35, 38);
+            this.radioButton_text.Size = new System.Drawing.Size(60, 60);
             this.radioButton_text.TabIndex = 0;
             this.radioButton_text.TabStop = true;
             this.radioButton_text.UseVisualStyleBackColor = true;
@@ -175,9 +175,9 @@
             this.radioButton_pan.Appearance = System.Windows.Forms.Appearance.Button;
             this.radioButton_pan.ImageKey = "PanHand.ico";
             this.radioButton_pan.ImageList = this.imageList;
-            this.radioButton_pan.Location = new System.Drawing.Point(85, 47);
+            this.radioButton_pan.Location = new System.Drawing.Point(201, 69);
             this.radioButton_pan.Name = "radioButton_pan";
-            this.radioButton_pan.Size = new System.Drawing.Size(35, 38);
+            this.radioButton_pan.Size = new System.Drawing.Size(60, 60);
             this.radioButton_pan.TabIndex = 0;
             this.radioButton_pan.TabStop = true;
             this.radioButton_pan.UseVisualStyleBackColor = true;
@@ -188,9 +188,9 @@
             this.radioButton_image.Appearance = System.Windows.Forms.Appearance.Button;
             this.radioButton_image.ImageKey = "image.png";
             this.radioButton_image.ImageList = this.imageList;
-            this.radioButton_image.Location = new System.Drawing.Point(126, 47);
+            this.radioButton_image.Location = new System.Drawing.Point(3, 135);
             this.radioButton_image.Name = "radioButton_image";
-            this.radioButton_image.Size = new System.Drawing.Size(35, 38);
+            this.radioButton_image.Size = new System.Drawing.Size(60, 60);
             this.radioButton_image.TabIndex = 0;
             this.radioButton_image.TabStop = true;
             this.radioButton_image.UseVisualStyleBackColor = true;
@@ -198,29 +198,31 @@
             // 
             // btnGravar
             // 
-            this.btnGravar.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnGravar.BackColor = System.Drawing.SystemColors.Control;
             this.btnGravar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.btnGravar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGravar.Image = ((System.Drawing.Image)(resources.GetObject("btnGravar.Image")));
-            this.btnGravar.Location = new System.Drawing.Point(167, 47);
+            this.btnGravar.Location = new System.Drawing.Point(69, 135);
             this.btnGravar.Name = "btnGravar";
             this.btnGravar.Padding = new System.Windows.Forms.Padding(5);
-            this.btnGravar.Size = new System.Drawing.Size(35, 35);
+            this.btnGravar.Size = new System.Drawing.Size(60, 60);
             this.btnGravar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnGravar.TabIndex = 1;
             this.btnGravar.TabStop = false;
-            this.btnGravar.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.btnGravar.Click += new System.EventHandler(this.btnGravar_Click);
             // 
             // ToolBox
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(208, 562);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(289, 562);
             this.Controls.Add(this.flowLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(305, 601);
             this.Name = "ToolBox";
-            this.Padding = new System.Windows.Forms.Padding(0, 0, 3, 3);
+            this.Padding = new System.Windows.Forms.Padding(3);
             this.Text = "ToolBox";
             this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnGravar)).EndInit();

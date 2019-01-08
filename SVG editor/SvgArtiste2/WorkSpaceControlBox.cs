@@ -61,18 +61,22 @@ namespace SVGEditor2
             numericUpDown_minorGrids.Value = minorGrid;
             numHeight.Value = drawAreaSize.Height;
             numWidth.Value = drawAreaSize.Width;
+            //WorkArea a = new WorkArea();
+            //SvgArtiste b = new SvgArtiste();
+            //numWidth.Value = a.Width;
+            //numHeight.Value = a.Height;
             textBox_description.Text = description;
         }
 
         public void SetZoom(float f)
         {
-            if((f >= trackBarZoom.Minimum) && (f <= trackBarZoom.Maximum))
-            trackBarZoom.Value = (int)f;
+            if ((f >= trackBarZoom.Minimum) && (f <= trackBarZoom.Maximum))
+                trackBarZoom.Value = (int)f;
         }
 
         private void ButtonNoZoomClick(object sender, EventArgs e)
         {
-            trackBarZoom.Value = 1;
+            trackBarZoom.Value = 2;
         }
 
         private void ButtonZoominClick(object sender, EventArgs e)
@@ -83,13 +87,13 @@ namespace SVGEditor2
 
         private void ButtonZoomoutClick(object sender, EventArgs e)
         {
-            if (trackBarZoom.Value > 1)
+            if (trackBarZoom.Value > 2)
                 trackBarZoom.Value--;
         }
 
         private void CheckBoxGridCheckedChanged(object sender, EventArgs e)
         {
-            if(GridOptionChange!= null)
+            if (GridOptionChange != null)
                 GridOptionChange(sender, e);
         }
 
@@ -120,7 +124,7 @@ namespace SVGEditor2
         {
             var ev = new ControlBoxEventArgs();
             FillControlboxEventArgs(ref ev);
-            if(WorkAreaOptionChange != null)
+            if (WorkAreaOptionChange != null)
                 WorkAreaOptionChange(sender, ev);
         }
 

@@ -30,9 +30,17 @@
         {
             Crom.Controls.TabbedDocument.TopTabButtonRenderer topTabButtonRenderer1 = new Crom.Controls.TabbedDocument.TopTabButtonRenderer();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WorkArea));
-            this.tabbedView = new Crom.Controls.TabbedDocument.TabbedView();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.tabbedView = new Crom.Controls.TabbedDocument.TabbedView();
             this.SuspendLayout();
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Location = new System.Drawing.Point(0, 539);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(784, 22);
+            this.statusStrip1.TabIndex = 0;
+            this.statusStrip1.Text = "statusStrip1";
             // 
             // tabbedView
             // 
@@ -55,23 +63,15 @@
             this.tabbedView.Name = "tabbedView";
             this.tabbedView.SelectedIndex = -1;
             this.tabbedView.ShowOneTabButton = true;
-            this.tabbedView.Size = new System.Drawing.Size(292, 244);
+            this.tabbedView.Size = new System.Drawing.Size(784, 539);
             this.tabbedView.TabIndex = 1;
             this.tabbedView.PageSelectionMade += new Crom.Controls.TabbedDocument.TabbedView.OnPageSelectionMade(this.TabbedViewPageSelectionMade);
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.Location = new System.Drawing.Point(0, 244);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(292, 22);
-            this.statusStrip1.TabIndex = 0;
-            this.statusStrip1.Text = "statusStrip1";
             // 
             // WorkArea
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(292, 266);
+            this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.tabbedView);
             this.Controls.Add(this.statusStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

@@ -35,6 +35,7 @@
             // propertyGrid
             // 
             resources.ApplyResources(this.propertyGrid, "propertyGrid");
+            this.propertyGrid.Cursor = System.Windows.Forms.Cursors.Default;
             this.propertyGrid.Name = "propertyGrid";
             this.propertyGrid.PropertyValueChanged += new System.Windows.Forms.PropertyValueChangedEventHandler(this.propertyGrid_PropertyValueChanged);
             this.propertyGrid.Click += new System.EventHandler(this.propertyGrid_Click);
