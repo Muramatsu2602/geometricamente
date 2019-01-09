@@ -57,15 +57,15 @@ namespace SVGEditor2
 
         public void SetGridOption(bool isGridOn, int minorGrid, Size drawAreaSize, String description)
         {
-            checkBox_Grid.Checked = isGridOn;
-            numericUpDown_minorGrids.Value = minorGrid;
-            numHeight.Value = drawAreaSize.Height;
-            numWidth.Value = drawAreaSize.Width;
-            //WorkArea a = new WorkArea();
-            //SvgArtiste b = new SvgArtiste();
-            //numWidth.Value = a.Width;
-            //numHeight.Value = a.Height;
-            textBox_description.Text = description;
+              checkBox_Grid.Checked = isGridOn; 
+            numericUpDown_minorGrids.Value = minorGrid; 
+            //numHeight.Value = drawAreaSize.Height; 
+            //numWidth.Value = drawAreaSize.Width; 
+            WorkArea a = new WorkArea(); 
+            SvgArtiste b = new SvgArtiste(); 
+            numWidth.Value = a.Width; 
+            numHeight.Value = a.Height; 
+            textBox_description.Text = description; 
         }
 
         public void SetZoom(float f)
@@ -76,7 +76,7 @@ namespace SVGEditor2
 
         private void ButtonNoZoomClick(object sender, EventArgs e)
         {
-            trackBarZoom.Value = 2;
+            trackBarZoom.Value = 1;
         }
 
         private void ButtonZoominClick(object sender, EventArgs e)
@@ -87,7 +87,7 @@ namespace SVGEditor2
 
         private void ButtonZoomoutClick(object sender, EventArgs e)
         {
-            if (trackBarZoom.Value > 2)
+            if (trackBarZoom.Value > 1)
                 trackBarZoom.Value--;
         }
 

@@ -12,7 +12,7 @@ namespace Geometricamente_V1
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
+            Application.EnableVisualStyles(); // teste
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frmLogin());
         }

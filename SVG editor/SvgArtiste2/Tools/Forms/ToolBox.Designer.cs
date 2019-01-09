@@ -75,6 +75,7 @@
             this.radioButton_Pointer.TabIndex = 0;
             this.radioButton_Pointer.TabStop = true;
             this.radioButton_Pointer.UseVisualStyleBackColor = true;
+            this.radioButton_Pointer.Visible = false;
             this.radioButton_Pointer.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
             // 
             // imageList
@@ -168,6 +169,7 @@
             this.radioButton_text.TabIndex = 0;
             this.radioButton_text.TabStop = true;
             this.radioButton_text.UseVisualStyleBackColor = true;
+            this.radioButton_text.Visible = false;
             this.radioButton_text.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
             // 
             // radioButton_pan
