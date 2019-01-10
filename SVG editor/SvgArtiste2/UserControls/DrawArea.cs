@@ -632,7 +632,7 @@ namespace DrawTools
             //
             _selectAllToolStripMenuItem.Name = "selectAllToolStripMenuItem";
             _selectAllToolStripMenuItem.Size = new Size(152, 22);
-            _selectAllToolStripMenuItem.Text = @"Select All";
+            _selectAllToolStripMenuItem.Text = @"Selecionar Todos";
             _selectAllToolStripMenuItem.Click += SelectAllToolStripMenuItemClick;
             //
             // toolStripSeparator1
@@ -644,21 +644,21 @@ namespace DrawTools
             //
             _bringToFrontToolStripMenuItem.Name = "bringToFrontToolStripMenuItem";
             _bringToFrontToolStripMenuItem.Size = new Size(152, 22);
-            _bringToFrontToolStripMenuItem.Text = @"Bring to Front";
+            _bringToFrontToolStripMenuItem.Text = @"Trazer a Frente";
             _bringToFrontToolStripMenuItem.Click += BringToFrontToolStripMenuItemClick;
             //
             // sendToBackToolStripMenuItem
             //
             _sendToBackToolStripMenuItem.Name = "sendToBackToolStripMenuItem";
             _sendToBackToolStripMenuItem.Size = new Size(152, 22);
-            _sendToBackToolStripMenuItem.Text = @"Send to Back";
+            _sendToBackToolStripMenuItem.Text = @"Colocar Atrás";
             _sendToBackToolStripMenuItem.Click += SendToBackToolStripMenuItemClick;
             //
             // deleteToolStripMenuItem
             //
             _deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
             _deleteToolStripMenuItem.Size = new Size(152, 22);
-            _deleteToolStripMenuItem.Text = @"Delete";
+            _deleteToolStripMenuItem.Text = @"Deletar";
             _deleteToolStripMenuItem.Click += DeleteToolStripMenuItemClick;
             //
             // toolStripSeparator2
@@ -670,21 +670,21 @@ namespace DrawTools
             //
             _cutToolStripMenuItem.Name = "cutToolStripMenuItem";
             _cutToolStripMenuItem.Size = new Size(152, 22);
-            _cutToolStripMenuItem.Text = @"Cut";
+            _cutToolStripMenuItem.Text = @"Cortar";
             _cutToolStripMenuItem.Click += CutToolStripMenuItemClick;
             //
             // copyToolStripMenuItem
             //
             _copyToolStripMenuItem.Name = "copyToolStripMenuItem";
             _copyToolStripMenuItem.Size = new Size(152, 22);
-            _copyToolStripMenuItem.Text = @"Copy";
+            _copyToolStripMenuItem.Text = @"Copiar";
             _copyToolStripMenuItem.Click += CopyToolStripMenuItemClick;
             //
             // pasteToolStripMenuItem
             //
             _pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
             _pasteToolStripMenuItem.Size = new Size(152, 22);
-            _pasteToolStripMenuItem.Text = @"Paste";
+            _pasteToolStripMenuItem.Text = @"Colar";
             _pasteToolStripMenuItem.Click += PasteToolStripMenuItemClick;
             //
             // toolStripSeparator3

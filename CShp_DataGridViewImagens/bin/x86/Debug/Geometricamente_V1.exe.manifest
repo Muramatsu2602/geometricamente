@@ -110,19 +110,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>9ENltpKvgbfPQrrdyDuG4zeNiE5bgeM72iUllRlyQQ8=</dsig:DigestValue>
+        <dsig:DigestValue>8Fk2Sc13byjfKxZcZVMWDOJ8dlv6OUF5HsQgG6/3JgY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SvgArtiste.exe" size="208384">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SvgArtiste.exe" size="233984">
       <assemblyIdentity name="SvgArtiste" version="2.1.1.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>3JgmRf2M5vW4L1AcKZcFnEoSKG/7h2LTtSGEHdON0bE=</dsig:DigestValue>
+        <dsig:DigestValue>uBDFqR3Ln6r1OL9ux6e2ht8riBO5bW/RY+ToOvAJvtw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -134,7 +134,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>MMnflL55C5Ho5mZmmK3+LsqwpAGn2tK7NviHiUSoMf0=</dsig:DigestValue>
+        <dsig:DigestValue>lv13TeyqhePSS0wbTacbMOH48htaZ6j/eGM5AsNnrEY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

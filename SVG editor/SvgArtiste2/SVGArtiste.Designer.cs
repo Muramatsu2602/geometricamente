@@ -42,6 +42,7 @@ namespace SVGEditor2
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SvgArtiste));
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MaiMenuStrip = new System.Windows.Forms.MenuStrip();
@@ -85,33 +86,27 @@ namespace SVGEditor2
             // 
             // statusStrip1
             // 
-            this.statusStrip1.Location = new System.Drawing.Point(0, 414);
+            resources.ApplyResources(this.statusStrip1, "statusStrip1");
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(546, 22);
-            this.statusStrip1.TabIndex = 2;
-            this.statusStrip1.Text = "statusStrip1";
             // 
             // fileToolStripMenuItem
             // 
+            resources.ApplyResources(this.fileToolStripMenuItem, "fileToolStripMenuItem");
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(35, 20);
-            this.fileToolStripMenuItem.Text = "&File";
             // 
             // MaiMenuStrip
             // 
+            resources.ApplyResources(this.MaiMenuStrip, "MaiMenuStrip");
             this.MaiMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem1,
             this.editToolStripMenuItem,
             this.helpToolStripMenuItem});
-            this.MaiMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.MaiMenuStrip.Name = "MaiMenuStrip";
-            this.MaiMenuStrip.Size = new System.Drawing.Size(546, 24);
-            this.MaiMenuStrip.TabIndex = 4;
-            this.MaiMenuStrip.Text = "menuStrip1";
             this.MaiMenuStrip.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.MaiMenuStrip_ItemClicked);
             // 
             // fileToolStripMenuItem1
             // 
+            resources.ApplyResources(this.fileToolStripMenuItem1, "fileToolStripMenuItem1");
             this.fileToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newToolStripMenuItem,
             this.openToolStripMenuItem,
@@ -120,59 +115,49 @@ namespace SVGEditor2
             this.toolStripSeparator1,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem1.Name = "fileToolStripMenuItem1";
-            this.fileToolStripMenuItem1.Size = new System.Drawing.Size(61, 20);
-            this.fileToolStripMenuItem1.Text = "&Arquivo";
             // 
             // newToolStripMenuItem
             // 
+            resources.ApplyResources(this.newToolStripMenuItem, "newToolStripMenuItem");
             this.newToolStripMenuItem.Image = global::SVGEditor2.Properties.Resources.new_page;
-            this.newToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.White;
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
-            this.newToolStripMenuItem.Text = "&Novo";
             this.newToolStripMenuItem.Click += new System.EventHandler(this.NewToolStripMenuItemNewClick);
             // 
             // openToolStripMenuItem
             // 
+            resources.ApplyResources(this.openToolStripMenuItem, "openToolStripMenuItem");
             this.openToolStripMenuItem.Image = global::SVGEditor2.Properties.Resources.open;
-            this.openToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.White;
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
-            this.openToolStripMenuItem.Text = "&Abrir";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.OpenToolStripMenuItemClick);
             // 
             // saveToolStripMenuItem
             // 
+            resources.ApplyResources(this.saveToolStripMenuItem, "saveToolStripMenuItem");
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
-            this.saveToolStripMenuItem.Text = "&Salvar";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // saveAsToolStripMenuItem
             // 
+            resources.ApplyResources(this.saveAsToolStripMenuItem, "saveAsToolStripMenuItem");
             this.saveAsToolStripMenuItem.Image = global::SVGEditor2.Properties.Resources.save_as;
-            this.saveAsToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.White;
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
-            this.saveAsToolStripMenuItem.Text = "S&alvar  Como";
             this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.SaveToolStripMenuItemClick);
             // 
             // toolStripSeparator1
             // 
+            resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(141, 6);
             // 
             // exitToolStripMenuItem
             // 
+            resources.ApplyResources(this.exitToolStripMenuItem, "exitToolStripMenuItem");
             this.exitToolStripMenuItem.Image = global::SVGEditor2.Properties.Resources.exit;
-            this.exitToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.White;
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
-            this.exitToolStripMenuItem.Text = "S&air";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItemClick);
             // 
             // editToolStripMenuItem
             // 
+            resources.ApplyResources(this.editToolStripMenuItem, "editToolStripMenuItem");
             this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.undoToolStripMenuItem,
             this.redoToolStripMenuItem,
@@ -189,117 +174,103 @@ namespace SVGEditor2
             this.copyToolStripMenuItem,
             this.pasteToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
-            this.editToolStripMenuItem.Text = "&Editar";
             // 
             // undoToolStripMenuItem
             // 
+            resources.ApplyResources(this.undoToolStripMenuItem, "undoToolStripMenuItem");
             this.undoToolStripMenuItem.Name = "undoToolStripMenuItem";
-            this.undoToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
-            this.undoToolStripMenuItem.Text = "Desfazer";
             this.undoToolStripMenuItem.Click += new System.EventHandler(this.UndoToolStripMenuItemClick);
             // 
             // redoToolStripMenuItem
             // 
+            resources.ApplyResources(this.redoToolStripMenuItem, "redoToolStripMenuItem");
             this.redoToolStripMenuItem.Name = "redoToolStripMenuItem";
-            this.redoToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
-            this.redoToolStripMenuItem.Text = "Refazer";
             this.redoToolStripMenuItem.Click += new System.EventHandler(this.RedoToolStripMenuItemClick);
             // 
             // toolStripSeparator6
             // 
+            resources.ApplyResources(this.toolStripSeparator6, "toolStripSeparator6");
             this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(173, 6);
             // 
             // tsSelectAll
             // 
+            resources.ApplyResources(this.tsSelectAll, "tsSelectAll");
             this.tsSelectAll.Name = "tsSelectAll";
-            this.tsSelectAll.Size = new System.Drawing.Size(176, 22);
-            this.tsSelectAll.Text = "Selecionar Todos";
             this.tsSelectAll.Click += new System.EventHandler(this.TsSelectAllClick);
             // 
             // unSelectAllToolStripMenuItem
             // 
+            resources.ApplyResources(this.unSelectAllToolStripMenuItem, "unSelectAllToolStripMenuItem");
             this.unSelectAllToolStripMenuItem.Name = "unSelectAllToolStripMenuItem";
-            this.unSelectAllToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
-            this.unSelectAllToolStripMenuItem.Text = "Deselecionar Todos";
             this.unSelectAllToolStripMenuItem.Click += new System.EventHandler(this.UnSelectAllToolStripMenuItemClick);
             // 
             // toolStripSeparator3
             // 
+            resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(173, 6);
             // 
             // bringToFrontToolStripMenuItem
             // 
+            resources.ApplyResources(this.bringToFrontToolStripMenuItem, "bringToFrontToolStripMenuItem");
             this.bringToFrontToolStripMenuItem.Name = "bringToFrontToolStripMenuItem";
-            this.bringToFrontToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
-            this.bringToFrontToolStripMenuItem.Text = "Trazer a Frente";
             this.bringToFrontToolStripMenuItem.Click += new System.EventHandler(this.BringToFrontToolStripMenuItemClick);
             // 
             // sendBackToolStripMenuItem
             // 
+            resources.ApplyResources(this.sendBackToolStripMenuItem, "sendBackToolStripMenuItem");
             this.sendBackToolStripMenuItem.Name = "sendBackToolStripMenuItem";
-            this.sendBackToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
-            this.sendBackToolStripMenuItem.Text = "Levar para Trás";
             this.sendBackToolStripMenuItem.Click += new System.EventHandler(this.SendBackToolStripMenuItemClick);
             // 
             // toolStripSeparator4
             // 
+            resources.ApplyResources(this.toolStripSeparator4, "toolStripSeparator4");
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(173, 6);
             // 
             // deleteToolStripMenuItem
             // 
+            resources.ApplyResources(this.deleteToolStripMenuItem, "deleteToolStripMenuItem");
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
-            this.deleteToolStripMenuItem.Text = "Deletar";
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.DeleteToolStripMenuItemClick);
             // 
             // toolStripSeparator5
             // 
+            resources.ApplyResources(this.toolStripSeparator5, "toolStripSeparator5");
             this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(173, 6);
             // 
             // cutToolStripMenuItem
             // 
+            resources.ApplyResources(this.cutToolStripMenuItem, "cutToolStripMenuItem");
             this.cutToolStripMenuItem.Name = "cutToolStripMenuItem";
-            this.cutToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
-            this.cutToolStripMenuItem.Text = "Cortar";
             this.cutToolStripMenuItem.Click += new System.EventHandler(this.CutToolStripMenuItemClick);
             // 
             // copyToolStripMenuItem
             // 
+            resources.ApplyResources(this.copyToolStripMenuItem, "copyToolStripMenuItem");
             this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
-            this.copyToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
-            this.copyToolStripMenuItem.Text = "Copiar";
             this.copyToolStripMenuItem.Click += new System.EventHandler(this.CopyToolStripMenuItemClick);
             // 
             // pasteToolStripMenuItem
             // 
+            resources.ApplyResources(this.pasteToolStripMenuItem, "pasteToolStripMenuItem");
             this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
-            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
-            this.pasteToolStripMenuItem.Text = "Colar";
             this.pasteToolStripMenuItem.Click += new System.EventHandler(this.PasteToolStripMenuItemClick);
             // 
             // helpToolStripMenuItem
             // 
+            resources.ApplyResources(this.helpToolStripMenuItem, "helpToolStripMenuItem");
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aboutToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
-            this.helpToolStripMenuItem.Text = "&Ajuda";
             // 
             // aboutToolStripMenuItem
             // 
+            resources.ApplyResources(this.aboutToolStripMenuItem, "aboutToolStripMenuItem");
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
-            this.aboutToolStripMenuItem.Text = "&Sobre";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.AboutToolStripMenuItemClick);
             // 
             // toolStrip1
             // 
-            this.toolStrip1.AutoSize = false;
+            resources.ApplyResources(this.toolStrip1, "toolStrip1");
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton_new,
             this.toolStripButton_open,
@@ -307,86 +278,65 @@ namespace SVGEditor2
             this.toolStripButton_close,
             this.toolStripButton_exit,
             this.toolStripSeparator2});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(546, 30);
-            this.toolStrip1.TabIndex = 5;
-            this.toolStrip1.Text = "toolStrip1";
             // 
             // toolStripButton_new
             // 
+            resources.ApplyResources(this.toolStripButton_new, "toolStripButton_new");
             this.toolStripButton_new.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButton_new.Image = global::SVGEditor2.Properties.Resources.new_page;
-            this.toolStripButton_new.ImageTransparentColor = System.Drawing.Color.White;
             this.toolStripButton_new.Name = "toolStripButton_new";
-            this.toolStripButton_new.Size = new System.Drawing.Size(23, 27);
-            this.toolStripButton_new.Text = "New SVG Document";
             this.toolStripButton_new.Click += new System.EventHandler(this.NewToolStripMenuItemNewClick);
             // 
             // toolStripButton_open
             // 
+            resources.ApplyResources(this.toolStripButton_open, "toolStripButton_open");
             this.toolStripButton_open.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButton_open.Image = global::SVGEditor2.Properties.Resources.open;
-            this.toolStripButton_open.ImageTransparentColor = System.Drawing.Color.White;
             this.toolStripButton_open.Name = "toolStripButton_open";
-            this.toolStripButton_open.Size = new System.Drawing.Size(23, 27);
-            this.toolStripButton_open.Text = "Open SVG Document";
             this.toolStripButton_open.Click += new System.EventHandler(this.OpenToolStripMenuItemClick);
             // 
             // toolStripButton_saveAs
             // 
+            resources.ApplyResources(this.toolStripButton_saveAs, "toolStripButton_saveAs");
             this.toolStripButton_saveAs.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButton_saveAs.Image = global::SVGEditor2.Properties.Resources.save_as;
-            this.toolStripButton_saveAs.ImageTransparentColor = System.Drawing.Color.White;
             this.toolStripButton_saveAs.Name = "toolStripButton_saveAs";
-            this.toolStripButton_saveAs.Size = new System.Drawing.Size(23, 27);
-            this.toolStripButton_saveAs.Text = "Save SVG Document As";
             this.toolStripButton_saveAs.Click += new System.EventHandler(this.SaveToolStripMenuItemClick);
             // 
             // toolStripButton_close
             // 
+            resources.ApplyResources(this.toolStripButton_close, "toolStripButton_close");
             this.toolStripButton_close.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButton_close.Image = global::SVGEditor2.Properties.Resources.cancel;
-            this.toolStripButton_close.ImageTransparentColor = System.Drawing.Color.White;
             this.toolStripButton_close.Name = "toolStripButton_close";
-            this.toolStripButton_close.Size = new System.Drawing.Size(23, 27);
-            this.toolStripButton_close.Text = "Close Current SVG Document";
             this.toolStripButton_close.Click += new System.EventHandler(this.ToolStripButtonCloseClick);
             // 
             // toolStripButton_exit
             // 
+            resources.ApplyResources(this.toolStripButton_exit, "toolStripButton_exit");
             this.toolStripButton_exit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButton_exit.Image = global::SVGEditor2.Properties.Resources.exit;
-            this.toolStripButton_exit.ImageTransparentColor = System.Drawing.Color.White;
             this.toolStripButton_exit.Name = "toolStripButton_exit";
-            this.toolStripButton_exit.Size = new System.Drawing.Size(23, 27);
-            this.toolStripButton_exit.Text = "Exit Application";
             this.toolStripButton_exit.Click += new System.EventHandler(this.ExitToolStripMenuItemClick);
             // 
             // toolStripSeparator2
             // 
+            resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 30);
             // 
             // panel1
             // 
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Controls.Add(this._docker);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 54);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(546, 360);
-            this.panel1.TabIndex = 6;
             // 
             // _docker
             // 
+            resources.ApplyResources(this._docker, "_docker");
             this._docker.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
             this._docker.CanMoveByMouseFilledForms = true;
-            this._docker.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._docker.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._docker.Location = new System.Drawing.Point(0, 0);
             this._docker.Name = "_docker";
-            this._docker.Size = new System.Drawing.Size(546, 360);
-            this._docker.TabIndex = 8;
             this._docker.TitleBarGradientColor1 = System.Drawing.SystemColors.Control;
             this._docker.TitleBarGradientColor2 = System.Drawing.Color.White;
             this._docker.TitleBarGradientSelectedColor1 = System.Drawing.Color.DarkGray;
@@ -395,17 +345,14 @@ namespace SVGEditor2
             // 
             // SvgArtiste
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(546, 436);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.MaiMenuStrip);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MainMenuStrip = this.MaiMenuStrip;
             this.Name = "SvgArtiste";
-            this.Text = "SVG Artiste 2.0";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SvgArtiste_FormClosing);
             this.Shown += new System.EventHandler(this.SvgMainShown);
