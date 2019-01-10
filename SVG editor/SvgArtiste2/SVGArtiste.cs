@@ -39,16 +39,17 @@ namespace SVGEditor2
         WorkArea _svgMainFiles;
         WorkSpaceControlBox _svgProperties;
         ToolBox _toolBox;
+        String[] dados;
 
         #endregion Fields
 
         #region Constructors
 
-        public SvgArtiste()
+        public SvgArtiste(String[] dados)
         {
+
             InitializeComponent();
-
-
+            this.dados = dados;
             Intialize();
         }
 
@@ -107,7 +108,7 @@ namespace SVGEditor2
             _svgMainFiles.ToolDone += OnToolDone;
             _svgMainFiles.ItemsSelected += SvgMainFilesItemsSelected;
 
-            _toolBox = new ToolBox { Size = new Size(113, 165) };
+            _toolBox = new ToolBox(dados) { Size = new Size(113, 165) };
             _toolBox.ToolSelectionChanged += ToolSelectionChanged;
 
             _svgProperties = new WorkSpaceControlBox();
@@ -266,6 +267,16 @@ namespace SVGEditor2
         private void MaiMenuStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
+        }
+
+        private void SvgArtiste_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult dr = new DialogResult();
+            dr = MessageBox.Show("Deseja mesmo sair?", "GEOMETRICAMENTE", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dr == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
         }
     }
 }

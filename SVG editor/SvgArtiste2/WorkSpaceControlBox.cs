@@ -62,7 +62,7 @@ namespace SVGEditor2
             //numHeight.Value = drawAreaSize.Height; 
             //numWidth.Value = drawAreaSize.Width; 
             WorkArea a = new WorkArea(); 
-            SvgArtiste b = new SvgArtiste(); 
+            SvgArtiste b = new SvgArtiste(null); 
             numWidth.Value = a.Width; 
             numHeight.Value = a.Height; 
             textBox_description.Text = description; 

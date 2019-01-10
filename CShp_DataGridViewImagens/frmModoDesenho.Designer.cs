@@ -61,10 +61,10 @@
             // 
             this.label1.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label1.Location = new System.Drawing.Point(8, 13);
+            this.label1.Location = new System.Drawing.Point(13, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(828, 68);
+            this.label1.Size = new System.Drawing.Size(842, 68);
             this.label1.TabIndex = 21;
             this.label1.Text = " TELA DE DESENHO";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -146,7 +146,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(155, 25);
             this.label4.TabIndex = 28;
-            this.label4.Text = "SvgPaint™";
+            this.label4.Text = "SvgArtiste2";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // frmModoDesenho

@@ -19,3 +19,4 @@ C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\SVG editor\SVGLib\obj\x8
 C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\SVG editor\SVGLib\obj\x86\Debug\SVGLib.csproj.CopyComplete
 C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\SVG editor\SVGLib\obj\x86\Debug\SVGLib.dll
 C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\SVG editor\SVGLib\obj\x86\Debug\SVGLib.pdb
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\SVG editor\SVGLib\obj\x86\Debug\SVGLib.csprojAssemblyReference.cache

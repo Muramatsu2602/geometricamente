@@ -407,6 +407,7 @@ namespace SVGEditor2
             this.Name = "SvgArtiste";
             this.Text = "SVG Artiste 2.0";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SvgArtiste_FormClosing);
             this.Shown += new System.EventHandler(this.SvgMainShown);
             this.MaiMenuStrip.ResumeLayout(false);
             this.MaiMenuStrip.PerformLayout();

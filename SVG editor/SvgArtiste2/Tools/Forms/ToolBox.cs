@@ -88,11 +88,15 @@ namespace SVGEditor2.Tools.ToolBoxes
         const Int32 CURSOR_SHOWING = 0x00000001;
         #endregion
 
-        public ToolBox()
+        public ToolBox(String[] ui)
         {
             InitializeComponent();
+            if (ui != null)
+            {
+                this.dados = ui;
+            }
 
-            
+
             #region CONSTRUTOR'S VARIABLES
             _isRecording = false;
             //this._screenSize = Screen.PrimaryScreen.Bounds;
@@ -115,6 +119,7 @@ namespace SVGEditor2.Tools.ToolBoxes
             #endregion
 
             // MessageBox.Show( Environment.CurrentDirectory);
+
 
         }
 
@@ -239,7 +244,7 @@ namespace SVGEditor2.Tools.ToolBoxes
             }
             catch (Exception exc)
             {
-                MessageBox.Show("Erro ao iniciar gravação ! \n Método Start \n mais detalhes "+exc.Message);
+                MessageBox.Show("Erro ao iniciar gravação ! \n Método Start \n mais detalhes " + exc.Message);
             }
         }
 
@@ -269,7 +274,7 @@ namespace SVGEditor2.Tools.ToolBoxes
                 }
                 catch (Exception e)
                 {
-                    MessageBox.Show("Erro ao executar o método StartRec \n "+e.Message);
+                    MessageBox.Show("Erro ao executar o método StartRec \n " + e.Message);
 
                 }
 

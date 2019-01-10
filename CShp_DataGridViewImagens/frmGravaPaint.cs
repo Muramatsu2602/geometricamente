@@ -7,8 +7,9 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows.Forms;
-using AForge.Video;
-using AForge.Video.FFMPEG;
+using Accord;
+using Accord.Video;
+using Accord.Video.FFMPEG;
 using CapturaTela;
 
 namespace Geometricamente_V1
@@ -91,8 +92,6 @@ namespace Geometricamente_V1
 
         public frmGravaPaint(String[] dados)
         {
-
-
             this.dados = dados;
             InitializeComponent();
 
@@ -320,35 +319,11 @@ namespace Geometricamente_V1
 
         private void btnSettings_Click(object sender, EventArgs e)
         {
-            if (btnSettings.BackColor == Color.Transparent)
-            {
-                label1.Visible = true;
-                label2.Visible = true;
-                label3.Visible = true;
-                label5.Visible = true;
-                cb_BitRate.Visible = true;
-                cb_screenSelector.Visible = true;
-                cb_VideoCodec.Visible = true;
-                nud_FPS.Visible = true;
-                btnSettings.BackColor = Color.Silver;
-            }
-            else if (btnSettings.BackColor == Color.Silver)
-            {
-                label1.Visible = false;
-                label2.Visible = false;
-                label3.Visible = false;
-                label5.Visible = false;
-                cb_BitRate.Visible = false;
-                cb_screenSelector.Visible = false;
-                cb_VideoCodec.Visible = false;
-                nud_FPS.Visible = false;
-                btnSettings.BackColor = Color.Transparent;
-            }
+           Settings();
         }
 
         private void frmGravaPaint_FormClosing(object sender, FormClosingEventArgs e)
         {
-
             DialogResult dr = new DialogResult();
             dr = MessageBox.Show("Deseja Sair?", "GEOMETRICAMENTE", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dr == DialogResult.Yes)
@@ -379,6 +354,7 @@ namespace Geometricamente_V1
                 e.Cancel = true;
             }
 
+
         }
 
         private void frmGravaPaint_Load(object sender, EventArgs e)
@@ -390,5 +366,34 @@ namespace Geometricamente_V1
         {
             return Environment.CurrentDirectory;
         }
+
+        private void Settings()
+        {
+             if (btnSettings.BackColor == Color.Transparent)
+            {
+                label1.Visible = true;
+                label2.Visible = true;
+                label3.Visible = true;
+                label5.Visible = true;
+                cb_BitRate.Visible = true;
+                cb_screenSelector.Visible = true;
+                cb_VideoCodec.Visible = true;
+                nud_FPS.Visible = true;
+                btnSettings.BackColor = Color.Silver;
+            }
+            else if (btnSettings.BackColor == Color.Silver)
+            {
+                label1.Visible = false;
+                label2.Visible = false;
+                label3.Visible = false;
+                label5.Visible = false;
+                cb_BitRate.Visible = false;
+                cb_screenSelector.Visible = false;
+                cb_VideoCodec.Visible = false;
+                nud_FPS.Visible = false;
+                btnSettings.BackColor = Color.Transparent;
+            }
+        }
+      
     }
 }

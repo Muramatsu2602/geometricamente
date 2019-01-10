@@ -41,3 +41,4 @@ C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\SVG editor\SvgArtiste2\o
 C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\SVG editor\SvgArtiste2\obj\x86\Debug\SVGArtiste.csproj.CopyComplete
 C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\SVG editor\SvgArtiste2\obj\x86\Debug\SvgArtiste.exe
 C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\SVG editor\SvgArtiste2\obj\x86\Debug\SvgArtiste.pdb
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\SVG editor\SvgArtiste2\bin\x86\Debug\SvgArtiste.exe.config

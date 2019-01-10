@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SVGLib", "SVGLib\SVGLib.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SVGArtiste", "SvgArtiste2\SVGArtiste.csproj", "{0B01557B-78FA-49D2-B288-285A5D84FCA7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geometricamente_V1", "..\CShp_DataGridViewImagens\Geometricamente_V1.csproj", "{CA086315-B230-4587-8F57-C648A521145A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,14 @@ Global
 		{0B01557B-78FA-49D2-B288-285A5D84FCA7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0B01557B-78FA-49D2-B288-285A5D84FCA7}.Release|x86.ActiveCfg = Release|x86
 		{0B01557B-78FA-49D2-B288-285A5D84FCA7}.Release|x86.Build.0 = Release|x86
+		{CA086315-B230-4587-8F57-C648A521145A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA086315-B230-4587-8F57-C648A521145A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA086315-B230-4587-8F57-C648A521145A}.Debug|x86.ActiveCfg = Debug|x86
+		{CA086315-B230-4587-8F57-C648A521145A}.Debug|x86.Build.0 = Debug|x86
+		{CA086315-B230-4587-8F57-C648A521145A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA086315-B230-4587-8F57-C648A521145A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA086315-B230-4587-8F57-C648A521145A}.Release|x86.ActiveCfg = Release|x86
+		{CA086315-B230-4587-8F57-C648A521145A}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

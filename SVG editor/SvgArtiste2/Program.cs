@@ -27,7 +27,7 @@ namespace SVGEditor2
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SvgArtiste());
+            Application.Run(new SvgArtiste(null));
         }
     }
 }

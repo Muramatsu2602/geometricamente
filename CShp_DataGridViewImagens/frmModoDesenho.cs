@@ -1,4 +1,5 @@
 ﻿using CapturaTela;
+using SVGEditor2;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -72,7 +73,8 @@ namespace Geometricamente_V1
 
         private void btnSvgPaint_Click(object sender, EventArgs e)
         {
-            Process.Start(@"C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\ManipulacaoDeFormas\bin\Debug\SvgPaint.exe");
+            SvgArtiste art = new SvgArtiste(dados);
+            art.Show();
         }
 
 

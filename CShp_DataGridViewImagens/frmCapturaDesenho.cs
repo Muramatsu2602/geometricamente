@@ -7,8 +7,8 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows.Forms;
-using AForge.Video;
-using AForge.Video.FFMPEG;
+using Accord.Video;
+using Accord.Video.FFMPEG;
 
 namespace CapturaTela
 {
