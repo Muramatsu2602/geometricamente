@@ -44,7 +44,7 @@ namespace DrawTools
         #region Constructors
 
         public ToolPolygon()
-        {
+        {            
             //Cursor = new Cursor(GetType(), "Pencil.cur");
             Cursor = new Cursor(Assembly.GetExecutingAssembly().GetManifestResourceStream("SVGEditor2.Resources.Pencil.cur"));
         }

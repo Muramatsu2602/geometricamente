@@ -7,14 +7,14 @@
     <framework targetVersion="4.7.1" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="Geometricamente_V1.exe.manifest" size="9637">
+    <dependentAssembly dependencyType="install" codebase="Geometricamente_V1.exe.manifest" size="10291">
       <assemblyIdentity name="Geometricamente_V1.exe" version="1.0.0.0" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="x86" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>rk9Yd1SLAM+xBrNjxroeAyxj7iwYUFnnURAUphTs0UE=</dsig:DigestValue>
+        <dsig:DigestValue>iGlVX1jt14cBLl9SWJKBPoTcx6qTOlDKO/kn1akS1e4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

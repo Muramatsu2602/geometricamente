@@ -274,7 +274,7 @@
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "WorkSpaceControlBox";
-            this.Text = "ControlBox";
+            this.Text = "Controles";
             ((System.ComponentModel.ISupportInitialize)(this.trackBarZoom)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

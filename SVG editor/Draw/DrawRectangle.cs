@@ -138,7 +138,7 @@ namespace Draw
                     ParseSize(svg.Width,Dpi.X),
                     ParseSize(svg.Height,Dpi.Y));
                 dobj.SetStyleFromSvg(svg);
-                dobj.Nome = svg.ShapeName;
+                dobj.Name = svg.ShapeName;
 
                 return dobj;
             }
@@ -215,12 +215,12 @@ namespace Draw
             try
             {
                 RectangleF r = GetNormalizedRectangle(RectangleF);
-                if (CorForma != Color.Empty)
+                if (Fill != Color.Empty)
                 {
-                    Brush brush = new SolidBrush(CorForma);
+                    Brush brush = new SolidBrush(Fill);
                     g.FillRectangle(brush,r);
                 }
-                Pen pen = new Pen(CorLinha, StrokeWidth);
+                Pen pen = new Pen(Stroke, StrokeWidth);
                 g.DrawRectangle(pen,r.X,r.Y,r.Width,r.Height);
 
                 pen.Dispose();
@@ -331,7 +331,7 @@ namespace Draw
             string s = "<";
             s += Tag;
             s += GetStrStyle(scale);
-            s += GetRectStringXml(RectangleF,scale, Nome);
+            s += GetRectStringXml(RectangleF,scale, Name);
             s += " />" + "\r\n";
             return s;
         }
@@ -346,7 +346,7 @@ namespace Draw
         /// <returns></returns>
         public override int HitTest(PointF point)
         {
-            if ( Selecionado )
+            if ( Selected )
             {
                 for ( int i = 1; i <= HandleCount; i++ )
                 {

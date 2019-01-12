@@ -75,12 +75,12 @@ namespace Draw
         public override void Draw(Graphics g)
         {
             RectangleF r = GetNormalizedRectangle(RectangleF);
-            if (CorForma != Color.Empty)
+            if (Fill != Color.Empty)
             {
-                Brush brush = new SolidBrush(CorForma);
+                Brush brush = new SolidBrush(Fill);
                 g.FillEllipse(brush,r);
             }
-            var pen = new Pen(CorLinha, StrokeWidth);
+            var pen = new Pen(Stroke, StrokeWidth);
             g.DrawEllipse(pen, r);
             pen.Dispose();
         }

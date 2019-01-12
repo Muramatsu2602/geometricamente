@@ -94,7 +94,7 @@ namespace DrawTools
 
                         // Since we want to resize only one object, unselect all other objects
                         drawArea.GraphicsList.UnselectAll();
-                        o.Selecionado = true;
+                        o.Selected = true;
                         o.MouseClickOnHandle(handleNumber);
 
                         break;
@@ -104,7 +104,7 @@ namespace DrawTools
                     {
                         _selectMode = SelectionMode.Size;
                         o.MouseClickOnBorder();
-                        o.Selecionado = true;
+                        o.Selected = true;
                     }
 
             }
@@ -129,11 +129,11 @@ namespace DrawTools
                     _selectMode = SelectionMode.Move;
 
                     // Unselect all if Ctrl is not pressed and clicked object is not selected yet
-                    if ( ( Control.ModifierKeys & Keys.Control ) == 0  && !o.Selecionado )
+                    if ( ( Control.ModifierKeys & Keys.Control ) == 0  && !o.Selected )
                         drawArea.GraphicsList.UnselectAll();
 
                     // Select clicked object
-                    o.Selecionado = true;
+                    o.Selected = true;
 
                     drawArea.Cursor = Cursors.SizeAll;
                 }

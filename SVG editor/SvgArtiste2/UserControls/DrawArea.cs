@@ -52,12 +52,12 @@ namespace DrawTools
         private ToolStripMenuItem _deleteToolStripMenuItem;
         private GraphicsList _graphicsList; // list of draw objects
         private string _mDescription = "Svg picture";
-        private SizeF _mOriginalSize = new SizeF(500,400);
+        private SizeF _mOriginalSize = new SizeF(500, 400);
 
         // group selection rectangle
         // Information about owner form
-        private SizeF _mScale = new SizeF(1.0f,1.0f);
-        private SizeF _mSizePicture = new SizeF(500,400);
+        private SizeF _mScale = new SizeF(1.0f, 1.0f);
+        private SizeF _mSizePicture = new SizeF(500, 400);
         private ToolStripMenuItem _pasteToolStripMenuItem;
         private ToolStripMenuItem _selectAllToolStripMenuItem;
         private ToolStripMenuItem _sendToBackToolStripMenuItem;
@@ -88,7 +88,7 @@ namespace DrawTools
         public enum DrawToolType
         {
             Pointer,
-            Retangulo,
+            Rectangle,
             Ellipse,
             Line,
             Polygon,
@@ -103,21 +103,23 @@ namespace DrawTools
 
         #region Delegates
 
-            public delegate void OnItemsInSelection(object sender, MouseEventArgs e);
+        public delegate void OnItemsInSelection(object sender, MouseEventArgs e);
 
-            public delegate void OnMousePan(object sender, MouseEventArgs e);
+        public delegate void OnMousePan(object sender, MouseEventArgs e);
 
-            public delegate void OnMouseSelectionDone(object sender, EventArgs e);
+        public delegate void OnMouseSelectionDone(object sender, EventArgs e);
+
 
         #endregion Delegates
 
         #region Events
 
-            public event OnItemsInSelection ItemsSelected;
+        public event OnItemsInSelection ItemsSelected;
 
-            public event OnMousePan MousePan;
+        public event OnMousePan MousePan;
 
-            public event OnMouseSelectionDone ToolDone;
+        public event OnMouseSelectionDone ToolDone;
+
 
         #endregion Events
 
@@ -255,10 +257,10 @@ namespace DrawTools
         public void DoScaling(SizeF sc)
         {
             DrawObject.Zoom = sc.Height;
-            _graphicsList.Resize(sc,_mScale);
+            _graphicsList.Resize(sc, _mScale);
             _mScale = sc;
-            _mSizePicture = new SizeF(_mScale.Width*OriginalSize.Width,
-                _mScale.Height*OriginalSize.Height);
+            _mSizePicture = new SizeF(_mScale.Width * OriginalSize.Width,
+                _mScale.Height * OriginalSize.Height);
         }
 
         public void Draw(Graphics g)
@@ -267,8 +269,8 @@ namespace DrawTools
             g.FillRectangle(brush, ClientRectangle);
             // draw rect svg size
             var pen = new Pen(Color.FromArgb(0, 0, 255), 1);
-            g.DrawRectangle(pen,0,0,SizePicture.Width,SizePicture.Height);
-            if ( _graphicsList != null )
+            g.DrawRectangle(pen, 0, 0, SizePicture.Width, SizePicture.Height);
+            if (_graphicsList != null)
             {
                 _graphicsList.Draw(g);
             }
@@ -281,10 +283,10 @@ namespace DrawTools
         /// <param name="g"></param>
         public void DrawNetSelection(Graphics g)
         {
-            if ( ! DrawNetRectangle )
+            if (!DrawNetRectangle)
                 return;
-            var r = new Rectangle(Convert.ToInt32(NetRectangle.X),Convert.ToInt32(NetRectangle.Y),
-                Convert.ToInt32(NetRectangle.Width),Convert.ToInt32(NetRectangle.Height));
+            var r = new Rectangle(Convert.ToInt32(NetRectangle.X), Convert.ToInt32(NetRectangle.Y),
+                Convert.ToInt32(NetRectangle.Width), Convert.ToInt32(NetRectangle.Height));
             ControlPaint.DrawFocusRectangle(g, r, Color.Black, Color.Transparent);
         }
 
@@ -309,7 +311,7 @@ namespace DrawTools
             // create array of drawing tools
             _tools = new Tool[(int)DrawToolType.NumberOfDrawTools];
             _tools[(int)DrawToolType.Pointer] = new ToolPointer();
-            _tools[(int)DrawToolType.Retangulo] = new ToolRectangle();
+            _tools[(int)DrawToolType.Rectangle] = new ToolRectangle();
             _tools[(int)DrawToolType.Ellipse] = new ToolEllipse();
             _tools[(int)DrawToolType.Line] = new ToolLine();
             _tools[(int)DrawToolType.Polygon] = new ToolPolygon();
@@ -319,7 +321,7 @@ namespace DrawTools
             _tools[(int)DrawToolType.Path] = new ToolPath();
 
             Graphics g = Owner.CreateGraphics();
-            DrawObject.Dpi = new PointF(g.DpiX,g.DpiY);
+            DrawObject.Dpi = new PointF(g.DpiX, g.DpiY);
         }
 
         public bool LoadFromXml(XmlTextReader reader)
@@ -335,15 +337,15 @@ namespace DrawTools
                 return false;
             try
             {
-                SizePicture = new SizeF(DrawObject.ParseSize(root.Width,DrawObject.Dpi.X),
-                    DrawObject.ParseSize(root.Height,DrawObject.Dpi.Y));
+                SizePicture = new SizeF(DrawObject.ParseSize(root.Width, DrawObject.Dpi.X),
+                    DrawObject.ParseSize(root.Height, DrawObject.Dpi.Y));
             }
             catch
             {
             }
             _mOriginalSize = SizePicture;
             SvgElement ele = root.getChild();
-            _mScale = new SizeF(1,1);
+            _mScale = new SizeF(1, 1);
             if (ele != null)
                 _graphicsList.AddFromSvg(ele);
 
@@ -354,17 +356,17 @@ namespace DrawTools
         public void MkResize()
         {
             SizeF oldscale = _mScale;
-            _mScale.Width = _width/_mOriginalSize.Width;
-            _mScale.Height = _height/_mOriginalSize.Height;
-            _graphicsList.Resize(_mScale,oldscale);
-            SizePicture = new SizeF(DrawObject.RecalcFloat(SizePicture.Width, _mScale.Width,oldscale.Width),
-                DrawObject.RecalcFloat(SizePicture.Height, _mScale.Height,oldscale.Height));
+            _mScale.Width = _width / _mOriginalSize.Width;
+            _mScale.Height = _height / _mOriginalSize.Height;
+            _graphicsList.Resize(_mScale, oldscale);
+            SizePicture = new SizeF(DrawObject.RecalcFloat(SizePicture.Width, _mScale.Width, oldscale.Width),
+                DrawObject.RecalcFloat(SizePicture.Height, _mScale.Height, oldscale.Height));
         }
 
         public void RestoreScale()
         {
-            _graphicsList.Resize(new SizeF(1,1),_mScale);
-            _mScale = new SizeF(1,1);
+            _graphicsList.Resize(new SizeF(1, 1), _mScale);
+            _mScale = new SizeF(1, 1);
         }
 
         public bool SaveToXml(StreamWriter sw)
@@ -376,9 +378,9 @@ namespace DrawTools
 
                 string sXml = mSXmlDeclaration + "\r\n";
                 sXml += mSXmlDocType + "\r\n";
-                sXml += "<svg width=\""+_mOriginalSize.Width.ToString(CultureInfo.InvariantCulture)+
-                    "\" height=\""+_mOriginalSize.Height.ToString(CultureInfo.InvariantCulture)+"\">" + "\r\n";
-                sXml += "<desc>"+Description+"</desc>" + "\r\n";
+                sXml += "<svg width=\"" + _mOriginalSize.Width.ToString(CultureInfo.InvariantCulture) +
+                    "\" height=\"" + _mOriginalSize.Height.ToString(CultureInfo.InvariantCulture) + "\">" + "\r\n";
+                sXml += "<desc>" + Description + "</desc>" + "\r\n";
                 sXml += _graphicsList.GetXmlString(_mScale);
                 sXml += "</svg>" + "\r\n";
                 sw.Write(sXml);
@@ -402,16 +404,16 @@ namespace DrawTools
         /// <summary> 
         /// Clean up any resources being used.
         /// </summary>
-        protected override void Dispose( bool disposing )
+        protected override void Dispose(bool disposing)
         {
-            if( disposing )
+            if (disposing)
             {
-                if(components != null)
+                if (components != null)
                 {
                     components.Dispose();
                 }
             }
-            base.Dispose( disposing );
+            base.Dispose(disposing);
         }
 
         /// <summary>
@@ -496,7 +498,7 @@ namespace DrawTools
                 _tools[(int)_activeTool].OnMouseUp(this, e);
                 bool res = _tools[(int)_activeTool].IsComplete;
 
-               // if (activeTool != DrawToolType.Pan)
+                // if (activeTool != DrawToolType.Pan)
                 if (res)
                 {
                     ToolDone(sender, e);
@@ -528,10 +530,10 @@ namespace DrawTools
                 ClientRectangle);
             // draw rect svg size
 
-            if(DrawGrid)
+            if (DrawGrid)
                 DrawGridsAndScale(e.Graphics);
 
-            if ( _graphicsList != null )
+            if (_graphicsList != null)
                 _graphicsList.Draw(e.Graphics);
 
             DrawNetSelection(e.Graphics);
@@ -550,8 +552,8 @@ namespace DrawTools
             _width = (int)(SizePicture.Width);
             _height = (int)(SizePicture.Height);
 
-            var xMajorLines = (int)(_width / MajorIntervals/ ScaleDraw.Width);
-            var yMajorLines = (int)(_height/ MajorIntervals / ScaleDraw.Height);
+            var xMajorLines = (int)(_width / MajorIntervals / ScaleDraw.Width);
+            var yMajorLines = (int)(_height / MajorIntervals / ScaleDraw.Height);
 
             try
             {
@@ -564,7 +566,7 @@ namespace DrawTools
                     //draw X Axis minor lines
                     for (int i1 = 1; i1 <= Xdivs; i1++)
                     {
-                        float x1 = i1 * MajorIntervals / (Xdivs ) * ScaleDraw.Width;
+                        float x1 = i1 * MajorIntervals / (Xdivs) * ScaleDraw.Width;
                         g.DrawLine(majorlinesPen, x + x1, 0, x + x1, _height);
                     }
                 }
@@ -579,8 +581,8 @@ namespace DrawTools
                     //draw Y Axis minor lines
                     for (int i1 = 1; i1 <= Ydivs; i1++)
                     {
-                        float y1 = i1 * MajorIntervals / (Ydivs )* ScaleDraw.Height;
-                        g.DrawLine(majorlinesPen, 0,y + y1, _width,y + y1);
+                        float y1 = i1 * MajorIntervals / (Ydivs) * ScaleDraw.Height;
+                        g.DrawLine(majorlinesPen, 0, y + y1, _width, y + y1);
                     }
                 }
 
@@ -644,21 +646,21 @@ namespace DrawTools
             //
             _bringToFrontToolStripMenuItem.Name = "bringToFrontToolStripMenuItem";
             _bringToFrontToolStripMenuItem.Size = new Size(152, 22);
-            _bringToFrontToolStripMenuItem.Text = @"Trazer a Frente";
+            _bringToFrontToolStripMenuItem.Text = @"Trazer para Frente";
             _bringToFrontToolStripMenuItem.Click += BringToFrontToolStripMenuItemClick;
             //
             // sendToBackToolStripMenuItem
             //
             _sendToBackToolStripMenuItem.Name = "sendToBackToolStripMenuItem";
             _sendToBackToolStripMenuItem.Size = new Size(152, 22);
-            _sendToBackToolStripMenuItem.Text = @"Colocar Atrás";
+            _sendToBackToolStripMenuItem.Text = @"Levar para Trás";
             _sendToBackToolStripMenuItem.Click += SendToBackToolStripMenuItemClick;
             //
             // deleteToolStripMenuItem
             //
             _deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
             _deleteToolStripMenuItem.Size = new Size(152, 22);
-            _deleteToolStripMenuItem.Text = @"Deletar";
+            _deleteToolStripMenuItem.Text = @"Apagar";
             _deleteToolStripMenuItem.Click += DeleteToolStripMenuItemClick;
             //
             // toolStripSeparator2
@@ -702,8 +704,26 @@ namespace DrawTools
             MouseMove += DrawArea_MouseMove;
             MouseDown += DrawArea_MouseDown;
             MouseUp += DrawArea_MouseUp;
+            KeyDown += DrawArea_KeyDown;
             _contextMenuStrip.ResumeLayout(false);
             ResumeLayout(false);
+        }
+
+        private void DrawArea_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode.ToString().Equals("Delete"))
+            {
+                DialogResult dr = new DialogResult();
+                dr = MessageBox.Show("Deseja Apagar?", "GEOMETRICAMENTE", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dr == DialogResult.Yes)
+                {
+
+                    _graphicsList.DeleteSelection();
+                    Refresh();
+                }
+                // MessageBox.Show("aAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAa");
+
+            }
         }
 
         /// <summary>
@@ -719,22 +739,22 @@ namespace DrawTools
             int n = GraphicsList.Count;
             DrawObject o = null;
 
-            for ( int i = 0; i < n; i++ )
+            for (int i = 0; i < n; i++)
             {
-                if ( GraphicsList[i].HitTest(point) == 0 )
+                if (GraphicsList[i].HitTest(point) == 0)
                 {
                     o = GraphicsList[i];
                     break;
                 }
             }
 
-            if ( o != null )
+            if (o != null)
             {
-                if ( ! o.Selecionado )
+                if (!o.Selected)
                     GraphicsList.UnselectAll();
 
                 // Select clicked object
-                o.Selecionado = true;
+                o.Selected = true;
                 _bringToFrontToolStripMenuItem.Enabled = true;
                 _sendToBackToolStripMenuItem.Enabled = true;
                 _cutToolStripMenuItem.Enabled = true;
@@ -787,6 +807,7 @@ namespace DrawTools
         }
 
 
+
         private void BringToFrontToolStripMenuItemClick(object sender, EventArgs e)
         {
             _graphicsList.MoveSelectionToFront();
@@ -795,8 +816,13 @@ namespace DrawTools
 
         private void DeleteToolStripMenuItemClick(object sender, EventArgs e)
         {
-            _graphicsList.DeleteSelection();
-            Refresh();
+            DialogResult dr = new DialogResult();
+            dr = MessageBox.Show("Deseja Apagar?", "GEOMETRICAMENTE", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dr == DialogResult.Yes)
+            {
+                _graphicsList.DeleteSelection();
+                Refresh();
+            }
         }
 
         public void MoveCommand(ArrayList movedItemsList, PointF delta)

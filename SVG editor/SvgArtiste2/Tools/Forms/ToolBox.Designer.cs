@@ -225,7 +225,7 @@
             this.MinimumSize = new System.Drawing.Size(305, 601);
             this.Name = "ToolBox";
             this.Padding = new System.Windows.Forms.Padding(3);
-            this.Text = "ToolBox";
+            this.Text = "Desenho";
             this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnGravar)).EndInit();
             this.ResumeLayout(false);

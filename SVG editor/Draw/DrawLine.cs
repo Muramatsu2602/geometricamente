@@ -117,7 +117,7 @@ namespace Draw
             try
             {
                 g.SmoothingMode = SmoothingMode.AntiAlias;
-                var pen = new Pen(CorLinha, StrokeWidth);
+                var pen = new Pen(Stroke, StrokeWidth);
                 g.DrawLine(pen, _startPoint.X, _startPoint.Y, _endPoint.X, _endPoint.Y);
                 pen.Dispose();
             }
@@ -180,7 +180,7 @@ namespace Draw
         /// <returns></returns>
         public override int HitTest(PointF point)
         {
-            if ( Selecionado )
+            if ( Selected )
             {
                 for ( int i = 1; i <= HandleCount; i++ )
                 {

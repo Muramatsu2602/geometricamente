@@ -36,7 +36,7 @@
             // 
             // statusStrip1
             // 
-            this.statusStrip1.Location = new System.Drawing.Point(0, 539);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 427);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(784, 22);
             this.statusStrip1.TabIndex = 0;
@@ -63,7 +63,7 @@
             this.tabbedView.Name = "tabbedView";
             this.tabbedView.SelectedIndex = -1;
             this.tabbedView.ShowOneTabButton = true;
-            this.tabbedView.Size = new System.Drawing.Size(784, 539);
+            this.tabbedView.Size = new System.Drawing.Size(784, 427);
             this.tabbedView.TabIndex = 1;
             this.tabbedView.PageSelectionMade += new Crom.Controls.TabbedDocument.TabbedView.OnPageSelectionMade(this.TabbedViewPageSelectionMade);
             // 
@@ -71,12 +71,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 561);
+            this.ClientSize = new System.Drawing.Size(784, 449);
             this.Controls.Add(this.tabbedView);
             this.Controls.Add(this.statusStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "WorkArea";
-            this.Text = "WorkArea";
+            this.Text = "Área de Desenho";
             this.ResumeLayout(false);
             this.PerformLayout();
 

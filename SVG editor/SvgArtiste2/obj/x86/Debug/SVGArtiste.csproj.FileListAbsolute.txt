@@ -7,8 +7,10 @@ C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\SVG editor\SvgArtiste2\b
 C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\SVG editor\SvgArtiste2\bin\x86\Debug\swresample-2.dll
 C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\SVG editor\SvgArtiste2\bin\x86\Debug\swscale-4.dll
 C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\SVG editor\SvgArtiste2\bin\x86\Debug\Accord.dll.config
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\SVG editor\SvgArtiste2\bin\x86\Debug\SvgArtiste.exe.config
 C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\SVG editor\SvgArtiste2\bin\x86\Debug\SvgArtiste.exe
 C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\SVG editor\SvgArtiste2\bin\x86\Debug\SvgArtiste.pdb
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\SVG editor\SvgArtiste2\bin\x86\Debug\pt\SvgArtiste.resources.dll
 C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\SVG editor\SvgArtiste2\bin\x86\Debug\pt-BR\SvgArtiste.resources.dll
 C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\SVG editor\SvgArtiste2\bin\x86\Debug\Accord.dll
 C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\SVG editor\SvgArtiste2\bin\x86\Debug\Accord.Video.dll
@@ -34,11 +36,12 @@ C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\SVG editor\SvgArtiste2\o
 C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\SVG editor\SvgArtiste2\obj\x86\Debug\SVGEditor2.UserControls.WorkspaceHolder.resources
 C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\SVG editor\SvgArtiste2\obj\x86\Debug\SVGEditor2.AboutBox.resources
 C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\SVG editor\SvgArtiste2\obj\x86\Debug\SVGEditor2.shapeProperties.resources
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\SVG editor\SvgArtiste2\obj\x86\Debug\SVGEditor2.SvgArtiste.pt.resources
 C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\SVG editor\SvgArtiste2\obj\x86\Debug\SVGEditor2.shapeProperties.pt-BR.resources
 C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\SVG editor\SvgArtiste2\obj\x86\Debug\SVGArtiste.csproj.GenerateResource.cache
 C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\SVG editor\SvgArtiste2\obj\x86\Debug\SVGArtiste.csproj.CoreCompileInputs.cache
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\SVG editor\SvgArtiste2\obj\x86\Debug\pt\SvgArtiste.resources.dll
 C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\SVG editor\SvgArtiste2\obj\x86\Debug\pt-BR\SvgArtiste.resources.dll
 C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\SVG editor\SvgArtiste2\obj\x86\Debug\SVGArtiste.csproj.CopyComplete
 C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\SVG editor\SvgArtiste2\obj\x86\Debug\SvgArtiste.exe
 C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\SVG editor\SvgArtiste2\obj\x86\Debug\SvgArtiste.pdb
-C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\SVG editor\SvgArtiste2\bin\x86\Debug\SvgArtiste.exe.config

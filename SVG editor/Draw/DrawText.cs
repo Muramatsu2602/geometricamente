@@ -168,7 +168,7 @@ namespace Draw
         {
             if (RectangleF.Width == 0 || RectangleF.Height == 0)
                 RectangleF = CalcSize(g,Text,Font,RectangleF.X,RectangleF.Y,TextAnchor);
-            Brush brush = new SolidBrush(CorLinha);
+            Brush brush = new SolidBrush(Stroke);
             try
             {
                 g.DrawString(Text,Font,brush,RectangleF,TextAnchor);
@@ -181,7 +181,7 @@ namespace Draw
 
         public override string GetXmlStr(SizeF scale)
         {
-            return GetXmlText(RectangleF,CorLinha,Font,Text,scale,TextAnchor);
+            return GetXmlText(RectangleF,Stroke,Font,Text,scale,TextAnchor);
         }
 
         public override void Resize(SizeF newscale,SizeF oldscale)
@@ -202,7 +202,7 @@ namespace Draw
                 float h = ParseSize(svg.Height,Dpi.Y);
                 Text = svg.Value;
                 //font
-                CorLinha = svg.Fill;
+                Stroke = svg.Fill;
                 string family = svg.FontFamily;
                 float size = ParseSize(svg.FontSize,Dpi.X);
                 int fs = 0;

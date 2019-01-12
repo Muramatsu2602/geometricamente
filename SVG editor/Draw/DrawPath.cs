@@ -216,7 +216,7 @@ namespace Draw
                 s = s.Trim();
                 string[] arr = s.Split(' ');
 
-                dp = new DrawPath(arr) {Nome = svp.ShapeName};
+                dp = new DrawPath(arr) {Name = svp.ShapeName};
                 dp.SetStyleFromSvg(svp);
             }
             catch (Exception ex)
@@ -251,10 +251,10 @@ namespace Draw
             {
                 g.SmoothingMode = SmoothingMode.AntiAlias;
 
-                Pen pen = new Pen(CorForma, StrokeWidth);
+                Pen pen = new Pen(Stroke, StrokeWidth);
                 //pen.Color = Color.Black;
 
-                Brush br = new SolidBrush(CorForma);
+                Brush br = new SolidBrush(Fill);
                 IEnumerator enumerator = _pointArray.GetEnumerator();
 
                 while (enumerator.MoveNext())
@@ -376,8 +376,8 @@ namespace Draw
             s += "\"";
 
             //If we have a shape name
-            if(Nome.Length > 0)
-                s += " ShapeName = \"" + Nome + "\"";
+            if(Name.Length > 0)
+                s += " ShapeName = \"" + Name + "\"";
 
             s += " />" + "\r\n";
             return s;
@@ -558,9 +558,9 @@ namespace Draw
             {
                 newDrawPath._pointArray.Add(new PathCommands(pc.P, pc.Pc));
             }
-            newDrawPath.CorLinha = CorLinha;
+            newDrawPath.Stroke = Stroke;
             newDrawPath.StrokeWidth = StrokeWidth;
-            newDrawPath.CorForma = CorForma;
+            newDrawPath.Fill = Fill;
             return newDrawPath;
         }
 

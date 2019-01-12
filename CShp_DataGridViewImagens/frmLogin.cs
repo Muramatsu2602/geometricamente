@@ -96,5 +96,15 @@ namespace Geometricamente_V1
         {
 
         }
+
+        private void frmLogin_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+        }
+
+        private void frmLogin_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
     }
 }

@@ -44,21 +44,22 @@ namespace Draw
         /// Selection flag
         /// </summary>
         [Browsable(false)]
-        public bool Selecionado { get; set; }
+        public bool Selected { get; set; }
 
         /// <summary>
         /// Color
         /// </summary>
         [DisplayName("Cor da Forma")]
         [Description("Cor da Forma")]
-        public Color CorForma { get; set; }
+        public Color Fill { get; set; }
 
         /// <summary>
         /// Stroke
         /// </summary>
+        /// 
         [DisplayName("Cor da Linha")]
         [Description("Cor da Linha")]
-        public Color CorLinha { get; set; }
+        public Color Stroke { get; set; }
 
         /// <summary>
         /// Pen width
@@ -66,9 +67,10 @@ namespace Draw
         [Browsable(false)]
         protected float StrokeWidth { get; set; }
 
-        public int Espessura
+        [DisplayName("Espessura")]
+        [Description("Espessura")]
+        public int Thick
         {
-
             get
             {
                 return (int)(StrokeWidth / Zoom);
@@ -103,7 +105,9 @@ namespace Draw
         /// </summary>
         public static float LastUsedPenWidth { get; set; }
 
-        public string Nome { get; set; }
+        [DisplayName("Nome")]
+        [Description("Nome")]
+        public string Name { get; set; }
 
         #endregion
 
@@ -119,8 +123,8 @@ namespace Draw
 
         protected DrawObject()
         {
-            Nome = "";
-            CorForma = Color.Empty;
+            Name = "";
+            Fill = Color.Empty;
             Id = 0;
             SetId();
         }
@@ -164,7 +168,7 @@ namespace Draw
         /// <param name="g"></param>
         public virtual void DrawTracker(Graphics g)
         {
-            if (!Selecionado)
+            if (!Selected)
                 return;
 
             var brush = new SolidBrush(Color.Black);
@@ -269,7 +273,7 @@ namespace Draw
         {
             Trace.WriteLine("");
             Trace.WriteLine(GetType().Name);
-            Trace.WriteLine("Selected = " + Selecionado.ToString(CultureInfo.InvariantCulture));
+            Trace.WriteLine("Selected = " + Selected.ToString(CultureInfo.InvariantCulture));
         }
 
         /// <summary>
@@ -314,7 +318,7 @@ namespace Draw
         /// </summary>
         public virtual void Initialize()
         {
-            CorLinha = LastUsedColor;
+            Stroke = LastUsedColor;
             StrokeWidth = LastUsedPenWidth * Zoom;
         }
 
@@ -342,7 +346,7 @@ namespace Draw
 
         public string GetStrStyle(SizeF scale)
         {
-            return GetStringStyle(CorLinha, CorForma, StrokeWidth, scale);
+            return GetStringStyle(Stroke, Fill, StrokeWidth, scale);
         }
 
         public static string GetStringStyle(Color color, Color fill, float strokewidth, SizeF scale)
@@ -381,9 +385,9 @@ namespace Draw
 
         public void SetStyleFromSvg(SvgBasicShape svg)
         {
-            CorLinha = svg.Stroke;
+            Stroke = svg.Stroke;
             StrokeWidth = ParseSize(svg.StrokeWidth, Dpi.X);
-            CorForma = svg.Fill != Color.Transparent ? svg.Fill : Color.Empty;
+            Fill = svg.Fill != Color.Transparent ? svg.Fill : Color.Empty;
         }
 
         public static float ParseSize(string str, float dpi)

@@ -44,7 +44,7 @@ namespace Draw.Command
             {
                 var obj = (DrawObject)_toBePasted[i];
                 obj.Move(10, 10);
-                obj.Selecionado = true;
+                obj.Selected = true;
                 _graphicsList.Insert(0,obj);
             }
         }

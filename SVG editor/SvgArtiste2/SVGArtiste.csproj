@@ -99,6 +99,9 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="SVGArtiste.pt.resx">
+      <DependentUpon>SVGArtiste.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Tools\Forms\ShapeProperties.pt-BR.resx">
       <DependentUpon>ShapeProperties.cs</DependentUpon>
     </EmbeddedResource>

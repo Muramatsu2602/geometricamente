@@ -174,7 +174,7 @@ namespace SVGEditor2.Tools.ToolBoxes
                 case DrawTools.DrawArea.DrawToolType.Ellipse:
                     radioButton_ellipse.Checked = true;
                     break;
-                case DrawTools.DrawArea.DrawToolType.Retangulo:
+                case DrawTools.DrawArea.DrawToolType.Rectangle:
                     radioButton_rectangle.Checked = true;
                     break;
                 case DrawTools.DrawArea.DrawToolType.Line:

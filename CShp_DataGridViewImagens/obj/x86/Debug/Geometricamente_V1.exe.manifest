@@ -86,7 +86,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>AA4f3XSFMwIJzRpcY71dFKj1ioTnqBm+XQqrjr9S578=</dsig:DigestValue>
+        <dsig:DigestValue>ba7150R9AUp3SsZdHYjfxXIDZHfCExVscYsOt+KdtEc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -98,7 +98,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>mtdGHtuLsKisIfVJ0BRKfq82iLU+jj1l83IYbrkxMR4=</dsig:DigestValue>
+        <dsig:DigestValue>BrS15NHpwPBn5/zi/01nj3kEml+Xw5TPrNCR1B2/+hM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -110,19 +110,31 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>8Fk2Sc13byjfKxZcZVMWDOJ8dlv6OUF5HsQgG6/3JgY=</dsig:DigestValue>
+        <dsig:DigestValue>lh9TlszwXEKggz8RbzDUz1eugm35Rs4dVOZxnYHW2oo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SvgArtiste.exe" size="233984">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SvgArtiste.exe" size="234496">
       <assemblyIdentity name="SvgArtiste" version="2.1.1.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>uBDFqR3Ln6r1OL9ux6e2ht8riBO5bW/RY+ToOvAJvtw=</dsig:DigestValue>
+        <dsig:DigestValue>uFXngTzlogX/77HRES3SMC05GuQEI+hoQvyVoJXoC6Q=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="pt\SvgArtiste.resources.dll" size="4096">
+      <assemblyIdentity name="SvgArtiste.resources" version="2.1.1.0" language="pt" processorArchitecture="x86" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>q0Q0pHwxFA/HDZb3rlLpb5sPPn3Md2kacS5BItdOUek=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -134,19 +146,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>lv13TeyqhePSS0wbTacbMOH48htaZ6j/eGM5AsNnrEY=</dsig:DigestValue>
+        <dsig:DigestValue>NXIQdsKsSLRdBHWq3e6K2XY6dc3WDi41p+2Aye1N2Kg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SVGLib.dll" size="69632">
-      <assemblyIdentity name="SVGLib" version="0.10.6949.16175" language="neutral" processorArchitecture="x86" />
+      <assemblyIdentity name="SVGLib" version="0.10.6950.38062" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>JOa7M0vp/QCC4KPcAyrbp4w8Diax6sGZ3+iOI5WKH9o=</dsig:DigestValue>
+        <dsig:DigestValue>5r4Ah8VPbJvDMhFVJdFXcf8DFOwlbTXVZK+7VDbnIhM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

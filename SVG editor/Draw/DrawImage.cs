@@ -68,7 +68,7 @@ namespace Draw
             Initialize();
         }
 
-        public DrawImage(string fileName,float x, float y,float width,float height)
+        public DrawImage(string fileName, float x, float y, float width, float height)
         {
             InitBox();
             _fileName = fileName;
@@ -87,7 +87,8 @@ namespace Draw
         #endregion Constructors
 
         #region Properties
-
+        [DisplayName("Arquivo")]
+        [Description("Arquivo")]
         [EditorAttribute(typeof(System.Windows.Forms.Design.FileNameEditor), typeof(System.Drawing.Design.UITypeEditor))]
         public String FileName
         {
@@ -112,10 +113,10 @@ namespace Draw
             {
                 DrawImage dobj;
                 if (string.IsNullOrEmpty(svg.Id))
-                    dobj = new DrawImage(svg.HRef,ParseSize(svg.X,Dpi.X),
-                        ParseSize(svg.Y,Dpi.Y),
-                        ParseSize(svg.Width,Dpi.X),
-                        ParseSize(svg.Height,Dpi.Y));
+                    dobj = new DrawImage(svg.HRef, ParseSize(svg.X, Dpi.X),
+                        ParseSize(svg.Y, Dpi.Y),
+                        ParseSize(svg.Width, Dpi.X),
+                        ParseSize(svg.Height, Dpi.Y));
                 else
                 {
                     var di = new DrawImage();
@@ -147,7 +148,7 @@ namespace Draw
                 var ms = new MemoryStream();
                 const int offset = 0;
                 ms.Write(arrb, offset, arrb.Length - offset);
-                Image im= new Bitmap(ms);
+                Image im = new Bitmap(ms);
                 ms.Close();
                 return im;
             }
@@ -170,7 +171,7 @@ namespace Draw
                 FileStream fs = new FileStream(flnm, FileMode.Open, FileAccess.Read);
                 MemoryStream ms = new MemoryStream();
                 Bitmap bm = new Bitmap(fs);
-                bm.Save(ms,ImageFormat.Png);
+                bm.Save(ms, ImageFormat.Png);
                 BinaryReader br = new BinaryReader(ms);
                 ms.Position = 0;
                 byte[] arrpic = br.ReadBytes((int)ms.Length);
@@ -181,7 +182,7 @@ namespace Draw
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error reading file "+ex, "");
+                MessageBox.Show("Error reading file " + ex, "");
                 ErrH.Log("DrawImagee", "ReadPngMemImage", ex.ToString(), ErrH._LogPriority.Info);
                 return null;
             }
@@ -199,7 +200,7 @@ namespace Draw
                     _reload = false;
                 }
                 if (_image != null)
-                    g.DrawImage(_image,RectangleF);
+                    g.DrawImage(_image, RectangleF);
                 else
                     base.Draw(g);
             }
@@ -214,11 +215,11 @@ namespace Draw
         {
             try
             {
-                float x = ParseSize(svg.X,Dpi.X);
-                float y = ParseSize(svg.Y,Dpi.Y);
-                float w = ParseSize(svg.Width,Dpi.X);
-                float h = ParseSize(svg.Height,Dpi.Y);
-                RectangleF = new RectangleF(x,y,w,h);
+                float x = ParseSize(svg.X, Dpi.X);
+                float y = ParseSize(svg.Y, Dpi.Y);
+                float w = ParseSize(svg.Width, Dpi.X);
+                float h = ParseSize(svg.Height, Dpi.Y);
+                RectangleF = new RectangleF(x, y, w, h);
                 _fileName = svg.HRef;
                 _id = svg.Id;
                 try
@@ -226,13 +227,13 @@ namespace Draw
                     _image = Image.FromFile(_fileName);
                     return true;
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     ErrH.Log("DrawImage", "FillFromSvg", ex.ToString(), ErrH._LogPriority.Info);
                     return false;
                 }
             }
-            catch(Exception ex0)
+            catch (Exception ex0)
             {
                 ErrH.Log("DrawImage", "FillFromSvg", ex0.ToString(), ErrH._LogPriority.Info);
                 return false;
@@ -245,27 +246,27 @@ namespace Draw
             s += Tag;
             if (_id.Length > 0)
             {
-                s += " id= \""+_id+"\" ";
+                s += " id= \"" + _id + "\" ";
             }
-            s += GetRectStringXml(RectangleF,scale, "") + "\r\n";
+            s += GetRectStringXml(RectangleF, scale, "") + "\r\n";
             // trim directory name
             string flnm = _fileName;
-            if (_fileName.IndexOf(":",0)> 0)
+            if (_fileName.IndexOf(":", 0) > 0)
             {
                 string dir = Directory.GetCurrentDirectory();
-                if (_fileName.IndexOf(dir,0)==0 && dir.Length<_fileName.Length)
+                if (_fileName.IndexOf(dir, 0) == 0 && dir.Length < _fileName.Length)
                 {
-                    flnm = _fileName.Substring(dir.Length+1,_fileName.Length-dir.Length-1);
+                    flnm = _fileName.Substring(dir.Length + 1, _fileName.Length - dir.Length - 1);
                 }
             }
-            s += " xlink:href = \""+flnm+"\">" + "\r\n";
-            s += "</"+Tag+">" + "\r\n";
+            s += " xlink:href = \"" + flnm + "\">" + "\r\n";
+            s += "</" + Tag + ">" + "\r\n";
             return s;
         }
 
         void InitBox()
         {
-            CorLinha = Color.Red;
+            Stroke = Color.Red;
             StrokeWidth = 1;
         }
 
