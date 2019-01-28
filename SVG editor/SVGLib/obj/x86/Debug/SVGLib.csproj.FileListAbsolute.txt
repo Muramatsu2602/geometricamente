@@ -19,3 +19,31 @@ C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\SVG editor\SVGLib\obj\x8
 C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\SVG editor\SVGLib\obj\x86\Debug\SVGLib.csproj.CopyComplete
 C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\SVG editor\SVGLib\obj\x86\Debug\SVGLib.dll
 C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\SVG editor\SVGLib\obj\x86\Debug\SVGLib.pdb
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\SVG editor\SVGLib\obj\x86\Debug\SVGLib.csprojAssemblyReference.cache
+C:\ICJ_Geometria\SVG editor\SVGLib\bin\x86\Debug\avcodec-57.dll
+C:\ICJ_Geometria\SVG editor\SVGLib\bin\x86\Debug\avdevice-57.dll
+C:\ICJ_Geometria\SVG editor\SVGLib\bin\x86\Debug\avfilter-6.dll
+C:\ICJ_Geometria\SVG editor\SVGLib\bin\x86\Debug\avformat-57.dll
+C:\ICJ_Geometria\SVG editor\SVGLib\bin\x86\Debug\avutil-55.dll
+C:\ICJ_Geometria\SVG editor\SVGLib\bin\x86\Debug\postproc-54.dll
+C:\ICJ_Geometria\SVG editor\SVGLib\bin\x86\Debug\swresample-2.dll
+C:\ICJ_Geometria\SVG editor\SVGLib\bin\x86\Debug\swscale-4.dll
+C:\ICJ_Geometria\SVG editor\SVGLib\bin\x86\Debug\Accord.dll.config
+C:\ICJ_Geometria\SVG editor\SVGLib\bin\x86\Debug\SVGLib.dll.config
+C:\ICJ_Geometria\SVG editor\SVGLib\bin\x86\Debug\SVGLib.dll
+C:\ICJ_Geometria\SVG editor\SVGLib\bin\x86\Debug\SVGLib.pdb
+C:\ICJ_Geometria\SVG editor\SVGLib\bin\x86\Debug\Accord.dll
+C:\ICJ_Geometria\SVG editor\SVGLib\bin\x86\Debug\Accord.Video.dll
+C:\ICJ_Geometria\SVG editor\SVGLib\bin\x86\Debug\Accord.Video.FFMPEG.dll
+C:\ICJ_Geometria\SVG editor\SVGLib\bin\x86\Debug\EntityFramework.dll
+C:\ICJ_Geometria\SVG editor\SVGLib\bin\x86\Debug\EntityFramework.SqlServer.dll
+C:\ICJ_Geometria\SVG editor\SVGLib\bin\x86\Debug\Accord.xml
+C:\ICJ_Geometria\SVG editor\SVGLib\bin\x86\Debug\Accord.Video.xml
+C:\ICJ_Geometria\SVG editor\SVGLib\bin\x86\Debug\Accord.Video.FFMPEG.xml
+C:\ICJ_Geometria\SVG editor\SVGLib\bin\x86\Debug\EntityFramework.xml
+C:\ICJ_Geometria\SVG editor\SVGLib\bin\x86\Debug\EntityFramework.SqlServer.xml
+C:\ICJ_Geometria\SVG editor\SVGLib\obj\x86\Debug\SVGLib.csproj.CoreCompileInputs.cache
+C:\ICJ_Geometria\SVG editor\SVGLib\obj\x86\Debug\SVGLib.csproj.CopyComplete
+C:\ICJ_Geometria\SVG editor\SVGLib\obj\x86\Debug\SVGLib.dll
+C:\ICJ_Geometria\SVG editor\SVGLib\obj\x86\Debug\SVGLib.pdb
+C:\ICJ_Geometria\SVG editor\SVGLib\obj\x86\Debug\SVGLib.csprojAssemblyReference.cache

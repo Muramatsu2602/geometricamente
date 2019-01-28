@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Geometricamente_V1.DAO;
+using Geometricamente_V1.Model;
+using System;
 using System.Drawing;
 using System.IO;
 using System.Runtime.InteropServices;
@@ -56,7 +58,8 @@ namespace Geometricamente_V1
             CrossPen = new Pen(Color.Red, 2);
             rectangleBrush = new SolidBrush(Color.FromArgb(50, Color.Blue));
             rectanglePen = new Pen(Color.Blue, 1);
-           
+            // MessageBox.Show(dados[10]);
+
 
         }
         private void timer1_Tick(object sender, EventArgs e)
@@ -72,20 +75,34 @@ namespace Geometricamente_V1
             //cronometro
             tempoInicial = DateTime.Now;
             timer1.Start();
+            MessageBox.Show("hey");
         }
         public void ParaGravar()
         {
             try
             {
                 timer1.Stop();
+                DateTime agora = DateTime.Now;
+                string dh_arquivo = agora.ToString("yyyy-MM-dd_HH-mm-ss");
+                string dh_save = agora.ToString("yyyy-MM-dd HH:mm:ss");
                 DialogResult dr = new DialogResult();
                 dr = MessageBox.Show("Pronto! deseja salvar?", "GEOMETRIA", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
                 if (dr == DialogResult.Yes)
                 {
-                    DateTime agora = DateTime.Now;
-                    mciSendString("save recsound " + TestaPendrive() + "\\audio\\" + agora.ToString("yyyy-MM-dd_HH-mm-ss") + "_" + dados[0] + "_" + dados[1] + "anos" + ".mp3", null, 0,
+                    mciSendString("save recsound " + TestaPendrive() + "\\audio\\" + dados[10] + "_" + dh_arquivo + "_" + dados[0] + "_" + dados[1] + "anos" + ".mp3", null, 0,
                         IntPtr.Zero);
                     mciSendString("close recsound", null, 0, IntPtr.Zero);
+
+                    //Gravar no BD 
+                    Audio_DAO aDAO = new Audio_DAO();
+                    Audio audio = new Audio();
+                    audio.Nome_arquivo = dados[10] + "_" + dh_arquivo + "_" + dados[0] + "_" + dados[1] + "anos" + ".mp3";
+                    audio.Nome_imagem = dados[10];
+                    audio.Idade = Convert.ToInt32(dados[1]);
+                    audio.Narrador = dados[0];
+                    audio.Data = dh_save;
+                    aDAO.inserir(audio);
+
                 }
                 else if (dr == DialogResult.No)
                 {
@@ -118,7 +135,7 @@ namespace Geometricamente_V1
 
         private void PicGravador_Click(object sender, EventArgs e)
         {
-            if (picGravador.BackColor == Color.Transparent)
+            if (picGravador.BackColor == Color.White)
             {
                 lblGravando.ForeColor = Color.GreenYellow;
                 picGravador.BackColor = Color.GreenYellow;
@@ -126,8 +143,8 @@ namespace Geometricamente_V1
             }
             else if (picGravador.BackColor == Color.GreenYellow)
             {
-                lblGravando.ForeColor = Color.Silver;
-                picGravador.BackColor = Color.Transparent;
+                lblGravando.ForeColor = Color.White;
+                picGravador.BackColor = Color.White;
                 ParaGravar();
             }
         }
@@ -136,7 +153,7 @@ namespace Geometricamente_V1
         private void picImagem_MouseMove(object sender, MouseEventArgs e)
         {
 
-            
+
             if (!cross)
             {
                 line_X.Show();
@@ -151,7 +168,7 @@ namespace Geometricamente_V1
                 line_X.Hide();
                 line_Y.Hide();
             }
-        
+
 
         }
         private void btnCrosshair_Click(object sender, EventArgs e)
@@ -179,7 +196,7 @@ namespace Geometricamente_V1
 
         }
 
-      
+
     }
 
 }

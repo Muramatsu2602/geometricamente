@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Geometricamente_V1.DAO;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -94,6 +95,7 @@ namespace Geometricamente_V1
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
+            
 
         }
 

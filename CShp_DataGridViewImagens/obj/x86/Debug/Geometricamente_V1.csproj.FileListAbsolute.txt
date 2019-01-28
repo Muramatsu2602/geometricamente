@@ -21,14 +21,12 @@ C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\CShp_DataGridViewImagens
 C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\CShp_DataGridViewImagens\bin\x86\Debug\SVGLib.dll
 C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\CShp_DataGridViewImagens\bin\x86\Debug\Crom.Controls.dll
 C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\CShp_DataGridViewImagens\bin\x86\Debug\SvgArtiste.pdb
-C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\CShp_DataGridViewImagens\bin\x86\Debug\SvgArtiste.exe.config
 C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\CShp_DataGridViewImagens\bin\x86\Debug\Accord.xml
 C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\CShp_DataGridViewImagens\bin\x86\Debug\Accord.Video.xml
 C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\CShp_DataGridViewImagens\bin\x86\Debug\Accord.Video.FFMPEG.xml
 C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\CShp_DataGridViewImagens\bin\x86\Debug\Draw.pdb
 C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\CShp_DataGridViewImagens\bin\x86\Debug\SVGLib.pdb
 C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\CShp_DataGridViewImagens\bin\x86\Debug\Crom.Controls.pdb
-C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\CShp_DataGridViewImagens\bin\x86\Debug\pt\SvgArtiste.resources.dll
 C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\CShp_DataGridViewImagens\bin\x86\Debug\pt-BR\SvgArtiste.resources.dll
 C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\CShp_DataGridViewImagens\obj\x86\Debug\Geometricamente_V1.csprojAssemblyReference.cache
 C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\CShp_DataGridViewImagens\obj\x86\Debug\CapturaTela.frmCapturaDesenho.resources
@@ -47,3 +45,67 @@ C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\CShp_DataGridViewImagens
 C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\CShp_DataGridViewImagens\obj\x86\Debug\Geometricamente_V1.csproj.CopyComplete
 C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\CShp_DataGridViewImagens\obj\x86\Debug\Geometricamente_V1.exe
 C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\CShp_DataGridViewImagens\obj\x86\Debug\Geometricamente_V1.pdb
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\CShp_DataGridViewImagens\bin\x86\Debug\SvgArtiste.exe.config
+C:\Users\pedro\OneDrive\Área de Trabalho\ICJ_Geometria\CShp_DataGridViewImagens\bin\x86\Debug\pt\SvgArtiste.resources.dll
+C:\ICJ_Geometria\CShp_DataGridViewImagens\obj\x86\Debug\Geometricamente_V1.csprojAssemblyReference.cache
+C:\ICJ_Geometria\CShp_DataGridViewImagens\obj\x86\Debug\CapturaTela.frmCapturaDesenho.resources
+C:\ICJ_Geometria\CShp_DataGridViewImagens\obj\x86\Debug\Geometricamente_V1.frmEscolhePasta.resources
+C:\ICJ_Geometria\CShp_DataGridViewImagens\obj\x86\Debug\Geometricamente_V1.FrmGravaDescricao.resources
+C:\ICJ_Geometria\CShp_DataGridViewImagens\obj\x86\Debug\Geometricamente_V1.frmGravaPaint.resources
+C:\ICJ_Geometria\CShp_DataGridViewImagens\obj\x86\Debug\Geometricamente_V1.frmLogin.resources
+C:\ICJ_Geometria\CShp_DataGridViewImagens\obj\x86\Debug\Geometricamente_V1.frmModoDesenho.resources
+C:\ICJ_Geometria\CShp_DataGridViewImagens\obj\x86\Debug\Geometricamente_V1.frmSplashScreen.resources
+C:\ICJ_Geometria\CShp_DataGridViewImagens\obj\x86\Debug\Geometricamente_V1.Properties.Resources.resources
+C:\ICJ_Geometria\CShp_DataGridViewImagens\obj\x86\Debug\CapturaTela.TopForm.resources
+C:\ICJ_Geometria\CShp_DataGridViewImagens\obj\x86\Debug\Geometricamente_V1.csproj.GenerateResource.cache
+C:\ICJ_Geometria\CShp_DataGridViewImagens\obj\x86\Debug\Geometricamente_V1.csproj.CoreCompileInputs.cache
+C:\ICJ_Geometria\CShp_DataGridViewImagens\bin\x86\Debug\avcodec-57.dll
+C:\ICJ_Geometria\CShp_DataGridViewImagens\bin\x86\Debug\avdevice-57.dll
+C:\ICJ_Geometria\CShp_DataGridViewImagens\bin\x86\Debug\avfilter-6.dll
+C:\ICJ_Geometria\CShp_DataGridViewImagens\bin\x86\Debug\avformat-57.dll
+C:\ICJ_Geometria\CShp_DataGridViewImagens\bin\x86\Debug\avutil-55.dll
+C:\ICJ_Geometria\CShp_DataGridViewImagens\bin\x86\Debug\postproc-54.dll
+C:\ICJ_Geometria\CShp_DataGridViewImagens\bin\x86\Debug\swresample-2.dll
+C:\ICJ_Geometria\CShp_DataGridViewImagens\bin\x86\Debug\swscale-4.dll
+C:\ICJ_Geometria\CShp_DataGridViewImagens\bin\x86\Debug\sqlite3.dll
+C:\ICJ_Geometria\CShp_DataGridViewImagens\bin\x86\Debug\Accord.dll.config
+C:\ICJ_Geometria\CShp_DataGridViewImagens\bin\x86\Debug\Geometricamente_V1.exe.config
+C:\ICJ_Geometria\CShp_DataGridViewImagens\bin\x86\Debug\Geometricamente_V1.exe.manifest
+C:\ICJ_Geometria\CShp_DataGridViewImagens\bin\x86\Debug\Geometricamente_V1.application
+C:\ICJ_Geometria\CShp_DataGridViewImagens\bin\x86\Debug\Geometricamente_V1.exe
+C:\ICJ_Geometria\CShp_DataGridViewImagens\bin\x86\Debug\Geometricamente_V1.pdb
+C:\ICJ_Geometria\CShp_DataGridViewImagens\bin\x86\Debug\Accord.dll
+C:\ICJ_Geometria\CShp_DataGridViewImagens\bin\x86\Debug\Accord.Video.dll
+C:\ICJ_Geometria\CShp_DataGridViewImagens\bin\x86\Debug\Accord.Video.FFMPEG.dll
+C:\ICJ_Geometria\CShp_DataGridViewImagens\bin\x86\Debug\EntityFramework.dll
+C:\ICJ_Geometria\CShp_DataGridViewImagens\bin\x86\Debug\EntityFramework.SqlServer.dll
+C:\ICJ_Geometria\CShp_DataGridViewImagens\bin\x86\Debug\PresentationFramework.dll
+C:\ICJ_Geometria\CShp_DataGridViewImagens\bin\x86\Debug\SvgArtiste.exe
+C:\ICJ_Geometria\CShp_DataGridViewImagens\bin\x86\Debug\System.Data.SQLite.dll
+C:\ICJ_Geometria\CShp_DataGridViewImagens\bin\x86\Debug\System.Data.SQLite.EF6.dll
+C:\ICJ_Geometria\CShp_DataGridViewImagens\bin\x86\Debug\System.Data.SQLite.Linq.dll
+C:\ICJ_Geometria\CShp_DataGridViewImagens\bin\x86\Debug\Draw.dll
+C:\ICJ_Geometria\CShp_DataGridViewImagens\bin\x86\Debug\SVGLib.dll
+C:\ICJ_Geometria\CShp_DataGridViewImagens\bin\x86\Debug\Crom.Controls.dll
+C:\ICJ_Geometria\CShp_DataGridViewImagens\bin\x86\Debug\SvgArtiste.pdb
+C:\ICJ_Geometria\CShp_DataGridViewImagens\bin\x86\Debug\SvgArtiste.exe.config
+C:\ICJ_Geometria\CShp_DataGridViewImagens\bin\x86\Debug\Accord.xml
+C:\ICJ_Geometria\CShp_DataGridViewImagens\bin\x86\Debug\Accord.Video.xml
+C:\ICJ_Geometria\CShp_DataGridViewImagens\bin\x86\Debug\Accord.Video.FFMPEG.xml
+C:\ICJ_Geometria\CShp_DataGridViewImagens\bin\x86\Debug\EntityFramework.xml
+C:\ICJ_Geometria\CShp_DataGridViewImagens\bin\x86\Debug\EntityFramework.SqlServer.xml
+C:\ICJ_Geometria\CShp_DataGridViewImagens\bin\x86\Debug\System.Data.SQLite.xml
+C:\ICJ_Geometria\CShp_DataGridViewImagens\bin\x86\Debug\System.Data.SQLite.dll.config
+C:\ICJ_Geometria\CShp_DataGridViewImagens\bin\x86\Debug\Draw.pdb
+C:\ICJ_Geometria\CShp_DataGridViewImagens\bin\x86\Debug\Draw.dll.config
+C:\ICJ_Geometria\CShp_DataGridViewImagens\bin\x86\Debug\SVGLib.pdb
+C:\ICJ_Geometria\CShp_DataGridViewImagens\bin\x86\Debug\SVGLib.dll.config
+C:\ICJ_Geometria\CShp_DataGridViewImagens\bin\x86\Debug\Crom.Controls.pdb
+C:\ICJ_Geometria\CShp_DataGridViewImagens\bin\x86\Debug\Crom.Controls.dll.config
+C:\ICJ_Geometria\CShp_DataGridViewImagens\bin\x86\Debug\pt\SvgArtiste.resources.dll
+C:\ICJ_Geometria\CShp_DataGridViewImagens\bin\x86\Debug\pt-BR\SvgArtiste.resources.dll
+C:\ICJ_Geometria\CShp_DataGridViewImagens\obj\x86\Debug\Geometricamente_V1.exe.manifest
+C:\ICJ_Geometria\CShp_DataGridViewImagens\obj\x86\Debug\Geometricamente_V1.application
+C:\ICJ_Geometria\CShp_DataGridViewImagens\obj\x86\Debug\Geometricamente_V1.csproj.CopyComplete
+C:\ICJ_Geometria\CShp_DataGridViewImagens\obj\x86\Debug\Geometricamente_V1.exe
+C:\ICJ_Geometria\CShp_DataGridViewImagens\obj\x86\Debug\Geometricamente_V1.pdb

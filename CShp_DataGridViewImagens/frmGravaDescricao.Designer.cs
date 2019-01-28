@@ -138,6 +138,7 @@
             this.picImagem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picImagem.TabIndex = 0;
             this.picImagem.TabStop = false;
+            this.picImagem.Tag = "";
             this.picImagem.MouseMove += new System.Windows.Forms.MouseEventHandler(this.picImagem_MouseMove);
             // 
             // line_Y

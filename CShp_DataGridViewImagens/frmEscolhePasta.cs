@@ -68,7 +68,8 @@ namespace Geometricamente_V1
                     Size = new Size(200, 200),
                     SizeMode = PictureBoxSizeMode.StretchImage,
                     Location = new Point(c, l),
-                    Image = Image.FromFile(caminhoImagem)
+                    Image = Image.FromFile(caminhoImagem),
+                    Tag = arquivo.Name
                 };
                 panel3.Controls.Add(picture);
                 picture.Click += new EventHandler(AbreForm);
@@ -87,6 +88,7 @@ namespace Geometricamente_V1
         public void AbreForm(object sender, EventArgs e)
         {
             var box = (PictureBox)sender;
+            dados[10] = box.Tag.ToString();
             FrmGravaDescricao f2 = new FrmGravaDescricao(box.Image, dados); // aqui o
             f2.ShowDialog();
         }
