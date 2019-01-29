@@ -324,7 +324,7 @@ namespace CapturaTela
         bool startPaint;
         Graphics g;        //nullable int for storing Null value
         int? initX = null;
-        int? initY = null;
+        //int? initY = null;
         bool drawSquare;
         bool drawRectangle;
         bool drawCircle;

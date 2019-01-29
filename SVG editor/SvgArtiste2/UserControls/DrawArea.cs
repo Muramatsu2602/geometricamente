@@ -50,7 +50,6 @@ namespace DrawTools
         private ToolStripMenuItem _copyToolStripMenuItem;
         private ToolStripMenuItem _cutToolStripMenuItem;
         private ToolStripMenuItem _deleteToolStripMenuItem;
-        private GraphicsList _graphicsList; // list of draw objects
         private string _mDescription = "Svg picture";
         private SizeF _mOriginalSize = new SizeF(500, 400);
 
@@ -174,17 +173,7 @@ namespace DrawTools
         /// List of graphics objects.
         /// </summary>
         [CLSCompliant(false)]
-        public GraphicsList GraphicsList
-        {
-            get
-            {
-                return _graphicsList;
-            }
-            set
-            {
-                _graphicsList = value;
-            }
-        }
+        public GraphicsList GraphicsList { get; set; }
 
         /// <summary>
         /// Group selection rectangle. Used for drawing.
@@ -257,7 +246,7 @@ namespace DrawTools
         public void DoScaling(SizeF sc)
         {
             DrawObject.Zoom = sc.Height;
-            _graphicsList.Resize(sc, _mScale);
+            GraphicsList.Resize(sc, _mScale);
             _mScale = sc;
             _mSizePicture = new SizeF(_mScale.Width * OriginalSize.Width,
                 _mScale.Height * OriginalSize.Height);
@@ -270,9 +259,9 @@ namespace DrawTools
             // draw rect svg size
             var pen = new Pen(Color.FromArgb(0, 0, 255), 1);
             g.DrawRectangle(pen, 0, 0, SizePicture.Width, SizePicture.Height);
-            if (_graphicsList != null)
+            if (GraphicsList != null)
             {
-                _graphicsList.Draw(g);
+                GraphicsList.Draw(g);
             }
             brush.Dispose();
         }
@@ -306,7 +295,7 @@ namespace DrawTools
             _activeTool = DrawToolType.Pointer;
 
             // create list of graphic objects
-            _graphicsList = new GraphicsList();
+            GraphicsList = new GraphicsList();
 
             // create array of drawing tools
             _tools = new Tool[(int)DrawToolType.NumberOfDrawTools];
@@ -327,7 +316,7 @@ namespace DrawTools
         public bool LoadFromXml(XmlTextReader reader)
         {
             ErrH.Log("DrawArea", "LoadFromXML", "", ErrH._LogPriority.Info);
-            _graphicsList.Clear();
+            GraphicsList.Clear();
             var svg = new SvgDoc();
             if (!svg.LoadFromFile(reader))
                 return false;
@@ -347,9 +336,9 @@ namespace DrawTools
             SvgElement ele = root.getChild();
             _mScale = new SizeF(1, 1);
             if (ele != null)
-                _graphicsList.AddFromSvg(ele);
+                GraphicsList.AddFromSvg(ele);
 
-            Description = _graphicsList.Description;
+            Description = GraphicsList.Description;
             return true;
         }
 
@@ -358,14 +347,14 @@ namespace DrawTools
             SizeF oldscale = _mScale;
             _mScale.Width = _width / _mOriginalSize.Width;
             _mScale.Height = _height / _mOriginalSize.Height;
-            _graphicsList.Resize(_mScale, oldscale);
+            GraphicsList.Resize(_mScale, oldscale);
             SizePicture = new SizeF(DrawObject.RecalcFloat(SizePicture.Width, _mScale.Width, oldscale.Width),
                 DrawObject.RecalcFloat(SizePicture.Height, _mScale.Height, oldscale.Height));
         }
 
         public void RestoreScale()
         {
-            _graphicsList.Resize(new SizeF(1, 1), _mScale);
+            GraphicsList.Resize(new SizeF(1, 1), _mScale);
             _mScale = new SizeF(1, 1);
         }
 
@@ -381,7 +370,7 @@ namespace DrawTools
                 sXml += "<svg width=\"" + _mOriginalSize.Width.ToString(CultureInfo.InvariantCulture) +
                     "\" height=\"" + _mOriginalSize.Height.ToString(CultureInfo.InvariantCulture) + "\">" + "\r\n";
                 sXml += "<desc>" + Description + "</desc>" + "\r\n";
-                sXml += _graphicsList.GetXmlString(_mScale);
+                sXml += GraphicsList.GetXmlString(_mScale);
                 sXml += "</svg>" + "\r\n";
                 sw.Write(sXml);
                 sw.Close();
@@ -444,10 +433,9 @@ namespace DrawTools
             else if (e.Button == MouseButtons.Right)
                 OnContextMenu(e);
 
-            if (_graphicsList.IsAnythingSelecionado() && (!_tools[(int)_activeTool].IsComplete))
+            if (GraphicsList.IsAnythingSelecionado() && (!_tools[(int)_activeTool].IsComplete))
             {
-                if (ItemsSelected != null)
-                    ItemsSelected(_graphicsList.GetAllSelecionado(), e);
+                ItemsSelected?.Invoke(GraphicsList.GetAllSelecionado(), e);
             }
         }
 
@@ -466,10 +454,7 @@ namespace DrawTools
                 {
                     if (_activeTool == DrawToolType.Pan)
                     {
-                        if (MousePan != null)
-                        {
-                            MousePan(sender, e);
-                        }
+                        MousePan?.Invoke(sender, e);
                     }
 
                     var ind = (int)_activeTool;
@@ -510,10 +495,9 @@ namespace DrawTools
                 }
             }
 
-            if (_graphicsList.GetAllSelecionado().Count > 0)
+            if (GraphicsList.GetAllSelecionado().Count > 0)
             {
-                if (ItemsSelected != null)
-                    ItemsSelected(_graphicsList.GetAllSelecionado(), e);
+                ItemsSelected?.Invoke(GraphicsList.GetAllSelecionado(), e);
             }
         }
 
@@ -533,8 +517,8 @@ namespace DrawTools
             if (DrawGrid)
                 DrawGridsAndScale(e.Graphics);
 
-            if (_graphicsList != null)
-                _graphicsList.Draw(e.Graphics);
+            if (GraphicsList != null)
+                GraphicsList.Draw(e.Graphics);
 
             DrawNetSelection(e.Graphics);
             brush.Dispose();
@@ -718,7 +702,7 @@ namespace DrawTools
                 if (dr == DialogResult.Yes)
                 {
 
-                    _graphicsList.DeleteSelection();
+                    GraphicsList.DeleteSelection();
                     Refresh();
                 }
                 // MessageBox.Show("aAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAa");
@@ -778,31 +762,31 @@ namespace DrawTools
 
         private void CutToolStripMenuItemClick(object sender, EventArgs e)
         {
-            _graphicsList.CutSelection();
+            GraphicsList.CutSelection();
             Refresh();
         }
 
         private void CopyToolStripMenuItemClick(object sender, EventArgs e)
         {
-            _graphicsList.CopySelection();
+            GraphicsList.CopySelection();
             Refresh();
         }
 
         private void PasteToolStripMenuItemClick(object sender, EventArgs e)
         {
-            _graphicsList.PasteSelection();
+            GraphicsList.PasteSelection();
             Refresh();
         }
 
         private void SelectAllToolStripMenuItemClick(object sender, EventArgs e)
         {
-            _graphicsList.SelectAll();
+            GraphicsList.SelectAll();
             Refresh();
         }
 
         private void SendToBackToolStripMenuItemClick(object sender, EventArgs e)
         {
-            _graphicsList.MoveSelectionToBack();
+            GraphicsList.MoveSelectionToBack();
             Refresh();
         }
 
@@ -810,7 +794,7 @@ namespace DrawTools
 
         private void BringToFrontToolStripMenuItemClick(object sender, EventArgs e)
         {
-            _graphicsList.MoveSelectionToFront();
+            GraphicsList.MoveSelectionToFront();
             Refresh();
         }
 
@@ -820,25 +804,25 @@ namespace DrawTools
             dr = MessageBox.Show("Deseja Apagar?", "GEOMETRICAMENTE", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dr == DialogResult.Yes)
             {
-                _graphicsList.DeleteSelection();
+                GraphicsList.DeleteSelection();
                 Refresh();
             }
         }
 
         public void MoveCommand(ArrayList movedItemsList, PointF delta)
         {
-            _graphicsList.Move(movedItemsList, delta);
+            GraphicsList.Move(movedItemsList, delta);
             Refresh();
         }
 
         public void PropertyChanged(GridItem itemChanged, object oldVal)
         {
-            _graphicsList.PropertyChanged(itemChanged, oldVal);
+            GraphicsList.PropertyChanged(itemChanged, oldVal);
         }
 
         public void ResizeCommand(DrawObject resizedItems, PointF old, PointF newP, int handle)
         {
-            _graphicsList.ResizeCommand(resizedItems, old, newP, handle);
+            GraphicsList.ResizeCommand(resizedItems, old, newP, handle);
             Refresh();
         }
         #endregion Methods

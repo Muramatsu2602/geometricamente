@@ -19,12 +19,12 @@ namespace Geometricamente_V1
         #region Atributos da Classe
         String[] dados = new string[100];
 
-        bool cross;
+       // bool cross;
         private bool _isRecording;
         private List<string> _screenNames;
         //private Rectangle _screenSize;
         private UInt32 _frameCount;
-        private int fps = 0;
+        //private int fps = 0;
         private VideoFileWriter _writer;
         private int _width;
         private int _height;
@@ -33,7 +33,7 @@ namespace Geometricamente_V1
         private Rectangle _screenArea;
         int screenLeft, screenTop;
         bool useArea;
-        bool isMouseDown;
+        //bool isMouseDown;
 
         [StructLayout(LayoutKind.Sequential)]
         struct CURSORINFO

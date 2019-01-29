@@ -241,7 +241,7 @@ namespace Draw
 
         public override void Draw(Graphics g)
         {
-            PointF p0 = new PointF();
+            //PointF p0 = new PointF();
             PointF p1 = new PointF();
             PointF p2 = new PointF();
 

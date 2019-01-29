@@ -1,17 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using Accord;
 using Accord.Video.FFMPEG;
 using Accord.Video;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
-using Draw;
 using System.Threading;
 using DrawTools;
 using BD.DAO;
@@ -118,9 +113,11 @@ namespace SVGEditor2.Tools.ToolBoxes
 
             _writer = new VideoFileWriter();
 
-            _screenNames = new List<string>();
-            _screenNames.Add(@"Select ALL");
-            _screenNames.Add(@"Custom screen area");
+            _screenNames = new List<string>
+            {
+                @"Select ALL",
+                @"Custom screen area"
+            };
             foreach (var screen in Screen.AllScreens)
             {
                 _screenNames.Add(screen.DeviceName);
@@ -169,8 +166,7 @@ namespace SVGEditor2.Tools.ToolBoxes
                     ToolSelection = "Image";
                     break;
             }
-            if (ToolSelectionChanged != null)
-                ToolSelectionChanged(ToolSelection, null);
+            ToolSelectionChanged?.Invoke(ToolSelection, null);
         }
 
         public void SetToolSelection(DrawTools.DrawArea.DrawToolType tool)
@@ -254,12 +250,14 @@ namespace SVGEditor2.Tools.ToolBoxes
                 {
                     // as datas estao no metodo start_rec para sincronizar data do banco e data no nome do arquivo (aqui o nome forma ja no inicio)
                     Video_DAO vDAO = new Video_DAO();
-                    Video video = new Video();
-                    video.Nome_arquivo = fullName;
-                    //video.Audio_id =  ?? vem de onde
-                    video.Idade = Convert.ToInt32(dados[1]);
-                    video.Artista = dados[0];
-                    video.Data = dh_save;
+                    Video video = new Video
+                    {
+                        Nome_arquivo = fullName,
+                        //video.Audio_id =  ?? vem de onde
+                        Idade = Convert.ToInt32(dados[1]),
+                        Artista = dados[0],
+                        Data = dh_save
+                    };
                     vDAO.inserir(video);
                 }
                 catch (Exception er)

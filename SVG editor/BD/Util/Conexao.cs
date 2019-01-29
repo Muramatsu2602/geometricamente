@@ -11,7 +11,7 @@ namespace BD.Util
     public class Conexao
     {
         SQLiteConnection conn = null;
-        String strConn = @"Data Source=C:\\ICJ_Geometria\\BD\\geodb.s3db";
+        String strConn = @"Data Source=C:\\ICJ_Geometria\\arquivosBD\\geodb.s3db";
         public SQLiteConnection conectar()
         {
             try

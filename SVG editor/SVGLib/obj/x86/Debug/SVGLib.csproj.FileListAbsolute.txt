@@ -42,7 +42,6 @@ C:\ICJ_Geometria\SVG editor\SVGLib\bin\x86\Debug\Accord.Video.xml
 C:\ICJ_Geometria\SVG editor\SVGLib\bin\x86\Debug\Accord.Video.FFMPEG.xml
 C:\ICJ_Geometria\SVG editor\SVGLib\bin\x86\Debug\EntityFramework.xml
 C:\ICJ_Geometria\SVG editor\SVGLib\bin\x86\Debug\EntityFramework.SqlServer.xml
-C:\ICJ_Geometria\SVG editor\SVGLib\obj\x86\Debug\SVGLib.csprojAssemblyReference.cache
 C:\ICJ_Geometria\SVG editor\SVGLib\obj\x86\Debug\SVGLib.csproj.CoreCompileInputs.cache
 C:\ICJ_Geometria\SVG editor\SVGLib\obj\x86\Debug\SVGLib.csproj.CopyComplete
 C:\ICJ_Geometria\SVG editor\SVGLib\obj\x86\Debug\SVGLib.dll
