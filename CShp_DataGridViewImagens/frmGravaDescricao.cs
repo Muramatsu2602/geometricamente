@@ -1,11 +1,11 @@
-﻿using Geometricamente_V1.DAO;
-using Geometricamente_V1.Model;
-using System;
+﻿using System;
 using System.Drawing;
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
+using BD.DAO;
+using BD.Model;
 
 namespace Geometricamente_V1
 {
@@ -59,6 +59,8 @@ namespace Geometricamente_V1
             rectangleBrush = new SolidBrush(Color.FromArgb(50, Color.Blue));
             rectanglePen = new Pen(Color.Blue, 1);
             // MessageBox.Show(dados[10]);
+            MessageBox.Show(Environment.CurrentDirectory);
+
 
 
         }
@@ -75,7 +77,7 @@ namespace Geometricamente_V1
             //cronometro
             tempoInicial = DateTime.Now;
             timer1.Start();
-            MessageBox.Show("hey");
+            //MessageBox.Show("hey");
         }
         public void ParaGravar()
         {
@@ -95,12 +97,14 @@ namespace Geometricamente_V1
 
                     //Gravar no BD 
                     Audio_DAO aDAO = new Audio_DAO();
-                    Audio audio = new Audio();
-                    audio.Nome_arquivo = dados[10] + "_" + dh_arquivo + "_" + dados[0] + "_" + dados[1] + "anos" + ".mp3";
-                    audio.Nome_imagem = dados[10];
-                    audio.Idade = Convert.ToInt32(dados[1]);
-                    audio.Narrador = dados[0];
-                    audio.Data = dh_save;
+                    Audio audio = new Audio
+                    {
+                        Nome_arquivo = dados[10] + "_" + dh_arquivo + "_" + dados[0] + "_" + dados[1] + "anos" + ".mp3",
+                        Nome_imagem = dados[10],
+                        Idade = Convert.ToInt32(dados[1]),
+                        Narrador = dados[0],
+                        Data = dh_save
+                    };
                     aDAO.inserir(audio);
 
                 }

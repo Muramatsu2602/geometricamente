@@ -211,6 +211,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BD\BD.csproj">
+      <Project>{7ea66e03-1f9f-4859-9d32-1657c7e63dc1}</Project>
+      <Name>BD</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Crom.Controls\Crom.Controls.csproj">
       <Project>{F2999C1D-BED3-4D47-A8AC-8027334ECDC1}</Project>
       <Name>Crom.Controls</Name>

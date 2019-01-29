@@ -58,6 +58,7 @@ C:\ICJ_Geometria\SVG editor\Crom.Controls\bin\x86\Debug\Accord.Video.xml
 C:\ICJ_Geometria\SVG editor\Crom.Controls\bin\x86\Debug\Accord.Video.FFMPEG.xml
 C:\ICJ_Geometria\SVG editor\Crom.Controls\bin\x86\Debug\EntityFramework.xml
 C:\ICJ_Geometria\SVG editor\Crom.Controls\bin\x86\Debug\EntityFramework.SqlServer.xml
+C:\ICJ_Geometria\SVG editor\Crom.Controls\obj\x86\Debug\Crom.Controls.csprojAssemblyReference.cache
 C:\ICJ_Geometria\SVG editor\Crom.Controls\obj\x86\Debug\Crom.Controls.Docking.ButtonToDockBottom.resources
 C:\ICJ_Geometria\SVG editor\Crom.Controls\obj\x86\Debug\Crom.Controls.Docking.ButtonToDockLeft.resources
 C:\ICJ_Geometria\SVG editor\Crom.Controls\obj\x86\Debug\Crom.Controls.Docking.ButtonToDockRight.resources
@@ -78,4 +79,3 @@ C:\ICJ_Geometria\SVG editor\Crom.Controls\obj\x86\Debug\Crom.Controls.csproj.Cor
 C:\ICJ_Geometria\SVG editor\Crom.Controls\obj\x86\Debug\Crom.Controls.csproj.CopyComplete
 C:\ICJ_Geometria\SVG editor\Crom.Controls\obj\x86\Debug\Crom.Controls.dll
 C:\ICJ_Geometria\SVG editor\Crom.Controls\obj\x86\Debug\Crom.Controls.pdb
-C:\ICJ_Geometria\SVG editor\Crom.Controls\obj\x86\Debug\Crom.Controls.csprojAssemblyReference.cache

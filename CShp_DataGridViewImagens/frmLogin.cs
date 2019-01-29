@@ -1,5 +1,4 @@
-﻿using Geometricamente_V1.DAO;
-using System;
+﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
 

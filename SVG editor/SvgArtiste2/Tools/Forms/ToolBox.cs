@@ -14,12 +14,16 @@ using System.Diagnostics;
 using Draw;
 using System.Threading;
 using DrawTools;
+using BD.DAO;
+using BD.Model;
+
 
 namespace SVGEditor2.Tools.ToolBoxes
 {
     public partial class ToolBox : Form
     {
         public String ToolSelection = "";
+
 
         // Declare the delegate (if using non-generic pattern).
         public delegate void ToolSelectionChangedEventHandler(object sender, EventArgs e);
@@ -46,6 +50,8 @@ namespace SVGEditor2.Tools.ToolBoxes
         bool useArea;
         private ToolBarButton tbTriangle;
         bool isMouseDown;
+
+
 
         [StructLayout(LayoutKind.Sequential)]
         struct CURSORINFO
@@ -87,6 +93,9 @@ namespace SVGEditor2.Tools.ToolBoxes
 
         const Int32 CURSOR_SHOWING = 0x00000001;
         #endregion
+        // AQUI VEM O NOME
+        public string fullName;
+        string dh_save;
 
         public ToolBox(String[] ui)
         {
@@ -215,6 +224,7 @@ namespace SVGEditor2.Tools.ToolBoxes
             }
             else if (btnGravar.BackColor == Color.Red)
             {
+
                 Salvar();
                 btnGravar.BackColor = SystemColors.Control;
             }
@@ -230,10 +240,33 @@ namespace SVGEditor2.Tools.ToolBoxes
         }
         private void Salvar()
         {
-            SetVisible(false);
-            MessageBox.Show(@"Vídeo Salvo com sucesso!");
+            DialogResult dr = new DialogResult();
+            dr = MessageBox.Show("Pronto! deseja salvar o video?", "GEOMETRIA", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+            if (dr == DialogResult.Yes)
+            {
+                // metodo para gravar no video
 
+                SetVisible(false);
+                MessageBox.Show(@"Vídeo Salvo com sucesso!");
 
+                //Gravar no BD 
+                try
+                {
+                    // as datas estao no metodo start_rec para sincronizar data do banco e data no nome do arquivo (aqui o nome forma ja no inicio)
+                    Video_DAO vDAO = new Video_DAO();
+                    Video video = new Video();
+                    video.Nome_arquivo = fullName;
+                    //video.Audio_id =  ?? vem de onde
+                    video.Idade = Convert.ToInt32(dados[1]);
+                    video.Artista = dados[0];
+                    video.Data = dh_save;
+                    vDAO.inserir(video);
+                }
+                catch (Exception er)
+                {
+                    MessageBox.Show("Erro ao inserir video no Banco de Dados!\n" + "mais detalhes:" + er.Message);
+                }
+            }
         }
 
         private void Start(bool selectArea)
@@ -256,11 +289,15 @@ namespace SVGEditor2.Tools.ToolBoxes
                 SetVisible(true);
                 _frameCount = 0;
 
-                string fullName = string.Format(@"{0}\{1}_{2}.mp4", Environment.CurrentDirectory + "\\video", dados[0], DateTime.Now.ToString("yyyy.MM.dd_HH.mm.ss"));
 
-                DateTime agora = DateTime.Now;
+
                 // Save File option
 
+                DateTime agora = DateTime.Now;
+                string dh_arquivo = agora.ToString("yyyy-MM-dd_HH-mm-ss");
+                string dh_save = agora.ToString("yyyy-MM-dd HH:mm:ss");
+
+                string fullName = "audio_id" + "_" + dh_arquivo + "_" + dados[0] + "_" + dados[1] + "anos" + ".mp4";
                 try
                 {
                     _writer = new VideoFileWriter();
@@ -271,6 +308,7 @@ namespace SVGEditor2.Tools.ToolBoxes
                               10,
                               VideoCodec.MPEG4,
                               (int)5000000);
+
                 }
                 catch (Exception e)
                 {
