@@ -9,8 +9,6 @@ using System.Runtime.InteropServices;
 using System.Diagnostics;
 using System.Threading;
 using DrawTools;
-using BD.DAO;
-using BD.Model;
 
 
 namespace SVGEditor2.Tools.ToolBoxes
@@ -18,7 +16,6 @@ namespace SVGEditor2.Tools.ToolBoxes
     public partial class ToolBox : Form
     {
         public String ToolSelection = "";
-
 
         // Declare the delegate (if using non-generic pattern).
         public delegate void ToolSelectionChangedEventHandler(object sender, EventArgs e);
@@ -248,17 +245,17 @@ namespace SVGEditor2.Tools.ToolBoxes
                 //Gravar no BD 
                 try
                 {
-                    // as datas estao no metodo start_rec para sincronizar data do banco e data no nome do arquivo (aqui o nome forma ja no inicio)
-                    Video_DAO vDAO = new Video_DAO();
-                    Video video = new Video
-                    {
-                        Nome_arquivo = fullName,
-                        //video.Audio_id =  ?? vem de onde
-                        Idade = Convert.ToInt32(dados[1]),
-                        Artista = dados[0],
-                        Data = dh_save
-                    };
-                    vDAO.inserir(video);
+                    /*    // as datas estao no metodo start_rec para sincronizar data do banco e data no nome do arquivo (aqui o nome forma ja no inicio)
+                        Video_DAO vDAO = new Video_DAO();
+                        Video video = new Video
+                        {
+                            Nome_arquivo = fullName,
+                            Audio_id = 0,
+                            Idade = Convert.ToInt32(dados[1]),
+                            Artista = dados[0],
+                            Data = dh_save
+                        };
+                        vDAO.inserir(video);*/
                 }
                 catch (Exception er)
                 {

@@ -48,7 +48,7 @@ namespace Geometricamente_V1
 
         private void btnSvgPaint_MouseLeave(object sender, EventArgs e)
         {
-              btnSvgPaint.BackColor = Color.Transparent;
+            btnSvgPaint.BackColor = Color.Transparent;
         }
 
         private void button1_Click(object sender, EventArgs e)

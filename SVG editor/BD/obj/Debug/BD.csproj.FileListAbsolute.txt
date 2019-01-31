@@ -12,6 +12,7 @@ C:\ICJ_Geometria\SVG editor\BD\bin\Debug\EntityFramework.xml
 C:\ICJ_Geometria\SVG editor\BD\bin\Debug\EntityFramework.SqlServer.xml
 C:\ICJ_Geometria\SVG editor\BD\bin\Debug\System.Data.SQLite.xml
 C:\ICJ_Geometria\SVG editor\BD\bin\Debug\System.Data.SQLite.dll.config
+C:\ICJ_Geometria\SVG editor\BD\obj\Debug\BD.csprojAssemblyReference.cache
 C:\ICJ_Geometria\SVG editor\BD\obj\Debug\BD.Properties.Resources.resources
 C:\ICJ_Geometria\SVG editor\BD\obj\Debug\BD.csproj.GenerateResource.cache
 C:\ICJ_Geometria\SVG editor\BD\obj\Debug\BD.csproj.CoreCompileInputs.cache
