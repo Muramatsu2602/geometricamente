@@ -59,7 +59,6 @@ namespace Geometricamente_V1
             rectangleBrush = new SolidBrush(Color.FromArgb(50, Color.Blue));
             rectanglePen = new Pen(Color.Blue, 1);
             // MessageBox.Show(dados[10]);
-            MessageBox.Show(Environment.CurrentDirectory);
 
 
 
@@ -96,17 +95,18 @@ namespace Geometricamente_V1
                     mciSendString("close recsound", null, 0, IntPtr.Zero);
 
                     //Gravar no BD 
-                    Audio_DAO aDAO = new Audio_DAO();
-                    Audio audio = new Audio
-                    {
-                        Nome_arquivo = dados[10] + "_" + dh_arquivo + "_" + dados[0] + "_" + dados[1] + "anos" + ".mp3",
-                        Nome_imagem = dados[10],
-                        Idade = Convert.ToInt32(dados[1]),
-                        Narrador = dados[0],
-                        Data = dh_save
-                    };
-                    aDAO.inserir(audio);
-
+                    /*
+                        Audio_DAO aDAO = new Audio_DAO();
+                        Audio audio = new Audio
+                        {
+                            Nome_arquivo = dados[10] + "_" + dh_arquivo + "_" + dados[0] + "_" + dados[1] + "anos" + ".mp3",
+                            Nome_imagem = dados[10],
+                            Idade = Convert.ToInt32(dados[1]),
+                            Narrador = dados[0],
+                            Data = dh_save
+                        };
+                        aDAO.inserir(audio);
+                    */
                 }
                 else if (dr == DialogResult.No)
                 {

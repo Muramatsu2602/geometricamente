@@ -75,6 +75,8 @@ namespace Geometricamente_V1
 
         const Int32 CURSOR_SHOWING = 0x00000001;
         #endregion
+        public string fullName;
+        string dh_save;
 
         private void picDesenha_Click(object sender, EventArgs e)
         {
@@ -157,9 +159,14 @@ namespace Geometricamente_V1
                 SetVisible(true);
                 _frameCount = 0;
 
-                string fullName = string.Format(@"{0}\{1}_{2}.mp4", TestaPendrive() + "\\video", dados[0], DateTime.Now.ToString("yyyy.MM.dd_HH.mm.ss"));
 
                 DateTime agora = DateTime.Now;
+                string dh_arquivo = agora.ToString("yyyy-MM-dd_HH-mm-ss");
+                string dh_save = agora.ToString("yyyy-MM-dd HH:mm:ss");
+
+                string fullName = TestaPendrive() + "\\video\\"+ dh_arquivo + "_" + dados[0] + "_" + dados[1] + "anos" + ".mp4";
+
+      
                 // Save File option
 
                 try
