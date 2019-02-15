@@ -54,8 +54,8 @@ namespace Geometricamente_V1
             String pastaOrigem = pasta;
             var filtros = new String[] { "jpg", "jpeg", "png", "gif", "tiff", "bmp" };
             var arquivos = GetArquivosDaPasta(pastaOrigem, filtros, false);
-            int l = 0;
-            int c = 0;
+            int l = 10;
+            int c = 10;
             for (int i = 0; i < arquivos.Length; i++)
             {
                 FileInfo arquivo = new FileInfo(arquivos[i]);
@@ -64,15 +64,18 @@ namespace Geometricamente_V1
                 PictureBox picture = new PictureBox
                 {
                     Name = "pictureBox" + i,
-                    BackColor = Color.Black,
+                    BackColor = Color.White,
                     Size = new Size(200, 200),
                     SizeMode = PictureBoxSizeMode.StretchImage,
                     Location = new Point(c, l),
                     Image = Image.FromFile(caminhoImagem),
-                    Tag = arquivo.Name
+                    Tag = arquivo.Name,
+                    Cursor = System.Windows.Forms.Cursors.Hand
                 };
                 panel3.Controls.Add(picture);
                 picture.Click += new EventHandler(AbreForm);
+                picture.MouseHover += new EventHandler(ImagemHover);
+                picture.MouseLeave += new EventHandler(ImagemMouseLeave);
 
                 if (c > (panel3.Size.Width - 400))
                 {
@@ -91,6 +94,20 @@ namespace Geometricamente_V1
             dados[10] = box.Tag.ToString();
             FrmGravaDescricao f2 = new FrmGravaDescricao(box.Image, dados); // aqui o
             f2.ShowDialog();
+        }
+
+        public void ImagemHover(object sender, EventArgs e)
+        {
+            var imagem = (PictureBox)sender;
+            imagem.BorderStyle = BorderStyle.Fixed3D;
+            imagem.BackColor = Color.LightGray;
+        }
+
+        public void ImagemMouseLeave(object sender, EventArgs e)
+        {
+            var imagem = (PictureBox)sender;
+            imagem.BackColor = Color.White;
+            imagem.BorderStyle = BorderStyle.None;
         }
 
         public static string[] GetArquivosDaPasta(String pastaRaiz, String[] filtros, bool isRecursiva)

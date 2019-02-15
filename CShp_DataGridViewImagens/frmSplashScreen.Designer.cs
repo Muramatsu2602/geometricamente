@@ -62,7 +62,7 @@
             // progressBar1
             // 
             this.progressBar1.ForeColor = System.Drawing.Color.White;
-            this.progressBar1.Location = new System.Drawing.Point(0, 421);
+            this.progressBar1.Location = new System.Drawing.Point(2, 392);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(603, 29);
             this.progressBar1.Step = 100;
@@ -112,9 +112,9 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(1, 196);
+            this.pictureBox4.Location = new System.Drawing.Point(12, 186);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(290, 219);
+            this.pictureBox4.Size = new System.Drawing.Size(230, 200);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 7;
             this.pictureBox4.TabStop = false;
@@ -122,20 +122,20 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(292, 373);
+            this.label2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(245, 362);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(304, 15);
+            this.label2.Size = new System.Drawing.Size(340, 16);
             this.label2.TabIndex = 8;
             this.label2.Text = "Coordenador: Prof. Dr. Wilson Massashiro Yonezawa";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(292, 398);
+            this.label4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(247, 312);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(240, 15);
+            this.label4.Size = new System.Drawing.Size(267, 16);
             this.label4.TabIndex = 9;
             this.label4.Text = "Bolsista: Pedro Kenzo Muramatsu Carmo";
             // 
@@ -152,10 +152,10 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(292, 348);
+            this.label5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(247, 337);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(299, 15);
+            this.label5.Size = new System.Drawing.Size(345, 16);
             this.label5.TabIndex = 11;
             this.label5.Text = "Coordenadora: Prof. Ma.  Bruna Albieri Cruz da Silva";
             // 
@@ -171,7 +171,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(600, 452);
+            this.ClientSize = new System.Drawing.Size(600, 423);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.progressBar1);

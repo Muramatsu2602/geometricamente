@@ -125,3 +125,4 @@ C:\ICJ_Geometria\CShp_DataGridViewImagens\bin\x86\Debug\Crom.Controls.pdb
 C:\ICJ_Geometria\CShp_DataGridViewImagens\bin\x86\Debug\Crom.Controls.dll.config
 C:\ICJ_Geometria\CShp_DataGridViewImagens\bin\x86\Debug\pt\SvgArtiste.resources.dll
 C:\ICJ_Geometria\CShp_DataGridViewImagens\bin\x86\Debug\pt-BR\SvgArtiste.resources.dll
+C:\ICJ_Geometria\CShp_DataGridViewImagens\obj\x86\Debug\Geometricamente_V1.About.resources

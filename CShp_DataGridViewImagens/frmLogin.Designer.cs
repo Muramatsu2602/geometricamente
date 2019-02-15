@@ -37,6 +37,7 @@
             this.btnGravar = new System.Windows.Forms.PictureBox();
             this.btnDesenhar = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.btnAjuda = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numIdade)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGravar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDesenhar)).BeginInit();
@@ -46,7 +47,7 @@
             // 
             this.label1.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label1.Location = new System.Drawing.Point(4, 10);
+            this.label1.Location = new System.Drawing.Point(4, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(596, 63);
@@ -103,7 +104,7 @@
             this.btnGravar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGravar.Image = ((System.Drawing.Image)(resources.GetObject("btnGravar.Image")));
             this.btnGravar.InitialImage = ((System.Drawing.Image)(resources.GetObject("btnGravar.InitialImage")));
-            this.btnGravar.Location = new System.Drawing.Point(111, 306);
+            this.btnGravar.Location = new System.Drawing.Point(120, 305);
             this.btnGravar.Name = "btnGravar";
             this.btnGravar.Padding = new System.Windows.Forms.Padding(11);
             this.btnGravar.Size = new System.Drawing.Size(150, 150);
@@ -121,7 +122,7 @@
             this.btnDesenhar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDesenhar.Image = ((System.Drawing.Image)(resources.GetObject("btnDesenhar.Image")));
             this.btnDesenhar.InitialImage = ((System.Drawing.Image)(resources.GetObject("btnDesenhar.InitialImage")));
-            this.btnDesenhar.Location = new System.Drawing.Point(333, 306);
+            this.btnDesenhar.Location = new System.Drawing.Point(342, 305);
             this.btnDesenhar.Name = "btnDesenhar";
             this.btnDesenhar.Padding = new System.Windows.Forms.Padding(11);
             this.btnDesenhar.Size = new System.Drawing.Size(150, 150);
@@ -147,11 +148,25 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.btnSair_Click);
             // 
+            // btnAjuda
+            // 
+            this.btnAjuda.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnAjuda.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAjuda.ForeColor = System.Drawing.Color.White;
+            this.btnAjuda.Location = new System.Drawing.Point(12, 13);
+            this.btnAjuda.Name = "btnAjuda";
+            this.btnAjuda.Size = new System.Drawing.Size(63, 50);
+            this.btnAjuda.TabIndex = 21;
+            this.btnAjuda.Text = "Sobre";
+            this.btnAjuda.UseVisualStyleBackColor = false;
+            this.btnAjuda.Click += new System.EventHandler(this.btnAjuda_Click);
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 480);
+            this.Controls.Add(this.btnAjuda);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnDesenhar);
             this.Controls.Add(this.btnGravar);
@@ -168,8 +183,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmLogin";
             this.Load += new System.EventHandler(this.frmLogin_Load);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmLogin_KeyDown);
-            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.frmLogin_KeyPress);
             ((System.ComponentModel.ISupportInitialize)(this.numIdade)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGravar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDesenhar)).EndInit();
@@ -188,5 +201,6 @@
         private System.Windows.Forms.PictureBox btnGravar;
         private System.Windows.Forms.PictureBox btnDesenhar;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAjuda;
     }
 }

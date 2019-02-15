@@ -98,7 +98,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Vn1mlURXjF/00mLdDp4AEBjm6KXGWpNRoIfOwnL/6LM=</dsig:DigestValue>
+        <dsig:DigestValue>VdSdqr/8t65eA0bkIcpjF8xD+MPHtBu53gXo3zTx0s8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -110,7 +110,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>XJ6j5qD85bfZjFTUOn8yuANSzN7YL5Nh8mbcyokXdWQ=</dsig:DigestValue>
+        <dsig:DigestValue>UmLJeJ7smzZwq35Z7+HRRsvsZxX0DUN5+ucCx2aGN2U=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -139,14 +139,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Geometricamente_V1.exe" size="1787872">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Geometricamente_V1.exe" size="1988576">
       <assemblyIdentity name="Geometricamente_V1" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>kFVJZb6b7CdCsv0+TY2BhrKFzyJyZ882yGCxiXq5K2Q=</dsig:DigestValue>
+        <dsig:DigestValue>RXbhvqklvtpQngQAITcw1Cn2AVwmewKMTDJQaRju0us=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -158,7 +158,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>hEtIEo2WMGUhLq8zhCbgA9Ad9e30zakbq2JTxDC9w1U=</dsig:DigestValue>
+        <dsig:DigestValue>zlLcC/mPN6PX77FREpd6soQNmEdQhuLCH94Pixq8r0c=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -170,7 +170,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ifrp77hdXVfnCxmm7N1+a0gRJj5HNSwUXiRv43rbKj4=</dsig:DigestValue>
+        <dsig:DigestValue>gv1KqUVQ/eFtbbqXB1sjWj9o4CKwjNEihOqwlQ7bQc8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -182,19 +182,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>P+1raI9m+MZVnULsfYdbApiGyQH+TdRSNayu+05sObQ=</dsig:DigestValue>
+        <dsig:DigestValue>Tp2T+QrozNWru4S0dnIDQ0zFlxbKskJnunLqPTc+1VY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SVGLib.dll" size="69632">
-      <assemblyIdentity name="SVGLib" version="0.10.6970.33032" language="neutral" processorArchitecture="x86" />
+      <assemblyIdentity name="SVGLib" version="0.10.6985.28843" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Bv5ktkwvFPJOa/grXO92fbW4jAbaSf36AIzMUljMyQU=</dsig:DigestValue>
+        <dsig:DigestValue>VznUC5UCiGLhLC94OgmYJWGKqqu7MPdvZjI3AWKkNLE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
