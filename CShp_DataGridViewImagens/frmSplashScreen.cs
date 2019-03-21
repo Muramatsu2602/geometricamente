@@ -14,7 +14,7 @@ namespace Geometricamente_V1
 
         private void frmSplashScreen_Load(object sender, EventArgs e)
         {
-            TestaPasta();
+           // TestaPasta();
         }
         public String TestaPendrive()
         {

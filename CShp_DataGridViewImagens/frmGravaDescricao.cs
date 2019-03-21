@@ -90,6 +90,7 @@ namespace Geometricamente_V1
                 dr = MessageBox.Show("Pronto! deseja salvar?", "GEOMETRIA", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
                 if (dr == DialogResult.Yes)
                 {
+                    //MessageBox.Show(Environment.CurrentDirectory);
                     mciSendString("save recsound " + TestaPendrive() + "\\audio\\" + dados[10] + "_" + dh_arquivo + "_" + dados[0] + "_" + dados[1] + "anos" + ".mp3", null, 0,
                         IntPtr.Zero);
                     mciSendString("close recsound", null, 0, IntPtr.Zero);

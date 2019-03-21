@@ -97,7 +97,7 @@ namespace SVGEditor2.Tools.ToolBoxes
                 this.dados = ui;
             }
 
-            MessageBox.Show(Environment.CurrentDirectory);
+         //   MessageBox.Show(Environment.CurrentDirectory);
 
 
             #region CONSTRUTOR'S VARIABLES
