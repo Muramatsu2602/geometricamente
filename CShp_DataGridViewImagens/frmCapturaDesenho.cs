@@ -367,17 +367,11 @@ namespace CapturaTela
 
                 float angle = 0;
                 PointF[] p = new PointF[3];
-
                 p[0].X = e.X;
-
                 p[0].Y = e.Y;
-
                 p[1].X = (float)(e.X - int.Parse(txt_ShapeSize.Text) * Math.Cos(angle));
-
                 p[1].Y = (float)(e.Y - int.Parse(txt_ShapeSize.Text) * Math.Sin(angle));
-
                 p[2].X = (float)(e.X - int.Parse(txt_ShapeSize.Text) * Math.Cos(angle + Math.PI / 3));
-
                 p[2].Y = (float)(e.Y - int.Parse(txt_ShapeSize.Text) * Math.Sin(angle + Math.PI / 3));
 
                 g.FillPolygon(sb, p);
@@ -415,8 +409,6 @@ namespace CapturaTela
                 drawTriangle = false;
                 drawCircle = false;
                 drawRectangle = false;
-
-
                 picQuadrado.BackColor = btn_PenColor.BackColor;
                 drawSquare = true;
             }
