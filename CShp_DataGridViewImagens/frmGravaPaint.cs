@@ -19,7 +19,7 @@ namespace Geometricamente_V1
         #region Atributos da Classe
         String[] dados = new string[100];
 
-       // bool cross;
+        // bool cross;
         private bool _isRecording;
         private List<string> _screenNames;
         //private Rectangle _screenSize;
@@ -164,9 +164,9 @@ namespace Geometricamente_V1
                 string dh_arquivo = agora.ToString("yyyy-MM-dd_HH-mm-ss");
                 string dh_save = agora.ToString("yyyy-MM-dd HH:mm:ss");
 
-                string fullName = TestaPendrive() + "\\video\\"+ dh_arquivo + "_" + dados[0] + "_" + dados[1] + "anos" + ".mp4";
+                string fullName = TestaPendrive() + "\\video\\" + dh_arquivo + "_" + dados[0] + "_" + dados[1] + "anos" + ".mp4";
 
-      
+
                 // Save File option
 
                 try
@@ -326,7 +326,7 @@ namespace Geometricamente_V1
 
         private void btnSettings_Click(object sender, EventArgs e)
         {
-           Settings();
+            Settings();
         }
 
         private void frmGravaPaint_FormClosing(object sender, FormClosingEventArgs e)
@@ -374,9 +374,23 @@ namespace Geometricamente_V1
             return Environment.CurrentDirectory;
         }
 
+        private void frmGravaPaint_Activated(object sender, EventArgs e)
+        {
+            Process[] pname = Process.GetProcessesByName("MSPAINT");
+            if (pname.Length == 0)
+            {
+     
+               Application.OpenForms
+                .OfType<Form>()
+                .Where(form => String.Equals(form.Name, "frmGravaPaint"))
+                .ToList()
+                .ForEach(form => form.Hide());
+            }
+        }
+
         private void Settings()
         {
-             if (btnSettings.BackColor == Color.Transparent)
+            if (btnSettings.BackColor == Color.Transparent)
             {
                 label1.Visible = true;
                 label2.Visible = true;
@@ -401,6 +415,6 @@ namespace Geometricamente_V1
                 btnSettings.BackColor = Color.Transparent;
             }
         }
-      
+
     }
 }

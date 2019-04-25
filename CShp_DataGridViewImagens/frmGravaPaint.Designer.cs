@@ -199,6 +199,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmGravaPaint";
             this.Text = "GRAVAR TELA";
+            this.Activated += new System.EventHandler(this.frmGravaPaint_Activated);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmGravaPaint_FormClosing);
             this.Load += new System.EventHandler(this.frmGravaPaint_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picDesenha)).EndInit();

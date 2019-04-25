@@ -139,14 +139,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Geometricamente_V1.exe" size="1988576">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Geometricamente_V1.exe" size="1989600">
       <assemblyIdentity name="Geometricamente_V1" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>MA00q9SQNaGK1IShvtNLJSVmat147MQSaP7Ms2tEqvc=</dsig:DigestValue>
+        <dsig:DigestValue>WhNjXmbhzNcFf2/wAMk3T+4akYafyGceSZKyrZn8cF8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -158,19 +158,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>oYApZdrTb9z97+Rn3nsiTdnXq3t3SKd1OnQat36nDnk=</dsig:DigestValue>
+        <dsig:DigestValue>zHAGip2leZ6812nn4IjIF8wHH7uN8YpQbYOKXX+g1Os=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="pt\SvgArtiste.resources.dll" size="4096">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="pt\SvgArtiste.resources.dll" size="139264">
       <assemblyIdentity name="SvgArtiste.resources" version="2.1.1.0" language="pt" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>oCMqi68j17fh6Q2mH1JGp1tenm011Kgmq/0XL7eQZHY=</dsig:DigestValue>
+        <dsig:DigestValue>Sp6Z4sEPBGCM5uiX5rmH3U5llMFLYHzHYBR3Y9k9e2s=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -182,7 +182,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>x6c074Y/4n08sFwd+akUfiuihjdaScCCat11p19Of4Y=</dsig:DigestValue>
+        <dsig:DigestValue>EjFuZ9D78WHwxGPHwSozjFxey7rk9ZRyCrRFCeQsyDA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

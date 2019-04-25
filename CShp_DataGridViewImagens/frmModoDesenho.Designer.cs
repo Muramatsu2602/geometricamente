@@ -48,7 +48,7 @@
             this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(808, 13);
+            this.button1.Location = new System.Drawing.Point(800, 13);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(47, 44);
@@ -59,12 +59,12 @@
             // 
             // label1
             // 
-            this.label1.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Arial", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.label1.Location = new System.Drawing.Point(13, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(842, 68);
+            this.label1.Size = new System.Drawing.Size(834, 48);
             this.label1.TabIndex = 21;
             this.label1.Text = " TELA DE DESENHO";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -75,7 +75,7 @@
             this.btnMSPaint.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMSPaint.Image = ((System.Drawing.Image)(resources.GetObject("btnMSPaint.Image")));
             this.btnMSPaint.InitialImage = ((System.Drawing.Image)(resources.GetObject("btnMSPaint.InitialImage")));
-            this.btnMSPaint.Location = new System.Drawing.Point(100, 164);
+            this.btnMSPaint.Location = new System.Drawing.Point(102, 143);
             this.btnMSPaint.Name = "btnMSPaint";
             this.btnMSPaint.Padding = new System.Windows.Forms.Padding(11);
             this.btnMSPaint.Size = new System.Drawing.Size(150, 150);
@@ -92,7 +92,7 @@
             this.btnGeometricamente.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGeometricamente.Image = ((System.Drawing.Image)(resources.GetObject("btnGeometricamente.Image")));
             this.btnGeometricamente.InitialImage = ((System.Drawing.Image)(resources.GetObject("btnGeometricamente.InitialImage")));
-            this.btnGeometricamente.Location = new System.Drawing.Point(357, 164);
+            this.btnGeometricamente.Location = new System.Drawing.Point(359, 143);
             this.btnGeometricamente.Name = "btnGeometricamente";
             this.btnGeometricamente.Padding = new System.Windows.Forms.Padding(11);
             this.btnGeometricamente.Size = new System.Drawing.Size(150, 150);
@@ -106,7 +106,7 @@
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(100, 352);
+            this.label2.Location = new System.Drawing.Point(102, 331);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(150, 25);
             this.label2.TabIndex = 25;
@@ -116,7 +116,7 @@
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(314, 352);
+            this.label3.Location = new System.Drawing.Point(318, 331);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(233, 25);
             this.label3.TabIndex = 26;
@@ -128,7 +128,7 @@
             this.btnSvgPaint.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSvgPaint.Image = ((System.Drawing.Image)(resources.GetObject("btnSvgPaint.Image")));
             this.btnSvgPaint.InitialImage = ((System.Drawing.Image)(resources.GetObject("btnSvgPaint.InitialImage")));
-            this.btnSvgPaint.Location = new System.Drawing.Point(617, 164);
+            this.btnSvgPaint.Location = new System.Drawing.Point(619, 143);
             this.btnSvgPaint.Name = "btnSvgPaint";
             this.btnSvgPaint.Padding = new System.Windows.Forms.Padding(11);
             this.btnSvgPaint.Size = new System.Drawing.Size(150, 150);
@@ -142,7 +142,7 @@
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(612, 352);
+            this.label4.Location = new System.Drawing.Point(617, 331);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(155, 25);
             this.label4.TabIndex = 28;
@@ -154,7 +154,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(868, 498);
+            this.ClientSize = new System.Drawing.Size(860, 450);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnSvgPaint);
             this.Controls.Add(this.label3);

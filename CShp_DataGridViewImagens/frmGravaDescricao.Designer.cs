@@ -28,10 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmGravaDescricao));
             this.lblTempo = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timer1 = new System.Windows.Forms.Timer();
             this.btnSair = new System.Windows.Forms.Button();
             this.picGravador = new System.Windows.Forms.PictureBox();
             this.btnCrosshair = new System.Windows.Forms.PictureBox();
@@ -74,7 +73,7 @@
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(35, 36);
             this.btnSair.TabIndex = 12;
-            this.btnSair.Text = "&X";
+            this.btnSair.Text = "X";
             this.btnSair.UseVisualStyleBackColor = false;
             this.btnSair.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -215,7 +214,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Turquoise;
+            this.BackColor = System.Drawing.Color.PaleTurquoise;
             this.ClientSize = new System.Drawing.Size(800, 600);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lblGravando);

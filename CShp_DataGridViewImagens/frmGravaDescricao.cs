@@ -142,7 +142,7 @@ namespace Geometricamente_V1
         {
             if (picGravador.BackColor == Color.White)
             {
-                lblGravando.ForeColor = Color.GreenYellow;
+                lblGravando.ForeColor = Color.Green;
                 picGravador.BackColor = Color.GreenYellow;
                 Gravar();
             }

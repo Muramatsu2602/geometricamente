@@ -85,7 +85,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.panel1.BackColor = System.Drawing.Color.PaleTurquoise;
             this.panel1.Controls.Add(this.btnSair);
             this.panel1.Controls.Add(this.txtDiretorio);
             this.panel1.Controls.Add(this.pictureBox1);
@@ -107,7 +107,7 @@
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(35, 36);
             this.btnSair.TabIndex = 11;
-            this.btnSair.Text = "&X";
+            this.btnSair.Text = "X";
             this.btnSair.UseVisualStyleBackColor = false;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 

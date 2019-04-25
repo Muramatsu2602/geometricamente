@@ -17,7 +17,7 @@ namespace CapturaTela
         #region Atributos da Classe
         String[] dados = new string[100];
 
-        bool cross;
+        bool cross = false;
         private bool _isRecording;
         private List<string> _screenNames;
         //private Rectangle _screenSize;
@@ -508,7 +508,6 @@ namespace CapturaTela
         private void pictureBox5_Click(object sender, EventArgs e)
         {
             GravarCheckBox();
-
         }
 
         private void GravarCheckBox()
@@ -623,7 +622,7 @@ namespace CapturaTela
         private void pnl_Draw_MouseMove(object sender, MouseEventArgs e)
         {
 
-            if (!cross)
+            if (cross)
             {
                 line_X.Show();
                 line_Y.Show();
@@ -632,7 +631,7 @@ namespace CapturaTela
                 line_Y.Location = new Point((e.Location.X + 0), 0);
                 line_X.Location = new Point(0, (e.Location.Y + 0));
             }
-            else if (cross)
+            else if (!cross)
             {
                 line_X.Hide();
                 line_Y.Hide();
