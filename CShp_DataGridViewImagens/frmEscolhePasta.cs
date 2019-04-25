@@ -66,7 +66,7 @@ namespace Geometricamente_V1
                     Name = "pictureBox" + i,
                     BackColor = Color.White,
                     Size = new Size(200, 200),
-                    SizeMode = PictureBoxSizeMode.StretchImage,
+                    SizeMode = PictureBoxSizeMode.Zoom,
                     Location = new Point(c, l),
                     Image = Image.FromFile(caminhoImagem),
                     Tag = arquivo.Name,
