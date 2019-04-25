@@ -49,5 +49,10 @@ namespace Geometricamente_V1
             if (i == 5000)
                 this.Close();
         }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

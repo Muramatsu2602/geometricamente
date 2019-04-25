@@ -6,9 +6,10 @@ namespace Geometricamente_V1
 {
     public partial class frmLogin : Form
     {
-
+        
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         public static extern bool SetForegroundWindow(IntPtr hWnd);
+
         String[] dados = new String[100];
         public frmLogin()
         {
@@ -89,16 +90,7 @@ namespace Geometricamente_V1
         private void btnDesenhar_MouseLeave(object sender, EventArgs e)
         {
             btnDesenhar.BackColor = Color.White;
-
         }
-
-        private void frmLogin_Load(object sender, EventArgs e)
-        {
-            
-
-        }
-
-     
 
         private void btnAjuda_Click(object sender, EventArgs e)
         {
